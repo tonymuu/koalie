@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAA01CD083D200786F30 /* AppDelegate.swift */; };
-		EA21DAA31CD083D200786F30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAA21CD083D200786F30 /* ViewController.swift */; };
 		EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA21DAA41CD083D200786F30 /* Main.storyboard */; };
 		EA21DAA81CD083D200786F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA21DAA71CD083D200786F30 /* Assets.xcassets */; };
 		EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA21DAA91CD083D200786F30 /* LaunchScreen.storyboard */; };
 		EA21DAB61CD083D200786F30 /* KoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAB51CD083D200786F30 /* KoalieTests.swift */; };
 		EA21DAC11CD083D300786F30 /* KoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAC01CD083D300786F30 /* KoalieUITests.swift */; };
+		EA2588FE1CE04A550060B6F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */; };
+		EA2589011CE0518E0060B6F2 /* KoalieLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */; };
+		EA2589021CE0518E0060B6F2 /* Load Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA2589001CE0518E0060B6F2 /* Load Screen.jpg */; };
+		EA2589051CE2E2D20060B6F2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589041CE2E2D20060B6F2 /* File.swift */; };
+		EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */; };
+		EA449F281CDF928F0009D6B2 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA449F271CDF928F0009D6B2 /* HomeTableView.swift */; };
+		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
+		EABC87851CD5C928001A6C0F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC87841CD5C928001A6C0F /* HomeTableViewController.swift */; };
+		EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABC87861CD5CE4D001A6C0F /* Property List.plist */; };
+		EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878A1CD7F325001A6C0F /* home-1.jpg */; };
+		EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878B1CD7F325001A6C0F /* home-2.jpg */; };
+		EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878C1CD7F325001A6C0F /* home-3.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,6 @@
 /* Begin PBXFileReference section */
 		EA21DA9D1CD083D200786F30 /* Koalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21DAA01CD083D200786F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA21DAA21CD083D200786F30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA21DAA51CD083D200786F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA21DAA71CD083D200786F30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA21DAAA1CD083D200786F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +57,18 @@
 		EA21DABC1CD083D200786F30 /* KoalieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoalieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21DAC01CD083D300786F30 /* KoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoalieUITests.swift; sourceTree = "<group>"; };
 		EA21DAC21CD083D300786F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = KoalieLogo.png; path = images/KoalieLogo.png; sourceTree = "<group>"; };
+		EA2589001CE0518E0060B6F2 /* Load Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Load Screen.jpg"; path = "images/Load Screen.jpg"; sourceTree = "<group>"; };
+		EA2589041CE2E2D20060B6F2 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagViewController.swift; sourceTree = "<group>"; };
+		EA449F271CDF928F0009D6B2 /* HomeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
+		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		EABC87841CD5C928001A6C0F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		EABC87861CD5CE4D001A6C0F /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		EABC878A1CD7F325001A6C0F /* home-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-1.jpg"; path = "images/home-1.jpg"; sourceTree = "<group>"; };
+		EABC878B1CD7F325001A6C0F /* home-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-2.jpg"; path = "images/home-2.jpg"; sourceTree = "<group>"; };
+		EABC878C1CD7F325001A6C0F /* home-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-3.jpg"; path = "images/home-3.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +119,16 @@
 		EA21DA9F1CD083D200786F30 /* Koalie */ = {
 			isa = PBXGroup;
 			children = (
-				EA21DAA01CD083D200786F30 /* AppDelegate.swift */,
-				EA21DAA21CD083D200786F30 /* ViewController.swift */,
+				EA2589031CE2E2C30060B6F2 /* Files */,
+				EA449F261CDF925B0009D6B2 /* Views */,
+				EABC87881CD7F0E0001A6C0F /* View Controllers */,
+				EABC87891CD7F2A9001A6C0F /* Images */,
 				EA21DAA41CD083D200786F30 /* Main.storyboard */,
+				EA21DAA01CD083D200786F30 /* AppDelegate.swift */,
 				EA21DAA71CD083D200786F30 /* Assets.xcassets */,
-				EA21DAA91CD083D200786F30 /* LaunchScreen.storyboard */,
 				EA21DAAC1CD083D200786F30 /* Info.plist */,
+				EABC87861CD5CE4D001A6C0F /* Property List.plist */,
+				EA21DAA91CD083D200786F30 /* LaunchScreen.storyboard */,
 			);
 			path = Koalie;
 			sourceTree = "<group>";
@@ -123,6 +149,45 @@
 				EA21DAC21CD083D300786F30 /* Info.plist */,
 			);
 			path = KoalieUITests;
+			sourceTree = "<group>";
+		};
+		EA2589031CE2E2C30060B6F2 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA2589041CE2E2D20060B6F2 /* File.swift */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		EA449F261CDF925B0009D6B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA449F271CDF928F0009D6B2 /* HomeTableView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EABC87881CD7F0E0001A6C0F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EABC87841CD5C928001A6C0F /* HomeTableViewController.swift */,
+				EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */,
+				EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */,
+				EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EABC87891CD7F2A9001A6C0F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */,
+				EA2589001CE0518E0060B6F2 /* Load Screen.jpg */,
+				EABC878A1CD7F325001A6C0F /* home-1.jpg */,
+				EABC878B1CD7F325001A6C0F /* home-2.jpg */,
+				EABC878C1CD7F325001A6C0F /* home-3.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +294,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */,
+				EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */,
 				EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */,
+				EA2589021CE0518E0060B6F2 /* Load Screen.jpg in Resources */,
 				EA21DAA81CD083D200786F30 /* Assets.xcassets in Resources */,
+				EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */,
+				EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */,
 				EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */,
+				EA2589011CE0518E0060B6F2 /* KoalieLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +327,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA21DAA31CD083D200786F30 /* ViewController.swift in Sources */,
+				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
+				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,
+				EA449F281CDF928F0009D6B2 /* HomeTableView.swift in Sources */,
+				EABC87851CD5C928001A6C0F /* HomeTableViewController.swift in Sources */,
 				EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */,
+				EA2588FE1CE04A550060B6F2 /* HomeViewController.swift in Sources */,
+				EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +558,7 @@
 				EA21DAC71CD083D300786F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA21DAC81CD083D300786F30 /* Build configuration list for PBXNativeTarget "KoalieTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +567,7 @@
 				EA21DACA1CD083D300786F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA21DACB1CD083D300786F30 /* Build configuration list for PBXNativeTarget "KoalieUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +576,7 @@
 				EA21DACD1CD083D300786F30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

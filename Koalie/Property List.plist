@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Background Color</key>
+	<string>UIColor(red: 0.082, green: 0.729, blue: 0.600, alpha: 1.00)</string>
+	<key>New item</key>
+	<string></string>
+</dict>
+</plist>
