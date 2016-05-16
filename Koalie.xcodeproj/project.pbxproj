@@ -20,6 +20,10 @@
 		EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */; };
 		EA449F281CDF928F0009D6B2 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA449F271CDF928F0009D6B2 /* HomeTableView.swift */; };
 		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
+		EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */; };
+		EA91ABB91CE91D5D00EA81BD /* People Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABB81CE91D5D00EA81BD /* People Icon.png */; };
+		EA91ABBC1CE91E2D00EA81BD /* Back-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABBA1CE91E2D00EA81BD /* Back-Icon.png */; };
+		EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */; };
 		EABC87851CD5C928001A6C0F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC87841CD5C928001A6C0F /* HomeTableViewController.swift */; };
 		EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABC87861CD5CE4D001A6C0F /* Property List.plist */; };
 		EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878A1CD7F325001A6C0F /* home-1.jpg */; };
@@ -64,6 +68,10 @@
 		EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagViewController.swift; sourceTree = "<group>"; };
 		EA449F271CDF928F0009D6B2 /* HomeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		EA91ABB81CE91D5D00EA81BD /* People Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "People Icon.png"; path = "images/People Icon.png"; sourceTree = "<group>"; };
+		EA91ABBA1CE91E2D00EA81BD /* Back-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Icon.png"; path = "images/Back-Icon.png"; sourceTree = "<group>"; };
+		EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hashtag.png; path = images/Hashtag.png; sourceTree = "<group>"; };
 		EABC87841CD5C928001A6C0F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		EABC87861CD5CE4D001A6C0F /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		EABC878A1CD7F325001A6C0F /* home-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-1.jpg"; path = "images/home-1.jpg"; sourceTree = "<group>"; };
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				EA449F271CDF928F0009D6B2 /* HomeTableView.swift */,
+				EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -181,6 +190,9 @@
 		EABC87891CD7F2A9001A6C0F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EA91ABBA1CE91E2D00EA81BD /* Back-Icon.png */,
+				EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */,
+				EA91ABB81CE91D5D00EA81BD /* People Icon.png */,
 				EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */,
 				EA2589001CE0518E0060B6F2 /* Load Screen.jpg */,
 				EABC878A1CD7F325001A6C0F /* home-1.jpg */,
@@ -296,12 +308,15 @@
 			files = (
 				EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */,
 				EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */,
+				EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */,
 				EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */,
 				EA2589021CE0518E0060B6F2 /* Load Screen.jpg in Resources */,
 				EA21DAA81CD083D200786F30 /* Assets.xcassets in Resources */,
 				EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */,
 				EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */,
 				EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */,
+				EA91ABBC1CE91E2D00EA81BD /* Back-Icon.png in Resources */,
+				EA91ABB91CE91D5D00EA81BD /* People Icon.png in Resources */,
 				EA2589011CE0518E0060B6F2 /* KoalieLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */,
 				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
 				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,
 				EA449F281CDF928F0009D6B2 /* HomeTableView.swift in Sources */,

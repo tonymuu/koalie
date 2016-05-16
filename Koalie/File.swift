@@ -13,6 +13,7 @@ struct Constants {
     struct backgroundColor {
         static let light = UIColor(red: 0.082, green: 0.729, blue: 0.600, alpha: 1.00)
         static let dark = UIColor(red: 0.043, green: 0.439, blue: 0.361, alpha: 1.00)
+        static let selected = UIColor(red: 0.063, green: 0.588, blue: 0.482, alpha: 1.00)
     }
     
     struct size {
