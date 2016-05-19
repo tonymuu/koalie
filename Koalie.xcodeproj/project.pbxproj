@@ -19,6 +19,7 @@
 		EA2589051CE2E2D20060B6F2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589041CE2E2D20060B6F2 /* File.swift */; };
 		EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */; };
 		EA449F281CDF928F0009D6B2 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA449F271CDF928F0009D6B2 /* HomeTableView.swift */; };
+		EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */; };
 		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
 		EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */; };
 		EA91ABB91CE91D5D00EA81BD /* People Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABB81CE91D5D00EA81BD /* People Icon.png */; };
@@ -29,6 +30,7 @@
 		EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878A1CD7F325001A6C0F /* home-1.jpg */; };
 		EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878B1CD7F325001A6C0F /* home-2.jpg */; };
 		EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878C1CD7F325001A6C0F /* home-3.jpg */; };
+		EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		EA2589041CE2E2D20060B6F2 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagViewController.swift; sourceTree = "<group>"; };
 		EA449F271CDF928F0009D6B2 /* HomeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
+		EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		EA91ABB81CE91D5D00EA81BD /* People Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "People Icon.png"; path = "images/People Icon.png"; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		EABC878A1CD7F325001A6C0F /* home-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-1.jpg"; path = "images/home-1.jpg"; sourceTree = "<group>"; };
 		EABC878B1CD7F325001A6C0F /* home-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-2.jpg"; path = "images/home-2.jpg"; sourceTree = "<group>"; };
 		EABC878C1CD7F325001A6C0F /* home-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-3.jpg"; path = "images/home-3.jpg"; sourceTree = "<group>"; };
+		EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowManyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		EA21DA941CD083D200786F30 = {
 			isa = PBXGroup;
 			children = (
+				EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */,
 				EA21DA9F1CD083D200786F30 /* Koalie */,
 				EA21DAB41CD083D200786F30 /* KoalieTests */,
 				EA21DABF1CD083D300786F30 /* KoalieUITests */,
@@ -183,6 +188,7 @@
 				EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */,
 				EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */,
 				EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */,
+				EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				TargetAttributes = {
 					EA21DA9C1CD083D200786F30 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = FGWM5JGVBM;
 					};
 					EA21DAB01CD083D200786F30 = {
 						CreatedOnToolsVersion = 7.3;
@@ -306,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */,
 				EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */,
 				EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */,
 				EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */,
@@ -346,6 +354,7 @@
 				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
 				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,
 				EA449F281CDF928F0009D6B2 /* HomeTableView.swift in Sources */,
+				EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */,
 				EABC87851CD5C928001A6C0F /* HomeTableViewController.swift in Sources */,
 				EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */,
 				EA2588FE1CE04A550060B6F2 /* HomeViewController.swift in Sources */,
@@ -491,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Koalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koa.Koalie;
@@ -502,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Koalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.koa.Koalie;
