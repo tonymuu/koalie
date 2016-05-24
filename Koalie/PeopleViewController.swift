@@ -9,9 +9,13 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
+    
     @IBOutlet weak var buttonFirst: UIButton!
-
     @IBOutlet weak var buttonSecond: UIButton!
+    @IBOutlet weak var buttonCreate: UIButton!
+    @IBOutlet weak var textfieldNumOfPeople: UITextField!
+    @IBOutlet weak var labelCost: UILabel!
+    @IBOutlet weak var labelHowMany: UILabel!
     @IBAction func ButtonBackClick(sender: AnyObject) {
         if buttonFirst.selected {
             print(1)
@@ -28,20 +32,45 @@ class PeopleViewController: UIViewController {
     }
     
     @IBAction func firstSelected(sender: AnyObject) {
-        setSelected(buttonFirst, buttonDeselected: buttonSecond)
+        
+        buttonSecond.backgroundColor = Constants.backgroundColor.dark
+        buttonFirst.backgroundColor = Constants.backgroundColor.selected
+        
+        if (!labelCost.hidden) {
+            UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    () -> Void in
+                    self.buttonCreate.center.y -= 100.0
+                    }, completion: nil)
+            UIView.animateWithDuration(0.1, delay: 0.35, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                () -> Void in
+                self.labelHowMany.hidden = true
+                self.textfieldNumOfPeople.hidden = true
+                self.labelCost.hidden = true
+                }, completion: nil)
+        }
     }
     
     @IBAction func secondSelected(sender: AnyObject) {
-        setSelected(buttonSecond, buttonDeselected: buttonFirst)
+        
+        buttonFirst.backgroundColor = Constants.backgroundColor.dark
+        buttonSecond.backgroundColor = Constants.backgroundColor.selected
+        
+        if (labelCost.hidden) {
+            UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                () -> Void in
+                self.buttonCreate.center.y += 100.0
+                }, completion: nil)
+            UIView.animateWithDuration(0.1, delay: 0.35, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                () -> Void in
+                
+                self.labelHowMany.hidden = false
+                self.textfieldNumOfPeople.hidden = false
+                self.labelCost.hidden = false
+                }, completion: nil)
+        }
+        
     }
 
-    func setSelected(buttonSelected: UIButton, buttonDeselected: UIButton) {    buttonSelected.selected = true
-        buttonDeselected.selected = false
-        
-        buttonDeselected.backgroundColor = Constants.backgroundColor.dark
-        buttonSelected.backgroundColor = Constants.backgroundColor.selected
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

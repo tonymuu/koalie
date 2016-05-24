@@ -14,6 +14,8 @@ class HashtagViewController: UIViewController {
     
     @IBOutlet weak var buttonBack: UIButton!
     
+    @IBOutlet weak var buttonNext: UIButton!
+    
     @IBAction func buttonBackClick(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -26,7 +28,7 @@ class HashtagViewController: UIViewController {
         var rect = textfieldHashtag.frame;
         rect.size.height = 100;
         textfieldHashtag.frame = rect;
-    }
+        }
     
     
 
