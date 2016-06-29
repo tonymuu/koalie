@@ -9,13 +9,16 @@
 import UIKit
 
 class PeopleViewController: UIViewController {
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var centerConstraints: NSLayoutConstraint!
     @IBOutlet weak var buttonFirst: UIButton!
     @IBOutlet weak var buttonSecond: UIButton!
     @IBOutlet weak var buttonCreate: UIButton!
     @IBOutlet weak var textfieldNumOfPeople: UITextField!
     @IBOutlet weak var labelCost: UILabel!
     @IBOutlet weak var labelHowMany: UILabel!
+    
     @IBAction func ButtonBackClick(sender: AnyObject) {
         if buttonFirst.selected {
             print(1)
@@ -28,6 +31,8 @@ class PeopleViewController: UIViewController {
     }
     
     @IBAction func ButtonCreateClick(sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("VCOverview")
+        self.presentViewController(vc!, animated: true, completion: nil)
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
@@ -36,10 +41,15 @@ class PeopleViewController: UIViewController {
         buttonSecond.backgroundColor = Constants.backgroundColor.dark
         buttonFirst.backgroundColor = Constants.backgroundColor.selected
         
+        //update constraints + setNeedsUpdateConstraints + layoutIfNeeded in animation block to avoid jumping 
+        self.topConstraint.constant = 32.0
+        buttonCreate.setNeedsUpdateConstraints()
+        
         if (!labelCost.hidden) {
             UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     () -> Void in
-                    self.buttonCreate.center.y -= 100.0
+//                    self.buttonCreate.center.x -= 80.0
+                self.buttonCreate.layoutIfNeeded()
                     }, completion: nil)
             UIView.animateWithDuration(0.1, delay: 0.35, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 () -> Void in
@@ -55,10 +65,14 @@ class PeopleViewController: UIViewController {
         buttonFirst.backgroundColor = Constants.backgroundColor.dark
         buttonSecond.backgroundColor = Constants.backgroundColor.selected
         
+        self.topConstraint.constant = 150.0
+        buttonCreate.setNeedsUpdateConstraints()
+        
         if (labelCost.hidden) {
             UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 () -> Void in
-                self.buttonCreate.center.y += 100.0
+//                self.buttonCreate.center.x += 80.0
+                self.buttonCreate.layoutIfNeeded()
                 }, completion: nil)
             UIView.animateWithDuration(0.1, delay: 0.35, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 () -> Void in

@@ -25,9 +25,6 @@ class HashtagViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        var rect = textfieldHashtag.frame;
-        rect.size.height = 100;
-        textfieldHashtag.frame = rect;
         }
     
     

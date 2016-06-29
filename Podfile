@@ -5,7 +5,7 @@ use_frameworks!
 
 
 target 'Koalie' do
-	
+    pod 'DKCamera'
 end
 
 

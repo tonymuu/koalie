@@ -9,7 +9,13 @@
 import UIKit
 
 class EventTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var labelEvent: UILabel!
+    @IBOutlet weak var labelProgress: UILabel!
+    
+//    @IBAction func buttonInfoClick(sender: AnyObject) {
+//        
+//    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

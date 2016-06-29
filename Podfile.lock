@@ -1,1 +1,10 @@
+PODS:
+  - DKCamera (1.2.9)
+
+DEPENDENCIES:
+  - DKCamera
+
+SPEC CHECKSUMS:
+  DKCamera: a070bfb4d4b1cafae3816270a35536ff61a9329a
+
 COCOAPODS: 0.39.0

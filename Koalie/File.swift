@@ -10,6 +10,9 @@ import Foundation
 import UIKit.UIColor
 
 struct Constants {
+    static let images = [UIImage(named: "home-1.jpg"), UIImage(named: "home-2.jpg"), UIImage(named: "home-3.jpg")]
+    
+    
     struct backgroundColor {
         static let light = UIColor(red: 0.082, green: 0.729, blue: 0.600, alpha: 1.00)
         static let dark = UIColor(red: 0.043, green: 0.439, blue: 0.361, alpha: 1.00)

@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import DKCamera
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    
     @IBOutlet weak var eventTableView: UITableView!
+    
+    var numberOfRows = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return numberOfRows;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -44,26 +49,37 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 150;
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == .Delete) {
+            numberOfRows -= 1
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath);
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
         
-        cell.imageView?.contentMode = UIViewContentMode.Center
-        cell.backgroundView?.contentMode = UIViewContentMode.Center
+        if (indexPath.row == 0) {
+            cell.labelEvent.text = "#THANKSGIVINGDAY"
+        } else if (indexPath.row == 1) {
+            cell.labelEvent.text = "#HikingTrip"
+        } else {
+            cell.labelEvent.text = "#JustARandomEventForFun"
+        }
         
-        let imgView = UIImageView(image: UIImage(named: "home-" + String(indexPath.row + 1) + ".jpg"))
-        let filterView = UIView(frame: cell.frame)
-        
-        filterView.alpha = 0.5
-        filterView.backgroundColor = UIColor.blackColor()
-        
-        cell.addSubview(imgView)
-        cell.addSubview(filterView)
-
         
         return cell;
     }
     
-    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        
+        let camVC = self.storyboard!.instantiateViewControllerWithIdentifier("CameraView")
+        
+        self.presentViewController(camVC, animated: true, completion: nil)
+        
+        return indexPath
+
+    }
     
     /*
     // MARK: - Navigation
