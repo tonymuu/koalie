@@ -62,7 +62,7 @@
                                                         <constraint firstAttribute="height" constant="32" id="cIl-py-eYJ"/>
                                                         <constraint firstAttribute="width" constant="32" id="ioU-JQ-XCy"/>
                                                     </constraints>
-                                                    <state key="normal" image="Back Arrow.pdf"/>
+                                                    <state key="normal" image="Info Button Icon.png"/>
                                                     <connections>
                                                         <segue destination="hIC-l2-dgz" kind="presentation" id="4cZ-zX-06f"/>
                                                     </connections>
@@ -1835,7 +1835,6 @@
         <image name="Add Icons Icon.png" width="1024" height="1024"/>
         <image name="Add Music Icon.png" width="1024" height="1024"/>
         <image name="Add Text Icon.png" width="1024" height="1024"/>
-        <image name="Back Arrow.pdf" width="500" height="500"/>
         <image name="Back-Arrow-Icons 1.png" width="659" height="492"/>
         <image name="Back-Icon.png" width="659" height="708"/>
         <image name="Bar.png" width="990" height="852"/>
@@ -1843,6 +1842,7 @@
         <image name="Email Icon.png" width="1024" height="1024"/>
         <image name="Gif Icon.png" width="1024" height="1024"/>
         <image name="Hashtag.png" width="526" height="537"/>
+        <image name="Info Button Icon.png" width="500" height="500"/>
         <image name="Light Arrow Icon.png" width="659" height="492"/>
         <image name="Minus Icon.png" width="1024" height="1024"/>
         <image name="Not Selected-Download-Button.png" width="672" height="517"/>
