@@ -81,6 +81,7 @@
 		EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878A1CD7F325001A6C0F /* home-1.jpg */; };
 		EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878B1CD7F325001A6C0F /* home-2.jpg */; };
 		EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878C1CD7F325001A6C0F /* home-3.jpg */; };
+		EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */; };
 		EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +185,7 @@
 		EABC878A1CD7F325001A6C0F /* home-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-1.jpg"; path = "images/home-1.jpg"; sourceTree = "<group>"; };
 		EABC878B1CD7F325001A6C0F /* home-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-2.jpg"; path = "images/home-2.jpg"; sourceTree = "<group>"; };
 		EABC878C1CD7F325001A6C0F /* home-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-3.jpg"; path = "images/home-3.jpg"; sourceTree = "<group>"; };
+		EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowManyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -378,6 +380,7 @@
 				EA76B78D1D0940C600E2D593 /* IconViewController.swift */,
 				EA76B78F1D0940CE00E2D593 /* ThemeViewController.swift */,
 				EA76B7A01D0CDC2F00E2D593 /* ReadyViewController.swift */,
+				EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				EA76B7901D0940CE00E2D593 /* ThemeViewController.swift in Sources */,
 				EA5C85161CFFFB0800A61033 /* GalleryViewController.swift in Sources */,
 				EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */,
+				EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */,
 				EA76B78C1D0940BF00E2D593 /* TextViewController.swift in Sources */,
 				EA76B7761D07F6CD00E2D593 /* FinalizeViewController.swift in Sources */,
 				EA5C85081CFCA94A00A61033 /* CamViewController.swift in Sources */,
