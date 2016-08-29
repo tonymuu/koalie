@@ -8,6 +8,7 @@
 
 import UIKit
 import DKCamera
+import Alamofire
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,12 +20,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = Constants.backgroundColor.light
-//        
-//        eventTableView.backgroundColor = Constants.backgroundColor.light
         eventTableView.delegate = self
         eventTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.getMedias).responseJSON { response in
+            print(response.medias)
+        }
     }
 
     override func didReceiveMemoryWarning() {

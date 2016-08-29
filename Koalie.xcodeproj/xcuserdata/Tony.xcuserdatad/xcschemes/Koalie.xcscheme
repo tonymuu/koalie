@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "086B636A0EFCE851A00BF854990D26A8"
+               BuildableName = "Pods_Koalie.framework"
+               BlueprintName = "Pods-Koalie"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA21DA9C1CD083D200786F30"
                BuildableName = "Koalie.app"
                BlueprintName = "Koalie"

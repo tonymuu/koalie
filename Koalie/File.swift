@@ -22,5 +22,14 @@ struct Constants {
     struct size {
         static let bttfHeight = 40
     }
+    
+    struct URIs {
+        static let baseUri = "http://localhost:3000"
+    }
+    
+    struct routes {
+        static let auth = "/auth/facebook/token"
+        static let getMedias = "/medias"
+    }
 }
 
