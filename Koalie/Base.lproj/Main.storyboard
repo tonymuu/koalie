@@ -435,7 +435,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="buttonBack" destination="48l-p0-HJa" id="YDR-Sd-hOq"/>
                         <outlet property="buttonNext" destination="48l-p0-HJa" id="vT4-Cf-9j6"/>
                         <outlet property="textfieldHashtag" destination="FVm-Wx-vfo" id="QyV-L8-5EG"/>
                     </connections>
@@ -858,12 +857,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZgN-DJ-RY9" kind="relationship" relationship="rootViewController" id="VDs-Vj-CPO"/>
+                        <segue destination="evC-IO-9IF" kind="relationship" relationship="rootViewController" id="tYE-4A-QWF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2K-Bj-ZHI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5455" y="-2415"/>
+            <point key="canvasLocation" x="-4611" y="-2383"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="ivI-hh-aP4">
@@ -1883,7 +1882,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6d-uf-ktg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4740" y="-2420"/>
+            <point key="canvasLocation" x="-5212" y="-2430"/>
         </scene>
         <!--Hashtag View Controller-->
         <scene sceneID="rMS-5B-fJ4">

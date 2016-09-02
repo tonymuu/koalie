@@ -11,6 +11,7 @@ import DKCamera
 
 class CamViewController: DKCamera {
     
+    
     func buttonCancelClick() {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -18,7 +19,18 @@ class CamViewController: DKCamera {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        didCancel = buttonCancelClick
+        let camera = DKCamera()
+        
+        camera.didCancel = { () in
+            self.buttonCancelClick()
+        }
+        
+        camera.didFinishCapturingImage = { (image: UIImage) in
+            print("DKCamera: didFinishCapturingImage")
+            
+        }
+
+
 
         // Do any additional setup after loading the view.
     }
@@ -46,5 +58,8 @@ class CamViewController: DKCamera {
         let galleryVC = self.storyboard!.instantiateViewControllerWithIdentifier("GalleryVC")
         self.presentViewController(galleryVC, animated: true, completion: nil)
     }
+    
+    
+    
     
 }

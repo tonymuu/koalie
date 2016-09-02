@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.4.1)
+  - AWSCore (2.4.7)
+  - AWSS3 (2.4.7):
+    - AWSCore (= 2.4.7)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -29,6 +32,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - AWSS3
   - DKCamera
   - FacebookCore
   - FacebookLogin
@@ -36,6 +40,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  AWSCore: 9a729a3c0050a51ece3547d546c327acdac7838a
+  AWSS3: 0f3c8ed11e04cd78cf86ed396c06330ab142db7a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   DKCamera: ef9c557e7f2ec83ebeaf95e9297e16e43755ec2e
   FacebookCore: 14f27add6888c27470d42a100374e6361f4e0f79
@@ -45,6 +51,4 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 96d9b70b5784490f02ab86119e542a1f182017a8
   FBSDKShareKit: 06ef20cb2f16828ca4b20055333313dd445de362
 
-PODFILE CHECKSUM: 525e813143d6c97b5a898960ce37ec6b4d513b22
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0

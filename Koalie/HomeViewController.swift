@@ -23,9 +23,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         eventTableView.delegate = self
         eventTableView.dataSource = self
         
-        Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.getMedias).responseJSON { response in
-            print(response.medias)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +78,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return indexPath
 
     }
+    
+
     
     /*
     // MARK: - Navigation

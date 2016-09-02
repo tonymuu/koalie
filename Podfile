@@ -11,6 +11,7 @@ pod 'FacebookShare'
 target 'Koalie' do
     pod 'DKCamera'
     pod 'Alamofire', '~> 3.4'
+    pod 'AWSS3'
 end
 
 

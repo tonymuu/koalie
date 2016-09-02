@@ -12,8 +12,6 @@ class HashtagViewController: UIViewController {
     
     @IBOutlet weak var textfieldHashtag: UITextField!
     
-    @IBOutlet weak var buttonBack: UIButton!
-    
     @IBOutlet weak var buttonNext: UIButton!
     
     @IBAction func buttonBackClick(sender: AnyObject) {
