@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,5 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+}
+
+class CustomIdentityProvider: NSObject, AWSIdentityProviderManager {
+    var tokens: [String : String]?
+    init(tokens: [String : String]) {
+        self.tokens = tokens
+    }
+    func logins() -> AWSTask {
+        return AWSTask(result: tokens)
+    }
 }
 
