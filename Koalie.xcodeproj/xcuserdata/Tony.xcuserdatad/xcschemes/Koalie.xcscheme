@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "086B636A0EFCE851A00BF854990D26A8"
-               BuildableName = "Pods_Koalie.framework"
-               BlueprintName = "Pods-Koalie"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "EA21DA9C1CD083D200786F30"
                BuildableName = "Koalie.app"
                BlueprintName = "Koalie"
@@ -42,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EA21DAB01CD083D200786F30"
-               BuildableName = "KoalieTests.xctest"
-               BlueprintName = "KoalieTests"
-               ReferencedContainer = "container:Koalie.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EA21DABB1CD083D200786F30"
-               BuildableName = "KoalieUITests.xctest"
-               BlueprintName = "KoalieUITests"
-               ReferencedContainer = "container:Koalie.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

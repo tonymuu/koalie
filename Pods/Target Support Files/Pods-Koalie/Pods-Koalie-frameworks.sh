@@ -84,28 +84,22 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Koalie/Bolts.framework"
-  install_framework "Pods-Koalie/FBSDKCoreKit.framework"
-  install_framework "Pods-Koalie/FBSDKLoginKit.framework"
-  install_framework "Pods-Koalie/FBSDKShareKit.framework"
-  install_framework "Pods-Koalie/FacebookCore.framework"
-  install_framework "Pods-Koalie/FacebookLogin.framework"
-  install_framework "Pods-Koalie/FacebookShare.framework"
   install_framework "Pods-Koalie/AWSCore.framework"
   install_framework "Pods-Koalie/AWSS3.framework"
   install_framework "Pods-Koalie/Alamofire.framework"
+  install_framework "Pods-Koalie/Bolts.framework"
   install_framework "Pods-Koalie/DKCamera.framework"
+  install_framework "Pods-Koalie/FBSDKCoreKit.framework"
+  install_framework "Pods-Koalie/FBSDKLoginKit.framework"
+  install_framework "Pods-Koalie/FBSDKShareKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Koalie/Bolts.framework"
-  install_framework "Pods-Koalie/FBSDKCoreKit.framework"
-  install_framework "Pods-Koalie/FBSDKLoginKit.framework"
-  install_framework "Pods-Koalie/FBSDKShareKit.framework"
-  install_framework "Pods-Koalie/FacebookCore.framework"
-  install_framework "Pods-Koalie/FacebookLogin.framework"
-  install_framework "Pods-Koalie/FacebookShare.framework"
   install_framework "Pods-Koalie/AWSCore.framework"
   install_framework "Pods-Koalie/AWSS3.framework"
   install_framework "Pods-Koalie/Alamofire.framework"
+  install_framework "Pods-Koalie/Bolts.framework"
   install_framework "Pods-Koalie/DKCamera.framework"
+  install_framework "Pods-Koalie/FBSDKCoreKit.framework"
+  install_framework "Pods-Koalie/FBSDKLoginKit.framework"
+  install_framework "Pods-Koalie/FBSDKShareKit.framework"
 fi

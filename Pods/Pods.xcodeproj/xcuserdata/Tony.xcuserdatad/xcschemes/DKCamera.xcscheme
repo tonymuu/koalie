@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C61E73C3B72AE64AA734FEC6'
+               BlueprintIdentifier = 'BF82A37FBB101D975B36116C'
                BlueprintName = 'DKCamera'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'DKCamera.framework'>
