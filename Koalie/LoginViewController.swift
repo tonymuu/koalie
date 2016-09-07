@@ -13,38 +13,33 @@ import AWSCore
 import AWSS3
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-    @IBOutlet weak var labelStatus: UILabel!
-
-    @IBOutlet weak var imageProfilePic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            labelStatus.text = FBSDKAccessToken.currentAccessToken().tokenString
-        } else {
-            labelStatus.text = "You are logged out"
-        }
-        
         let loginButton: FBSDKLoginButton = FBSDKLoginButton()
         loginButton.delegate = self
-        loginButton.center = self.view.center
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(loginButton)
+
+        let horizontalConstraint = NSLayoutConstraint(item: self.view, attribute: .CenterX, relatedBy: .Equal, toItem: loginButton, attribute: .CenterX, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: loginButton, attribute: .Bottom, multiplier: 1, constant: 120)
         
+        self.view.addConstraint(horizontalConstraint)
+        self.view.addConstraint(verticalConstraint)
+        
+        
+        let bgImage = UIImage(named: "Wallpaper for App.png")
+        let imageView = UIImageView(frame: self.view.bounds)
+        imageView.image = bgImage
+        self.view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("Logged in!")
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            labelStatus.text = FBSDKAccessToken.currentAccessToken().tokenString
-            print(labelStatus.text)
-            returnUserData()
-//            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC")
-//            self.presentViewController(vc!, animated: true, completion: nil)
-        } else {
-            labelStatus.text = "You are logged out"
-        }
+        returnUserData()
+
+
 
     }
     
@@ -53,31 +48,34 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func returnUserData() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            if (error != nil) {
-                print("Error: \(error)")
-            }
-            else {
-                print(result)
-                print(result.valueForKey("name") as! String)
-                let fid = result.valueForKey("id") as! String
-                let imgURLString = "http://graph.facebook.com/" + fid + "/picture?type=normal"
-                let imgURL = NSURL(string: imgURLString)
-                let imageData = NSData(contentsOfURL: imgURL!)
-                let image = UIImage(data: imageData!)
-                self.imageProfilePic.image = image!
-                let token = FBSDKAccessToken.currentAccessToken().tokenString
-                
+        let token = FBSDKAccessToken.currentAccessToken().tokenString
+        
+        // important! it has to be named "access token" to authenticate.
+        let dict = ["access_token": token]
+        
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC") as! HomeViewController
+        let navigationVC = UINavigationController(rootViewController: vc)
+        navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
 
-                self.uploadToS3(image!)
-                
-                let dict = ["access_token": token]
-                Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.auth, parameters: dict, encoding: .URL, headers: nil).responseJSON { response in
-                    print(response.request)
+        
+        Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.auth, parameters: dict, encoding: .URL, headers: nil).responseJSON { response in
+            print(response.request)
+            if (FBSDKAccessToken.currentAccessToken() != nil) {
+                Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.getEvents, parameters: nil, encoding: .URL, headers: nil).responseJSON { response in switch response.result {
+                case .Success(let data):
+                    let dict = data as! NSDictionary
+                    vc.userData = dict
+                    
+                case .Failure(let error):
+                    print(error)
+                    }
                 }
+                
+            } else {
+                print("You are logged out")
             }
-        })
+        }
+        self.presentViewController(navigationVC, animated: true, completion: nil)
     }
     
     func uploadToS3(image: UIImage) {
@@ -98,6 +96,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         downloadRequest.key = "images/DSC_0086.jpg"
         downloadRequest.downloadingFileURL = downloadingFilePath
         
+        // download request
+        
         transferManager.download(downloadRequest).continueWithBlock {(task: AWSTask!) -> AnyObject! in
             if ((task.error) != nil) {
                 print(task.error)
@@ -117,6 +117,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             uploadRequest.bucket = "koalie-test-bucket"
             uploadRequest.key = filename
             uploadRequest.body = NSURL(fileURLWithPath: filename)
+            
+            // upload request
             
             transferManager.upload(uploadRequest).continueWithBlock {(task: AWSTask!) -> AnyObject! in
                 if (task.error != nil) {

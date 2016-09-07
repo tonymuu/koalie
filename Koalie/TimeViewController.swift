@@ -13,6 +13,8 @@ class TimeViewController: UIViewController {
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelUnit: UILabel!
     
+    var newEvent: Event?
+    
     @IBAction func buttonPlusClick(sender: AnyObject) {
         var num = Int(labelNumber.text!)!
         if (labelUnit.text == "hours" && num == 7) {
@@ -50,24 +52,17 @@ class TimeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if newEvent != nil {
+            print("Received new event object: \(newEvent?.eventName)")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        newEvent?.startDate = NSDate()
+        newEvent?.endDate = NSDate()
+        
+        let destinationVC = segue.destinationViewController as! PeopleViewController
+        destinationVC.newEvent = self.newEvent
     }
-    */
 
 }

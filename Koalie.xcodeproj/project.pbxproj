@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		23F4D18A902F4634C8194A8A /* Pods_Koalie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6A2DF6768396D16549B14D /* Pods_Koalie.framework */; };
 		2E6ACCFA97B574FA3C0C039E /* Pods_KoalieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A17E5CC7B83924284865A08 /* Pods_KoalieTests.framework */; };
-		EA17A73D1CFBD8ED00328F0F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA17A73C1CFBD8ED00328F0F /* CameraViewController.swift */; };
+		EA1F58F81D7B772A00EAEBDE /* Wallpaper for App.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */; };
+		EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */; };
+		EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */; };
+		EA1F58FE1D7B933200EAEBDE /* JoinEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1F58FD1D7B933200EAEBDE /* JoinEventViewController.swift */; };
 		EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAA01CD083D200786F30 /* AppDelegate.swift */; };
 		EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA21DAA41CD083D200786F30 /* Main.storyboard */; };
 		EA21DAA81CD083D200786F30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA21DAA71CD083D200786F30 /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 		EA5162431D792F590012B26B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5162381D792F590012B26B /* FBSDKCoreKit.framework */; };
 		EA5162441D792F590012B26B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5162391D792F590012B26B /* FBSDKLoginKit.framework */; };
 		EA5162451D792F590012B26B /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51623A1D792F590012B26B /* FBSDKShareKit.framework */; };
+		EA5382DF1D7D25EA0044D059 /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5382DE1D7D25EA0044D059 /* ProfileIconView.swift */; };
+		EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5382E01D7D264B0044D059 /* ProfileIconView.xib */; };
+		EA566DE81D7BDBA200135CDB /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA566DE71D7BDBA200135CDB /* EventObject.swift */; };
 		EA5BC4831D237E1A00A066AC /* Back Arrow.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EA5BC4821D237E1A00A066AC /* Back Arrow.pdf */; };
 		EA5C85081CFCA94A00A61033 /* CamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5C85071CFCA94A00A61033 /* CamViewController.swift */; };
 		EA5C850F1CFEB1F900A61033 /* Back-Arrow-Icons 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C85091CFEB1F900A61033 /* Back-Arrow-Icons 1.png */; };
@@ -122,7 +128,10 @@
 		924481D0928596F08EA0D4AA /* Pods-KoalieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoalieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KoalieTests/Pods-KoalieTests.release.xcconfig"; sourceTree = "<group>"; };
 		94AEC1A2EC2DD1BA7B3B1C25 /* Pods-Koalie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koalie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koalie/Pods-Koalie.debug.xcconfig"; sourceTree = "<group>"; };
 		9F7820833DFF9FDEF9265C78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		EA17A73C1CFBD8ED00328F0F /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wallpaper for App.png"; sourceTree = "<group>"; };
+		EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Koalie Logo.png"; sourceTree = "<group>"; };
+		EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upload_test.jpg; sourceTree = "<group>"; };
+		EA1F58FD1D7B933200EAEBDE /* JoinEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinEventViewController.swift; sourceTree = "<group>"; };
 		EA21DA9D1CD083D200786F30 /* Koalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21DAA01CD083D200786F30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA21DAA51CD083D200786F30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +161,9 @@
 		EA5162381D792F590012B26B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		EA5162391D792F590012B26B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		EA51623A1D792F590012B26B /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		EA5382DE1D7D25EA0044D059 /* ProfileIconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
+		EA5382E01D7D264B0044D059 /* ProfileIconView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileIconView.xib; sourceTree = "<group>"; };
+		EA566DE71D7BDBA200135CDB /* EventObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
 		EA5BC4821D237E1A00A066AC /* Back Arrow.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Back Arrow.pdf"; sourceTree = "<group>"; };
 		EA5C85071CFCA94A00A61033 /* CamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CamViewController.swift; sourceTree = "<group>"; };
 		EA5C85091CFEB1F900A61033 /* Back-Arrow-Icons 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Arrow-Icons 1.png"; sourceTree = "<group>"; };
@@ -335,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2589041CE2E2D20060B6F2 /* File.swift */,
+				EA566DE71D7BDBA200135CDB /* EventObject.swift */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -346,6 +359,8 @@
 				EA5C85191D0160BB00A61033 /* GalleryTableViewCell.swift */,
 				EA76B7911D0CBBD700E2D593 /* ThemeView.xib */,
 				EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */,
+				EA5382DE1D7D25EA0044D059 /* ProfileIconView.swift */,
+				EA5382E01D7D264B0044D059 /* ProfileIconView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -353,6 +368,7 @@
 		EA5D48551CF3AC5300B7D10D /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */,
 				EA76B76B1D07F14200E2D593 /* Gif Icon.png */,
 				EA76B76C1D07F14200E2D593 /* People Icon.png */,
 				EA76B76D1D07F14200E2D593 /* Photo Icon.png */,
@@ -402,6 +418,7 @@
 		EA76B7931D0CBC1C00E2D593 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */,
 				EA76B7941D0CBC7100E2D593 /* Full Selected.jpg */,
 				EA76B7951D0CBC7100E2D593 /* Icon Selected.jpg */,
 				EA76B7961D0CBC7100E2D593 /* Music Selected.jpg */,
@@ -420,7 +437,6 @@
 				EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */,
 				EAB7B2271CF2C498005D01CA /* TimeViewController.swift */,
 				EA6DA95B1CF543B000B14A89 /* OverviewViewController.swift */,
-				EA17A73C1CFBD8ED00328F0F /* CameraViewController.swift */,
 				EA5C85071CFCA94A00A61033 /* CamViewController.swift */,
 				EA5C85151CFFFB0800A61033 /* GalleryViewController.swift */,
 				EA76B7671D053AEE00E2D593 /* InfoViewController.swift */,
@@ -432,6 +448,7 @@
 				EA76B7A01D0CDC2F00E2D593 /* ReadyViewController.swift */,
 				EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */,
 				EA88D9BC1D71F67100345E84 /* LoginViewController.swift */,
+				EA1F58FD1D7B933200EAEBDE /* JoinEventViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -439,6 +456,7 @@
 		EABC87891CD7F2A9001A6C0F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */,
 				EA5BC4821D237E1A00A066AC /* Back Arrow.pdf */,
 				EA76B7931D0CBC1C00E2D593 /* Views */,
 				EA5D48561CF3AC6100B7D10D /* buttons */,
@@ -582,12 +600,15 @@
 				EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */,
 				EA5C85131CFEB1F900A61033 /* Selected-Download-Button.png in Resources */,
 				EA76B79D1D0CBC7100E2D593 /* Theme Selected.jpg in Resources */,
+				EA1F58F81D7B772A00EAEBDE /* Wallpaper for App.png in Resources */,
 				EA5C850F1CFEB1F900A61033 /* Back-Arrow-Icons 1.png in Resources */,
 				EA76B7991D0CBC7100E2D593 /* Full Selected.jpg in Resources */,
 				EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */,
 				EA76B7731D07F14200E2D593 /* Top Rated Icon.png in Resources */,
 				EA76B7711D07F14200E2D593 /* People Icon.png in Resources */,
 				EA76B7801D093F8200E2D593 /* Add Icons Icon.png in Resources */,
+				EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */,
+				EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */,
 				EAB7B22A1CF2C4F2005D01CA /* Clock Icon.png in Resources */,
 				EA6DA9581CF53C2E00B14A89 /* X-Icon.png in Resources */,
 				EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */,
@@ -620,6 +641,7 @@
 				EA5C85121CFEB1F900A61033 /* Not Selected-Download-Button.png in Resources */,
 				EA91ABBC1CE91E2D00EA81BD /* Back-Icon.png in Resources */,
 				EA5D485A1CF3AD0F00B7D10D /* Plus Icon.png in Resources */,
+				EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */,
 				EA5C85181D00032F00A61033 /* Gallery Icon.png in Resources */,
 				EA5C85101CFEB1F900A61033 /* Delet-Icon.png in Resources */,
 				EA76B7811D093F8200E2D593 /* Add Music Icon.png in Resources */,
@@ -792,14 +814,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5C851A1D0160BB00A61033 /* GalleryTableViewCell.swift in Sources */,
+				EA566DE81D7BDBA200135CDB /* EventObject.swift in Sources */,
 				EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */,
-				EA17A73D1CFBD8ED00328F0F /* CameraViewController.swift in Sources */,
 				EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */,
 				EA6DA95C1CF543B000B14A89 /* OverviewViewController.swift in Sources */,
 				EA76B78A1D09407F00E2D593 /* MusicViewController.swift in Sources */,
 				EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */,
 				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
 				EA76B7A11D0CDC2F00E2D593 /* ReadyViewController.swift in Sources */,
+				EA1F58FE1D7B933200EAEBDE /* JoinEventViewController.swift in Sources */,
 				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,
 				EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */,
 				EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */,
@@ -812,6 +835,7 @@
 				EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */,
 				EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */,
 				EA76B78C1D0940BF00E2D593 /* TextViewController.swift in Sources */,
+				EA5382DF1D7D25EA0044D059 /* ProfileIconView.swift in Sources */,
 				EA76B7761D07F6CD00E2D593 /* FinalizeViewController.swift in Sources */,
 				EA5C85081CFCA94A00A61033 /* CamViewController.swift in Sources */,
 			);

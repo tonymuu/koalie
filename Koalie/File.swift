@@ -30,6 +30,10 @@ struct Constants {
     struct routes {
         static let auth = "/auth/facebook/token"
         static let getMedias = "/medias"
+        static let createEvent = "/create_event"
+        static let getEvents = "/joined_events"
+        static let searchEvents = "/search_events"
+        static let joinEvent = "/join_event"
     }
 }
 

@@ -9,27 +9,50 @@
 import UIKit
 import DKCamera
 import Alamofire
+import FBSDKLoginKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     
     @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var labelInstructional: UILabel!
     
-    var numberOfRows = 3
+    var numberOfRows = 0
+    
+    var userData: NSDictionary!
+    var eventDataList: [NSDictionary]!
+    
+    
+    @IBAction func buttonLogoutClick(sender: AnyObject) {
+        FBSDKLoginManager().logOut()
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         eventTableView.delegate = self
         eventTableView.dataSource = self
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        eventDataList = userData.objectForKey("events") as! [NSDictionary]
+        
+        numberOfRows = eventDataList.count
+        
+        print(eventDataList)
+        print(numberOfRows)
+        
+        if numberOfRows != 0 {
+            labelInstructional.text = ""
+        }
+        
+        self.navigationItem.titleView = generateProfileImageView(userData.objectForKey("picture") as! String)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -57,14 +80,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventTableViewCell
         
-        if (indexPath.row == 0) {
-            cell.labelEvent.text = "#THANKSGIVINGDAY"
-        } else if (indexPath.row == 1) {
-            cell.labelEvent.text = "#HikingTrip"
-        } else {
-            cell.labelEvent.text = "#JustARandomEventForFun"
-        }
+        let eventData = eventDataList[indexPath.row]
         
+        cell.labelEvent.text = eventData.objectForKey("name") as? String
         
         return cell;
     }
@@ -79,16 +97,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     
+    private func generateProfileImageView(urlString: String) -> UIView {
+        let hw = self.navigationController?.navigationBar.frame.size.height
+        let imgViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let imgView = UIImageView(frame: imgViewContainer.frame)
+        let url = NSURL(string: urlString)
+        if let imgData = NSData(contentsOfURL: url!) {
+            imgView.image = UIImage(data: imgData)
+        }
+        imgViewContainer.layer.cornerRadius = hw! / 2
+        imgViewContainer.layer.borderWidth = 1.5
+        imgViewContainer.layer.borderColor = (UIColor.whiteColor()).CGColor
+        imgViewContainer.clipsToBounds = true
+        imgView.contentMode = .ScaleAspectFill
+        
+        imgViewContainer.addSubview(imgView)
 
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        return imgViewContainer
     }
-    */
-
 }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import FBSDKLoginKit
 
 class PeopleViewController: UIViewController {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
@@ -18,6 +20,9 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var textfieldNumOfPeople: UITextField!
     @IBOutlet weak var labelCost: UILabel!
     @IBOutlet weak var labelHowMany: UILabel!
+    
+    var newEvent: Event!
+    
     
     @IBAction func ButtonBackClick(sender: AnyObject) {
         if buttonFirst.selected {
@@ -31,9 +36,22 @@ class PeopleViewController: UIViewController {
     }
     
     @IBAction func ButtonCreateClick(sender: AnyObject) {
+        newEvent?.eventSize = 10
+        
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("VCOverview")
         self.presentViewController(vc!, animated: true, completion: nil)
         self.navigationController?.popToRootViewControllerAnimated(true)
+        
+        let dict = [
+            "eventName": self.newEvent!.eventName,
+            "eventSize": String(self.newEvent!.eventSize),
+            "startDate": String(self.newEvent!.startDate),
+            "endDate": String(self.newEvent!.endDate),
+        ]
+        
+        Alamofire.request(.POST, Constants.URIs.baseUri + Constants.routes.createEvent, parameters: dict, encoding: .URL, headers: nil).responseJSON { response in
+            print(response.request)
+        }
     }
     
     @IBAction func firstSelected(sender: AnyObject) {
@@ -87,24 +105,9 @@ class PeopleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if newEvent != nil {
+            print("Received new event object: \(newEvent?.eventName)")
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
