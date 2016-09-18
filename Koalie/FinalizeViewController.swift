@@ -13,30 +13,30 @@ class FinalizeViewController: UIViewController {
     
     @IBOutlet weak var viewImage: UIImageView!
     
-    @IBAction func finalizeButtonClick(sender: AnyObject) {
+    @IBAction func finalizeButtonClick(_ sender: AnyObject) {
         
     }
     
-    @IBAction func buttonBackClick(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func buttonBackClick(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func buttonMusicClick(sender: AnyObject) {
+    @IBAction func buttonMusicClick(_ sender: AnyObject) {
         viewGeneral.viewImage.image = UIImage(named: "Music Selected.jpg")
         animateGeneralView()
     }
     
-    @IBAction func buttonTextClick(sender: AnyObject) {
+    @IBAction func buttonTextClick(_ sender: AnyObject) {
         viewGeneral.viewImage.image = UIImage(named: "Text Selected.jpg")
         animateGeneralView()
     }
     
-    @IBAction func buttonIconClick(sender: AnyObject) {
+    @IBAction func buttonIconClick(_ sender: AnyObject) {
         viewGeneral.viewImage.image = UIImage(named: "Icon Selected.jpg")
         animateGeneralView()
     }
     
-    @IBAction func buttonThemeClick(sender: AnyObject) {
+    @IBAction func buttonThemeClick(_ sender: AnyObject) {
         viewGeneral.viewImage.image = UIImage(named: "Theme Selected.jpg")
         animateGeneralView()
     }
@@ -49,7 +49,7 @@ class FinalizeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewGeneral.frame = self.view.frame
-        viewImage.image = Constants.images[counter++]
+        viewImage.image = Constants.images[counter+1]
         animateImageView()
     }
     
@@ -64,7 +64,7 @@ class FinalizeViewController: UIViewController {
          transition.type = kCATransitionPush
          transition.subtype = kCATransitionFromRight
          */
-        viewGeneral.layer.addAnimation(transition, forKey: kCATransition)
+        viewGeneral.layer.add(transition, forKey: kCATransition)
         self.view.addSubview(viewGeneral)
         CATransaction.commit()
     }
@@ -74,8 +74,8 @@ class FinalizeViewController: UIViewController {
         
         CATransaction.setAnimationDuration(animationDuration)
         CATransaction.setCompletionBlock {
-            let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(self.switchTimeInterval * NSTimeInterval(NSEC_PER_SEC)))
-            dispatch_after(delay, dispatch_get_main_queue()) {
+            let delay = DispatchTime.now() + Double(Int64(self.switchTimeInterval * TimeInterval(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: delay) {
                 self.animateImageView()
             }
         }
@@ -86,7 +86,7 @@ class FinalizeViewController: UIViewController {
          transition.type = kCATransitionPush
          transition.subtype = kCATransitionFromRight
          */
-        viewImage.layer.addAnimation(transition, forKey: kCATransition)
+        viewImage.layer.add(transition, forKey: kCATransition)
         viewImage.image = Constants.images[counter]
         
         CATransaction.commit()

@@ -9,8 +9,8 @@
 import UIKit
 
 class ReadyViewController: UIViewController {
-    @IBAction func dismissButtonClick(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func dismissButtonClick(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {

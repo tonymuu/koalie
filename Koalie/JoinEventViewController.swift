@@ -15,8 +15,8 @@ class JoinEventViewController: UIViewController {
     
     @IBOutlet weak var buttonNext: UIButton!
     
-    @IBAction func buttonBackClick(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func buttonBackClick(_ sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
 
@@ -25,23 +25,23 @@ class JoinEventViewController: UIViewController {
         
         let dict = ["eventName": "a"]
         
-        Alamofire.request(.GET, Constants.URIs.baseUri+Constants.routes.searchEvents, parameters: dict, encoding: .URL, headers: nil).responseJSON {
+        Alamofire.request(Constants.URIs.baseUri+Constants.routes.searchEvents, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON {
             response in switch response.result {
-                case .Success(let data):
+                case .success(let data):
                     print("Found the following event with name a: \n")
                     print(data)
                     let dataArray = data as! NSArray
-                    let dict = dataArray[0]
-                    let eventId = dict.objectForKey("_id") as! String
+                    let dict = dataArray[0] as! NSDictionary
+                    let eventId = dict.object(forKey: "_id") as! String
                     let idDict = ["eventId": eventId]
-                    Alamofire.request(.POST, Constants.URIs.baseUri+Constants.routes.joinEvent, parameters: idDict, encoding: .URL, headers: nil).responseJSON { response in switch response.result {
-                            case .Success(let data):
+                    Alamofire.request(Constants.URIs.baseUri+Constants.routes.joinEvent, method: .post, parameters: idDict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
+                            case .success(let data):
                                 print(data)
-                            case .Failure(let error):
+                            case .failure(let error):
                                 print(error)
                         }
                 }
-                case .Failure(let error):
+                case .failure(let error):
                     print(error)
             }
         }

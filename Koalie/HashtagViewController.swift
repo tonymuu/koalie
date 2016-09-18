@@ -12,19 +12,19 @@ class HashtagViewController: UIViewController {
     
     @IBOutlet weak var textfieldHashtag: UITextField!
     
-    @IBAction func buttonNextClick(sender: AnyObject) {
+    @IBAction func buttonNextClick(_ sender: AnyObject) {
         
     }
     
-    @IBAction func buttonBackClick(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func buttonBackClick(_ sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newEvent = Event()
         newEvent.eventName = textfieldHashtag.text
         
-        let destinationVC = segue.destinationViewController as! TimeViewController
+        let destinationVC = segue.destination as! TimeViewController
         destinationVC.newEvent = newEvent
     }
 

@@ -12,6 +12,8 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var labelEvent: UILabel!
     @IBOutlet weak var labelProgress: UILabel!
     
+    var eventId: String!
+    
 //    @IBAction func buttonInfoClick(sender: AnyObject) {
 //        
 //    }
@@ -21,7 +23,7 @@ class EventTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

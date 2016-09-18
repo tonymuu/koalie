@@ -9,8 +9,8 @@
 import UIKit
 
 class GalleryTableViewCell: UITableViewCell {
-    @IBOutlet weak var viewPicture: UIView!
     
+    @IBOutlet weak var viewPicture: UIImageView!
     @IBOutlet weak var labelUpvotes: UILabel!
     @IBOutlet weak var buttonUpvote: UIButton!
     
@@ -18,21 +18,21 @@ class GalleryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var buttonDownload: UIButton!
     
-    @IBAction func buttonUpvoteClick(sender: AnyObject) {
-        buttonUpvote.selected = true
-        buttonDownvote.selected = false
+    @IBAction func buttonUpvoteClick(_ sender: AnyObject) {
+        buttonUpvote.isSelected = true
+        buttonDownvote.isSelected = false
         labelUpvotes.text = "1"
     }
     
-    @IBAction func buttonDownvoteClick(sender: AnyObject) {
-        buttonDownvote.selected = true
-        buttonUpvote.selected = false
+    @IBAction func buttonDownvoteClick(_ sender: AnyObject) {
+        buttonDownvote.isSelected = true
+        buttonUpvote.isSelected = false
         labelUpvotes.text = "0"
     }
     
     
-    @IBAction func buttonDownloadClick(sender: AnyObject) {
-        buttonDownload.selected = true
+    @IBAction func buttonDownloadClick(_ sender: AnyObject) {
+        buttonDownload.isSelected = true
     }
     
     override func awakeFromNib() {
@@ -40,7 +40,7 @@ class GalleryTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

@@ -9,8 +9,8 @@
 import UIKit
 
 class OverviewViewController: UIViewController {
-    @IBAction func dismissButtonClick(sender: AnyObject) {
-        self.presentingViewController?.presentingViewController!.dismissViewControllerAnimated(true, completion: {
+    @IBAction func dismissButtonClick(_ sender: AnyObject) {
+        self.presentingViewController?.presentingViewController!.dismiss(animated: true, completion: {
         })
     }
 

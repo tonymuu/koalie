@@ -12,8 +12,8 @@ import MapKit
 class InfoViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
 
-    @IBAction func buttonBackClick(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func buttonBackClick(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

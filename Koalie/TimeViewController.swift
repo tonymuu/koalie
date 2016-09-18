@@ -15,7 +15,7 @@ class TimeViewController: UIViewController {
     
     var newEvent: Event?
     
-    @IBAction func buttonPlusClick(sender: AnyObject) {
+    @IBAction func buttonPlusClick(_ sender: AnyObject) {
         var num = Int(labelNumber.text!)!
         if (labelUnit.text == "hours" && num == 7) {
             labelNumber.text = String(1)
@@ -30,7 +30,7 @@ class TimeViewController: UIViewController {
         }
     }
     
-    @IBAction func buttonMinusClick(sender: AnyObject) {
+    @IBAction func buttonMinusClick(_ sender: AnyObject) {
         var num = Int(labelNumber.text!)!
         if (labelUnit.text == "week") {
             labelNumber.text = String(5)
@@ -45,8 +45,8 @@ class TimeViewController: UIViewController {
         }
     }
     
-    @IBAction func buttonBackClick(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func buttonBackClick(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -57,11 +57,11 @@ class TimeViewController: UIViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        newEvent?.startDate = NSDate()
-        newEvent?.endDate = NSDate()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        newEvent?.startDate = Date()
+        newEvent?.endDate = Date()
         
-        let destinationVC = segue.destinationViewController as! PeopleViewController
+        let destinationVC = segue.destination as! PeopleViewController
         destinationVC.newEvent = self.newEvent
     }
 

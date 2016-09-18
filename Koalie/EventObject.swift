@@ -11,6 +11,6 @@ import Foundation
 class Event: NSObject {
     var eventName: String!
     var eventSize: Int8!
-    var startDate: NSDate?
-    var endDate: NSDate?
+    var startDate: Date?
+    var endDate: Date?
 }

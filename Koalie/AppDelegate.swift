@@ -9,55 +9,99 @@
 import UIKit
 import FBSDKCoreKit
 import AWSCore
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
-
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        FBSDKAppEvents.activateApp()
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        
+        return handled
     }
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
-        FBSDKProfilePictureView()
-                
-        return true
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let r = FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+
+        
+        if isUserAuthenticated() {
+            // AWS config
+            //        let customProviderManager = CustomIdentityProvider(tokens: FBSDKAccessToken.currentAccessToken().tokenString)
+            let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .usWest2, identityPoolId: "us-west-2:0e669216-3640-4829-bc5c-a5322425f07f")
+            //        credentialsProvider.logins = [AWSIdentityProviderFacebook: FBSDKAccessToken.currentAccessToken().tokenString]
+            let logins: NSDictionary = NSDictionary(dictionary: ["graph.facebook.com" : FBSDKAccessToken.current().tokenString])
+            credentialsProvider.logins = logins as? [AnyHashable: Any]
+            let configuration = AWSServiceConfiguration(region: .usEast1, credentialsProvider: credentialsProvider)
+            AWSServiceManager.default().defaultServiceConfiguration = configuration
+            
+            let myStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = myStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+            let navigationVC = UINavigationController(rootViewController: vc)
+            navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
+            self.window?.rootViewController = navigationVC
+
+        } else {
+            let myStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = myStoryBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+            
+            self.window?.rootViewController = vc
+            return r
+        }
+        
+//         temporary solution to bypass login for testing camera
+//        let vc = LLSimpleCamViewController()
+//        let navigationVC = UINavigationController(rootViewController: vc)
+//        self.window?.rootViewController = navigationVC
+
+        return r
+    }
+    
+    func isUserAuthenticated() -> Bool {
+        return !(FBSDKAccessToken.current() == nil)
     }
 
 }
 
 class CustomIdentityProvider: NSObject, AWSIdentityProviderManager {
-    var tokens: [String : String]?
-    init(tokens: [String : String]) {
+    var tokens: NSDictionary?
+    init(tokens: NSDictionary) {
         self.tokens = tokens
     }
-    func logins() -> AWSTask {
+
+    /**
+     Each entry in logins represents a single login with an identity provider. The key is the domain of the login provider (e.g. 'graph.facebook.com') and the value is the OAuth/OpenId Connect token that results from an authentication with that login provider.
+     */
+    public func logins() -> AWSTask<NSDictionary> {
         return AWSTask(result: tokens)
     }
+
 }
 

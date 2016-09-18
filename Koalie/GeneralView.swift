@@ -11,7 +11,7 @@ import UIKit
 class GeneralView: UIView {
     @IBOutlet weak var viewImage: UIImageView!
 
-    @IBAction func buttonDismissClick(sender: AnyObject) {
+    @IBAction func buttonDismissClick(_ sender: AnyObject) {
         animateDismissView()
     }
     
@@ -26,13 +26,13 @@ class GeneralView: UIView {
          transition.type = kCATransitionPush
          transition.subtype = kCATransitionFromRight
          */
-        self.layer.addAnimation(transition, forKey: kCATransition)
+        self.layer.add(transition, forKey: kCATransition)
         self.removeFromSuperview()
         CATransaction.commit()
     }
 
     
     class func instanceFromNib() -> UIView {
-        return UINib(nibName: "ThemeView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
+        return UINib(nibName: "ThemeView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 }

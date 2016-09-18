@@ -21,8 +21,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(loginButton)
 
-        let horizontalConstraint = NSLayoutConstraint(item: self.view, attribute: .CenterX, relatedBy: .Equal, toItem: loginButton, attribute: .CenterX, multiplier: 1, constant: 0)
-        let verticalConstraint = NSLayoutConstraint(item: self.view, attribute: .Bottom, relatedBy: .Equal, toItem: loginButton, attribute: .Bottom, multiplier: 1, constant: 120)
+        let horizontalConstraint = NSLayoutConstraint(item: self.view, attribute: .centerX, relatedBy: .equal, toItem: loginButton, attribute: .centerX, multiplier: 1, constant: 0)
+        let verticalConstraint = NSLayoutConstraint(item: self.view, attribute: .bottom, relatedBy: .equal, toItem: loginButton, attribute: .bottom, multiplier: 1, constant: 120)
         
         self.view.addConstraint(horizontalConstraint)
         self.view.addConstraint(verticalConstraint)
@@ -32,41 +32,40 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         let imageView = UIImageView(frame: self.view.bounds)
         imageView.image = bgImage
         self.view.addSubview(imageView)
-        self.view.sendSubviewToBack(imageView)
+        self.view.sendSubview(toBack: imageView)
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         print("Logged in!")
         returnUserData()
-
-
-
     }
     
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
     }
     
     func returnUserData() {
-        let token = FBSDKAccessToken.currentAccessToken().tokenString
+        let token = FBSDKAccessToken.current().tokenString
         
         // important! it has to be named "access token" to authenticate.
         let dict = ["access_token": token]
         
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("HomeVC") as! HomeViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
         let navigationVC = UINavigationController(rootViewController: vc)
         navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
 
         
-        Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.auth, parameters: dict, encoding: .URL, headers: nil).responseJSON { response in
+        Alamofire.request(Constants.URIs.baseUri + Constants.routes.auth, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
             print(response.request)
-            if (FBSDKAccessToken.currentAccessToken() != nil) {
-                Alamofire.request(.GET, Constants.URIs.baseUri + Constants.routes.getEvents, parameters: nil, encoding: .URL, headers: nil).responseJSON { response in switch response.result {
-                case .Success(let data):
+            if (FBSDKAccessToken.current() != nil) {
+                Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEvents, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { response in switch response.result {
+                case .success(let data):
                     let dict = data as! NSDictionary
                     vc.userData = dict
                     
-                case .Failure(let error):
+                    self.present(navigationVC, animated: true, completion: nil)
+
+                case .failure(let error):
                     print(error)
                     }
                 }
@@ -75,30 +74,23 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("You are logged out")
             }
         }
-        self.presentViewController(navigationVC, animated: true, completion: nil)
     }
     
-    func uploadToS3(image: UIImage) {
-        // AWS config
-        //        let customProviderManager = CustomIdentityProvider(tokens: FBSDKAccessToken.currentAccessToken().tokenString)
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .USWest2, identityPoolId: "us-west-2:0e669216-3640-4829-bc5c-a5322425f07f")
-        //        credentialsProvider.logins = [AWSIdentityProviderFacebook: FBSDKAccessToken.currentAccessToken().tokenString]
-        let logins: NSDictionary = NSDictionary(dictionary: ["graph.facebook.com" : FBSDKAccessToken.currentAccessToken().tokenString])
-        credentialsProvider.logins = logins as [NSObject : AnyObject]
-        let configuration = AWSServiceConfiguration(region: .USEast1, credentialsProvider: credentialsProvider)
-        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+    func uploadToS3(_ image: UIImage) {
 
         
-        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-        let downloadingFilePath = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingString("downloaded_sample.jpg"))
-        var downloadRequest = AWSS3TransferManagerDownloadRequest()
-        downloadRequest.bucket = "koalie-test-bucket"
-        downloadRequest.key = "images/DSC_0086.jpg"
-        downloadRequest.downloadingFileURL = downloadingFilePath
+        let transferManager = AWSS3TransferManager.default()
+        
+        ///// download
+        let downloadingFilePath = URL(fileURLWithPath: NSTemporaryDirectory() + "downloaded_sample.jpg")
+        let downloadRequest = AWSS3TransferManagerDownloadRequest()
+        downloadRequest?.bucket = "koalie-test-bucket"
+        downloadRequest?.key = "images/DSC_0086.jpg"
+        downloadRequest?.downloadingFileURL = downloadingFilePath
         
         // download request
         
-        transferManager.download(downloadRequest).continueWithBlock {(task: AWSTask!) -> AnyObject! in
+        transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
             if ((task.error) != nil) {
                 print(task.error)
             }
@@ -107,20 +99,22 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print(downloadOutput)
             }
             return nil
-        }
+        })
         
+        
+        ///// upload
         if let data = UIImageJPEGRepresentation(image, 0.8) {
             let uploadRequest = AWSS3TransferManagerUploadRequest()
-            let filename = getDocumentsDirectory().stringByAppendingString("/upload_test.jpg")
-            data.writeToFile(filename, atomically: true)
+            let filename = getDocumentsDirectory() + "/upload_test.jpg"
+            try? data.write(to: URL(fileURLWithPath: filename), options: [.atomic])
             print(filename)
-            uploadRequest.bucket = "koalie-test-bucket"
-            uploadRequest.key = filename
-            uploadRequest.body = NSURL(fileURLWithPath: filename)
+            uploadRequest?.bucket = "koalie-test-bucket"
+            uploadRequest?.key = filename
+            uploadRequest?.body = URL(fileURLWithPath: filename)
             
             // upload request
             
-            transferManager.upload(uploadRequest).continueWithBlock {(task: AWSTask!) -> AnyObject! in
+            transferManager?.upload(uploadRequest).continue( {(task: AWSTask!) -> AnyObject! in
                 if (task.error != nil) {
                     print(task.error)
                 }
@@ -129,13 +123,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print(uploadOutput)
                 }
                 return nil
-            }
+            })
         }
         
     }
     
     func getDocumentsDirectory() -> String {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return paths[0]
     }
 }

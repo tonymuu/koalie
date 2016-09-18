@@ -17,44 +17,41 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var buttonFirst: UIButton!
     @IBOutlet weak var buttonSecond: UIButton!
     @IBOutlet weak var buttonCreate: UIButton!
-    @IBOutlet weak var textfieldNumOfPeople: UITextField!
-    @IBOutlet weak var labelCost: UILabel!
-    @IBOutlet weak var labelHowMany: UILabel!
     
     var newEvent: Event!
     
     
-    @IBAction func ButtonBackClick(sender: AnyObject) {
-        if buttonFirst.selected {
+    @IBAction func ButtonBackClick(_ sender: AnyObject) {
+        if buttonFirst.isSelected {
             print(1)
         }
-        if buttonSecond.selected {
+        if buttonSecond.isSelected {
             print(2)
         }
         
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func ButtonCreateClick(sender: AnyObject) {
+    @IBAction func ButtonCreateClick(_ sender: AnyObject) {
         newEvent?.eventSize = 10
         
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("VCOverview")
-        self.presentViewController(vc!, animated: true, completion: nil)
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview")
+        self.present(vc!, animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
         
         let dict = [
             "eventName": self.newEvent!.eventName,
             "eventSize": String(self.newEvent!.eventSize),
-            "startDate": String(self.newEvent!.startDate),
-            "endDate": String(self.newEvent!.endDate),
+            "startDate": String(describing: self.newEvent!.startDate),
+            "endDate": String(describing: self.newEvent!.endDate),
         ]
         
-        Alamofire.request(.POST, Constants.URIs.baseUri + Constants.routes.createEvent, parameters: dict, encoding: .URL, headers: nil).responseJSON { response in
+        Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
             print(response.request)
         }
     }
     
-    @IBAction func firstSelected(sender: AnyObject) {
+    @IBAction func firstSelected(_ sender: AnyObject) {
         
         buttonSecond.backgroundColor = Constants.backgroundColor.dark
         buttonFirst.backgroundColor = Constants.backgroundColor.selected
@@ -62,44 +59,15 @@ class PeopleViewController: UIViewController {
         //update constraints + setNeedsUpdateConstraints + layoutIfNeeded in animation block to avoid jumping 
         self.topConstraint.constant = 32.0
         buttonCreate.setNeedsUpdateConstraints()
-        
-        if (!labelCost.hidden) {
-            UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    () -> Void in
-//                    self.buttonCreate.center.x -= 80.0
-                self.buttonCreate.layoutIfNeeded()
-                    }, completion: nil)
-            UIView.animateWithDuration(0.1, delay: 0.35, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                () -> Void in
-                self.labelHowMany.hidden = true
-                self.textfieldNumOfPeople.hidden = true
-                self.labelCost.hidden = true
-                }, completion: nil)
-        }
     }
     
-    @IBAction func secondSelected(sender: AnyObject) {
+    @IBAction func secondSelected(_ sender: AnyObject) {
         
         buttonFirst.backgroundColor = Constants.backgroundColor.dark
         buttonSecond.backgroundColor = Constants.backgroundColor.selected
         
         self.topConstraint.constant = 150.0
         buttonCreate.setNeedsUpdateConstraints()
-        
-        if (labelCost.hidden) {
-            UIView.animateWithDuration(0.35, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                () -> Void in
-//                self.buttonCreate.center.x += 80.0
-                self.buttonCreate.layoutIfNeeded()
-                }, completion: nil)
-            UIView.animateWithDuration(0.1, delay: 0.35, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                () -> Void in
-                
-                self.labelHowMany.hidden = false
-                self.textfieldNumOfPeople.hidden = false
-                self.labelCost.hidden = false
-                }, completion: nil)
-        }
         
     }
 

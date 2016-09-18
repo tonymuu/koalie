@@ -29,7 +29,9 @@ struct Constants {
     
     struct routes {
         static let auth = "/auth/facebook/token"
-        static let getMedias = "/medias"
+        static let getEventMedias = "/event_medias"
+        static let getMyMedias = "/my_medias"
+        static let createMedia = "/create_media"
         static let createEvent = "/create_event"
         static let getEvents = "/joined_events"
         static let searchEvents = "/search_events"

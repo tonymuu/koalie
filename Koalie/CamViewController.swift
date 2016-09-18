@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import DKCamera
 
-class CamViewController: DKCamera {
+class CamViewController: DKCamera, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     func buttonCancelClick() {
@@ -18,12 +17,23 @@ class CamViewController: DKCamera {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         self.didCancel = { () in
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
         self.didFinishCapturingImage = { (image: UIImage) in
             print("DKCamera: didFinishCapturingImage")
+            
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = .Camera
+            
+            self.presentViewController(picker, animated: true, completion: nil)
+            
+            
         }
     }
 
@@ -33,16 +43,16 @@ class CamViewController: DKCamera {
         let bottomView = self.cameraSwitchButton.superview
         let galleryButton: UIButton = {
             let galleryButton = UIButton()
-            galleryButton.addTarget(self, action: #selector(galleryButtonClick), forControlEvents: .TouchUpInside)
-            galleryButton.setImage(UIImage(named: "Gallery Icon.png"), forState: .Normal)
-            galleryButton.setTitle("Gallery", forState: .Normal)
+            galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
+            galleryButton.setImage(UIImage(named: "Gallery Icon.png"), for: UIControlState())
+            galleryButton.setTitle("Gallery", for: UIControlState())
 //            galleryButton.sizeToFit()
             return galleryButton
         }()
         
         galleryButton.frame.origin = CGPoint(x: 40.0, y: ((bottomView?.bounds.height)! - galleryButton.bounds.height) / 2)
         galleryButton.bounds.size = CGSize(width: cameraSwitchButton.bounds.width, height: cameraSwitchButton.bounds.height)
-        galleryButton.autoresizingMask = [.FlexibleRightMargin, .FlexibleBottomMargin, .FlexibleTopMargin]
+        galleryButton.autoresizingMask = [.flexibleRightMargin, .flexibleBottomMargin, .flexibleTopMargin]
         bottomView!.addSubview(galleryButton)
     }
     

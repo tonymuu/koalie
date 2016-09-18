@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DKCamera.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,7 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LLSimpleCamera.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Koalie.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-KoalieTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,7 +57,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3B41A9B1D49827D58E203AF61D34F608</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B6BCCA4633976619D09DDD013AA288C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>599F8639EA89494A321D0A4E4CA512B2</key>
+		<key>4B4101B2F24A088E35E1CCDB3CDFD003</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D69761C2CD2A1E5C013537B29CAB4CF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6A932845C7A5BE5374224A90EA874591</key>
+		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,12 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>948A46EC641E4DA25A0C1AA1762AF963</key>
+		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
+		<key>CE0CC7E2B5B550BC4172F6FF9CC5D50A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
