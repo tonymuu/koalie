@@ -36,8 +36,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("Logged in!")
-        returnUserData()
+        if(error != nil) {
+            print(error)
+        } else if result.isCancelled {
+            print("canceled")
+        } else {
+            print("Logged in!")
+            returnUserData()
+        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -45,7 +51,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func returnUserData() {
-        let token = FBSDKAccessToken.current().tokenString
+        print(FBSDKAccessToken.current().tokenString)
+        let token: String = FBSDKAccessToken.current().tokenString
         
         // important! it has to be named "access token" to authenticate.
         let dict = ["access_token": token]

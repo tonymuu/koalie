@@ -7,10 +7,10 @@ use_frameworks!
 target 'Koalie' do
     pod 'Alamofire', '~> 4.0'
     pod 'AWSS3', '2.4.7'
-    pod 'FBSDKCoreKit', '4.15.0'
-    pod 'FBSDKLoginKit', '4.15.0'
-    pod 'FBSDKShareKit', '4.15.0'
-    pod 'LLSimpleCamera', '4.1'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKLoginKit'
+    pod 'FBSDKShareKit'
+    pod 'LLSimpleCamera', '4.2'
 end
 
 

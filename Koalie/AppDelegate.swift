@@ -50,9 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let r = FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+// Login logic
 
-        
         if isUserAuthenticated() {
+            
             // AWS config
             //        let customProviderManager = CustomIdentityProvider(tokens: FBSDKAccessToken.currentAccessToken().tokenString)
             let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .usWest2, identityPoolId: "us-west-2:0e669216-3640-4829-bc5c-a5322425f07f")
@@ -67,23 +68,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationVC = UINavigationController(rootViewController: vc)
             navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
             self.window?.rootViewController = navigationVC
+            
+            return true;
 
         } else {
             let myStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let vc = myStoryBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
             
             self.window?.rootViewController = vc
-            return r
+            return true
         }
-        
-//         temporary solution to bypass login for testing camera
-//        let vc = LLSimpleCamViewController()
-//        let navigationVC = UINavigationController(rootViewController: vc)
-//        self.window?.rootViewController = navigationVC
+/*
+       // temporary solution to bypass login for testing camera
+        let vc = LLSimpleCamViewController()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        self.window?.rootViewController = navigationVC
 
-        return r
+        return true
+         */
+        return true;
     }
-    
+ 
     func isUserAuthenticated() -> Bool {
         return !(FBSDKAccessToken.current() == nil)
     }

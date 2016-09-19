@@ -60,10 +60,9 @@ class LLSimpleCamViewController: UIViewController {
             }
         }
         
-        /**
         self.camera.onError = {(camera, error) -> Void in
-            if (error.domain == LLSimpleCameraErrorDomain) {
-                if error.code == 10 || error.code == 11 {
+            if (error?._domain == LLSimpleCameraErrorDomain) {
+                if error?._code == 10 || error?._code == 11 {
                     if(self.view.subviews.contains(self.errorLabel)){
                         self.errorLabel.removeFromSuperview()
                     }
@@ -102,7 +101,6 @@ class LLSimpleCamViewController: UIViewController {
                 }
             }
         }
-        */
         
         if(LLSimpleCamera.isFrontCameraAvailable() && LLSimpleCamera.isRearCameraAvailable()){
             self.snapButton = UIButton(type: .custom)
