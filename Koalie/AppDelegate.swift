@@ -83,8 +83,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigationVC
  
  */
-
-        return true
     }
  
     func isUserAuthenticated() -> Bool {

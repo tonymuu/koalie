@@ -19,32 +19,37 @@ class JoinEventViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let dict = ["eventName": "a"]
+    @IBAction func buttonNextClick(_ sender: AnyObject) {
+        let eventName: String = textfieldHashtag.text!
+        let dict = ["eventName": eventName]
         
         Alamofire.request(Constants.URIs.baseUri+Constants.routes.searchEvents, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON {
             response in switch response.result {
+            case .success(let data):
+                print("Found the following event with name a: \n")
+                print(data)
+                let dataArray = data as! NSArray
+                let dict = dataArray[0] as! NSDictionary
+                let eventId = dict.object(forKey: "_id") as! String
+                let idDict = ["eventId": eventId]
+                Alamofire.request(Constants.URIs.baseUri+Constants.routes.joinEvent, method: .post, parameters: idDict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
                 case .success(let data):
-                    print("Found the following event with name a: \n")
                     print(data)
-                    let dataArray = data as! NSArray
-                    let dict = dataArray[0] as! NSDictionary
-                    let eventId = dict.object(forKey: "_id") as! String
-                    let idDict = ["eventId": eventId]
-                    Alamofire.request(Constants.URIs.baseUri+Constants.routes.joinEvent, method: .post, parameters: idDict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
-                            case .success(let data):
-                                print(data)
-                            case .failure(let error):
-                                print(error)
-                        }
-                }
                 case .failure(let error):
                     print(error)
+                    }
+                }
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCJoinSuccess")
+            self.present(vc!, animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
+
+            case .failure(let error):
+                print(error)
             }
         }
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
