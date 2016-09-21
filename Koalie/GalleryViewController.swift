@@ -32,7 +32,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.eventTableView.dataSource = self
 
         
-        let dict = ["eventId": eventId]
+        let dict = ["eventId": eventId!]
         
         
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEventMedias, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
@@ -47,7 +47,6 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 case .failure(let error):
                     print(error)
             }
-                print(response)
         }
     }
     
@@ -60,20 +59,20 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell") as! GalleryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
         
         let dict = mediaList?.object(at: (indexPath as NSIndexPath).row) as! NSDictionary
-        let name = dict.object(forKey: "_id") as! String
         let key = dict.object(forKey: "stored_path") as? String
         
         let transferManager = AWSS3TransferManager.default()
         
         ///// download
-        let downloadingFilePath = URL(fileURLWithPath: NSTemporaryDirectory() + name)
+        let downloadingFilePath = URL(fileURLWithPath: NSTemporaryDirectory().appending("\(indexPath.row).jpg"))
         let downloadRequest = AWSS3TransferManagerDownloadRequest()
         downloadRequest?.bucket = "koalie-test-bucket"
         downloadRequest?.key = key
         downloadRequest?.downloadingFileURL = downloadingFilePath
+        
         
         // download request
         
@@ -83,11 +82,13 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             if ((task.result) != nil) {
                 let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
+                let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
+                print(downloadingFilePath.relativePath)
+                cell.viewPicture.image = image
                 return downloadOutput
             }
             return nil
         })
-        cell.viewPicture.image = UIImage(contentsOfFile: downloadingFilePath.absoluteString)
 
         return cell
     }

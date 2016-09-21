@@ -52,33 +52,40 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func returnUserData() {
         print(FBSDKAccessToken.current().tokenString)
-        let token: String = FBSDKAccessToken.current().tokenString
-        
-        // important! it has to be named "access token" to authenticate.
-        let dict = ["access_token": token]
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
-        let navigationVC = UINavigationController(rootViewController: vc)
-        navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
+        if let token = FBSDKAccessToken.current().tokenString {
+            // important! it has to be named "access token" to authenticate.
+            let dict = ["access_token": token]
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+            let navigationVC = UINavigationController(rootViewController: vc)
+            navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
+            
+            
+            Alamofire.request(Constants.URIs.baseUri + Constants.routes.auth, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                print(response.request)
+                if (FBSDKAccessToken.current() != nil) {
+                    // AWS config
+                    let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .usWest2, identityPoolId: "us-west-2:0e669216-3640-4829-bc5c-a5322425f07f")
+                    let logins: NSDictionary = NSDictionary(dictionary: ["graph.facebook.com" : FBSDKAccessToken.current().tokenString])
+                    credentialsProvider.logins = logins as? [AnyHashable: Any]
+                    let configuration = AWSServiceConfiguration(region: .usEast1, credentialsProvider: credentialsProvider)
+                    AWSServiceManager.default().defaultServiceConfiguration = configuration
 
-        
-        Alamofire.request(Constants.URIs.baseUri + Constants.routes.auth, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-            print(response.request)
-            if (FBSDKAccessToken.current() != nil) {
-                Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEvents, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { response in switch response.result {
-                case .success(let data):
-                    let dict = data as! NSDictionary
-                    vc.userData = dict
-                    
-                    self.present(navigationVC, animated: true, completion: nil)
-
-                case .failure(let error):
-                    print(error)
+                    Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEvents, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { response in switch response.result {
+                    case .success(let data):
+                        let dict = data as! NSDictionary
+                        vc.userData = dict
+                        
+                        self.present(navigationVC, animated: true, completion: nil)
+                        
+                    case .failure(let error):
+                        print(error)
+                        }
                     }
+                    
+                } else {
+                    print("You are logged out")
                 }
-                
-            } else {
-                print("You are logged out")
             }
         }
     }

@@ -51,13 +51,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let r = FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
 // Login logic
-
         if isUserAuthenticated() {
             
             // AWS config
-            //        let customProviderManager = CustomIdentityProvider(tokens: FBSDKAccessToken.currentAccessToken().tokenString)
             let credentialsProvider = AWSCognitoCredentialsProvider(regionType: .usWest2, identityPoolId: "us-west-2:0e669216-3640-4829-bc5c-a5322425f07f")
-            //        credentialsProvider.logins = [AWSIdentityProviderFacebook: FBSDKAccessToken.currentAccessToken().tokenString]
             let logins: NSDictionary = NSDictionary(dictionary: ["graph.facebook.com" : FBSDKAccessToken.current().tokenString])
             credentialsProvider.logins = logins as? [AnyHashable: Any]
             let configuration = AWSServiceConfiguration(region: .usEast1, credentialsProvider: credentialsProvider)
@@ -69,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
             self.window?.rootViewController = navigationVC
             
-            return true;
+            return true
 
         } else {
             let myStoryBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -78,15 +75,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = vc
             return true
         }
-/*
+ 
+        /*
        // temporary solution to bypass login for testing camera
         let vc = LLSimpleCamViewController()
         let navigationVC = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = navigationVC
+ 
+ */
 
         return true
-         */
-        return true;
     }
  
     func isUserAuthenticated() -> Bool {

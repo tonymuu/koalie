@@ -8,12 +8,15 @@
 
 import UIKit
 import AWSS3
+import Alamofire
 
 class PreviewImageViewController: UIViewController {
-    var image = UIImage();
-    var imageView = UIImageView();
-    var infoLabel = UILabel();
-    var cancelButton = UIButton();
+    var image = UIImage()
+    var imageView = UIImageView()
+    var infoLabel = UILabel()
+    var cancelButton = UIButton()
+    var eventId: String!
+    var storedPath: String!
     
     convenience init(image: UIImage) {
         self.init(nibName: nil, bundle: nil)
@@ -81,6 +84,10 @@ class PreviewImageViewController: UIViewController {
                 if (task.result != nil) {
                     let uploadOutput = task.result
                     print(uploadOutput)
+                    let dict = ["eventId": self.eventId!, "storedPath": filename]
+                    Alamofire.request(Constants.URIs.baseUri.appending(Constants.routes.createMedia), method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                        print(response)
+                    }
                 }
                 return nil
             })

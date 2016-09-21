@@ -24,7 +24,12 @@ struct Constants {
     }
     
     struct URIs {
-        static let baseUri = "http://localhost:3000"
+        // production url
+       static let baseUri = "https://koalie.herokuapp.com"
+        
+        // dev url
+        //static let baseUri = "http://localhost:3000"
+
     }
     
     struct routes {

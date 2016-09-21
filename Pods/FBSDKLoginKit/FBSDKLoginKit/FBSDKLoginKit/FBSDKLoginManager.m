@@ -283,7 +283,7 @@ static NSString *const FBSDKExpectedChallengeKey = @"expected_login_challenge";
   return [_keychainStore stringForKey:FBSDKExpectedChallengeKey];
 }
 
-- (NSDictionary *)logInParametersWithPermissions:(NSSet *)permissions serverConfiguration:(FBSDKServerConfiguration *)serverConfiguration
+- (NSDictionary *)logInParametersWithPermissions:(NSSet *)permissions
 {
   [FBSDKInternalUtility validateURLSchemes];
 
@@ -297,7 +297,6 @@ static NSString *const FBSDKExpectedChallengeKey = @"expected_login_challenge";
   loginParams[@"sdk_version"] = FBSDK_VERSION_STRING;
   loginParams[@"fbapp_pres"] = @([FBSDKInternalUtility isFacebookAppInstalled]);
   loginParams[@"auth_type"] = @"rerequest";
-  loginParams[@"logging_token"] = serverConfiguration.loggingToken;
 
   [FBSDKInternalUtility dictionary:loginParams setObject:[FBSDKSettings appURLSchemeSuffix] forKey:@"local_client_id"];
   [FBSDKInternalUtility dictionary:loginParams setObject:[FBSDKLoginUtility stringForAudience:self.defaultAudience] forKey:@"default_audience"];
@@ -326,15 +325,7 @@ static NSString *const FBSDKExpectedChallengeKey = @"expected_login_challenge";
 
 - (void)logInWithBehavior:(FBSDKLoginBehavior)loginBehavior
 {
-  __weak __typeof__(self) weakSelf = self;
-  [FBSDKServerConfigurationManager loadServerConfigurationWithCompletionBlock:^(FBSDKServerConfiguration *serverConfiguration, NSError *loadError) {
-    [weakSelf logInWithBehavior:loginBehavior serverConfiguration:serverConfiguration serverConfigurationLoadError:loadError];
-  }];
-}
-
-- (void)logInWithBehavior:(FBSDKLoginBehavior)loginBehavior serverConfiguration:(FBSDKServerConfiguration *)serverConfiguration serverConfigurationLoadError:(NSError *)loadError
-{
-  NSDictionary *loginParams = [self logInParametersWithPermissions:_requestedPermissions serverConfiguration:serverConfiguration];
+  NSDictionary *loginParams = [self logInParametersWithPermissions:_requestedPermissions];
 
   void(^completion)(BOOL, NSString *, NSError *) = ^void(BOOL didPerformLogIn, NSString *authMethod, NSError *error) {
     if (didPerformLogIn) {
@@ -351,22 +342,24 @@ static NSString *const FBSDKExpectedChallengeKey = @"expected_login_challenge";
   switch (loginBehavior) {
     case FBSDKLoginBehaviorNative: {
       if ([FBSDKInternalUtility isFacebookAppInstalled]) {
-        BOOL useNativeDialog = [serverConfiguration useNativeDialogForDialogName:FBSDKDialogConfigurationNameLogin];
-        if (useNativeDialog && loadError == nil) {
-          [self performNativeLogInWithParameters:loginParams handler:^(BOOL openedURL, NSError *openedURLError) {
-            if (openedURLError) {
-              [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorDeveloperErrors
-                                 formatString:@"FBSDKLoginBehaviorNative failed : %@\nTrying FBSDKLoginBehaviorBrowser", openedURLError];
-            }
-            if (openedURL) {
-              completion(YES, FBSDKLoginManagerLoggerAuthMethod_Native, openedURLError);
-            } else {
-              [self logInWithBehavior:FBSDKLoginBehaviorBrowser];
-            }
-          }];
-        } else {
-          [self logInWithBehavior:FBSDKLoginBehaviorBrowser];
-        }
+        [FBSDKServerConfigurationManager loadServerConfigurationWithCompletionBlock:^(FBSDKServerConfiguration *serverConfiguration, NSError *loadError) {
+          BOOL useNativeDialog = [serverConfiguration useNativeDialogForDialogName:FBSDKDialogConfigurationNameLogin];
+          if (useNativeDialog && loadError == nil) {
+            [self performNativeLogInWithParameters:loginParams handler:^(BOOL openedURL, NSError *openedURLError) {
+              if (openedURLError) {
+                [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorDeveloperErrors
+                                   formatString:@"FBSDKLoginBehaviorNative failed : %@\nTrying FBSDKLoginBehaviorBrowser", openedURLError];
+              }
+              if (openedURL) {
+                completion(YES, FBSDKLoginManagerLoggerAuthMethod_Native, openedURLError);
+              } else {
+                [self logInWithBehavior:FBSDKLoginBehaviorBrowser];
+              }
+            }];
+          } else {
+            [self logInWithBehavior:FBSDKLoginBehaviorBrowser];
+          }
+        }];
         break;
       }
       // intentional fall through.
@@ -380,11 +373,13 @@ static NSString *const FBSDKExpectedChallengeKey = @"expected_login_challenge";
       break;
     }
     case FBSDKLoginBehaviorSystemAccount: {
-      if (serverConfiguration.isSystemAuthenticationEnabled && loadError == nil) {
-        [self beginSystemLogIn];
-      } else {
-        [self logInWithBehavior:FBSDKLoginBehaviorNative];
-      }
+      [FBSDKServerConfigurationManager loadServerConfigurationWithCompletionBlock:^(FBSDKServerConfiguration *serverConfiguration, NSError *loadError) {
+        if (serverConfiguration.isSystemAuthenticationEnabled && loadError == nil) {
+          [self beginSystemLogIn];
+        } else {
+          [self logInWithBehavior:FBSDKLoginBehaviorNative];
+        }
+      }];
       completion(YES, FBSDKLoginManagerLoggerAuthMethod_System, nil);
       break;
     }

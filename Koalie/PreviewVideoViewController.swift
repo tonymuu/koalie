@@ -77,7 +77,7 @@ class PreviewVideoViewController: UIViewController {
     }
     
     func backButtonPressed(_ button: UIButton) {
-        self.navigationController!.popViewController(animated: false)
+        self.dismiss(animated: false)
     }
     
     override var prefersStatusBarHidden : Bool {

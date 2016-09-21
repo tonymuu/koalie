@@ -21,7 +21,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var userData: NSDictionary!
     var eventDataList: [NSDictionary]!
-    
     override func viewDidLoad() {
         returnUserData()
 
@@ -41,11 +40,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150;
+        return 150
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -98,7 +97,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     fileprivate func returnUserData() {
-        let token = FBSDKAccessToken.current().tokenString
+        let token: String = FBSDKAccessToken.current().tokenString
         
         // important! it has to be named "access token" to authenticate.
         let dict = ["access_token": token]

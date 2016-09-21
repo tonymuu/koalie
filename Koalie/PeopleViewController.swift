@@ -33,22 +33,21 @@ class PeopleViewController: UIViewController {
     }
     
     @IBAction func ButtonCreateClick(_ sender: AnyObject) {
-        newEvent?.eventSize = 10
-        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview")
         self.present(vc!, animated: true, completion: nil)
         self.navigationController?.popToRootViewController(animated: true)
         
         let dict = [
-            "eventName": self.newEvent!.eventName,
-            "eventSize": String(self.newEvent!.eventSize),
-            "startDate": String(describing: self.newEvent!.startDate),
-            "endDate": String(describing: self.newEvent!.endDate),
-        ]
+            "eventName": self.newEvent!.eventName!,
+            "eventSize": String(self.newEvent!.eventSize!),
+            "startDate": String(describing: self.newEvent!.startDate!),
+            "endDate": String(describing: self.newEvent!.endDate!)
+            ]
         
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
             print(response.request)
         }
+        
     }
     
     @IBAction func firstSelected(_ sender: AnyObject) {
@@ -56,19 +55,13 @@ class PeopleViewController: UIViewController {
         buttonSecond.backgroundColor = Constants.backgroundColor.dark
         buttonFirst.backgroundColor = Constants.backgroundColor.selected
         
-        //update constraints + setNeedsUpdateConstraints + layoutIfNeeded in animation block to avoid jumping 
-        self.topConstraint.constant = 32.0
-        buttonCreate.setNeedsUpdateConstraints()
+        newEvent.eventSize = 10
     }
     
     @IBAction func secondSelected(_ sender: AnyObject) {
         
         buttonFirst.backgroundColor = Constants.backgroundColor.dark
         buttonSecond.backgroundColor = Constants.backgroundColor.selected
-        
-        self.topConstraint.constant = 150.0
-        buttonCreate.setNeedsUpdateConstraints()
-        
     }
 
     override func viewDidLoad() {

@@ -9,36 +9,32 @@
 import UIKit
 
 class TimeViewController: UIViewController {
-    
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelUnit: UILabel!
-    
     var newEvent: Event?
-    
     @IBAction func buttonPlusClick(_ sender: AnyObject) {
         var num = Int(labelNumber.text!)!
-        if (labelUnit.text == "hours" && num == 7) {
+        if labelUnit.text == "hours" && num == 7 {
             labelNumber.text = String(1)
             labelUnit.text = "days"
-        } else if (labelUnit.text == "days" && num == 5) {
+        } else if labelUnit.text == "days" && num == 5 {
             labelNumber.text = String(1)
             labelUnit.text = "week"
-        } else if (labelUnit.text != "week") {
+        } else if labelUnit.text != "week" {
             num += 1
             labelNumber.text = String(num)
 //            labelUnit.text = num > 1 ? labelUnit.text!+"s" : labelUnit.text
         }
     }
-    
     @IBAction func buttonMinusClick(_ sender: AnyObject) {
         var num = Int(labelNumber.text!)!
-        if (labelUnit.text == "week") {
+        if labelUnit.text == "week" {
             labelNumber.text = String(5)
             labelUnit.text = "days"
-        } else if (labelUnit.text == "days" && num == 1) {
+        } else if labelUnit.text == "days" && num == 1 {
             labelNumber.text = String(7)
             labelUnit.text = "hours"
-        } else if (num > 1) {
+        } else if num > 1 {
             num -= 1
             labelNumber.text = String(num)
             //            labelUnit.text = num > 1 ? labelUnit.text!+"s" : labelUnit.text

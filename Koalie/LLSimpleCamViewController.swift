@@ -33,8 +33,6 @@ class LLSimpleCamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        uploadImageToS3()
-        
         self.navigationController?.setNavigationBarHidden(true, animated: false);
         self.view.backgroundColor = UIColor.black;
         
@@ -44,6 +42,16 @@ class LLSimpleCamViewController: UIViewController {
         self.camera.attach(to: self, withFrame: CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height))
         self.camera.fixOrientationAfterCapture = false;
         
+        self.homeButton = UIButton(type: .system)
+        self.homeButton.frame = CGRect(x: 12.0, y: 16.0, width: 29.0 + 20.0, height: 22.0 + 20.0)
+        self.homeButton.tintColor = UIColor.white
+        self.homeButton.setImage(UIImage(named: "Home Icon.png"), for: UIControlState())
+        self.homeButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+        self.homeButton.addTarget(self, action: #selector(homeButtonClick), for: .touchUpInside)
+        self.view!.addSubview(homeButton)
+        
+        //uploadImageToS3(image: UIImage(named: "upload_test.jpg")!)
+
         
         self.camera.onDeviceChange = {(camera, device) -> Void in
             if (camera?.isFlashAvailable())! {
@@ -139,13 +147,6 @@ class LLSimpleCamViewController: UIViewController {
             self.switchButton.addTarget(self, action: #selector(LLSimpleCamViewController.switchButtonPressed(_:)), for: .touchUpInside)
             self.view!.addSubview(self.switchButton)
             
-//            self.segmentedControl = UISegmentedControl(items: ["Picture", "Video"])
-//            self.segmentedControl.frame = CGRectMake(12.0, screenRect.size.height - 60, 120.0, 32.0)
-//            self.segmentedControl.selectedSegmentIndex = 0
-//            self.segmentedControl.tintColor = UIColor.whiteColor()
-//            self.segmentedControl.addTarget(self, action: #selector(LLSimpleCamViewController.segmentedControlValueChanged(_:)), forControlEvents: .ValueChanged)
-//            self.view!.addSubview(self.segmentedControl)
-            
             self.galleryButton = UIButton(type: .system)
             self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 29.0 + 20.0, height: 22.0 + 20.0)
             self.galleryButton.tintColor = UIColor.white
@@ -154,13 +155,6 @@ class LLSimpleCamViewController: UIViewController {
             self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
             self.view!.addSubview(self.galleryButton)
             
-            self.homeButton = UIButton(type: .system)
-            self.homeButton.frame = CGRect(x: 12.0, y: 16.0, width: 29.0 + 20.0, height: 22.0 + 20.0)
-            self.homeButton.tintColor = UIColor.white
-            self.homeButton.setImage(UIImage(named: "Home Icon.png"), for: UIControlState())
-            self.homeButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-            self.homeButton.addTarget(self, action: #selector(homeButtonClick), for: .touchUpInside)
-            self.view!.addSubview(homeButton)
         }
         else{
             let label: UILabel = UILabel(frame: CGRect.zero)
@@ -223,7 +217,9 @@ class LLSimpleCamViewController: UIViewController {
             if (error == nil) {
                 camera?.perform(#selector(NetService.stop), with: nil, afterDelay: 0.2)
                 let imageVC: PreviewImageViewController = PreviewImageViewController(image: image!)
+                imageVC.eventId = self.eventId
                 self.present(imageVC, animated: false, completion: { _ in })
+                self.uploadImageToS3(image: image!)
             } else {
                 print("An error has occured: %@", error)
             }
@@ -261,10 +257,11 @@ class LLSimpleCamViewController: UIViewController {
             self.snapButton.layer.borderColor = UIColor.white.cgColor
             self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.5);
             self.camera.stopRecording({(camera, outputFileUrl, error) -> Void in
-                let uploadUrl = NSURL(string: ConvenientMethods.getDocumentsDirectory().appending("/"+uuid+".mov"))
-                print(uploadUrl)
-                let vc: PreviewVideoViewController = PreviewVideoViewController(videoUrl: outputFileUrl!, uploadUrl: uploadUrl! as URL)
-                self.navigationController!.pushViewController(vc, animated: false)
+               // let uploadUrl = self.applicationDocumentsDirectory().appendingPathComponent(uuid).appendingPathExtension("mov")
+                
+                print(outputFileUrl!)
+                let vc: PreviewVideoViewController = PreviewVideoViewController(videoUrl: outputFileUrl!, uploadUrl: outputFileUrl! as URL)
+                self.present(vc, animated: false)
             })
         }
     }
@@ -333,12 +330,10 @@ class LLSimpleCamViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func uploadImageToS3() {
+    func uploadImageToS3(image: UIImage) {
         let transferManager = AWSS3TransferManager.default()
         
-        let image = UIImage(named: "upload_test.jpg")
-        
-        if let data = UIImageJPEGRepresentation(image!, 0.8) {
+        if let data = UIImageJPEGRepresentation(image, 0.8) {
             let uploadRequest = AWSS3TransferManagerUploadRequest()
             let filename = ConvenientMethods.getDocumentsDirectory() + ("/"+UUID().uuidString+".jpg")
             print(filename)
@@ -360,10 +355,9 @@ class LLSimpleCamViewController: UIViewController {
                 return nil
             })
             
-            let dict = ["eventId": eventId, "storedPath": filename]
-            Alamofire.request(Constants.URIs.baseUri.appending(Constants.routes.createMedia), parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+            let dict = ["eventId": eventId!, "storedPath": filename]
+            Alamofire.request(Constants.URIs.baseUri.appending(Constants.routes.createMedia), method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
                 print(response)
-                
             }
         }
     }
