@@ -11,6 +11,8 @@ target 'Koalie' do
     pod 'FBSDKLoginKit', '4.15.0'
     pod 'FBSDKShareKit', '4.15.0'
     pod 'LLSimpleCamera', '4.2'
+    pod 'AwesomeCache', :git => 'https://github.com/aschuch/AwesomeCache.git', :branch => 'swift3.0'
+
 end
 
 

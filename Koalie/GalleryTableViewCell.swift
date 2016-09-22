@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class GalleryTableViewCell: UITableViewCell {
     
@@ -18,16 +19,34 @@ class GalleryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var buttonDownload: UIButton!
     
+    var voted: Bool!
+    
+    var upvotes: Int = 0
+    
+    var eventId: String!
+        
     @IBAction func buttonUpvoteClick(_ sender: AnyObject) {
         buttonUpvote.isSelected = true
         buttonDownvote.isSelected = false
-        labelUpvotes.text = "1"
+        if !voted {
+            upvotes = Int(labelUpvotes.text!)!
+            voted = true
+            upvotes += 1
+            labelUpvotes.text = String(describing: upvotes)
+            updateUpvotes(upvotes: upvotes)
+        }
     }
     
     @IBAction func buttonDownvoteClick(_ sender: AnyObject) {
         buttonDownvote.isSelected = true
         buttonUpvote.isSelected = false
-        labelUpvotes.text = "0"
+        if !voted {
+            upvotes = Int(labelUpvotes.text!)!
+            voted = true
+            upvotes -= 1
+            labelUpvotes.text = String(describing: upvotes)
+            updateUpvotes(upvotes: upvotes)
+        }
     }
     
     
@@ -44,6 +63,21 @@ class GalleryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateUpvotes(upvotes: Int) {
+        let dict = [
+            "eventId": eventId!,
+            "likes": upvotes] as [String : Any]
+
+        Alamofire.request(Constants.URIs.baseUri + Constants.routes.postUpvotes, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
+        case .success(let data):
+            print(data)
+        case .failure(let error):
+            print(error)
+            }
+        }
+
     }
 
 }

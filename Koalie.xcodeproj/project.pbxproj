@@ -100,6 +100,7 @@
 		EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878A1CD7F325001A6C0F /* home-1.jpg */; };
 		EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878B1CD7F325001A6C0F /* home-2.jpg */; };
 		EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878C1CD7F325001A6C0F /* home-3.jpg */; };
+		EACF48161D96E19B002C79DD /* Koalie Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EACF48151D96E19B002C79DD /* Koalie Logo.png */; };
 		EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */; };
 		EAD487C11D84650A0059EB44 /* LLSimpleCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */; };
 		EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */; };
@@ -239,6 +240,7 @@
 		EABC878A1CD7F325001A6C0F /* home-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-1.jpg"; path = "images/home-1.jpg"; sourceTree = "<group>"; };
 		EABC878B1CD7F325001A6C0F /* home-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-2.jpg"; path = "images/home-2.jpg"; sourceTree = "<group>"; };
 		EABC878C1CD7F325001A6C0F /* home-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-3.jpg"; path = "images/home-3.jpg"; sourceTree = "<group>"; };
+		EACF48151D96E19B002C79DD /* Koalie Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Koalie Logo.png"; path = "../../../../../Google Drive/Koalie App Graphics /1. Login/Koalie Logo.png"; sourceTree = "<group>"; };
 		EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LLSimpleCamera.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/LLSimpleCamera.framework"; sourceTree = "<group>"; };
 		EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 		EA5D48561CF3AC6100B7D10D /* buttons */ = {
 			isa = PBXGroup;
 			children = (
+				EACF48151D96E19B002C79DD /* Koalie Logo.png */,
 				EAD487C61D8481BB0059EB44 /* Flip Camera Icon.png */,
 				EAD487C81D8481E20059EB44 /* Home Icon.png */,
 				EA76B7651D03EFA400E2D593 /* Light Arrow Icon 2.png */,
@@ -684,6 +687,7 @@
 				EA5D485A1CF3AD0F00B7D10D /* Plus Icon.png in Resources */,
 				EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */,
 				EA5C85181D00032F00A61033 /* Gallery Icon.png in Resources */,
+				EACF48161D96E19B002C79DD /* Koalie Logo.png in Resources */,
 				EA5C85101CFEB1F900A61033 /* Delet-Icon.png in Resources */,
 				EA76B7811D093F8200E2D593 /* Add Music Icon.png in Resources */,
 				EA2589011CE0518E0060B6F2 /* KoalieLogo.png in Resources */,

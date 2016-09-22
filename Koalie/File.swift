@@ -41,6 +41,7 @@ struct Constants {
         static let getEvents = "/joined_events"
         static let searchEvents = "/search_events"
         static let joinEvent = "/join_event"
+        static let postUpvotes = "/vote_media"
     }
 }
 

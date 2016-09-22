@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AwesomeCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,17 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B4101B2F24A088E35E1CCDB3CDFD003</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>854AC10C486ED431436BB3292031483F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>DD4C60D0C1ADF7586B8862EEA147DE00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF13EF0C95394C37026057BEDD905810</key>
 		<dict>
 			<key>primary</key>
 			<true/>

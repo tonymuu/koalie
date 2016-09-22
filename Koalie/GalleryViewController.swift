@@ -9,12 +9,15 @@
 import UIKit
 import Alamofire
 import AWSS3
+import AwesomeCache
+import FBSDKLoginKit
 
 class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var eventTableView: UITableView!
     
     var eventId: String!
 
+    // sorted according to likes in the backend
     var mediaList: NSArray?
     
     var numberOfRows = 0
@@ -39,11 +42,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 case .success(let data):
                     self.mediaList = data as! [NSDictionary] as NSArray?
                     self.numberOfRows = (self.mediaList?.count)!
-                    
-                    
-                    
                     self.eventTableView.reloadData()
-                    
                 case .failure(let error):
                     print(error)
             }
@@ -61,35 +60,60 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
         
+        
         let dict = mediaList?.object(at: (indexPath as NSIndexPath).row) as! NSDictionary
+        let upvotes: Int! = dict.object(forKey: "likes") as! Int
+        let votedMembers = dict.object(forKey: "voted_members") as! NSArray
+        let isVoted = votedMembers.contains(FBSDKAccessToken.current().tokenString)
+        
+        cell.labelUpvotes.text = String(upvotes!)
+        cell.eventId = eventId
+        cell.voted = isVoted
+        
         let key = dict.object(forKey: "stored_path") as? String
         
-        let transferManager = AWSS3TransferManager.default()
-        
-        ///// download
-        let downloadingFilePath = URL(fileURLWithPath: NSTemporaryDirectory().appending("\(indexPath.row).jpg"))
-        let downloadRequest = AWSS3TransferManagerDownloadRequest()
-        downloadRequest?.bucket = "koalie-test-bucket"
-        downloadRequest?.key = key
-        downloadRequest?.downloadingFileURL = downloadingFilePath
-        
-        
-        // download request
-        
-        let task = transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
-            if ((task.error) != nil) {
-                print(task.error)
-            }
-            if ((task.result) != nil) {
-                let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
-                let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
-                print(downloadingFilePath.relativePath)
+        do {
+            let cache = try Cache<UIImage>(name: "imageCache")
+            if let image = cache[key!] {
                 cell.viewPicture.image = image
-                return downloadOutput
+                return cell
             }
-            return nil
-        })
+            
+            
+            cell.viewPicture.image = UIImage(named: "Koalie Logo.png")
+            
+            let transferManager = AWSS3TransferManager.default()
+            
+            ///// download
+            let downloadingFilePath = URL(fileURLWithPath: NSTemporaryDirectory().appending("\(indexPath.row).jpg"))
+            let downloadRequest = AWSS3TransferManagerDownloadRequest()
+            downloadRequest?.bucket = "koalie-test-bucket"
+            downloadRequest?.key = key
+            downloadRequest?.downloadingFileURL = downloadingFilePath
+            
+            
+            // download request
+            
+            let task = transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
+                if ((task.error) != nil) {
+                    print(task.error)
+                }
+                if ((task.result) != nil) {
+                    let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
+                    let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
+                    print(downloadingFilePath.relativePath)
+                    cache[key!] = image
+                    cell.viewPicture.image = image
+                    return downloadOutput
+                }
+                return nil
+            })
 
+            return cell
+            
+        } catch _ {
+            print("Something went wrong")
+        }
         return cell
     }
 
