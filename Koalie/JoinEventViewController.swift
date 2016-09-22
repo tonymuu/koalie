@@ -29,19 +29,21 @@ class JoinEventViewController: UIViewController {
                 print("Found the following event with name a: \n")
                 print(data)
                 let dataArray = data as! NSArray
-                let dict = dataArray[0] as! NSDictionary
-                let eventId = dict.object(forKey: "_id") as! String
-                let idDict = ["eventId": eventId]
-                Alamofire.request(Constants.URIs.baseUri+Constants.routes.joinEvent, method: .post, parameters: idDict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
-                case .success(let data):
-                    print(data)
-                case .failure(let error):
-                    print(error)
+                if dataArray.count == 0 {
+                    print("Did not find any event with the name provided")
+                } else {
+                    let dict = dataArray[0] as! NSDictionary
+                    let eventId = dict.object(forKey: "_id") as! String
+                    let idDict = ["eventId": eventId]
+                    Alamofire.request(Constants.URIs.baseUri+Constants.routes.joinEvent, method: .post, parameters: idDict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
+                    case .success(let data):
+                        print(data)
+                    case .failure(let error):
+                        print(error)
+                        }
                     }
+                    self.presentSuccessScreen()
                 }
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCJoinSuccess")
-            self.present(vc!, animated: true, completion: nil)
-            self.navigationController?.popToRootViewController(animated: true)
 
             case .failure(let error):
                 print(error)
@@ -51,5 +53,15 @@ class JoinEventViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func presentSuccessScreen() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCJoinSuccess")
+        self.present(vc!, animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func presentFailureScreen() {
+        
     }
 }

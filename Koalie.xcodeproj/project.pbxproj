@@ -158,6 +158,7 @@
 		EA2589041CE2E2D20060B6F2 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagViewController.swift; sourceTree = "<group>"; };
 		EA2A39EC1CFAAA6A00BC6C4A /* Info Button Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info Button Icon.png"; sourceTree = "<group>"; };
+		EA41BAE31D935BE2004A69D4 /* Koalie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Koalie.entitlements; sourceTree = "<group>"; };
 		EA4426121D83D29F00CCC4C7 /* LLSimpleCamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSimpleCamViewController.swift; sourceTree = "<group>"; };
 		EA4426141D83D43500CCC4C7 /* Koalie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Koalie-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA45773A1D7FD73800BF5936 /* Hashtag Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hashtag Icon@2x.png"; sourceTree = "<group>"; };
@@ -343,6 +344,7 @@
 		EA21DA9F1CD083D200786F30 /* Koalie */ = {
 			isa = PBXGroup;
 			children = (
+				EA41BAE31D935BE2004A69D4 /* Koalie.entitlements */,
 				EA2589031CE2E2C30060B6F2 /* Files */,
 				EA449F261CDF925B0009D6B2 /* Views */,
 				EABC87881CD7F0E0001A6C0F /* View Controllers */,
@@ -588,6 +590,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = FGWM5JGVBM;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					EA21DAB01CD083D200786F30 = {
 						CreatedOnToolsVersion = 7.3;
@@ -989,6 +996,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Koalie/Koalie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koalie/Info.plist;
@@ -1009,6 +1017,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Koalie/Koalie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koalie/Info.plist;

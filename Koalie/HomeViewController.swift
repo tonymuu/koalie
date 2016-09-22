@@ -22,13 +22,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var userData: NSDictionary!
     var eventDataList: [NSDictionary]!
     override func viewDidLoad() {
+        super.viewDidLoad()
+        self.eventTableView.delegate = self
+        self.eventTableView.dataSource = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "NotificationReloadData"), object: nil)
         returnUserData()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -106,11 +110,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print(response.request)
             Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEvents, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { response in switch response.result {
             case .success(let data):
-                super.viewDidLoad()
-                self.eventTableView.delegate = self
-                self.eventTableView.dataSource = self
-
-                
                 let dict = data as! NSDictionary
                 self.userData = dict
                 self.eventDataList = self.userData.object(forKey: "events") as! [NSDictionary]
@@ -132,5 +131,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
-
+    func reloadData() {
+        returnUserData()
+    }
 }

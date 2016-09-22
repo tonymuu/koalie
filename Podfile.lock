@@ -15,7 +15,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.15.0):
     - FBSDKCoreKit
-  - LLSimpleCamera (4.2.0)
+  - LLSimpleCamera (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - FBSDKCoreKit (= 4.15.0)
   - FBSDKLoginKit (= 4.15.0)
   - FBSDKShareKit (= 4.15.0)
-  - LLSimpleCamera (= 4.2)
+  - LLSimpleCamera (= 4.1)
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
@@ -33,8 +33,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 6680cbd33a4243d80700f182d0af36b3fa7f3118
   FBSDKLoginKit: 96d9b70b5784490f02ab86119e542a1f182017a8
   FBSDKShareKit: 06ef20cb2f16828ca4b20055333313dd445de362
-  LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
+  LLSimpleCamera: c2600d1621555473530ca2a70d4399d287086337
 
-PODFILE CHECKSUM: c686b4ef52181008850038edb745696a1ef28982
+PODFILE CHECKSUM: 5f0794c1738e6227b1de212bdc4a7d23022ffe06
 
 COCOAPODS: 1.0.1

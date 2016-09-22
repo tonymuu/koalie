@@ -19,7 +19,6 @@ class LLSimpleCamViewController: UIViewController {
     var settingsButton = UIButton();
     var galleryButton = UIButton();
     var homeButton = UIButton();
-    var segmentedControl = UISegmentedControl();
     var camera = LLSimpleCamera();
     
     var eventId: String!
@@ -239,7 +238,6 @@ class LLSimpleCamViewController: UIViewController {
             if(self.camera.position == LLCameraPositionRear && !self.flashButton.isHidden){
                 self.flashButton.isHidden = true;
             }
-            self.segmentedControl.isHidden = true
             self.switchButton.isHidden = true
             self.snapButton.layer.borderColor = UIColor.red.cgColor
             self.snapButton.backgroundColor = UIColor.red.withAlphaComponent(0.5);
@@ -252,7 +250,6 @@ class LLSimpleCamViewController: UIViewController {
             if(self.camera.position == LLCameraPositionRear && self.flashButton.isHidden){
                 self.flashButton.isHidden = false;
             }
-            self.segmentedControl.isHidden = false;
             self.switchButton.isHidden = false
             self.snapButton.layer.borderColor = UIColor.white.cgColor
             self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.5);
