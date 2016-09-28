@@ -17,6 +17,7 @@ PODS:
   - FBSDKShareKit (4.15.0):
     - FBSDKCoreKit
   - LLSimpleCamera (4.2.0)
+  - VIMVideoPlayer (6.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - FBSDKLoginKit (= 4.15.0)
   - FBSDKShareKit (= 4.15.0)
   - LLSimpleCamera (= 4.2)
+  - VIMVideoPlayer
 
 EXTERNAL SOURCES:
   AwesomeCache:
@@ -47,7 +49,8 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: 96d9b70b5784490f02ab86119e542a1f182017a8
   FBSDKShareKit: 06ef20cb2f16828ca4b20055333313dd445de362
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
+  VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 2a117017e1527dc795394ab3c38afde379ca6b25
+PODFILE CHECKSUM: cb0baec7ce20d832332477daa48f78f0ea5aaf7f
 
 COCOAPODS: 1.0.1

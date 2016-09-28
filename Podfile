@@ -12,6 +12,7 @@ target 'Koalie' do
     pod 'FBSDKShareKit', '4.15.0'
     pod 'LLSimpleCamera', '4.2'
     pod 'AwesomeCache', :git => 'https://github.com/aschuch/AwesomeCache.git', :branch => 'swift3.0'
+    pod 'VIMVideoPlayer'
 
 end
 

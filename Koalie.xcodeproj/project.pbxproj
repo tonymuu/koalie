@@ -110,6 +110,7 @@
 		EAD487CB1D84835D0059EB44 /* SDevCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */; };
 		EAD487CD1D8498D60059EB44 /* ConvenientMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487CC1D8498D60059EB44 /* ConvenientMethods.swift */; };
 		EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */; };
+		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -250,6 +251,7 @@
 		EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDevCircleButton.swift; sourceTree = "<group>"; };
 		EAD487CC1D8498D60059EB44 /* ConvenientMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientMethods.swift; sourceTree = "<group>"; };
 		EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowManyTableViewController.swift; sourceTree = "<group>"; };
+		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -399,6 +401,7 @@
 				EA5382DE1D7D25EA0044D059 /* ProfileIconView.swift */,
 				EA5382E01D7D264B0044D059 /* ProfileIconView.xib */,
 				EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */,
+				EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -821,6 +824,7 @@
 				EA76B78A1D09407F00E2D593 /* MusicViewController.swift in Sources */,
 				EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */,
 				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
+				EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */,
 				EA76B7A11D0CDC2F00E2D593 /* ReadyViewController.swift in Sources */,
 				EA1F58FE1D7B933200EAEBDE /* JoinEventViewController.swift in Sources */,
 				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,

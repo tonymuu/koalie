@@ -59,9 +59,19 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>VIMVideoPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2521019980F9AB1F00C5C92BFD71ABE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
 		<dict>
 			<key>primary</key>
@@ -92,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>854AC10C486ED431436BB3292031483F</key>
+		<key>9657354EA1BD8BC9FF981A03B5E99F24</key>
 		<dict>
 			<key>primary</key>
 			<true/>

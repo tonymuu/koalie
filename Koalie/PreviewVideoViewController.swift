@@ -8,8 +8,10 @@
 
 import UIKit
 import AWSS3
+import Alamofire
 
 class PreviewVideoViewController: UIViewController {
+    var eventId: String! = nil
     var videoUrl: URL!;
     var uploadUrl: URL!;
     var avPlayer = AVPlayer();
@@ -19,6 +21,7 @@ class PreviewVideoViewController: UIViewController {
     convenience init(videoUrl url: URL) {
         self.init()
         self.videoUrl = url
+        self.uploadUrl = url
     }
     
     convenience init(videoUrl url: URL, uploadUrl: URL) {
@@ -48,21 +51,7 @@ class PreviewVideoViewController: UIViewController {
         
         self.avPlayerLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height)
         self.view.layer.addSublayer(self.avPlayerLayer)
-        
-//        self.backButton.addTarget(self, action: #selector(PreviewVideoViewController.backButtonPressed(_:)), forControlEvents: .TouchUpInside)
-//        self.backButton.frame = CGRectMake(7, 13, 65, 30)
-//        self.backButton.layer.borderColor = UIColor.whiteColor().CGColor;
-//        self.backButton.layer.borderWidth = 2;
-//        self.backButton.layer.cornerRadius = 5;
-//        self.backButton.titleLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 13);
-//        self.backButton.setTitle("Back", forState: .Normal)
-//        self.backButton.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
-//        self.backButton.layer.shadowColor = UIColor.blackColor().CGColor
-//        self.backButton.layer.shadowOffset = CGSizeMake(0.0, 0.0)
-//        self.backButton.layer.shadowOpacity = 0.4
-//        self.backButton.layer.shadowRadius = 1.0
-//        self.backButton.clipsToBounds = false
-        
+                
         let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(uploadVideoToS3))
         self.view.addGestureRecognizer(holdGesture)
         
@@ -101,6 +90,10 @@ class PreviewVideoViewController: UIViewController {
                 print(task.error)
             }
             if (task.result != nil) {
+                let dict = ["eventId": self.eventId!, "storedPath": self.uploadUrl, "isVideo": "true"] as [String : Any]
+                Alamofire.request(Constants.URIs.baseUri.appending(Constants.routes.createMedia), method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                    print(response)
+                }
                 let uploadOutput = task.result
                 print(uploadOutput)
             }

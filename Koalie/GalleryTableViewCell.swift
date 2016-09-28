@@ -8,9 +8,9 @@
 
 import UIKit
 import Alamofire
+import VIMVideoPlayer
 
-class GalleryTableViewCell: UITableViewCell {
-    
+class GalleryTableViewCell: UITableViewCell, VIMVideoPlayerViewDelegate {
     @IBOutlet weak var viewPicture: UIImageView!
     @IBOutlet weak var labelUpvotes: UILabel!
     @IBOutlet weak var buttonUpvote: UIButton!
@@ -18,6 +18,8 @@ class GalleryTableViewCell: UITableViewCell {
     @IBOutlet weak var buttonDownvote: UIButton!
 
     @IBOutlet weak var buttonDownload: UIButton!
+    
+    let player = VIMVideoPlayerView()
     
     var voted: Bool!
     
@@ -56,7 +58,7 @@ class GalleryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.player.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

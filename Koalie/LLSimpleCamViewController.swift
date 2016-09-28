@@ -49,9 +49,6 @@ class LLSimpleCamViewController: UIViewController {
         self.homeButton.addTarget(self, action: #selector(homeButtonClick), for: .touchUpInside)
         self.view!.addSubview(homeButton)
         
-        //uploadImageToS3(image: UIImage(named: "upload_test.jpg")!)
-
-        
         self.camera.onDeviceChange = {(camera, device) -> Void in
             if (camera?.isFlashAvailable())! {
                 self.flashButton.isHidden = false
@@ -95,7 +92,7 @@ class LLSimpleCamViewController: UIViewController {
                     jumpSettingsBtn.layer.cornerRadius = 5;
                     jumpSettingsBtn.layer.borderWidth = 2;
                     jumpSettingsBtn.clipsToBounds = true;
-                    jumpSettingsBtn.addTarget(self, action: #selector(LLSimpleCamViewController.jumpSettinsButtonPressed(_:)), for: .touchUpInside);
+                    jumpSettingsBtn.addTarget(self, action: #selector(self.jumpSettinsButtonPressed(_:)), for: .touchUpInside);
                     jumpSettingsBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
                     
                     self.settingsButton = jumpSettingsBtn;
@@ -134,7 +131,7 @@ class LLSimpleCamViewController: UIViewController {
             self.flashButton.tintColor = UIColor.white
             self.flashButton.setImage(UIImage(named: "camera-flash.png"), for: UIControlState())
             self.flashButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-            self.flashButton.addTarget(self, action: #selector(LLSimpleCamViewController.flashButtonPressed(_:)), for: .touchUpInside)
+            self.flashButton.addTarget(self, action: #selector(self.flashButtonPressed(_:)), for: .touchUpInside)
             self.flashButton.isHidden = true;
             self.view!.addSubview(self.flashButton)
             
@@ -143,7 +140,7 @@ class LLSimpleCamViewController: UIViewController {
             self.switchButton.tintColor = UIColor.white
             self.switchButton.setImage(UIImage(named: "Flip Camera Icon.png"), for: UIControlState())
             self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-            self.switchButton.addTarget(self, action: #selector(LLSimpleCamViewController.switchButtonPressed(_:)), for: .touchUpInside)
+            self.switchButton.addTarget(self, action: #selector(self.switchButtonPressed(_:)), for: .touchUpInside)
             self.view!.addSubview(self.switchButton)
             
             self.galleryButton = UIButton(type: .system)
@@ -218,7 +215,6 @@ class LLSimpleCamViewController: UIViewController {
                 let imageVC: PreviewImageViewController = PreviewImageViewController(image: image!)
                 imageVC.eventId = self.eventId
                 self.present(imageVC, animated: false, completion: { _ in })
-                self.uploadImageToS3(image: image!)
             } else {
                 print("An error has occured: %@", error)
             }
@@ -257,7 +253,8 @@ class LLSimpleCamViewController: UIViewController {
                // let uploadUrl = self.applicationDocumentsDirectory().appendingPathComponent(uuid).appendingPathExtension("mov")
                 
                 print(outputFileUrl!)
-                let vc: PreviewVideoViewController = PreviewVideoViewController(videoUrl: outputFileUrl!, uploadUrl: outputFileUrl! as URL)
+                let vc: PreviewVideoViewController = PreviewVideoViewController(videoUrl: outputFileUrl!)
+                vc.eventId = self.eventId
                 self.present(vc, animated: false)
             })
         }
@@ -305,7 +302,6 @@ class LLSimpleCamViewController: UIViewController {
     
     internal func galleryButtonClick() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let galleryVC = storyboard.instantiateViewControllerWithIdentifier("GalleryVC") as! GalleryViewController
         let eventGalleryVC = storyboard.instantiateViewController(withIdentifier: "eventGalleryVC") as! GalleryViewController
         eventGalleryVC.eventId = self.eventId
         
@@ -325,37 +321,5 @@ class LLSimpleCamViewController: UIViewController {
     
     internal func homeButtonClick() {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func uploadImageToS3(image: UIImage) {
-        let transferManager = AWSS3TransferManager.default()
-        
-        if let data = UIImageJPEGRepresentation(image, 0.8) {
-            let uploadRequest = AWSS3TransferManagerUploadRequest()
-            let filename = ConvenientMethods.getDocumentsDirectory() + ("/"+UUID().uuidString+".jpg")
-            print(filename)
-            try? data.write(to: URL(fileURLWithPath: filename), options: [.atomic])
-            uploadRequest?.bucket = "koalie-test-bucket"
-            uploadRequest?.key = filename
-            uploadRequest?.body = URL(fileURLWithPath: filename)
-            
-            // upload request
-            
-            transferManager?.upload(uploadRequest).continue({(task: AWSTask!) -> AnyObject! in
-                if (task.error != nil) {
-                    print(task.error)
-                }
-                if (task.result != nil) {
-                    let uploadOutput = task.result
-                    print(uploadOutput)
-                }
-                return nil
-            })
-            
-            let dict = ["eventId": eventId!, "storedPath": filename]
-            Alamofire.request(Constants.URIs.baseUri.appending(Constants.routes.createMedia), method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-                print(response)
-            }
-        }
     }
 }
