@@ -17,12 +17,23 @@ class GalleryVideoTableViewCell: GalleryTableViewCell, VIMVideoPlayerViewDelegat
     override func awakeFromNib() {
         super.awakeFromNib()
         self.player.delegate = self
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(playVideo))
+        player.addGestureRecognizer(tapGestureRecognizer)
+        self.addSubview(player)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func playVideo(_ sender: UIGestureRecognizer) {
+        if self.player.player.isPlaying {
+            self.player.player.pause()
+        } else {
+            self.player.player.play()
+        }
     }
 
 }

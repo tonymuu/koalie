@@ -79,41 +79,40 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     print("got image from cache")
                     cell.viewPicture.image = image
                     return cell
+                } else {
+                    cell.viewPicture.image = UIImage(named: "KoalieLogo.png")
+                    
+                    let transferManager = AWSS3TransferManager.default()
+                    
+                    ///// download
+                    let downloadingFilePath = self.applicationDocumentsDirectory().appendingPathComponent(String(indexPath.row)).appendingPathExtension("jpg")
+                    let downloadRequest = AWSS3TransferManagerDownloadRequest()
+                    downloadRequest?.bucket = "koalie-test-bucket"
+                    downloadRequest?.key = key
+                    downloadRequest?.downloadingFileURL = downloadingFilePath
+                    
+                    // download request
+                    
+                    transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
+                        if ((task.error) != nil) {
+                            print(task.error)
+                        }
+                        if ((task.result) != nil) {
+                            let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
+                            let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
+                            print(downloadingFilePath.relativePath)
+                            cache[key!] = image
+                            cell.viewPicture.image = image
+                            return downloadOutput
+                        }
+                        return nil
+                    })
+                    return cell
                 }
-                
-                cell.viewPicture.image = UIImage(named: "KoalieLogo.png")
-                
-                let transferManager = AWSS3TransferManager.default()
-                
-                ///// download
-                let downloadingFilePath = self.applicationDocumentsDirectory().appendingPathComponent(String(indexPath.row)).appendingPathExtension("jpg")
-                let downloadRequest = AWSS3TransferManagerDownloadRequest()
-                downloadRequest?.bucket = "koalie-test-bucket"
-                downloadRequest?.key = key
-                downloadRequest?.downloadingFileURL = downloadingFilePath
-                
-                // download request
-                
-                transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
-                    if ((task.error) != nil) {
-                        print(task.error)
-                    }
-                    if ((task.result) != nil) {
-                        let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
-                        let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
-                        print(downloadingFilePath.relativePath)
-                        cache[key!] = image
-                        cell.viewPicture.image = image
-                        return downloadOutput
-                    }
-                    return nil
-                })
-                return cell
             } catch _ {
                 print("Something went wrong")
             }
-        }
-        else {
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! GalleryVideoTableViewCell
             cell.labelUpvotes.text = String(upvotes!)
             cell.eventId = eventId
@@ -125,49 +124,47 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.player.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
 
             do {
-                let cache = try Cache<NSURL>(name: "videoCache")
+                let cache = try Cache<NSString>(name: "videoCache")
                 print("got video from cache")
-                if let videoUrl = cache[key!] {
-                    cell.player.player.setURL(videoUrl as URL!)
-                    cell.addSubview(cell.player)
-                    cell.player.player.play()
+                if let name = cache[key!] {
+                    let videoUrl = self.applicationDocumentsDirectory().appendingPathComponent(name as String)
+                    cell.player.player.setURL(videoUrl)
                     print(cache.allObjects())
                     return cell
+                } else {
+                    let transferManager = AWSS3TransferManager.default()
+                    
+                    ///// download
+                    let name = key?.components(separatedBy: "/").last
+                    let downloadingFilePath = self.applicationDocumentsDirectory().appendingPathComponent(name!)
+                    let downloadRequest = AWSS3TransferManagerDownloadRequest()
+                    downloadRequest?.bucket = "koalie-test-bucket"
+                    downloadRequest?.key = key
+                    downloadRequest?.downloadingFileURL = downloadingFilePath
+                    
+                    // download request
+                    
+                    transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
+                        if ((task.error) != nil) {
+                            print(task.error)
+                        }
+                        if ((task.result) != nil) {
+                            let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
+                            print(downloadingFilePath.relativePath)
+                            cache[key!] = name as NSString?
+                            cell.player.player.setURL(downloadingFilePath)
+                            return downloadOutput
+                        }
+                        return nil
+                    })
+                    return cell
                 }
-                
-                let transferManager = AWSS3TransferManager.default()
-                
-                ///// download
-                let name = key?.components(separatedBy: "/").last
-                let downloadingFilePath = self.applicationDocumentsDirectory().appendingPathComponent(name!)
-                let downloadRequest = AWSS3TransferManagerDownloadRequest()
-                downloadRequest?.bucket = "koalie-test-bucket"
-                downloadRequest?.key = key
-                downloadRequest?.downloadingFileURL = downloadingFilePath
-                
-                // download request
-                
-                transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
-                    if ((task.error) != nil) {
-                        print(task.error)
-                    }
-                    if ((task.result) != nil) {
-                        let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
-                        print(downloadingFilePath.relativePath)
-                        cache[key!] = downloadingFilePath as NSURL
-                        cell.player.player.setURL(downloadingFilePath)
-                        cell.addSubview(cell.player)
-                        cell.player.player.play()
-                        return downloadOutput
-                    }
-                    return nil
-                })
-                return cell
             } catch _ {
-                print("Something went wrong")
+                    print("Something went wrong")
+                }
+                return cell
             }
-            return cell
-        }
+                
         return mock!
     }
     
