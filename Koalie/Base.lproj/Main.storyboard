@@ -554,6 +554,94 @@
                                             <outlet property="viewPicture" destination="liF-PW-F8c" id="Cw6-KD-JC3"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" rowHeight="322" id="mC0-Rc-mri" customClass="GalleryVideoTableViewCell" customModule="Koalie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="350" width="375" height="322"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mC0-Rc-mri" id="TNv-MU-CHF">
+                                            <frame key="frameInset" width="375" height="321"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-HL-m2M"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbZ-sQ-qwl">
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf5-hk-1hu">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="ds3-9j-nj2"/>
+                                                                <constraint firstAttribute="height" constant="30" id="pis-Du-j7V"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Light Arrow Icon.png"/>
+                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <connections>
+                                                                <action selector="buttonUpvoteClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="X5p-gf-bE0"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-9r-dlv">
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="DEE-sR-qMO"/>
+                                                                <constraint firstAttribute="height" constant="30" id="e51-1F-gck"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Not Selected-Download-Button.png"/>
+                                                            <state key="selected" image="Selected-Download-Button.png"/>
+                                                            <connections>
+                                                                <action selector="buttonDownloadClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="M3b-nD-30Y"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5M-vW-y84">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="TPk-30-clo"/>
+                                                                <constraint firstAttribute="width" constant="30" id="j6C-PX-F43"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Light Arrow Icon.png"/>
+                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <connections>
+                                                                <action selector="buttonDownvoteClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="B6E-8h-zWJ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh9-qV-Z5z">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="w5M-vW-y84" firstAttribute="leading" secondItem="Bf5-hk-1hu" secondAttribute="trailing" constant="16" id="7uV-ZH-kst"/>
+                                                        <constraint firstItem="Bf5-hk-1hu" firstAttribute="leading" secondItem="wbZ-sQ-qwl" secondAttribute="leading" constant="30" id="NwG-oh-9X6"/>
+                                                        <constraint firstItem="w5M-vW-y84" firstAttribute="leading" secondItem="Oh9-qV-Z5z" secondAttribute="trailing" constant="16" id="VCU-vJ-90O"/>
+                                                        <constraint firstAttribute="height" constant="32" id="aIl-sZ-5kX"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Gwg-9r-dlv" secondAttribute="trailing" constant="34" id="c8A-NH-H1U"/>
+                                                        <constraint firstItem="Oh9-qV-Z5z" firstAttribute="leading" secondItem="Bf5-hk-1hu" secondAttribute="trailing" constant="19" id="teQ-7N-Lfc"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="7uV-ZH-kst"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oh9-qV-Z5z" firstAttribute="top" secondItem="NL5-HL-m2M" secondAttribute="bottom" constant="5.5" id="1fM-i4-QyE"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="NL5-HL-m2M" secondAttribute="trailing" id="2aH-Hy-3y9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wbZ-sQ-qwl" secondAttribute="trailing" id="EBU-co-ogh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Oh9-qV-Z5z" secondAttribute="bottom" constant="5.5" id="H6z-pg-VZw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wbZ-sQ-qwl" secondAttribute="bottom" id="KdS-bk-64F"/>
+                                                <constraint firstItem="NL5-HL-m2M" firstAttribute="leading" secondItem="TNv-MU-CHF" secondAttribute="leadingMargin" id="Lxs-pk-6eh"/>
+                                                <constraint firstItem="wbZ-sQ-qwl" firstAttribute="top" secondItem="NL5-HL-m2M" secondAttribute="bottom" id="P02-5Y-cOR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="w5M-vW-y84" secondAttribute="bottom" id="Uh0-OX-bJI"/>
+                                                <constraint firstItem="wbZ-sQ-qwl" firstAttribute="leading" secondItem="TNv-MU-CHF" secondAttribute="leadingMargin" id="VMJ-qx-NYW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Gwg-9r-dlv" secondAttribute="bottom" constant="0.5" id="Zg2-XQ-vuX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Bf5-hk-1hu" secondAttribute="bottom" id="q4E-56-ifb"/>
+                                                <constraint firstItem="NL5-HL-m2M" firstAttribute="top" secondItem="TNv-MU-CHF" secondAttribute="topMargin" id="t8j-Dh-0j6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonDownload" destination="Gwg-9r-dlv" id="Ojw-KB-RPn"/>
+                                            <outlet property="buttonDownvote" destination="w5M-vW-y84" id="qHf-bs-8Q2"/>
+                                            <outlet property="buttonUpvote" destination="Bf5-hk-1hu" id="a6q-oQ-E8F"/>
+                                            <outlet property="labelUpvotes" destination="Oh9-qV-Z5z" id="gfJ-3Q-5uw"/>
+                                            <outlet property="viewPicture" destination="NL5-HL-m2M" id="RNj-Sk-9Gi"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -1514,6 +1602,94 @@
                                             <outlet property="buttonUpvote" destination="sDP-kt-44s" id="s4V-el-Xoe"/>
                                             <outlet property="labelUpvotes" destination="7mD-HG-MrQ" id="UCS-fz-Etd"/>
                                             <outlet property="viewPicture" destination="Es0-vr-NKt" id="sRA-Fm-udp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" rowHeight="322" id="F4S-QO-SYB" customClass="GalleryVideoTableViewCell" customModule="Koalie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="350" width="375" height="322"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F4S-QO-SYB" id="Ehd-Jh-UZ9">
+                                            <frame key="frameInset" width="375" height="321"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-cN-PdG"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aW-t0-eUj">
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qol-20-Sth">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="96d-fQ-Jda"/>
+                                                                <constraint firstAttribute="width" constant="30" id="vqw-wL-eVB"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Light Arrow Icon.png"/>
+                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <connections>
+                                                                <action selector="buttonUpvoteClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="5Gx-RM-r3H"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ6-oJ-JkR">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="jWD-Wy-8ZO"/>
+                                                                <constraint firstAttribute="width" constant="30" id="y1n-dX-9sF"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Not Selected-Download-Button.png"/>
+                                                            <state key="selected" image="Selected-Download-Button.png"/>
+                                                            <connections>
+                                                                <action selector="buttonDownloadClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="Igt-On-75T"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IE-WQ-Zeq">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="OBU-b3-t0S"/>
+                                                                <constraint firstAttribute="width" constant="30" id="UYp-6k-IUT"/>
+                                                            </constraints>
+                                                            <state key="normal" image="Light Arrow Icon.png"/>
+                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <connections>
+                                                                <action selector="buttonDownvoteClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="RMn-sI-r2P"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIP-dc-HSB">
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="8IE-WQ-Zeq" firstAttribute="leading" secondItem="kIP-dc-HSB" secondAttribute="trailing" constant="16" id="GsG-rb-SxI"/>
+                                                        <constraint firstItem="Qol-20-Sth" firstAttribute="leading" secondItem="2aW-t0-eUj" secondAttribute="leading" constant="30" id="Ngu-YS-wHS"/>
+                                                        <constraint firstItem="8IE-WQ-Zeq" firstAttribute="leading" secondItem="Qol-20-Sth" secondAttribute="trailing" constant="16" id="Qix-ZS-KTl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xJ6-oJ-JkR" secondAttribute="trailing" constant="34" id="Z5Y-31-KuU"/>
+                                                        <constraint firstItem="kIP-dc-HSB" firstAttribute="leading" secondItem="Qol-20-Sth" secondAttribute="trailing" constant="19" id="fdH-nf-DqK"/>
+                                                        <constraint firstAttribute="height" constant="32" id="knq-cT-hjy"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Qix-ZS-KTl"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2aW-t0-eUj" firstAttribute="leading" secondItem="Ehd-Jh-UZ9" secondAttribute="leadingMargin" id="BTd-yS-1dC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2aW-t0-eUj" secondAttribute="bottom" id="Cnr-O8-jZT"/>
+                                                <constraint firstItem="mI4-cN-PdG" firstAttribute="leading" secondItem="Ehd-Jh-UZ9" secondAttribute="leadingMargin" id="CzJ-EW-0d4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kIP-dc-HSB" secondAttribute="bottom" constant="5.5" id="Evg-mm-Rgh"/>
+                                                <constraint firstItem="mI4-cN-PdG" firstAttribute="top" secondItem="Ehd-Jh-UZ9" secondAttribute="topMargin" id="FMl-CS-0GP"/>
+                                                <constraint firstItem="kIP-dc-HSB" firstAttribute="top" secondItem="mI4-cN-PdG" secondAttribute="bottom" constant="5.5" id="HTO-ux-mW4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qol-20-Sth" secondAttribute="bottom" id="KcR-e9-0gn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mI4-cN-PdG" secondAttribute="trailing" id="Ukb-HR-10m"/>
+                                                <constraint firstItem="2aW-t0-eUj" firstAttribute="top" secondItem="mI4-cN-PdG" secondAttribute="bottom" id="a3n-uF-tPe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2aW-t0-eUj" secondAttribute="trailing" id="aFG-te-r48"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8IE-WQ-Zeq" secondAttribute="bottom" id="dST-ZT-Qvd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xJ6-oJ-JkR" secondAttribute="bottom" constant="0.5" id="gh7-OJ-ogw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonDownload" destination="xJ6-oJ-JkR" id="PJM-fD-thU"/>
+                                            <outlet property="buttonDownvote" destination="8IE-WQ-Zeq" id="jGu-hc-GUB"/>
+                                            <outlet property="buttonUpvote" destination="Qol-20-Sth" id="Q9S-MG-tp2"/>
+                                            <outlet property="labelUpvotes" destination="kIP-dc-HSB" id="QWD-6T-dQe"/>
+                                            <outlet property="viewPicture" destination="mI4-cN-PdG" id="idc-e9-SPH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

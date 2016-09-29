@@ -58,7 +58,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
+        let mock = tableView.dequeueReusableCell(withIdentifier: "PictureCell")
         
         let dict = mediaList?.object(at: (indexPath as NSIndexPath).row) as! NSDictionary
         let upvotes: Int! = dict.object(forKey: "likes") as! Int
@@ -66,12 +66,14 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let isVoted = votedMembers.contains(FBSDKAccessToken.current().tokenString)
         let key = dict.object(forKey: "stored_path") as? String
         let isVideo = dict.object(forKey: "is_video") as! Bool
-        cell.labelUpvotes.text = String(upvotes!)
-        cell.eventId = eventId
-        cell.voted = isVoted
         
         if !isVideo {
             do {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
+                cell.labelUpvotes.text = String(upvotes!)
+                cell.eventId = eventId
+                cell.voted = isVoted
+
                 let cache = try Cache<UIImage>(name: "imageCache")
                 if let image = cache[key!] {
                     print("got image from cache")
@@ -79,7 +81,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     return cell
                 }
                 
-                cell.viewPicture.image = UIImage(named: "Koalie Logo.png")
+                cell.viewPicture.image = UIImage(named: "KoalieLogo.png")
                 
                 let transferManager = AWSS3TransferManager.default()
                 
@@ -112,6 +114,11 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! GalleryVideoTableViewCell
+            cell.labelUpvotes.text = String(upvotes!)
+            cell.eventId = eventId
+            cell.voted = isVoted
+
             cell.player.frame = cell.viewPicture.frame
             cell.player.player.isLooping = true
             cell.player.player.disableAirplay()
@@ -122,7 +129,9 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print("got video from cache")
                 if let videoUrl = cache[key!] {
                     cell.player.player.setURL(videoUrl as URL!)
-                    print(cache)
+                    cell.addSubview(cell.player)
+                    cell.player.player.play()
+                    print(cache.allObjects())
                     return cell
                 }
                 
@@ -159,7 +168,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             return cell
         }
-        return cell
+        return mock!
     }
     
     func applicationDocumentsDirectory()-> URL {

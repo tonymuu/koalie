@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import VIMVideoPlayer
 
-class GalleryVideoTableViewCell: UITableViewCell {
+
+class GalleryVideoTableViewCell: GalleryTableViewCell, VIMVideoPlayerViewDelegate {
+    
+    let player = VIMVideoPlayerView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.player.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
