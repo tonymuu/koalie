@@ -67,9 +67,20 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let key = dict.object(forKey: "stored_path") as? String
         let isVideo = dict.object(forKey: "is_video") as! Bool
         
+        let user = dict.object(forKey: "user_id") as! NSDictionary
+        let fbUser = user.object(forKey: "facebook") as! NSDictionary
+        let fbId = fbUser.object(forKey: "id") as! String
+        let profilePicUrl = fbUser.object(forKey: "picture") as! String
+        let fbName = fbUser.object(forKey: "name") as! String
+        
         if !isVideo {
             do {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
+                cell.profileName.text = fbName
+                if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
+                    cell.profilePicture.image = UIImage(data: data as Data)
+                }
+                
                 cell.labelUpvotes.text = String(upvotes!)
                 cell.eventId = eventId
                 cell.voted = isVoted

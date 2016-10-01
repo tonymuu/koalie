@@ -13,6 +13,8 @@ target 'Koalie' do
     pod 'LLSimpleCamera', '4.2'
     pod 'AwesomeCache', :git => 'https://github.com/aschuch/AwesomeCache.git', :branch => 'swift3.0'
     pod 'VIMVideoPlayer'
+    pod 'GuillotineMenu', '~> 3.0'
+
 
 end
 

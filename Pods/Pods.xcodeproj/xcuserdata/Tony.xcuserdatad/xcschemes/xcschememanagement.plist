@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GuillotineMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>LLSimpleCamera.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2521019980F9AB1F00C5C92BFD71ABE9</key>
+		<key>2637C02A9FA946061714A669B4162D08</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9657354EA1BD8BC9FF981A03B5E99F24</key>
+		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
+		<key>B3989B0E9CCDE59A9B6FF465D94D1869</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B63D94699A3319A032278CC119EF9C76</key>
 		<dict>
 			<key>primary</key>
 			<true/>

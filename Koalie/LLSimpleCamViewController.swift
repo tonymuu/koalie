@@ -311,8 +311,6 @@ class LLSimpleCamViewController: UIViewController {
         let navVc1 = UINavigationController(rootViewController: eventGalleryVC)
         let navVc2 = UINavigationController(rootViewController: myGalleryVC)
         
-        
-        
         let tabbarVC = UITabBarController()
         tabbarVC.viewControllers = NSArray(objects: navVc1, navVc2) as? [UIViewController]
         

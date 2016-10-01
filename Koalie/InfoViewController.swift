@@ -8,35 +8,44 @@
 
 import UIKit
 import MapKit
+import GuillotineMenu
 
 class InfoViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
+    
+    var presentationAnimator = GuillotineTransitionAnimation()
+    
 
+    
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func buttonMenuClick(_ sender: AnyObject) {
+        let menuVC = storyboard?.instantiateViewController(withIdentifier: "InfoMenuVC")
+        menuVC?.modalPresentationStyle = .custom
+        menuVC?.transitioningDelegate = self
+        
+        presentationAnimator.animationDelegate = menuVC as? GuillotineAnimationDelegate
+        presentationAnimator.supportView = sender as! UIView
+        presentationAnimator.presentButton = sender as! UIView
+        present(menuVC!, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension InfoViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .presentation
+        return presentationAnimator
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        presentationAnimator.mode = .dismissal
+        return presentationAnimator
     }
-    */
-
 }

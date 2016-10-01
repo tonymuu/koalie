@@ -88,6 +88,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let url = URL(string: urlString)
         if let imgData = try? Data(contentsOf: url!) {
             imgView.image = UIImage(data: imgData)
+            
+            let textAttachment = NSTextAttachment()
+            textAttachment.image = UIImage(data: imgData)
+            let attachmentString = NSAttributedString(attachment: textAttachment)
+            let myString = NSMutableAttributedString(string: "My Name")
+            myString.append(attachmentString)
+
         }
         imgViewContainer.layer.cornerRadius = hw! / 2
         imgViewContainer.layer.borderWidth = 1.5
@@ -96,6 +103,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         imgView.contentMode = .scaleAspectFill
         
         imgViewContainer.addSubview(imgView)
+        
 
         return imgViewContainer
     }

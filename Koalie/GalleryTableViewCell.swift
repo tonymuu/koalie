@@ -18,6 +18,8 @@ class GalleryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var buttonDownload: UIButton!
     
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var profileName: UILabel!
     
     var voted: Bool!
     
