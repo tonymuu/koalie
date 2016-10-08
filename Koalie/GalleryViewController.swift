@@ -16,7 +16,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var eventTableView: UITableView!
     
     var eventId: String!
-
+    
     // sorted according to likes in the backend
     var mediaList: NSArray?
     
@@ -66,13 +66,12 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let isVoted = votedMembers.contains(FBSDKAccessToken.current().tokenString)
         let key = dict.object(forKey: "stored_path") as? String
         let isVideo = dict.object(forKey: "is_video") as! Bool
-        
+        let mediaId = dict.object(forKey: "_id") as! String
         let user = dict.object(forKey: "user_id") as! NSDictionary
         let fbUser = user.object(forKey: "facebook") as! NSDictionary
         let fbId = fbUser.object(forKey: "id") as! String
         let profilePicUrl = fbUser.object(forKey: "picture") as! String
         let fbName = fbUser.object(forKey: "name") as! String
-        
         if !isVideo {
             do {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
@@ -84,7 +83,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.labelUpvotes.text = String(upvotes!)
                 cell.eventId = eventId
                 cell.voted = isVoted
-
+                cell.mediaId = mediaId
                 let cache = try Cache<UIImage>(name: "imageCache")
                 if let image = cache[key!] {
                     print("got image from cache")
@@ -111,7 +110,6 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                         if ((task.result) != nil) {
                             let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
                             let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
-                            print(downloadingFilePath.relativePath)
                             cache[key!] = image
                             cell.viewPicture.image = image
                             return downloadOutput
@@ -125,10 +123,15 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! GalleryVideoTableViewCell
+            cell.profileName.text = fbName
+            if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
+                cell.profilePicture.image = UIImage(data: data as Data)
+            }
+            
             cell.labelUpvotes.text = String(upvotes!)
             cell.eventId = eventId
             cell.voted = isVoted
-
+            cell.mediaId = mediaId
             cell.player.frame = cell.viewPicture.frame
             cell.player.player.isLooping = true
             cell.player.player.disableAirplay()
@@ -140,7 +143,6 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if let name = cache[key!] {
                     let videoUrl = self.applicationDocumentsDirectory().appendingPathComponent(name as String)
                     cell.player.player.setURL(videoUrl)
-                    print(cache.allObjects())
                     return cell
                 } else {
                     let transferManager = AWSS3TransferManager.default()
@@ -161,7 +163,6 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                         }
                         if ((task.result) != nil) {
                             let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
-                            print(downloadingFilePath.relativePath)
                             cache[key!] = name as NSString?
                             cell.player.player.setURL(downloadingFilePath)
                             return downloadOutput

@@ -28,7 +28,7 @@ struct Constants {
        static let baseUri = "https://koalie.herokuapp.com"
         
         // dev url
-        //static let baseUri = "http://localhost:3000"
+//        static let baseUri = "http://localhost:3000"
 
     }
     

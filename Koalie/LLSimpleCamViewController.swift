@@ -22,6 +22,7 @@ class LLSimpleCamViewController: UIViewController {
     var camera = LLSimpleCamera();
     
     var eventId: String!
+    var userId: String!
     
     
     override func viewWillAppear(_ animated: Bool) {

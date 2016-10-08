@@ -51,10 +51,10 @@
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.086274509799999996" green="0.68627450980000004" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="130" id="Td5-TN-6ed" customClass="EventTableViewCell" customModule="Koalie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="130"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Td5-TN-6ed" id="eba-Na-ceG">
-                                            <frame key="frameInset" width="1000" height="130"/>
+                                            <frame key="frameInset" width="375" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-ps-N8l">
@@ -470,7 +470,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="322"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iKX-gy-S8u" id="YAn-PT-EYS">
-                                            <frame key="frameInset" width="375" height="321"/>
+                                            <frame key="frameInset" width="375" height="322"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="liF-PW-F8c"/>
@@ -498,17 +498,6 @@
                                                                 <action selector="buttonDownloadClick:" destination="iKX-gy-S8u" eventType="touchUpInside" id="WGn-Ab-z2E"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7U-e6-KAs">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="Vo8-Ow-Uqi"/>
-                                                                <constraint firstAttribute="height" constant="30" id="WHF-yr-QCs"/>
-                                                            </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
-                                                            <connections>
-                                                                <action selector="buttonDownvoteClick:" destination="iKX-gy-S8u" eventType="touchUpInside" id="Fos-Xf-5e6"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H9-kC-Baj">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -518,17 +507,10 @@
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="9H9-kC-Baj" firstAttribute="leading" secondItem="UiR-lb-Mcp" secondAttribute="trailing" constant="19" id="HDc-k5-J1W"/>
-                                                        <constraint firstItem="H7U-e6-KAs" firstAttribute="leading" secondItem="9H9-kC-Baj" secondAttribute="trailing" constant="16" id="MAr-GT-oDr"/>
                                                         <constraint firstAttribute="trailing" secondItem="AU2-fp-tkH" secondAttribute="trailing" constant="34" id="MaG-Yk-RYM"/>
-                                                        <constraint firstItem="H7U-e6-KAs" firstAttribute="leading" secondItem="UiR-lb-Mcp" secondAttribute="trailing" constant="16" id="SGa-vk-fZM"/>
                                                         <constraint firstAttribute="height" constant="32" id="eB7-YO-hDQ"/>
                                                         <constraint firstItem="UiR-lb-Mcp" firstAttribute="leading" secondItem="fzx-kV-dG7" secondAttribute="leading" constant="30" id="jKE-8q-2QO"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="SGa-vk-fZM"/>
-                                                        </mask>
-                                                    </variation>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AbT-1b-7QK">
                                                     <constraints>
@@ -557,12 +539,10 @@
                                                 <constraint firstItem="liF-PW-F8c" firstAttribute="leading" secondItem="YAn-PT-EYS" secondAttribute="leadingMargin" id="Yos-3s-TRW"/>
                                                 <constraint firstItem="fzx-kV-dG7" firstAttribute="leading" secondItem="YAn-PT-EYS" secondAttribute="leadingMargin" id="d5V-cM-O60"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fzx-kV-dG7" secondAttribute="bottom" id="tyK-Ix-PgS"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="H7U-e6-KAs" secondAttribute="bottom" id="uOk-Sp-88X"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonDownload" destination="AU2-fp-tkH" id="0yG-AG-AOp"/>
-                                            <outlet property="buttonDownvote" destination="H7U-e6-KAs" id="CmD-4v-BdG"/>
                                             <outlet property="buttonUpvote" destination="UiR-lb-Mcp" id="B7B-x2-Avr"/>
                                             <outlet property="labelUpvotes" destination="9H9-kC-Baj" id="327-r7-ews"/>
                                             <outlet property="profileName" destination="Ruo-TA-6Ju" id="hx5-fp-7mh"/>
@@ -574,7 +554,7 @@
                                         <rect key="frame" x="0.0" y="350" width="375" height="322"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mC0-Rc-mri" id="TNv-MU-CHF">
-                                            <frame key="frameInset" width="375" height="321"/>
+                                            <frame key="frameInset" width="375" height="322"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NL5-HL-m2M"/>
@@ -602,17 +582,6 @@
                                                                 <action selector="buttonDownloadClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="M3b-nD-30Y"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5M-vW-y84">
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="TPk-30-clo"/>
-                                                                <constraint firstAttribute="width" constant="30" id="j6C-PX-F43"/>
-                                                            </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
-                                                            <connections>
-                                                                <action selector="buttonDownvoteClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="B6E-8h-zWJ"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oh9-qV-Z5z">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -621,18 +590,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="w5M-vW-y84" firstAttribute="leading" secondItem="Bf5-hk-1hu" secondAttribute="trailing" constant="16" id="7uV-ZH-kst"/>
                                                         <constraint firstItem="Bf5-hk-1hu" firstAttribute="leading" secondItem="wbZ-sQ-qwl" secondAttribute="leading" constant="30" id="NwG-oh-9X6"/>
-                                                        <constraint firstItem="w5M-vW-y84" firstAttribute="leading" secondItem="Oh9-qV-Z5z" secondAttribute="trailing" constant="16" id="VCU-vJ-90O"/>
                                                         <constraint firstAttribute="height" constant="32" id="aIl-sZ-5kX"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gwg-9r-dlv" secondAttribute="trailing" constant="34" id="c8A-NH-H1U"/>
                                                         <constraint firstItem="Oh9-qV-Z5z" firstAttribute="leading" secondItem="Bf5-hk-1hu" secondAttribute="trailing" constant="19" id="teQ-7N-Lfc"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="7uV-ZH-kst"/>
-                                                        </mask>
-                                                    </variation>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Np7-9U-TW0">
                                                     <constraints>
@@ -656,7 +618,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="wbZ-sQ-qwl" secondAttribute="bottom" id="KdS-bk-64F"/>
                                                 <constraint firstItem="NL5-HL-m2M" firstAttribute="leading" secondItem="TNv-MU-CHF" secondAttribute="leadingMargin" id="Lxs-pk-6eh"/>
                                                 <constraint firstItem="wbZ-sQ-qwl" firstAttribute="top" secondItem="NL5-HL-m2M" secondAttribute="bottom" id="P02-5Y-cOR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="w5M-vW-y84" secondAttribute="bottom" id="Uh0-OX-bJI"/>
                                                 <constraint firstItem="wbZ-sQ-qwl" firstAttribute="leading" secondItem="TNv-MU-CHF" secondAttribute="leadingMargin" id="VMJ-qx-NYW"/>
                                                 <constraint firstAttribute="topMargin" secondItem="Np7-9U-TW0" secondAttribute="top" id="Y2b-5F-5TL"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Gwg-9r-dlv" secondAttribute="bottom" constant="0.5" id="Zg2-XQ-vuX"/>
@@ -667,7 +628,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonDownload" destination="Gwg-9r-dlv" id="Ojw-KB-RPn"/>
-                                            <outlet property="buttonDownvote" destination="w5M-vW-y84" id="qHf-bs-8Q2"/>
                                             <outlet property="buttonUpvote" destination="Bf5-hk-1hu" id="a6q-oQ-E8F"/>
                                             <outlet property="labelUpvotes" destination="Oh9-qV-Z5z" id="gfJ-3Q-5uw"/>
                                             <outlet property="profileName" destination="uRW-Vd-drW" id="BTs-Lv-Xf1"/>
@@ -1410,7 +1370,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="322"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z86-jC-uUv" id="j98-As-Nah">
-                                            <frame key="frameInset" width="375" height="321"/>
+                                            <frame key="frameInset" width="375" height="322"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Es0-vr-NKt"/>
@@ -1438,17 +1398,6 @@
                                                                 <action selector="buttonDownloadClick:" destination="Z86-jC-uUv" eventType="touchUpInside" id="VtN-3R-zM6"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ud-eg-LCY">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="Xis-Ti-kuF"/>
-                                                                <constraint firstAttribute="height" constant="30" id="sRR-o1-UsM"/>
-                                                            </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
-                                                            <connections>
-                                                                <action selector="buttonDownvoteClick:" destination="Z86-jC-uUv" eventType="touchUpInside" id="HBt-8z-tEe"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mD-HG-MrQ">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1457,18 +1406,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="3ud-eg-LCY" firstAttribute="leading" secondItem="7mD-HG-MrQ" secondAttribute="trailing" constant="16" id="7gK-7Y-SQA"/>
                                                         <constraint firstItem="7mD-HG-MrQ" firstAttribute="leading" secondItem="sDP-kt-44s" secondAttribute="trailing" constant="19" id="N0m-PE-gP5"/>
                                                         <constraint firstAttribute="height" constant="32" id="Xx6-qD-CDf"/>
                                                         <constraint firstItem="sDP-kt-44s" firstAttribute="leading" secondItem="GF7-06-JT3" secondAttribute="leading" constant="30" id="dJZ-XN-B1R"/>
                                                         <constraint firstAttribute="trailing" secondItem="AX0-GW-qPH" secondAttribute="trailing" constant="34" id="lyj-C1-R2S"/>
-                                                        <constraint firstItem="3ud-eg-LCY" firstAttribute="leading" secondItem="sDP-kt-44s" secondAttribute="trailing" constant="16" id="zN5-G2-N33"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="zN5-G2-N33"/>
-                                                        </mask>
-                                                    </variation>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZTs-Hk-eIo">
                                                     <constraints>
@@ -1485,7 +1427,6 @@
                                             <constraints>
                                                 <constraint firstItem="GF7-06-JT3" firstAttribute="top" secondItem="Es0-vr-NKt" secondAttribute="bottom" id="9Iy-m4-HsP"/>
                                                 <constraint firstItem="Es0-vr-NKt" firstAttribute="leading" secondItem="j98-As-Nah" secondAttribute="leadingMargin" id="9S2-Py-MZ0"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="3ud-eg-LCY" secondAttribute="bottom" id="BLl-Zy-ImJ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="7mD-HG-MrQ" secondAttribute="bottom" constant="5.5" id="BhM-lI-F50"/>
                                                 <constraint firstItem="ZTs-Hk-eIo" firstAttribute="leading" secondItem="j98-As-Nah" secondAttribute="leadingMargin" constant="8" id="DI4-bS-BAt"/>
                                                 <constraint firstItem="Es0-vr-NKt" firstAttribute="top" secondItem="j98-As-Nah" secondAttribute="topMargin" constant="32" id="Fst-sT-fix"/>
@@ -1503,7 +1444,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonDownload" destination="AX0-GW-qPH" id="3yB-EJ-pmQ"/>
-                                            <outlet property="buttonDownvote" destination="3ud-eg-LCY" id="bUI-pa-oO6"/>
                                             <outlet property="buttonUpvote" destination="sDP-kt-44s" id="s4V-el-Xoe"/>
                                             <outlet property="labelUpvotes" destination="7mD-HG-MrQ" id="UCS-fz-Etd"/>
                                             <outlet property="profileName" destination="0IG-iB-9YX" id="9Ef-fo-23D"/>
@@ -1515,7 +1455,7 @@
                                         <rect key="frame" x="0.0" y="350" width="375" height="322"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F4S-QO-SYB" id="Ehd-Jh-UZ9">
-                                            <frame key="frameInset" width="375" height="321"/>
+                                            <frame key="frameInset" width="375" height="322"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mI4-cN-PdG"/>
@@ -1543,17 +1483,6 @@
                                                                 <action selector="buttonDownloadClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="Igt-On-75T"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IE-WQ-Zeq">
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="OBU-b3-t0S"/>
-                                                                <constraint firstAttribute="width" constant="30" id="UYp-6k-IUT"/>
-                                                            </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
-                                                            <connections>
-                                                                <action selector="buttonDownvoteClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="RMn-sI-r2P"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIP-dc-HSB">
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1562,18 +1491,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="8IE-WQ-Zeq" firstAttribute="leading" secondItem="kIP-dc-HSB" secondAttribute="trailing" constant="16" id="GsG-rb-SxI"/>
                                                         <constraint firstItem="Qol-20-Sth" firstAttribute="leading" secondItem="2aW-t0-eUj" secondAttribute="leading" constant="30" id="Ngu-YS-wHS"/>
-                                                        <constraint firstItem="8IE-WQ-Zeq" firstAttribute="leading" secondItem="Qol-20-Sth" secondAttribute="trailing" constant="16" id="Qix-ZS-KTl"/>
                                                         <constraint firstAttribute="trailing" secondItem="xJ6-oJ-JkR" secondAttribute="trailing" constant="34" id="Z5Y-31-KuU"/>
                                                         <constraint firstItem="kIP-dc-HSB" firstAttribute="leading" secondItem="Qol-20-Sth" secondAttribute="trailing" constant="19" id="fdH-nf-DqK"/>
                                                         <constraint firstAttribute="height" constant="32" id="knq-cT-hjy"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="Qix-ZS-KTl"/>
-                                                        </mask>
-                                                    </variation>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RTV-YU-GXw">
                                                     <constraints>
@@ -1602,13 +1524,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="mI4-cN-PdG" secondAttribute="trailing" id="Ukb-HR-10m"/>
                                                 <constraint firstItem="2aW-t0-eUj" firstAttribute="top" secondItem="mI4-cN-PdG" secondAttribute="bottom" id="a3n-uF-tPe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2aW-t0-eUj" secondAttribute="trailing" id="aFG-te-r48"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="8IE-WQ-Zeq" secondAttribute="bottom" id="dST-ZT-Qvd"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="xJ6-oJ-JkR" secondAttribute="bottom" constant="0.5" id="gh7-OJ-ogw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonDownload" destination="xJ6-oJ-JkR" id="PJM-fD-thU"/>
-                                            <outlet property="buttonDownvote" destination="8IE-WQ-Zeq" id="jGu-hc-GUB"/>
                                             <outlet property="buttonUpvote" destination="Qol-20-Sth" id="Q9S-MG-tp2"/>
                                             <outlet property="labelUpvotes" destination="kIP-dc-HSB" id="QWD-6T-dQe"/>
                                             <outlet property="profileName" destination="Mr9-ZI-E5t" id="UNG-KQ-qSK"/>
