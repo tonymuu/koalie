@@ -305,10 +305,10 @@ class LLSimpleCamViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let eventGalleryVC = storyboard.instantiateViewController(withIdentifier: "eventGalleryVC") as! GalleryViewController
         eventGalleryVC.eventId = self.eventId
-        
+        eventGalleryVC.userId = self.userId
         let myGalleryVC = storyboard.instantiateViewController(withIdentifier: "myGalleryVC") as! GalleryViewController
         myGalleryVC.eventId = self.eventId
-        
+        myGalleryVC.userId = self.userId
         let navVc1 = UINavigationController(rootViewController: eventGalleryVC)
         let navVc2 = UINavigationController(rootViewController: myGalleryVC)
         

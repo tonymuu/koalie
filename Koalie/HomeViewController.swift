@@ -21,6 +21,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var userData: NSDictionary!
     var eventDataList: [NSDictionary]!
+    var userId: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.eventTableView.delegate = self
@@ -75,7 +77,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let camVC = LLSimpleCamViewController()
         camVC.eventId = cell.eventId
-        
+        camVC.userId = self.userId
         self.present(camVC, animated: true, completion: nil)
         
         return indexPath
@@ -119,20 +121,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEvents, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON { response in switch response.result {
             case .success(let data):
                 let dict = data as! NSDictionary
-                self.userData = dict
+                self.userId = dict.object(forKey: "_id") as! String
+                self.userData = dict.object(forKey: "facebook") as! NSDictionary
                 self.eventDataList = self.userData.object(forKey: "events") as! [NSDictionary]
-                
                 self.numberOfRows = self.eventDataList.count
-                
                 if self.numberOfRows != 0 {
                     self.labelInstructional.text = ""
                 }
-                
                 self.navigationItem.titleView = self.generateProfileImageView(self.userData.object(forKey: "picture") as! String)
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
-                
                 self.eventTableView.reloadData()
-
             case .failure(let error):
                 print(error)
                 }

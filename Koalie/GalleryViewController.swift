@@ -16,6 +16,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var eventTableView: UITableView!
     
     var eventId: String!
+    var userId: String!
     
     // sorted according to likes in the backend
     var mediaList: NSArray?
@@ -63,7 +64,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let dict = mediaList?.object(at: (indexPath as NSIndexPath).row) as! NSDictionary
         let upvotes: Int! = dict.object(forKey: "likes") as! Int
         let votedMembers = dict.object(forKey: "voted_members") as! NSArray
-        let isVoted = votedMembers.contains(FBSDKAccessToken.current().tokenString)
+        let isVoted = votedMembers.contains(self.userId)
         let key = dict.object(forKey: "stored_path") as? String
         let isVideo = dict.object(forKey: "is_video") as! Bool
         let mediaId = dict.object(forKey: "_id") as! String
