@@ -50,9 +50,16 @@ class JoinEventViewController: UIViewController {
             }
         }
     }
+    
+    func dismissKeyboard() {
+        textfieldHashtag.resignFirstResponder()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func presentSuccessScreen() {

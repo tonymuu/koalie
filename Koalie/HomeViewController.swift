@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import FBSDKLoginKit
+import AwesomeCache
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -23,6 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var eventDataList: [NSDictionary]!
     var userId: String!
     
+    var cache: Cache<UIImage>? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.eventTableView.delegate = self
@@ -30,7 +33,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "NotificationReloadData"), object: nil)
         returnUserData()
-
+        do {
+            cache = try Cache<UIImage>(name: "imageCache")
+        } catch _ {
+            print("Something wrong")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
