@@ -117,9 +117,6 @@ class LLSimpleCamViewController: UIViewController {
             self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.6);
             self.snapButton.layer.rasterizationScale = UIScreen.main.scale
             self.snapButton.layer.shouldRasterize = true
-//            self.snapButton.addTarget(self, action: #selector(LLSimpleCamViewController.snapButtonClicked(_:)), forControlEvents: .TouchUpInside)
-//            self.snapButton.addTarget(self, action: #selector(LLSimpleCamViewController.snapButtonPressedDown(_:)), forControlEvents: .TouchDown)
-//            self.snapButton.addTarget(self, action: #selector(LLSimpleCamViewController.snapButtonReleased(_:)), forControlEvents: .TouchCancel)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(snapButtonClicked))
             tapGesture.numberOfTapsRequired = 1
             let holdDownGesture = UILongPressGestureRecognizer(target: self, action: #selector(snapButtonPressedDown))

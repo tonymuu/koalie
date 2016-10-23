@@ -36,6 +36,11 @@ class PreviewImageViewController: UIViewController {
         self.imageView.image = self.image
         self.view!.addSubview(self.imageView)
         
+        let confirmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        confirmButton.setImage(UIImage(named: "Check-Mark_Icon.png") , for: .normal)
+        confirmButton.addTarget(self, action: #selector(savePicture), for: .touchUpInside)
+        self.view.addSubview(confirmButton)
+        
         let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(savePicture))
         self.view.addGestureRecognizer(holdGesture)
         
