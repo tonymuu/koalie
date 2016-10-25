@@ -14,8 +14,7 @@ target 'Koalie' do
     pod 'AwesomeCache', :git => 'https://github.com/aschuch/AwesomeCache.git', :branch => 'swift3.0'
     pod 'VIMVideoPlayer'
     pod 'GuillotineMenu', '~> 3.0'
-
-
+    pod 'RevealingSplashView'
 end
 
 

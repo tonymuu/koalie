@@ -10,14 +10,13 @@ import UIKit
 import Alamofire
 import FBSDKLoginKit
 import AwesomeCache
+import RevealingSplashView
+
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    
-    
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var labelInstructional: UILabel!
-    
+    var revealingSplashView: RevealingSplashView!
     var numberOfRows = 0
     
     var userData: NSDictionary!
@@ -28,13 +27,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let window = UIApplication.shared.keyWindow
+        revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "KoalieLogo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
+        revealingSplashView.animationType = .heartBeat
+        window?.addSubview(revealingSplashView)
+        revealingSplashView.startAnimation(){
+        }
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
-
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: "NotificationReloadData"), object: nil)
-        returnUserData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadData), name: NSNotification.Name(rawValue: "NotificationReloadData"), object: nil)
+        self.returnUserData()
         do {
-            cache = try Cache<UIImage>(name: "imageCache")
+            self.cache = try Cache<UIImage>(name: "imageCache")
         } catch _ {
             print("Something wrong")
         }
@@ -138,6 +143,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.navigationItem.titleView = self.generateProfileImageView(self.userData.object(forKey: "picture") as! String)
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
                 self.eventTableView.reloadData()
+                self.revealingSplashView.finishHeartBeatAnimation()
             case .failure(let error):
                 print(error)
                 }

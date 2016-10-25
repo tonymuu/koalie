@@ -10,6 +10,7 @@
 		691635BD79CEDCE1945C7C83 /* Pods_KoalieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9625CEC048A06C5DF0463C /* Pods_KoalieTests.framework */; };
 		AA9F31FC24FE4AD2052FFB7C /* Pods_Koalie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507CAABDCE0583DAEDACEFF /* Pods_Koalie.framework */; };
 		EA02ED211D9E2A48006BE585 /* InfoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */; };
+		EA163E121DBF170D009FDC2D /* App-Icon-Template.png in Resources */ = {isa = PBXBuildFile; fileRef = EA163E111DBF170D009FDC2D /* App-Icon-Template.png */; };
 		EA1F58F81D7B772A00EAEBDE /* Wallpaper for App.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */; };
 		EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */; };
 		EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */; };
@@ -97,9 +98,6 @@
 		EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */; };
 		EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB7B2271CF2C498005D01CA /* TimeViewController.swift */; };
 		EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABC87861CD5CE4D001A6C0F /* Property List.plist */; };
-		EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878A1CD7F325001A6C0F /* home-1.jpg */; };
-		EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878B1CD7F325001A6C0F /* home-2.jpg */; };
-		EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABC878C1CD7F325001A6C0F /* home-3.jpg */; };
 		EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */; };
 		EAD487C11D84650A0059EB44 /* LLSimpleCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */; };
 		EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */; };
@@ -139,6 +137,7 @@
 		D507CAABDCE0583DAEDACEFF /* Pods_Koalie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Koalie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C2E589A163D5DB6D7D7D47 /* Pods-Koalie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koalie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koalie/Pods-Koalie.release.xcconfig"; sourceTree = "<group>"; };
 		EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoMenuViewController.swift; sourceTree = "<group>"; };
+		EA163E111DBF170D009FDC2D /* App-Icon-Template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-Icon-Template.png"; sourceTree = "<group>"; };
 		EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wallpaper for App.png"; sourceTree = "<group>"; };
 		EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Koalie Logo.png"; sourceTree = "<group>"; };
 		EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upload_test.jpg; sourceTree = "<group>"; };
@@ -238,9 +237,6 @@
 		EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hashtag.png; path = images/Hashtag.png; sourceTree = "<group>"; };
 		EAB7B2271CF2C498005D01CA /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		EABC87861CD5CE4D001A6C0F /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
-		EABC878A1CD7F325001A6C0F /* home-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-1.jpg"; path = "images/home-1.jpg"; sourceTree = "<group>"; };
-		EABC878B1CD7F325001A6C0F /* home-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-2.jpg"; path = "images/home-2.jpg"; sourceTree = "<group>"; };
-		EABC878C1CD7F325001A6C0F /* home-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "home-3.jpg"; path = "images/home-3.jpg"; sourceTree = "<group>"; };
 		EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LLSimpleCamera.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/LLSimpleCamera.framework"; sourceTree = "<group>"; };
 		EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +419,7 @@
 				EA6DA9591CF53C3E00B14A89 /* Overview Icon.png */,
 				EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */,
 				EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */,
+				EA163E111DBF170D009FDC2D /* App-Icon-Template.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -513,9 +510,6 @@
 				EA5D48561CF3AC6100B7D10D /* buttons */,
 				EA5D48551CF3AC5300B7D10D /* icons */,
 				EA2589001CE0518E0060B6F2 /* Load Screen.jpg */,
-				EABC878A1CD7F325001A6C0F /* home-1.jpg */,
-				EABC878B1CD7F325001A6C0F /* home-2.jpg */,
-				EABC878C1CD7F325001A6C0F /* home-3.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -646,14 +640,12 @@
 				EA4577411D7FDB2000BF5936 /* Clock Icon@2x.png in Resources */,
 				EA5C850F1CFEB1F900A61033 /* Back-Arrow-Icons 1.png in Resources */,
 				EA76B7991D0CBC7100E2D593 /* Full Selected.jpg in Resources */,
-				EABC878D1CD7F325001A6C0F /* home-1.jpg in Resources */,
 				EA76B7731D07F14200E2D593 /* Top Rated Icon.png in Resources */,
 				EA76B7711D07F14200E2D593 /* People Icon.png in Resources */,
 				EA76B7801D093F8200E2D593 /* Add Icons Icon.png in Resources */,
 				EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */,
 				EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */,
 				EA6DA9581CF53C2E00B14A89 /* X-Icon.png in Resources */,
-				EABC878E1CD7F325001A6C0F /* home-2.jpg in Resources */,
 				EA2A39ED1CFAAA6A00BC6C4A /* Info Button Icon.png in Resources */,
 				EA45773F1D7FDA8300BF5936 /* Back Arrow@2x.png in Resources */,
 				EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */,
@@ -674,7 +666,6 @@
 				EA5D48581CF3AD0100B7D10D /* Minus Icon.png in Resources */,
 				EA76B79B1D0CBC7100E2D593 /* Music Selected.jpg in Resources */,
 				EA45773D1D7FD76800BF5936 /* Question Mark Icon@2x.png in Resources */,
-				EABC878F1CD7F325001A6C0F /* home-3.jpg in Resources */,
 				EA76B79C1D0CBC7100E2D593 /* Text Selected.jpg in Resources */,
 				EA5C85141CFEB1F900A61033 /* Unselected Delete Icon.png in Resources */,
 				EA76B7641D03EF9800E2D593 /* Back-Arrow-Icons 2.png in Resources */,
@@ -686,6 +677,7 @@
 				EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */,
 				EA76B7851D093F8200E2D593 /* Pause Icon.png in Resources */,
 				EA5C85121CFEB1F900A61033 /* Not Selected-Download-Button.png in Resources */,
+				EA163E121DBF170D009FDC2D /* App-Icon-Template.png in Resources */,
 				EA91ABBC1CE91E2D00EA81BD /* Back-Icon.png in Resources */,
 				EA5D485A1CF3AD0F00B7D10D /* Plus Icon.png in Resources */,
 				EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */,

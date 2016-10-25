@@ -36,23 +36,44 @@ class PreviewImageViewController: UIViewController {
         self.imageView.image = self.image
         self.view!.addSubview(self.imageView)
         
-        let confirmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        confirmButton.setImage(UIImage(named: "Check-Mark_Icon.png") , for: .normal)
-        confirmButton.addTarget(self, action: #selector(savePicture), for: .touchUpInside)
+        let confirmButton = UIButton(type: .system)
+        confirmButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
+        confirmButton.tintColor = UIColor.white
+        confirmButton.setImage(UIImage(named: "Check-Mark-Icon.png") , for: UIControlState())
+        confirmButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+        confirmButton.addTarget(self, action: #selector(save), for: .touchUpInside)
         self.view.addSubview(confirmButton)
         
-        let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(savePicture))
-        self.view.addGestureRecognizer(holdGesture)
+        let cancelButton = UIButton(type: .system)
+        cancelButton.frame = CGRect(x: screenRect.size.width - 36.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
+        cancelButton.tintColor = UIColor.white
+        cancelButton.setImage(UIImage(named: "X-Icon.png") , for: UIControlState())
+        cancelButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+        cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        self.view.addSubview(cancelButton)
+
         
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PreviewImageViewController.viewTapped(_:)))
-        self.view!.addGestureRecognizer(tapGesture)
+//        let galleryButton = UIButton(type: .system)
+//        self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 29.0 + 20.0, height: 22.0 + 20.0)
+//        self.galleryButton.tintColor = UIColor.white
+//        self.galleryButton.setImage(UIImage(named: "Gallery Icon.png"), for: UIControlState())
+//        self.galleryButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+//        self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
+//        self.view!.addSubview(self.galleryButton)
+
+        
+//        let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(savePicture))
+//        self.view.addGestureRecognizer(holdGesture)
+//        
+//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PreviewImageViewController.viewTapped(_:)))
+//        self.view!.addGestureRecognizer(tapGesture)
     }
     
-    func viewTapped(_ gesture: UIGestureRecognizer) {
+    func cancel(_ gesture: UIGestureRecognizer) {
         self.dismiss(animated: false, completion: { _ in })
     }
     
-    func savePicture(_ gesture: UIGestureRecognizer) {
+    func save(_ gesture: UIGestureRecognizer) {
         if gesture.state == .ended {
             print("ended")
             uploadImageToS3()

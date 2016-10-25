@@ -11,10 +11,20 @@ import FBSDKLoginKit
 import Alamofire
 import AWSCore
 import AWSS3
+import RevealingSplashView
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+    var revealingSplashView: RevealingSplashView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "KoalieLogo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
+        revealingSplashView.animationType = .heartBeat
+        self.view.addSubview(revealingSplashView)
+        revealingSplashView.startAnimation(){
+        }
+
         
         let loginButton: FBSDKLoginButton = FBSDKLoginButton()
         loginButton.delegate = self
@@ -33,6 +43,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         imageView.image = bgImage
         self.view.addSubview(imageView)
         self.view.sendSubview(toBack: imageView)
+        
+        self.revealingSplashView.finishHeartBeatAnimation()
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {

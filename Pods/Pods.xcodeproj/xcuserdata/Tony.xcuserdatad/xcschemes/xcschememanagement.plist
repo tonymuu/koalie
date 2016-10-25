@@ -64,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RevealingSplashView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>VIMVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,6 +77,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>081514AC9741601E06A85C6FC24B481F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2637C02A9FA946061714A669B4162D08</key>
 		<dict>
 			<key>primary</key>
@@ -88,6 +98,11 @@
 			<true/>
 		</dict>
 		<key>3B6BCCA4633976619D09DDD013AA288C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C2CCD5819B112CC7F1401E02B989AE8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +127,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3989B0E9CCDE59A9B6FF465D94D1869</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B63D94699A3319A032278CC119EF9C76</key>
+		<key>B4FAD48C1482166ABC97C906DFD8B3EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

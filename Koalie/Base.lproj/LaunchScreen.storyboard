@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,32 +15,21 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Load Screen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vfe-aB-rro">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KoalieLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CkC-G1-rj7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="JsU-LT-a1C"/>
+                                    <constraint firstAttribute="width" constant="120" id="ORD-Gv-sU0"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.086274509799999996" green="0.68627450980000004" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="vfe-aB-rro" secondAttribute="trailing" id="6WO-Pa-RYt"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="vfe-aB-rro" secondAttribute="bottom" id="8ot-nY-pw9"/>
-                            <constraint firstItem="vfe-aB-rro" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Bzj-pX-mgH"/>
-                            <constraint firstItem="vfe-aB-rro" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="o00-GW-gCS"/>
-                            <constraint firstItem="vfe-aB-rro" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="pig-M1-UQk"/>
-                            <constraint firstItem="vfe-aB-rro" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="qdK-pO-h7q"/>
-                            <constraint firstAttribute="trailing" secondItem="vfe-aB-rro" secondAttribute="trailing" id="wGw-Ik-hqX"/>
-                            <constraint firstItem="vfe-aB-rro" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="wqL-jZ-w0g"/>
+                            <constraint firstItem="CkC-G1-rj7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1UP-96-PJV"/>
+                            <constraint firstItem="CkC-G1-rj7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j9E-U8-Net"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="6WO-Pa-RYt"/>
-                                <exclude reference="pig-M1-UQk"/>
-                                <exclude reference="qdK-pO-h7q"/>
-                                <exclude reference="8ot-nY-pw9"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -49,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Load Screen.jpg" width="750" height="1334"/>
+        <image name="KoalieLogo.png" width="2251" height="3113"/>
     </resources>
 </document>
