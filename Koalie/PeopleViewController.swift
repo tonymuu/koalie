@@ -22,14 +22,11 @@ class PeopleViewController: UIViewController {
     
     
     @IBAction func ButtonBackClick(_ sender: AnyObject) {
-        if buttonFirst.isSelected {
-            print(1)
+        if self.navigationController != nil {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
         }
-        if buttonSecond.isSelected {
-            print(2)
-        }
-        
-        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ButtonCreateClick(_ sender: AnyObject) {
@@ -50,6 +47,9 @@ class PeopleViewController: UIViewController {
         
     }
     
+    @IBAction func buttonAddClick(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func firstSelected(_ sender: AnyObject) {
         
         buttonSecond.backgroundColor = Constants.backgroundColor.dark

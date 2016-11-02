@@ -15,6 +15,9 @@ target 'Koalie' do
     pod 'VIMVideoPlayer'
     pod 'GuillotineMenu', '~> 3.0'
     pod 'RevealingSplashView'
+    pod 'LLSlideMenu'
+    pod 'SlideMenuControllerSwift'
+    pod 'ExpandingMenu', '~> 0.3'
 end
 
 

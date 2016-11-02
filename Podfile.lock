@@ -10,6 +10,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - ExpandingMenu (0.3.1)
   - FBSDKCoreKit (4.15.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.15.0):
@@ -18,19 +19,24 @@ PODS:
     - FBSDKCoreKit
   - GuillotineMenu (3.0)
   - LLSimpleCamera (4.2.0)
+  - LLSlideMenu (1.0.4)
   - RevealingSplashView (0.1.0)
+  - SlideMenuControllerSwift (3.0.0)
   - VIMVideoPlayer (6.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AwesomeCache (from `https://github.com/aschuch/AwesomeCache.git`, branch `swift3.0`)
   - AWSS3 (= 2.4.7)
+  - ExpandingMenu (~> 0.3)
   - FBSDKCoreKit (= 4.15.0)
   - FBSDKLoginKit (= 4.15.0)
   - FBSDKShareKit (= 4.15.0)
   - GuillotineMenu (~> 3.0)
   - LLSimpleCamera (= 4.2)
+  - LLSlideMenu
   - RevealingSplashView
+  - SlideMenuControllerSwift
   - VIMVideoPlayer
 
 EXTERNAL SOURCES:
@@ -49,14 +55,17 @@ SPEC CHECKSUMS:
   AWSCore: 9a729a3c0050a51ece3547d546c327acdac7838a
   AWSS3: 0f3c8ed11e04cd78cf86ed396c06330ab142db7a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  ExpandingMenu: 107548f3cb8c04b28a8b6b436983f506849484cc
   FBSDKCoreKit: 6680cbd33a4243d80700f182d0af36b3fa7f3118
   FBSDKLoginKit: 96d9b70b5784490f02ab86119e542a1f182017a8
   FBSDKShareKit: 06ef20cb2f16828ca4b20055333313dd445de362
   GuillotineMenu: 611ccb58ae092f2d929535377570ef25a7b5bc63
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
+  LLSlideMenu: e98f45dc04cdbbf19b4e6922b9078dc519292920
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
+  SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 6299bfcbc5366a8d8575e005b3045874e8acbc31
+PODFILE CHECKSUM: 8ad4d8c8fddcb2cdc9840eae8edf26eea46fbdd0
 
 COCOAPODS: 1.0.1

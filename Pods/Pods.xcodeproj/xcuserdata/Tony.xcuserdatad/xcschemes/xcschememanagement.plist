@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ExpandingMenu-ExpandingMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ExpandingMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,6 +64,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LLSlideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Koalie.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -69,6 +84,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SlideMenuControllerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>VIMVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,7 +97,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>081514AC9741601E06A85C6FC24B481F</key>
+		<key>163C3283804B9E51D5D55F70B0D380EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2450E2DA3A7E3AA277D7C7290DDC055C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C2CCD5819B112CC7F1401E02B989AE8</key>
+		<key>3C5685456B3ED2A700DBD8CC7DE83D96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C5685456B3ED2A700DBD8CC7DE83D96</key>
+		<key>4C0D54BC2EA848C7B20395ECFF54CB64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +147,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>906D557DB8397B31BE7E9346860CA2A3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B4FAD48C1482166ABC97C906DFD8B3EA</key>
+		<key>9E18C251ADFF23717B149B49B69C0E72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9EDB241CA84062D18B45D12341F01D5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB290499FBF7C2090E0C351868C2C583</key>
 		<dict>
 			<key>primary</key>
 			<true/>

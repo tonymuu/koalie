@@ -42,7 +42,15 @@ class TimeViewController: UIViewController {
     }
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
-        self.navigationController?.popViewController(animated: true)
+        if self.navigationController != nil {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func buttonAddClick(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
