@@ -11,9 +11,10 @@ import Alamofire
 import FBSDKLoginKit
 import AwesomeCache
 import RevealingSplashView
+import DGElasticPullToRefresh
 
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PresentInfoViewProtocol {
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var labelInstructional: UILabel!
     var revealingSplashView: RevealingSplashView!
@@ -27,17 +28,33 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // for splash window animation
         let window = UIApplication.shared.keyWindow
         revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "KoalieLogo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
         revealingSplashView.animationType = .heartBeat
         window?.addSubview(revealingSplashView)
         revealingSplashView.startAnimation(){
         }
+        
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor.white
+        self.eventTableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            print("pulled to refresh")
+            self?.reloadData()
+            self?.eventTableView.dg_stopLoading()
+            }, loadingView: loadingView)
+        self.eventTableView.dg_setPullToRefreshFillColor(eventTableView.backgroundColor!)
+        self.eventTableView.dg_setPullToRefreshBackgroundColor(Constants.backgroundColor.dark)
+        
+        
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
         
+        // for reloading data
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadData), name: NSNotification.Name(rawValue: "NotificationReloadData"), object: nil)
         self.returnUserData()
+        
         do {
             self.cache = try Cache<UIImage>(name: "imageCache")
         } catch _ {
@@ -48,7 +65,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HomeToInfoSegue" {
+            let destinationVC = segue.destination as! InfoViewController
+            
+        }
+    }
 
+    @IBAction func buttonInfoClick(_ sender: AnyObject) {
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
@@ -74,12 +101,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventTableViewCell
-        
         let eventData = eventDataList[(indexPath as NSIndexPath).row]
+        let size = String(describing: eventData.object(forKey: "size")!)
+        let filled = String(describing: (eventData.object(forKey: "member_ids") as! NSArray).count)
+        var timeLeft = eventData.object(forKey: "timeLeft")! as! Int
+
+        cell.delegate = self
         
         cell.labelEvent.text = eventData.object(forKey: "name") as? String
+        cell.labelSize.text = filled.appending(" / ").appending(size)
         cell.eventId = eventData.object(forKey: "_id") as! String
         
+        if timeLeft <= 0 {
+            cell.labelProgress.text = "Ended on ".appending(String(describing: eventData.object(forKey: "date_end")!))
+        } else if timeLeft <= 24 {
+            cell.labelProgress.text = String(describing: timeLeft).appending(" Hours Left")
+        } else {
+            let daysLeft = timeLeft / 24
+            timeLeft = timeLeft % 24
+            cell.labelProgress.text = String(describing: daysLeft).appending(" Days ").appending(String(describing: timeLeft)).appending(" Hours Left")
+        }
+
         return cell;
     }
     
@@ -150,7 +192,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    
     func reloadData() {
         returnUserData()
+    }
+    
+    func presentInfoView(controller: UIViewController) {
+        self.present(controller, animated: true, completion: nil)
     }
 }

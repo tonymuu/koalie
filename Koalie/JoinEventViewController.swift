@@ -30,19 +30,27 @@ class JoinEventViewController: UIViewController {
                 print(data)
                 let dataArray = data as! NSArray
                 if dataArray.count == 0 {
-                    print("Did not find any event with the name provided")
+                    self.presentNotFoundScreen()
                 } else {
+                    // if a list of events with same names, default to joining the first event in the list.
                     let dict = dataArray[0] as! NSDictionary
                     let eventId = dict.object(forKey: "_id") as! String
                     let idDict = ["eventId": eventId]
                     Alamofire.request(Constants.URIs.baseUri+Constants.routes.joinEvent, method: .post, parameters: idDict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
                     case .success(let data):
-                        print(data)
+                        let dict = data as! NSDictionary
+                        let message = String(describing: dict.object(forKey: "message")!)
+                        if message == Constants.messages.alreadyJoined {
+                            self.presentFailureScreen()
+                        } else if message == Constants.messages.eventfull {
+                            self.presentEventFullScreen()
+                        } else if message == Constants.messages.success {
+                            self.presentSuccessScreen()
+                        }
                     case .failure(let error):
                         print(error)
                         }
                     }
-                    self.presentSuccessScreen()
                 }
 
             case .failure(let error):
@@ -69,6 +77,18 @@ class JoinEventViewController: UIViewController {
     }
     
     func presentFailureScreen() {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AlreadyJoinedVC")
+        self.present(vc!, animated: true, completion: nil)
     }
+    
+    func presentNotFoundScreen() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventNotFoundVC")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
+    func presentEventFullScreen() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventFullVC")
+        self.present(vc!, animated: true, completion: nil)
+    }
+
 }

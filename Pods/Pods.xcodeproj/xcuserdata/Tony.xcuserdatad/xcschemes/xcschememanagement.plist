@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DGElasticPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ExpandingMenu-ExpandingMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,7 +102,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>163C3283804B9E51D5D55F70B0D380EA</key>
+		<key>115824B7CB2E76E5ACB836A251E79404</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -108,6 +113,11 @@
 			<true/>
 		</dict>
 		<key>2637C02A9FA946061714A669B4162D08</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2AA52D618AF35ED2B20FAF2456F60478</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,17 +157,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>906D557DB8397B31BE7E9346860CA2A3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9E18C251ADFF23717B149B49B69C0E72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,7 +167,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AB290499FBF7C2090E0C351868C2C583</key>
+		<key>A74F59F16C3A8F9C98B6EF0821BBD34C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -178,6 +178,16 @@
 			<true/>
 		</dict>
 		<key>DD4C60D0C1ADF7586B8862EEA147DE00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE14C34870CAA16D258780AB46119CB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2EB797F58796FD9A31809FC5EF88C71</key>
 		<dict>
 			<key>primary</key>
 			<true/>

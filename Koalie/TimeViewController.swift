@@ -12,6 +12,7 @@ class TimeViewController: UIViewController {
     @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelUnit: UILabel!
     var newEvent: Event?
+    var length: Int!
     @IBAction func buttonPlusClick(_ sender: AnyObject) {
         var num = Int(labelNumber.text!)!
         if labelUnit.text == "hours" && num == 7 {
@@ -23,15 +24,15 @@ class TimeViewController: UIViewController {
         } else if labelUnit.text != "week" {
             num += 1
             labelNumber.text = String(num)
-//            labelUnit.text = num > 1 ? labelUnit.text!+"s" : labelUnit.text
         }
     }
+    
     @IBAction func buttonMinusClick(_ sender: AnyObject) {
         var num = Int(labelNumber.text!)!
         if labelUnit.text == "week" {
             labelNumber.text = String(5)
             labelUnit.text = "days"
-        } else if labelUnit.text == "days" && num == 1 {
+        } else if labelUnit.text == "day" && num == 1 {
             labelNumber.text = String(7)
             labelUnit.text = "hours"
         } else if num > 1 {
@@ -42,17 +43,9 @@ class TimeViewController: UIViewController {
     }
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
-        if self.navigationController != nil {
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
-    
-    @IBAction func buttonAddClick(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,11 +55,20 @@ class TimeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        newEvent?.startDate = Date()
-        newEvent?.endDate = Date()
-        
-        let destinationVC = segue.destination as! PeopleViewController
-        destinationVC.newEvent = self.newEvent
+        if segue.identifier == "TimeToPeopleSegue" {
+            let destinationVC = segue.destination as! PeopleViewController
+            let num: Int = Int(labelNumber.text!)!
+            let unit = labelUnit.text
+            if (unit == "week") {
+                self.length = 168
+            } else if (unit == "days") {
+                self.length = num * 24
+            } else if (unit == "hours") {
+                self.length = num
+            }
+            self.newEvent?.eventLength = self.length
+            destinationVC.newEvent = self.newEvent
+        }
     }
 
 }

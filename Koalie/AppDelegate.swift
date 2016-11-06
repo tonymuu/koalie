@@ -68,7 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = navigationVC
             
             return true
-
         } else {
             let myStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let vc = myStoryBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
@@ -82,7 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = LLSimpleCamViewController()
         let navigationVC = UINavigationController(rootViewController: vc)
         self.window?.rootViewController = navigationVC
- 
  */
     }
  

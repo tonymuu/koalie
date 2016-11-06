@@ -98,6 +98,8 @@
 		EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */; };
 		EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB7B2271CF2C498005D01CA /* TimeViewController.swift */; };
 		EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABC87861CD5CE4D001A6C0F /* Property List.plist */; };
+		EAC553821DCEBADF001D4DE5 /* MorePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC553811DCEBADF001D4DE5 /* MorePeopleViewController.swift */; };
+		EAC553841DCEBAF9001D4DE5 /* MoreTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC553831DCEBAF9001D4DE5 /* MoreTimeViewController.swift */; };
 		EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */; };
 		EAD487C11D84650A0059EB44 /* LLSimpleCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */; };
 		EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */; };
@@ -106,7 +108,6 @@
 		EAD487C91D8481E20059EB44 /* Home Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD487C81D8481E20059EB44 /* Home Icon.png */; };
 		EAD487CB1D84835D0059EB44 /* SDevCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */; };
 		EAD487CD1D8498D60059EB44 /* ConvenientMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487CC1D8498D60059EB44 /* ConvenientMethods.swift */; };
-		EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
 		EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */; };
 /* End PBXBuildFile section */
@@ -237,6 +238,8 @@
 		EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hashtag.png; path = images/Hashtag.png; sourceTree = "<group>"; };
 		EAB7B2271CF2C498005D01CA /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		EABC87861CD5CE4D001A6C0F /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		EAC553811DCEBADF001D4DE5 /* MorePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorePeopleViewController.swift; sourceTree = "<group>"; };
+		EAC553831DCEBAF9001D4DE5 /* MoreTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTimeViewController.swift; sourceTree = "<group>"; };
 		EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LLSimpleCamera.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/LLSimpleCamera.framework"; sourceTree = "<group>"; };
 		EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
@@ -245,7 +248,6 @@
 		EAD487C81D8481E20059EB44 /* Home Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home Icon.png"; sourceTree = "<group>"; };
 		EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDevCircleButton.swift; sourceTree = "<group>"; };
 		EAD487CC1D8498D60059EB44 /* ConvenientMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientMethods.swift; sourceTree = "<group>"; };
-		EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowManyTableViewController.swift; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
 		EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -477,7 +479,6 @@
 				EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */,
 				EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */,
 				EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */,
-				EAE751D21CE97681008A0926 /* HowManyTableViewController.swift */,
 				EAB7B2271CF2C498005D01CA /* TimeViewController.swift */,
 				EA6DA95B1CF543B000B14A89 /* OverviewViewController.swift */,
 				EA5C85151CFFFB0800A61033 /* GalleryViewController.swift */,
@@ -497,6 +498,8 @@
 				EA4426141D83D43500CCC4C7 /* Koalie-Bridging-Header.h */,
 				EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */,
 				EAD487C41D846A2F0059EB44 /* PreviewVideoViewController.swift */,
+				EAC553811DCEBADF001D4DE5 /* MorePeopleViewController.swift */,
+				EAC553831DCEBAF9001D4DE5 /* MoreTimeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -817,9 +820,9 @@
 				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
 				EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */,
 				EA76B7A11D0CDC2F00E2D593 /* ReadyViewController.swift in Sources */,
+				EAC553821DCEBADF001D4DE5 /* MorePeopleViewController.swift in Sources */,
 				EA1F58FE1D7B933200EAEBDE /* JoinEventViewController.swift in Sources */,
 				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,
-				EAE751D31CE97681008A0926 /* HowManyTableViewController.swift in Sources */,
 				EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */,
 				EA2588FE1CE04A550060B6F2 /* HomeViewController.swift in Sources */,
 				EA76B78E1D0940C600E2D593 /* IconViewController.swift in Sources */,
@@ -837,6 +840,7 @@
 				EA5382DF1D7D25EA0044D059 /* ProfileIconView.swift in Sources */,
 				EAD487C51D846A2F0059EB44 /* PreviewVideoViewController.swift in Sources */,
 				EA76B7761D07F6CD00E2D593 /* FinalizeViewController.swift in Sources */,
+				EAC553841DCEBAF9001D4DE5 /* MoreTimeViewController.swift in Sources */,
 				EA7114081D80F94E009B1846 /* OptionsMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

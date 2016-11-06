@@ -19,14 +19,11 @@ class PeopleViewController: UIViewController {
     @IBOutlet weak var buttonCreate: UIButton!
     
     var newEvent: Event!
+    var size: Int!
     
     
     @IBAction func ButtonBackClick(_ sender: AnyObject) {
-        if self.navigationController != nil {
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            dismiss(animated: true, completion: nil)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ButtonCreateClick(_ sender: AnyObject) {
@@ -36,9 +33,8 @@ class PeopleViewController: UIViewController {
         
         let dict = [
             "eventName": self.newEvent!.eventName!,
-            "eventSize": String(self.newEvent!.eventSize!),
-            "startDate": String(describing: self.newEvent!.startDate!),
-            "endDate": String(describing: self.newEvent!.endDate!)
+            "eventSize": String(self.newEvent!.eventSize),
+            "eventLength": String(self.newEvent!.eventLength)
             ]
         
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
@@ -47,28 +43,25 @@ class PeopleViewController: UIViewController {
         
     }
     
-    @IBAction func buttonAddClick(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-    }
     @IBAction func firstSelected(_ sender: AnyObject) {
-        
         buttonSecond.backgroundColor = Constants.backgroundColor.dark
         buttonFirst.backgroundColor = Constants.backgroundColor.selected
-        
-        newEvent.eventSize = 10
+        newEvent.eventSize = 5
+        size = 5
     }
     
     @IBAction func secondSelected(_ sender: AnyObject) {
-        
         buttonFirst.backgroundColor = Constants.backgroundColor.dark
         buttonSecond.backgroundColor = Constants.backgroundColor.selected
+        newEvent.eventSize = 50
+        size = 50
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if newEvent != nil {
-            print("Received new event object: \(newEvent?.eventName)")
+        if newEvent == nil {
+            newEvent = Event()
         }
     }
 }

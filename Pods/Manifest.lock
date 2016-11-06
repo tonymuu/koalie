@@ -10,6 +10,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DGElasticPullToRefresh (1.1)
   - ExpandingMenu (0.3.1)
   - FBSDKCoreKit (4.15.0):
     - Bolts (~> 1.7)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AwesomeCache (from `https://github.com/aschuch/AwesomeCache.git`, branch `swift3.0`)
   - AWSS3 (= 2.4.7)
+  - DGElasticPullToRefresh
   - ExpandingMenu (~> 0.3)
   - FBSDKCoreKit (= 4.15.0)
   - FBSDKLoginKit (= 4.15.0)
@@ -55,6 +57,7 @@ SPEC CHECKSUMS:
   AWSCore: 9a729a3c0050a51ece3547d546c327acdac7838a
   AWSS3: 0f3c8ed11e04cd78cf86ed396c06330ab142db7a
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   ExpandingMenu: 107548f3cb8c04b28a8b6b436983f506849484cc
   FBSDKCoreKit: 6680cbd33a4243d80700f182d0af36b3fa7f3118
   FBSDKLoginKit: 96d9b70b5784490f02ab86119e542a1f182017a8
@@ -66,6 +69,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 8ad4d8c8fddcb2cdc9840eae8edf26eea46fbdd0
+PODFILE CHECKSUM: aae495a9276856fbbd5f3e08c5d4b3321a096e02
 
 COCOAPODS: 1.0.1

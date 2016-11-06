@@ -25,10 +25,10 @@ struct Constants {
     
     struct URIs {
         // production url
-       static let baseUri = "https://koalie.herokuapp.com"
+//       static let baseUri = "https://koalie.herokuapp.com"
         
         // dev url
-//        static let baseUri = "http://localhost:3000"
+        static let baseUri = "http://localhost:3000"
 
     }
     
@@ -42,6 +42,14 @@ struct Constants {
         static let searchEvents = "/search_events"
         static let joinEvent = "/join_event"
         static let postUpvotes = "/vote_media"
+        static let addPeople = "/add_people"
+        static let addTime = "/add_time"
+    }
+    
+    struct messages {
+        static let eventfull = "EventFull"
+        static let alreadyJoined = "AlreadyJoined"
+        static let success = "Success"
     }
 }
 

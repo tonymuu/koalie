@@ -13,6 +13,7 @@ import ExpandingMenu
 class InfoViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
+    var eventId: String!
 //    var presentationAnimator = GuillotineTransitionAnimation()
 //    var slideMenu: LLSlideMenu!
     
@@ -47,13 +48,15 @@ class InfoViewController: UIViewController {
         view.addSubview(menuButton)
 
         let addTimeButton = ExpandingMenuItem(size: menuButtonSize, title: "Length", image: UIImage(named: "Clock Icon")!, highlightedImage: UIImage(named: "Clock Icon")!, backgroundImage: UIImage(named: ""), backgroundHighlightedImage: UIImage(named: "")) { () -> Void in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddTimeVC")
-            self.present(vc!, animated: true, completion: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddTimeVC") as! MoreTimeViewController
+            vc.eventId = self.eventId
+            self.present(vc, animated: true, completion: nil)
         }
         
         let addPeopleButton = ExpandingMenuItem(size: menuButtonSize, title: "People", image: UIImage(named: "Add People Icon")!, highlightedImage: UIImage(named: "Add People Icon")!, backgroundImage: UIImage(named: ""), backgroundHighlightedImage: UIImage(named: "")) { () -> Void in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddPeopleVC")
-            self.present(vc!, animated: true, completion: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddPeopleVC") as! MorePeopleViewController
+            vc.eventId = self.eventId
+            self.present(vc, animated: true, completion: nil)
         }
         let inviteButton = ExpandingMenuItem(size: menuButtonSize, title: "Invite", image: UIImage(named: "Play Icon")!, highlightedImage: UIImage(named: "Play Icon")!, backgroundImage: UIImage(named: ""), backgroundHighlightedImage: UIImage(named: "")) { () -> Void in
             // Do some action

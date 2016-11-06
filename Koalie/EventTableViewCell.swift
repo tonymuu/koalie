@@ -8,20 +8,22 @@
 
 import UIKit
 
+protocol PresentInfoViewProtocol: NSObjectProtocol {
+    func presentInfoView(controller: UIViewController) -> Void;
+}
+
 class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var labelEvent: UILabel!
     @IBOutlet weak var labelProgress: UILabel!
+    @IBOutlet weak var labelSize: UILabel!
     
+    weak var delegate: PresentInfoViewProtocol?
     var eventId: String!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBAction func buttonInfoClick(_ sender: AnyObject) {
+        let storybard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storybard.instantiateViewController(withIdentifier: "InfoVC") as! InfoViewController
+        vc.eventId = self.eventId
+        delegate?.presentInfoView(controller: vc)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
 }
