@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4620348675FDFEBC19F426E8BB2961E8'
-               BlueprintName = 'VIMVideoPlayer'
+               BlueprintIdentifier = '91FB25DAA0A31D5480F2B35A7CD64041'
+               BlueprintName = 'SCLAlertView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'VIMVideoPlayer.framework'>
+               BuildableName = 'SCLAlertView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

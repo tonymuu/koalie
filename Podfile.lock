@@ -22,6 +22,7 @@ PODS:
   - LLSimpleCamera (4.2.0)
   - LLSlideMenu (1.0.4)
   - RevealingSplashView (0.1.0)
+  - SCLAlertView (0.7.0)
   - SlideMenuControllerSwift (3.0.0)
   - VIMVideoPlayer (6.0.1)
 
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - LLSimpleCamera (= 4.2)
   - LLSlideMenu
   - RevealingSplashView
+  - SCLAlertView
   - SlideMenuControllerSwift
   - VIMVideoPlayer
 
@@ -66,9 +68,10 @@ SPEC CHECKSUMS:
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
   LLSlideMenu: e98f45dc04cdbbf19b4e6922b9078dc519292920
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: aae495a9276856fbbd5f3e08c5d4b3321a096e02
+PODFILE CHECKSUM: 46971b0adf01d9be6157454db6b6668223694af6
 
 COCOAPODS: 1.0.1

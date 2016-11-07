@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 class JoinEventViewController: UIViewController {
     
@@ -84,11 +85,14 @@ class JoinEventViewController: UIViewController {
     func presentNotFoundScreen() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventNotFoundVC")
         self.present(vc!, animated: true, completion: nil)
+
+//        let alert = SCLAlertView()
+//        alert.showTitle("Event Not Found", subTitle: "Did you type in the correct #HashTag", duration: 1.0, completeText: "Done", style: .error, colorStyle: Constants.backgroundColor.hexDark, colorTextButton: Constants.backgroundColor.hexLight)
+//        SCLAlertView().showInfo("Event Not Found", subTitle: "Did you type in the correct #HashTag?")
     }
     
     func presentEventFullScreen() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventFullVC")
-        self.present(vc!, animated: true, completion: nil)
+        SCLAlertView().showError("Event Full", subTitle: "The Event is full, would you like to add yourself?")
     }
 
 }

@@ -60,6 +60,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb1646621778998777</string>
+				<string>koalieApp</string>
 			</array>
 		</dict>
 	</array>

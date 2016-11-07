@@ -19,6 +19,7 @@ target 'Koalie' do
     pod 'SlideMenuControllerSwift'
     pod 'ExpandingMenu', '~> 0.3'
     pod 'DGElasticPullToRefresh'
+    pod 'SCLAlertView'
 end
 
 

@@ -17,6 +17,9 @@ struct Constants {
         static let light = UIColor(red: 0.082, green: 0.729, blue: 0.600, alpha: 1.00)
         static let dark = UIColor(red: 0.043, green: 0.439, blue: 0.361, alpha: 1.00)
         static let selected = UIColor(red: 0.063, green: 0.588, blue: 0.482, alpha: 1.00)
+        
+        static let hexLight: UInt = 0x15BA99
+        static let hexDark: UInt = 0x0B705C
     }
     
     struct size {
@@ -25,10 +28,12 @@ struct Constants {
     
     struct URIs {
         // production url
-//       static let baseUri = "https://koalie.herokuapp.com"
+       static let baseUri = "https://koalie.herokuapp.com"
         
         // dev url
-        static let baseUri = "http://localhost:3000"
+//        static let baseUri = "http://localhost:3000"
+        
+        static let facebookAppUrl = "https://fb.me/1712424622418492"
 
     }
     

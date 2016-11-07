@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import AWSCore
 import Alamofire
+import SCLAlertView
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
         
+        let parsedUrl = BFURL(inboundURL: url, sourceApplication: sourceApplication)
+        if parsedUrl?.appLinkData != nil {
+            let targetUrl = parsedUrl?.targetURL
+            SCLAlertView().showNotice("Received Link", subTitle: "You just received an app invite sent from another user!")
+        }
         
         return handled
     }
