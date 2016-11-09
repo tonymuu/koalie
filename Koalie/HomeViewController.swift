@@ -105,7 +105,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let size = String(describing: eventData.object(forKey: "size")!)
         let filled = String(describing: (eventData.object(forKey: "member_ids") as! NSArray).count)
         var timeLeft = eventData.object(forKey: "timeLeft")! as! Int
-
+        let medias = eventData.object(forKey: "media_ids") as! [NSDictionary]
+        var storedPath = ""
+        for media in medias {
+            if !(media.object(forKey: "is_video") as! Bool) {
+                storedPath = media.object(forKey: "stored_path")! as! String
+                break
+            }
+        }
+        
         cell.delegate = self
         
         cell.labelEvent.text = eventData.object(forKey: "name") as? String
@@ -121,7 +129,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             timeLeft = timeLeft % 24
             cell.labelProgress.text = String(describing: daysLeft).appending(" Days ").appending(String(describing: timeLeft)).appending(" Hours Left")
         }
-
+        if let image = self.cache?[storedPath] {
+            cell.backgroundView = UIImageView(image: image)
+        }
+        
         return cell;
     }
     

@@ -73,11 +73,9 @@ class PreviewImageViewController: UIViewController {
         self.dismiss(animated: false, completion: { _ in })
     }
     
-    func save(_ gesture: UIGestureRecognizer) {
-        if gesture.state == .ended {
-            print("ended")
-            uploadImageToS3()
-        }
+    func save() {
+        uploadImageToS3()
+        self.dismiss(animated: false, completion: { _ in })
     }
     
     override var prefersStatusBarHidden : Bool {

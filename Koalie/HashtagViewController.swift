@@ -30,5 +30,13 @@ class HashtagViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGR)
     }
+    
+    func dismissKeyboard() {
+        textfieldHashtag.resignFirstResponder()
+    }
+
 }
