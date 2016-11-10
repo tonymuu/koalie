@@ -27,7 +27,7 @@ class OverviewViewController: UIViewController, FBSDKAppInviteDialogDelegate {
     }
     
     func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
-        
+        print("Invite COMPLETED!!!!!")
     }
     
     func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {

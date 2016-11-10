@@ -210,6 +210,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func presentInfoView(controller: UIViewController) {
-        self.present(controller, animated: true, completion: nil)
+        self.navigationController?.present(controller, animated: true, completion: nil)
     }
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 import MapKit
-import ExpandingMenu
+import FBSDKShareKit
 
-class InfoViewController: UIViewController, MKMapViewDelegate {
+class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDialogDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelTimeLeft: UILabel!
@@ -26,49 +26,37 @@ class InfoViewController: UIViewController, MKMapViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func buttonMenuClick(_ sender: AnyObject) {
+    @IBAction func buttonAddTimeClick(_ sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimeInfoVC") as! TimeInfoViewController
+        vc.eventId = self.eventId
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func buttonAddPeopleClick(_ sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PeopleInfoVC") as! PeopleInfoViewController
+        vc.eventId = self.eventId
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func buttonInviteClick(_ sender: AnyObject) {
+        let content = FBSDKAppInviteContent()
+        content.appLinkURL = URL(string: Constants.URIs.facebookAppUrl)
+        FBSDKAppInviteDialog.show(from: self, with: content, delegate: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         
         self.labelTitle.text = self.eventName
         self.labelTimeLeft.text = self.timeLeft
-        self.viewImage.image = self.eventImage
-        
-        let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)
-        let menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: UIImage(named: "Plus Icon")!, centerHighlightedImage: UIImage(named: "Minus Icon")!)
-        menuButton.center = CGPoint(x: self.view.bounds.width - 32.0, y: self.view.frame.origin.y + 48)
-        menuButton.expandingDirection = .bottom
-        view.addSubview(menuButton)
-
-        let addTimeButton = ExpandingMenuItem(size: menuButtonSize, title: "Length", image: UIImage(named: "Clock Icon")!, highlightedImage: UIImage(named: "Clock Icon")!, backgroundImage: UIImage(named: ""), backgroundHighlightedImage: UIImage(named: "")) { () -> Void in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddTimeVC") as! MoreTimeViewController
-            vc.eventId = self.eventId
-            self.present(vc, animated: true, completion: nil)
+        if self.eventImage != nil {
+            self.viewImage.image = self.eventImage
         }
-        
-        let addPeopleButton = ExpandingMenuItem(size: menuButtonSize, title: "People", image: UIImage(named: "Add People Icon")!, highlightedImage: UIImage(named: "Add People Icon")!, backgroundImage: UIImage(named: ""), backgroundHighlightedImage: UIImage(named: "")) { () -> Void in
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddPeopleVC") as! MorePeopleViewController
-            vc.eventId = self.eventId
-            self.present(vc, animated: true, completion: nil)
-        }
-        let inviteButton = ExpandingMenuItem(size: menuButtonSize, title: "Invite", image: UIImage(named: "Play Icon")!, highlightedImage: UIImage(named: "Play Icon")!, backgroundImage: UIImage(named: ""), backgroundHighlightedImage: UIImage(named: "")) { () -> Void in
-            // Do some action
-        }
-
-        addTimeButton.contentMode = .scaleAspectFill
-        addPeopleButton.contentMode = .scaleAspectFit
-        inviteButton.contentMode = .scaleToFill
-        
-        addTimeButton.clipsToBounds = true
-        addPeopleButton.clipsToBounds = true
-        inviteButton.clipsToBounds = true
-
-        menuButton.addMenuItems([addTimeButton, addPeopleButton, inviteButton])
         
         mapView.delegate = self
         mapView.showsUserLocation = true
@@ -88,5 +76,13 @@ class InfoViewController: UIViewController, MKMapViewDelegate {
         mapRegion.span.latitudeDelta = 0.2
         mapRegion.span.longitudeDelta = 0.2
         mapView.setRegion(mapRegion, animated: true)
+    }
+    
+    func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
+        
+    }
+    
+    func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
+        
     }
 }
