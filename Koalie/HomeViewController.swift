@@ -131,6 +131,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         if let image = self.cache?[storedPath] {
             cell.backgroundView = UIImageView(image: image)
+            cell.eventImage = image
         }
         
         return cell;

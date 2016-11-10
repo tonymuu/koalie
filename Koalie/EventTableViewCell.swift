@@ -19,11 +19,15 @@ class EventTableViewCell: UITableViewCell {
     
     weak var delegate: PresentInfoViewProtocol?
     var eventId: String!
+    var eventImage: UIImage?
     
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storybard.instantiateViewController(withIdentifier: "InfoVC") as! InfoViewController
         vc.eventId = self.eventId
+        vc.eventName = self.labelEvent.text
+        vc.timeLeft = self.labelProgress.text
+        vc.eventImage = self.eventImage
         delegate?.presentInfoView(controller: vc)
     }
 }

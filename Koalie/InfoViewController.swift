@@ -10,37 +10,35 @@ import UIKit
 import MapKit
 import ExpandingMenu
 
-class InfoViewController: UIViewController {
+class InfoViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelTimeLeft: UILabel!
+    @IBOutlet weak var viewImage: UIImageView!
     
     var eventId: String!
-//    var presentationAnimator = GuillotineTransitionAnimation()
-//    var slideMenu: LLSlideMenu!
-    
-
+    var eventName: String!
+    var timeLeft: String!
+    var eventImage: UIImage!
+    var locationManager: CLLocationManager!
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func buttonMenuClick(_ sender: AnyObject) {
-//        if slideMenu.ll_isOpen {
-//            slideMenu.ll_close()
-//        } else {
-//            slideMenu.ll_open()
-//        }
-//        let menuVC = storyboard?.instantiateViewController(withIdentifier: "InfoMenuVC")
-//        menuVC?.modalPresentationStyle = .custom
-//        menuVC?.transitioningDelegate = self
-//        
-//        presentationAnimator.animationDelegate = menuVC as? GuillotineAnimationDelegate
-//        presentationAnimator.supportView = sender as! UIView
-//        presentationAnimator.presentButton = sender as! UIView
-//        present(menuVC!, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager = CLLocationManager()
+        locationManager.requestWhenInUseAuthorization()
+        
+        self.labelTitle.text = self.eventName
+        self.labelTimeLeft.text = self.timeLeft
+        self.viewImage.image = self.eventImage
+        
         let menuButtonSize: CGSize = CGSize(width: 64.0, height: 64.0)
         let menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: UIImage(named: "Plus Icon")!, centerHighlightedImage: UIImage(named: "Minus Icon")!)
         menuButton.center = CGPoint(x: self.view.bounds.width - 32.0, y: self.view.frame.origin.y + 48)
@@ -71,25 +69,24 @@ class InfoViewController: UIViewController {
         inviteButton.clipsToBounds = true
 
         menuButton.addMenuItems([addTimeButton, addPeopleButton, inviteButton])
-
-//        slideMenu = LLSlideMenu()
-//        self.view.addSubview(slideMenu)
-//        slideMenu.ll_springFramesNum = 60
-//        slideMenu.ll_springVelocity = 70
-//        slideMenu.ll_menuWidth = 100
-//        slideMenu.ll_menuBackgroundColor = Constants.backgroundColor.dark
+        
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        var mapRegion = MKCoordinateRegion()
+        mapRegion.center.latitude = mapView.userLocation.coordinate.latitude
+        mapRegion.center.longitude = mapView.userLocation.coordinate.longitude
+        mapRegion.span.latitudeDelta = 0.2
+        mapRegion.span.longitudeDelta = 0.2
+        mapView.setRegion(mapRegion, animated: true)
+        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        var mapRegion = MKCoordinateRegion()
+        mapRegion.center.latitude = mapView.userLocation.coordinate.latitude
+        mapRegion.center.longitude = mapView.userLocation.coordinate.longitude
+        mapRegion.span.latitudeDelta = 0.2
+        mapRegion.span.longitudeDelta = 0.2
+        mapView.setRegion(mapRegion, animated: true)
     }
 }
-
-//extension InfoViewController: UIViewControllerTransitioningDelegate {
-//    
-//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        presentationAnimator.mode = .presentation
-//        return presentationAnimator
-//    }
-//    
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        presentationAnimator.mode = .dismissal
-//        return presentationAnimator
-//    }
-//}
