@@ -29,6 +29,28 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    @IBAction func buttonEditClick(_ sender: AnyObject) {
+        let actionSheet = UIAlertController(title: "Edit", message: "Make changes", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
+            UIAlertAction -> Void in
+            
+        })
+        let reportAction = UIAlertAction(title: "Report", style: .default, handler: {
+            UIAlertAction -> Void in
+            
+        })
+        let downloadAction = UIAlertAction(title: "Download", style: .default, handler: {
+            UIAlertAction -> Void in
+            
+        })
+        actionSheet.addAction(downloadAction)
+        actionSheet.addAction(reportAction)
+        actionSheet.addAction(deleteAction)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,15 +102,18 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
                     cell.profilePicture.image = UIImage(data: data as Data)
                 }
-                
                 cell.labelUpvotes.text = String(upvotes!)
                 cell.eventId = eventId
                 cell.voted = isVoted
                 cell.mediaId = mediaId
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector(("presentImageFullscreen:")))
+                cell.viewPicture.addGestureRecognizer(tapGestureRecognizer)
+
                 let cache = try Cache<UIImage>(name: "imageCache")
                 if let image = cache[key!] {
                     print("got image from cache")
                     cell.viewPicture.image = image
+
                     return cell
                 } else {
                     cell.viewPicture.image = UIImage(named: "KoalieLogo.png")
@@ -179,6 +204,24 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
                 
         return mock!
+    }
+    
+    func dismissImageFullscreen(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            sender.view?.removeFromSuperview()
+        }
+    }
+
+    
+    func presentImageFullscreen(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            let fullImageView = sender.view as! UIImageView
+            fullImageView.frame = self.view.frame
+            fullImageView.isUserInteractionEnabled = true
+            let tapGC = UITapGestureRecognizer(target: self, action: #selector(dismissImageFullscreen))
+            fullImageView.addGestureRecognizer(tapGC)
+            self.view.addSubview(fullImageView)
+        }
     }
     
     func applicationDocumentsDirectory()-> URL {

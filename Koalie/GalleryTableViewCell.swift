@@ -9,6 +9,11 @@
 import UIKit
 import Alamofire
 
+protocol ImageFullscreenDelegate {
+    func presentImageFullscreen(imageView: UIImageView) -> Void;
+}
+
+
 class GalleryTableViewCell: UITableViewCell {
     @IBOutlet weak var viewPicture: UIImageView!
     @IBOutlet weak var labelUpvotes: UILabel!
@@ -21,6 +26,8 @@ class GalleryTableViewCell: UITableViewCell {
     var upvotes: Int = 0
     var eventId: String!
     var mediaId: String!
+    
+    var delegate: ImageFullscreenDelegate!
     
     @IBAction func buttonUpvoteClick(_ sender: AnyObject) {
         if !voted {
@@ -61,4 +68,6 @@ class GalleryTableViewCell: UITableViewCell {
 
     }
 
+
 }
+

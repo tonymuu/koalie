@@ -149,8 +149,7 @@ class LLSimpleCamViewController: UIViewController {
             self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
             self.view!.addSubview(self.galleryButton)
             
-        }
-        else{
+        } else {
             let label: UILabel = UILabel(frame: CGRect.zero)
             label.text = "You must have a camera to take video."
             label.numberOfLines = 2
