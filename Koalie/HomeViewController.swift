@@ -37,6 +37,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         revealingSplashView.startAnimation(){
         }
         
+        // pull to refresh
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.white
         self.eventTableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
@@ -46,7 +47,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             }, loadingView: loadingView)
         self.eventTableView.dg_setPullToRefreshFillColor(eventTableView.backgroundColor!)
         self.eventTableView.dg_setPullToRefreshBackgroundColor(Constants.backgroundColor.dark)
-        
         
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
@@ -107,13 +107,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         var timeLeft = eventData.object(forKey: "timeLeft")! as! Int
         let hoursLong = String(describing: eventData.object(forKey: "hoursLong"))
         let medias = eventData.object(forKey: "media_ids") as! [NSDictionary]
-        var storedPath = ""
-        for media in medias {
-            if !(media.object(forKey: "is_video") as! Bool) {
-                storedPath = media.object(forKey: "stored_path")! as! String
-                break
-            }
-        }
+        let users = eventData.object(forKey: "member_ids") as! [NSDictionary]
         
         cell.delegate = self
         
@@ -124,7 +118,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.hoursLeft = String(describing: timeLeft)
         cell.userTotal = filled
         cell.eventSize = size
+        cell.users = users
         
+        // time left label
         if timeLeft <= 0 {
             cell.labelProgress.text = "Ended on ".appending(String(describing: eventData.object(forKey: "date_end")!))
         } else if timeLeft <= 24 {
@@ -134,9 +130,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             timeLeft = timeLeft % 24
             cell.labelProgress.text = String(describing: daysLeft).appending(" Days ").appending(String(describing: timeLeft)).appending(" Hours Left")
         }
+        
+        // cell background image: most voted nonvideo image
+        var storedPath = ""
+        for media in medias {
+            if !(media.object(forKey: "is_video") as! Bool) {
+                storedPath = media.object(forKey: "stored_path")! as! String
+                break
+            }
+        }
         if let image = self.cache?[storedPath] {
             cell.backgroundView = UIImageView(image: image)
             cell.eventImage = image
+            cell.backgroundView?.contentMode = .scaleAspectFill
         }
         
         return cell;

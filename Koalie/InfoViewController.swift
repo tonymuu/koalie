@@ -24,6 +24,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     var eventSize: String!
     var userTotal: String!
     var eventImage: UIImage!
+    var users: [NSDictionary]!
     var locationManager: CLLocationManager!
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
@@ -44,6 +45,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
         vc.eventId = self.eventId
         vc.userTotal = self.userTotal
         vc.eventSize = self.eventSize
+        vc.users = self.users
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -66,6 +68,11 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
             self.viewImage.image = self.eventImage
         }
         
+        // add tap to fullscreen to mapview
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(fullscreenMapview))
+        self.mapView.addGestureRecognizer(tapRecognizer)
+        
+        // init map view
         mapView.delegate = self
         mapView.showsUserLocation = true
         var mapRegion = MKCoordinateRegion()
@@ -105,5 +112,10 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     
     func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
         
-    }    
+    }
+    
+    func fullscreenMapview() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapVC")
+        self.present(vc!, animated: true, completion: nil)
+    }
 }

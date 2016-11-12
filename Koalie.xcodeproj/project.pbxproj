@@ -67,7 +67,6 @@
 		EA76B7641D03EF9800E2D593 /* Back-Arrow-Icons 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7631D03EF9800E2D593 /* Back-Arrow-Icons 2.png */; };
 		EA76B7661D03EFA400E2D593 /* Light Arrow Icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7651D03EFA400E2D593 /* Light Arrow Icon 2.png */; };
 		EA76B7681D053AEE00E2D593 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B7671D053AEE00E2D593 /* InfoViewController.swift */; };
-		EA76B7711D07F14200E2D593 /* People Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76C1D07F14200E2D593 /* People Icon.png */; };
 		EA76B7721D07F14200E2D593 /* Photo Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76D1D07F14200E2D593 /* Photo Icon.png */; };
 		EA76B7731D07F14200E2D593 /* Top Rated Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76E1D07F14200E2D593 /* Top Rated Icon.png */; };
 		EA76B7741D07F14200E2D593 /* Video Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76F1D07F14200E2D593 /* Video Icon.png */; };
@@ -158,6 +157,10 @@
 		EAD511561DD5A12700C4C135 /* You Icon NOT Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511281DD5A12700C4C135 /* You Icon NOT Selected.png */; };
 		EAD511571DD5A12700C4C135 /* You Icon Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511291DD5A12700C4C135 /* You Icon Selected.png */; };
 		EAD511591DD6CB9800C4C135 /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */; };
+		EAD5115B1DD7829F00C4C135 /* FriendListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD5115A1DD7829F00C4C135 /* FriendListTableViewCell.swift */; };
+		EAD5115D1DD791B600C4C135 /* People Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD5115C1DD791B600C4C135 /* People Icon.png */; };
+		EAD5115F1DD791BD00C4C135 /* Invite Circle Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */; };
+		EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511601DD7941200C4C135 /* MapViewController.swift */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
 		EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */; };
 /* End PBXBuildFile section */
@@ -257,7 +260,6 @@
 		EA76B7631D03EF9800E2D593 /* Back-Arrow-Icons 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Arrow-Icons 2.png"; sourceTree = "<group>"; };
 		EA76B7651D03EFA400E2D593 /* Light Arrow Icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light Arrow Icon 2.png"; sourceTree = "<group>"; };
 		EA76B7671D053AEE00E2D593 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		EA76B76C1D07F14200E2D593 /* People Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "People Icon.png"; sourceTree = "<group>"; };
 		EA76B76D1D07F14200E2D593 /* Photo Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Photo Icon.png"; sourceTree = "<group>"; };
 		EA76B76E1D07F14200E2D593 /* Top Rated Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Top Rated Icon.png"; sourceTree = "<group>"; };
 		EA76B76F1D07F14200E2D593 /* Video Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Video Icon.png"; sourceTree = "<group>"; };
@@ -349,6 +351,10 @@
 		EAD511281DD5A12700C4C135 /* You Icon NOT Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "You Icon NOT Selected.png"; sourceTree = "<group>"; };
 		EAD511291DD5A12700C4C135 /* You Icon Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "You Icon Selected.png"; sourceTree = "<group>"; };
 		EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullscreenImageViewController.swift; sourceTree = "<group>"; };
+		EAD5115A1DD7829F00C4C135 /* FriendListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListTableViewCell.swift; sourceTree = "<group>"; };
+		EAD5115C1DD791B600C4C135 /* People Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "People Icon.png"; sourceTree = "<group>"; };
+		EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Invite Circle Icon.png"; sourceTree = "<group>"; };
+		EAD511601DD7941200C4C135 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
 		EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -501,6 +507,7 @@
 				EA5382E01D7D264B0044D059 /* ProfileIconView.xib */,
 				EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */,
 				EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */,
+				EAD5115A1DD7829F00C4C135 /* FriendListTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -515,7 +522,6 @@
 				EA4577461D7FE19C00BF5936 /* Join Icon@2x.png */,
 				EA4577401D7FDB2000BF5936 /* Clock Icon@2x.png */,
 				EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */,
-				EA76B76C1D07F14200E2D593 /* People Icon.png */,
 				EA76B76D1D07F14200E2D593 /* Photo Icon.png */,
 				EA76B76E1D07F14200E2D593 /* Top Rated Icon.png */,
 				EA76B76F1D07F14200E2D593 /* Video Icon.png */,
@@ -604,6 +610,7 @@
 				EA0ACBFB1DD43DA40038179F /* TimeInfoViewController.swift */,
 				EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */,
 				EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */,
+				EAD511601DD7941200C4C135 /* MapViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -631,11 +638,13 @@
 				EAD510FE1DD5A12700C4C135 /* Back Arrow Icon w_ line.png */,
 				EAD510FF1DD5A12700C4C135 /* Back Arrow Icon.png */,
 				EAD511001DD5A12700C4C135 /* Black Box.png */,
+				EAD5115C1DD791B600C4C135 /* People Icon.png */,
 				EAD511011DD5A12700C4C135 /* Bottom Bar No Divider.png */,
 				EAD511021DD5A12700C4C135 /* Bottom Bar.png */,
 				EAD511031DD5A12700C4C135 /* Breaker Line.png */,
 				EAD511041DD5A12700C4C135 /* Camera Circle.png */,
 				EAD511051DD5A12700C4C135 /* Camera Icon.png */,
+				EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */,
 				EAD511061DD5A12700C4C135 /* Collab with Others Icon.png */,
 				EAD511071DD5A12700C4C135 /* Discard Icon.png */,
 				EAD511081DD5A12700C4C135 /* Divider Thin.png */,
@@ -816,8 +825,8 @@
 				EAD511411DD5A12700C4C135 /* Info Bar.png in Resources */,
 				EAD5113B1DD5A12700C4C135 /* Flash Off Icon.png in Resources */,
 				EAD511451DD5A12700C4C135 /* Keep Icon.png in Resources */,
-				EA76B7711D07F14200E2D593 /* People Icon.png in Resources */,
 				EA76B7801D093F8200E2D593 /* Add Icons Icon.png in Resources */,
+				EAD5115D1DD791B600C4C135 /* People Icon.png in Resources */,
 				EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */,
 				EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */,
 				EA6DA9581CF53C2E00B14A89 /* X-Icon.png in Resources */,
@@ -871,6 +880,7 @@
 				EAD511371DD5A12700C4C135 /* Divider Thin.png in Resources */,
 				EAD511491DD5A12700C4C135 /* Others Icon Selected.png in Resources */,
 				EAD510FA1DD585DA00C4C135 /* Options Icon.png in Resources */,
+				EAD5115F1DD791BD00C4C135 /* Invite Circle Icon.png in Resources */,
 				EAD487C91D8481E20059EB44 /* Home Icon.png in Resources */,
 				EAD5114C1DD5A12700C4C135 /* Search Bar.png in Resources */,
 				EAD5112F1DD5A12700C4C135 /* Black Box.png in Resources */,
@@ -1023,6 +1033,7 @@
 				EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */,
 				EA4426131D83D29F00CCC4C7 /* LLSimpleCamViewController.swift in Sources */,
 				EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */,
+				EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */,
 				EA6DA95C1CF543B000B14A89 /* OverviewViewController.swift in Sources */,
 				EA76B78A1D09407F00E2D593 /* MusicViewController.swift in Sources */,
 				EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */,
@@ -1044,6 +1055,7 @@
 				EA5C85161CFFFB0800A61033 /* GalleryViewController.swift in Sources */,
 				EA02ED211D9E2A48006BE585 /* InfoMenuViewController.swift in Sources */,
 				EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */,
+				EAD5115B1DD7829F00C4C135 /* FriendListTableViewCell.swift in Sources */,
 				EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */,
 				EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */,
 				EA76B78C1D0940BF00E2D593 /* TextViewController.swift in Sources */,

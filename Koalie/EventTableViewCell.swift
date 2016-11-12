@@ -24,6 +24,7 @@ class EventTableViewCell: UITableViewCell {
     var hoursLeft: String!
     var eventSize: String!
     var userTotal: String!
+    var users: [NSDictionary]!
     
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
@@ -36,6 +37,7 @@ class EventTableViewCell: UITableViewCell {
         vc.hoursLeft = self.hoursLeft
         vc.userTotal = self.userTotal
         vc.eventSize = self.eventSize
+        vc.users = self.users
         delegate?.presentInfoView(controller: vc)
     }
 }
