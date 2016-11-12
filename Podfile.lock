@@ -21,6 +21,7 @@ PODS:
   - GuillotineMenu (3.0)
   - LLSimpleCamera (4.2.0)
   - LLSlideMenu (1.0.4)
+  - NVActivityIndicatorView (3.0)
   - RevealingSplashView (0.1.0)
   - SCLAlertView (0.7.0)
   - SlideMenuControllerSwift (3.0.0)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - GuillotineMenu (~> 3.0)
   - LLSimpleCamera (= 4.2)
   - LLSlideMenu
+  - NVActivityIndicatorView
   - RevealingSplashView
   - SCLAlertView
   - SlideMenuControllerSwift
@@ -67,11 +69,12 @@ SPEC CHECKSUMS:
   GuillotineMenu: 611ccb58ae092f2d929535377570ef25a7b5bc63
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
   LLSlideMenu: e98f45dc04cdbbf19b4e6922b9078dc519292920
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 46971b0adf01d9be6157454db6b6668223694af6
+PODFILE CHECKSUM: d75ef311d30d5a06e224431905e1171197f6fc0c
 
 COCOAPODS: 1.0.1

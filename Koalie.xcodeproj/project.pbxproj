@@ -79,10 +79,6 @@
 		EA76B7861D093F8200E2D593 /* Play Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77D1D093F8200E2D593 /* Play Icon.png */; };
 		EA76B7871D093F8200E2D593 /* Preview-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77E1D093F8200E2D593 /* Preview-Icon.png */; };
 		EA76B7881D093F8200E2D593 /* Theme Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77F1D093F8200E2D593 /* Theme Icon.png */; };
-		EA76B78A1D09407F00E2D593 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B7891D09407F00E2D593 /* MusicViewController.swift */; };
-		EA76B78C1D0940BF00E2D593 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B78B1D0940BF00E2D593 /* TextViewController.swift */; };
-		EA76B78E1D0940C600E2D593 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B78D1D0940C600E2D593 /* IconViewController.swift */; };
-		EA76B7901D0940CE00E2D593 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B78F1D0940CE00E2D593 /* ThemeViewController.swift */; };
 		EA76B7921D0CBBD700E2D593 /* ThemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7911D0CBBD700E2D593 /* ThemeView.xib */; };
 		EA76B7991D0CBC7100E2D593 /* Full Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7941D0CBC7100E2D593 /* Full Selected.jpg */; };
 		EA76B79A1D0CBC7100E2D593 /* Icon Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7951D0CBC7100E2D593 /* Icon Selected.jpg */; };
@@ -90,7 +86,6 @@
 		EA76B79C1D0CBC7100E2D593 /* Text Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7971D0CBC7100E2D593 /* Text Selected.jpg */; };
 		EA76B79D1D0CBC7100E2D593 /* Theme Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7981D0CBC7100E2D593 /* Theme Selected.jpg */; };
 		EA76B79F1D0CBD3000E2D593 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */; };
-		EA76B7A11D0CDC2F00E2D593 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B7A01D0CDC2F00E2D593 /* ReadyViewController.swift */; };
 		EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA88D9BC1D71F67100345E84 /* LoginViewController.swift */; };
 		EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */; };
 		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
@@ -161,6 +156,7 @@
 		EAD5115D1DD791B600C4C135 /* People Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD5115C1DD791B600C4C135 /* People Icon.png */; };
 		EAD5115F1DD791BD00C4C135 /* Invite Circle Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */; };
 		EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511601DD7941200C4C135 /* MapViewController.swift */; };
+		EAD511631DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
 		EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */; };
 /* End PBXBuildFile section */
@@ -272,10 +268,6 @@
 		EA76B77D1D093F8200E2D593 /* Play Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Icon.png"; sourceTree = "<group>"; };
 		EA76B77E1D093F8200E2D593 /* Preview-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Preview-Icon.png"; sourceTree = "<group>"; };
 		EA76B77F1D093F8200E2D593 /* Theme Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Theme Icon.png"; sourceTree = "<group>"; };
-		EA76B7891D09407F00E2D593 /* MusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
-		EA76B78B1D0940BF00E2D593 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
-		EA76B78D1D0940C600E2D593 /* IconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
-		EA76B78F1D0940CE00E2D593 /* ThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		EA76B7911D0CBBD700E2D593 /* ThemeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeView.xib; sourceTree = "<group>"; };
 		EA76B7941D0CBC7100E2D593 /* Full Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Full Selected.jpg"; sourceTree = "<group>"; };
 		EA76B7951D0CBC7100E2D593 /* Icon Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon Selected.jpg"; sourceTree = "<group>"; };
@@ -283,7 +275,6 @@
 		EA76B7971D0CBC7100E2D593 /* Text Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Text Selected.jpg"; sourceTree = "<group>"; };
 		EA76B7981D0CBC7100E2D593 /* Theme Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Theme Selected.jpg"; sourceTree = "<group>"; };
 		EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
-		EA76B7A01D0CDC2F00E2D593 /* ReadyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
 		EA88D9BC1D71F67100345E84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +346,7 @@
 		EAD5115C1DD791B600C4C135 /* People Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "People Icon.png"; sourceTree = "<group>"; };
 		EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Invite Circle Icon.png"; sourceTree = "<group>"; };
 		EAD511601DD7941200C4C135 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmJoinEventViewController.swift; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
 		EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -592,11 +584,6 @@
 				EA76B7671D053AEE00E2D593 /* InfoViewController.swift */,
 				EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */,
 				EA76B7751D07F6CD00E2D593 /* FinalizeViewController.swift */,
-				EA76B7891D09407F00E2D593 /* MusicViewController.swift */,
-				EA76B78B1D0940BF00E2D593 /* TextViewController.swift */,
-				EA76B78D1D0940C600E2D593 /* IconViewController.swift */,
-				EA76B78F1D0940CE00E2D593 /* ThemeViewController.swift */,
-				EA76B7A01D0CDC2F00E2D593 /* ReadyViewController.swift */,
 				EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */,
 				EA88D9BC1D71F67100345E84 /* LoginViewController.swift */,
 				EA1F58FD1D7B933200EAEBDE /* JoinEventViewController.swift */,
@@ -611,6 +598,7 @@
 				EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */,
 				EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */,
 				EAD511601DD7941200C4C135 /* MapViewController.swift */,
+				EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1027,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5C851A1D0160BB00A61033 /* GalleryTableViewCell.swift in Sources */,
+				EAD511631DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift in Sources */,
 				EA0ACBFC1DD43DA40038179F /* TimeInfoViewController.swift in Sources */,
 				EA566DE81D7BDBA200135CDB /* EventObject.swift in Sources */,
 				EAD511591DD6CB9800C4C135 /* FullscreenImageViewController.swift in Sources */,
@@ -1035,20 +1024,16 @@
 				EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */,
 				EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */,
 				EA6DA95C1CF543B000B14A89 /* OverviewViewController.swift in Sources */,
-				EA76B78A1D09407F00E2D593 /* MusicViewController.swift in Sources */,
 				EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */,
 				EA2589051CE2E2D20060B6F2 /* File.swift in Sources */,
 				EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */,
-				EA76B7A11D0CDC2F00E2D593 /* ReadyViewController.swift in Sources */,
 				EAC553821DCEBADF001D4DE5 /* MorePeopleViewController.swift in Sources */,
 				EA1F58FE1D7B933200EAEBDE /* JoinEventViewController.swift in Sources */,
 				EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */,
 				EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */,
 				EA2588FE1CE04A550060B6F2 /* HomeViewController.swift in Sources */,
-				EA76B78E1D0940C600E2D593 /* IconViewController.swift in Sources */,
 				EA76B7681D053AEE00E2D593 /* InfoViewController.swift in Sources */,
 				EA76B79F1D0CBD3000E2D593 /* GeneralView.swift in Sources */,
-				EA76B7901D0940CE00E2D593 /* ThemeViewController.swift in Sources */,
 				EAD487CB1D84835D0059EB44 /* SDevCircleButton.swift in Sources */,
 				EA0ACBFE1DD43DAF0038179F /* PeopleInfoViewController.swift in Sources */,
 				EAD487CD1D8498D60059EB44 /* ConvenientMethods.swift in Sources */,
@@ -1058,7 +1043,6 @@
 				EAD5115B1DD7829F00C4C135 /* FriendListTableViewCell.swift in Sources */,
 				EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */,
 				EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */,
-				EA76B78C1D0940BF00E2D593 /* TextViewController.swift in Sources */,
 				EA5382DF1D7D25EA0044D059 /* ProfileIconView.swift in Sources */,
 				EAD487C51D846A2F0059EB44 /* PreviewVideoViewController.swift in Sources */,
 				EA76B7761D07F6CD00E2D593 /* FinalizeViewController.swift in Sources */,

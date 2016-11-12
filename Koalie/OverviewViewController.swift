@@ -12,8 +12,7 @@ import FBSDKShareKit
 class OverviewViewController: UIViewController, FBSDKAppInviteDialogDelegate {
     @IBAction func dismissButtonClick(_ sender: AnyObject) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationReloadData"), object: nil)
-        self.presentingViewController?.presentingViewController!.dismiss(animated: true, completion: {
-        })
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {

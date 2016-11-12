@@ -13,4 +13,8 @@ class ConvenientMethods: NSObject {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return paths[0]
     }
+    
+    static func applicationDocumentsDirectory()-> URL {
+        return FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).last!
+    }
 }

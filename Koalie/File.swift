@@ -53,6 +53,7 @@ struct Constants {
     }
     
     struct messages {
+        static let notFound = "NotFound"
         static let eventfull = "EventFull"
         static let alreadyJoined = "AlreadyJoined"
         static let success = "Success"

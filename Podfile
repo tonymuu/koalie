@@ -20,6 +20,7 @@ target 'Koalie' do
     pod 'ExpandingMenu', '~> 0.3'
     pod 'DGElasticPullToRefresh'
     pod 'SCLAlertView'
+    pod 'NVActivityIndicatorView'
 end
 
 
