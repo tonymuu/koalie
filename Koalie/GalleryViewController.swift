@@ -12,7 +12,7 @@ import AWSS3
 import AwesomeCache
 import FBSDKLoginKit
 
-class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
     @IBOutlet weak var eventTableView: UITableView!
     
     var eventId: String!
@@ -106,7 +106,9 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.eventId = eventId
                 cell.voted = isVoted
                 cell.mediaId = mediaId
-                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector(("presentImageFullscreen:")))
+                let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentImageFullscreen))
+                cell.viewPicture.isUserInteractionEnabled = true
+                tapGestureRecognizer.delegate = self
                 cell.viewPicture.addGestureRecognizer(tapGestureRecognizer)
 
                 let cache = try Cache<UIImage>(name: "imageCache")
@@ -206,22 +208,12 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return mock!
     }
     
-    func dismissImageFullscreen(sender: UITapGestureRecognizer) {
-        if sender.state == .ended {
-            sender.view?.removeFromSuperview()
-        }
-    }
-
-    
     func presentImageFullscreen(sender: UITapGestureRecognizer) {
-        if sender.state == .ended {
-            let fullImageView = sender.view as! UIImageView
-            fullImageView.frame = self.view.frame
-            fullImageView.isUserInteractionEnabled = true
-            let tapGC = UITapGestureRecognizer(target: self, action: #selector(dismissImageFullscreen))
-            fullImageView.addGestureRecognizer(tapGC)
-            self.view.addSubview(fullImageView)
-        }
+        let fullImageView = sender.view as! UIImageView
+        let image = fullImageView.image
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FullscreenImageVC") as! FullscreenImageViewController
+        vc.image = image
+        self.present(vc, animated: true, completion: nil)
     }
     
     func applicationDocumentsDirectory()-> URL {

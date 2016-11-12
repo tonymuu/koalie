@@ -38,7 +38,7 @@ class PeopleViewController: UIViewController {
             ]
         
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-            print(response.request)
+            print(response.request ?? "Response request")
         }
         
     }

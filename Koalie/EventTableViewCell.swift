@@ -20,17 +20,22 @@ class EventTableViewCell: UITableViewCell {
     weak var delegate: PresentInfoViewProtocol?
     var eventId: String!
     var eventImage: UIImage?
+    var hoursLong: String!
+    var hoursLeft: String!
+    var eventSize: String!
+    var userTotal: String!
     
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storybard.instantiateViewController(withIdentifier: "InfoVC") as! InfoViewController
-        let navigationVC = UINavigationController(rootViewController: vc)
         vc.eventId = self.eventId
         vc.eventName = self.labelEvent.text
         vc.timeLeft = self.labelProgress.text
         vc.eventImage = self.eventImage
-        navigationVC.isNavigationBarHidden = true
-        navigationVC.navigationBar.backgroundColor = Constants.backgroundColor.dark
-        delegate?.presentInfoView(controller: navigationVC)
+        vc.hoursLong = self.hoursLong
+        vc.hoursLeft = self.hoursLeft
+        vc.userTotal = self.userTotal
+        vc.eventSize = self.eventSize
+        delegate?.presentInfoView(controller: vc)
     }
 }

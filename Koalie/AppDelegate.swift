@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let r = FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        UINavigationBar.appearance().tintColor = UIColor.white
 // Login logic
         if isUserAuthenticated() {
             
@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let myStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let vc = myStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
             let navigationVC = UINavigationController(rootViewController: vc)
-            navigationVC.navigationBar.barTintColor = Constants.backgroundColor.dark
+            navigationVC.navigationBar.barTintColor = Constants.backgroundColor.darkTranslucent
             self.window?.rootViewController = navigationVC
             
             return true

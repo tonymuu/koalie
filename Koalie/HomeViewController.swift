@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("Something wrong")
         }
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -105,6 +105,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let size = String(describing: eventData.object(forKey: "size")!)
         let filled = String(describing: (eventData.object(forKey: "member_ids") as! NSArray).count)
         var timeLeft = eventData.object(forKey: "timeLeft")! as! Int
+        let hoursLong = String(describing: eventData.object(forKey: "hoursLong"))
         let medias = eventData.object(forKey: "media_ids") as! [NSDictionary]
         var storedPath = ""
         for media in medias {
@@ -119,6 +120,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.labelEvent.text = eventData.object(forKey: "name") as? String
         cell.labelSize.text = filled.appending(" / ").appending(size)
         cell.eventId = eventData.object(forKey: "_id") as! String
+        cell.hoursLong = hoursLong
+        cell.hoursLeft = String(describing: timeLeft)
+        cell.userTotal = filled
+        cell.eventSize = size
         
         if timeLeft <= 0 {
             cell.labelProgress.text = "Ended on ".appending(String(describing: eventData.object(forKey: "date_end")!))
@@ -196,6 +201,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 self.navigationItem.titleView = self.generateProfileImageView(self.userData.object(forKey: "picture") as! String)
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
+//                var newFrame = self.navigationController?.navigationBar.frame
+//                newFrame?.size.height -= 16
+//                self.navigationController!.navigationBar.frame = newFrame!
                 self.eventTableView.reloadData()
                 self.revealingSplashView.finishHeartBeatAnimation()
             case .failure(let error):
@@ -210,6 +218,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func presentInfoView(controller: UIViewController) {
-        self.navigationController?.present(controller, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -142,11 +142,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             transferManager?.upload(uploadRequest).continue( {(task: AWSTask!) -> AnyObject! in
                 if (task.error != nil) {
-                    print(task.error)
+                    print(task.error ?? "Task Error")
                 }
                 if (task.result != nil) {
                     let uploadOutput = task.result
-                    print(uploadOutput)
+                    print(uploadOutput ?? "Upload Output")
                 }
                 return nil
             })

@@ -19,6 +19,10 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     var eventId: String!
     var eventName: String!
     var timeLeft: String!
+    var hoursLeft: String!
+    var hoursLong: String!
+    var eventSize: String!
+    var userTotal: String!
     var eventImage: UIImage!
     var locationManager: CLLocationManager!
     
@@ -29,6 +33,8 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     @IBAction func buttonAddTimeClick(_ sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimeInfoVC") as! TimeInfoViewController
         vc.eventId = self.eventId
+        vc.timeLeft = self.timeLeft
+        vc.hoursLong = self.hoursLong
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -36,6 +42,8 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     @IBAction func buttonAddPeopleClick(_ sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PeopleInfoVC") as! PeopleInfoViewController
         vc.eventId = self.eventId
+        vc.userTotal = self.userTotal
+        vc.eventSize = self.eventSize
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -48,7 +56,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
         
@@ -69,6 +77,19 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
         mapView.setCenter(mapView.userLocation.coordinate, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController!.navigationBar.isTranslucent = false
+    }
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         var mapRegion = MKCoordinateRegion()
         mapRegion.center.latitude = mapView.userLocation.coordinate.latitude
@@ -84,5 +105,5 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     
     func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didFailWithError error: Error!) {
         
-    }
+    }    
 }

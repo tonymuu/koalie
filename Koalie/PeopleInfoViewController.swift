@@ -10,28 +10,35 @@ import UIKit
 
 class PeopleInfoViewController: UIViewController {
 
-    var eventId: String!
     
+    @IBOutlet weak var labelUserTotal: UILabel!
+    @IBOutlet weak var labelOpenSpots: UILabel!
+    var eventId: String!
+    var userTotal: String!
+    var eventSize: String!
+    
+    var addPeopleBarButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let openSpots = String(describing: Int(eventSize)! - Int(userTotal)!)
+        self.labelOpenSpots.text = openSpots
+        self.labelUserTotal.text = userTotal
+        addPeopleBarButton = UIBarButtonItem(title: "Add People", style: .plain, target: self, action: #selector(showAddPeopleVC))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.rightBarButtonItem = addPeopleBarButton
     }
-    */
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.rightBarButtonItem = nil
+    }
+    
+    func showAddPeopleVC() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddPeopleVC") as! MorePeopleViewController
+        vc.eventId = eventId
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

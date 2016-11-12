@@ -157,6 +157,7 @@
 		EAD511551DD5A12700C4C135 /* X Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511271DD5A12700C4C135 /* X Icon.png */; };
 		EAD511561DD5A12700C4C135 /* You Icon NOT Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511281DD5A12700C4C135 /* You Icon NOT Selected.png */; };
 		EAD511571DD5A12700C4C135 /* You Icon Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511291DD5A12700C4C135 /* You Icon Selected.png */; };
+		EAD511591DD6CB9800C4C135 /* FullscreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
 		EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */; };
 /* End PBXBuildFile section */
@@ -347,6 +348,7 @@
 		EAD511271DD5A12700C4C135 /* X Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X Icon.png"; sourceTree = "<group>"; };
 		EAD511281DD5A12700C4C135 /* You Icon NOT Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "You Icon NOT Selected.png"; sourceTree = "<group>"; };
 		EAD511291DD5A12700C4C135 /* You Icon Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "You Icon Selected.png"; sourceTree = "<group>"; };
+		EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullscreenImageViewController.swift; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
 		EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -601,6 +603,7 @@
 				EAC553831DCEBAF9001D4DE5 /* MoreTimeViewController.swift */,
 				EA0ACBFB1DD43DA40038179F /* TimeInfoViewController.swift */,
 				EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */,
+				EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1016,6 +1019,7 @@
 				EA5C851A1D0160BB00A61033 /* GalleryTableViewCell.swift in Sources */,
 				EA0ACBFC1DD43DA40038179F /* TimeInfoViewController.swift in Sources */,
 				EA566DE81D7BDBA200135CDB /* EventObject.swift in Sources */,
+				EAD511591DD6CB9800C4C135 /* FullscreenImageViewController.swift in Sources */,
 				EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */,
 				EA4426131D83D29F00CCC4C7 /* LLSimpleCamViewController.swift in Sources */,
 				EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */,

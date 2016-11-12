@@ -25,7 +25,7 @@ class MorePeopleViewController: PeopleViewController {
         let dict = ["eventId": self.eventId,
                     "size": self.size] as [String : Any]
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.addPeople, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-            print(response.request)
+            print(response.request ?? "Response")
         }
         dismiss(animated: true, completion: nil)
     }
