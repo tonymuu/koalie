@@ -12,14 +12,12 @@ import FBSDKLoginKit
 class OptionsMenuTableViewController: UITableViewController {
     @IBOutlet weak var cellLogout: UITableViewCell!
 
-    func buttonLogoutClick() {
-    }
-    
+    var delegate: HomeViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
+        let logoutTap = UITapGestureRecognizer(target: self, action: #selector(logout))
+        cellLogout.addGestureRecognizer(logoutTap)
     }
 
     // MARK: - Table view data source
@@ -35,10 +33,15 @@ class OptionsMenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.tableView(tableView, cellForRowAt: indexPath) == cellLogout {
-            self.navigationController?.dismiss(animated: true, completion: nil)
-
-            FBSDKLoginManager().logOut()
-        }
     }
+    
+    func logout() {
+        self.delegate.deinitPullToRefresh()
+        self.navigationController!.dismiss(animated: true, completion: nil)
+        FBSDKLoginManager().logOut()
+    }
+}
+
+protocol DeinitPullToRefreshDelegate {
+    func deinitPullToRefresh();
 }

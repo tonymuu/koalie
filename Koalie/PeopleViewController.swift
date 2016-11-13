@@ -27,8 +27,10 @@ class PeopleViewController: UIViewController {
     }
     
     @IBAction func ButtonCreateClick(_ sender: AnyObject) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview")
-        self.present(vc!, animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview") as! OverviewViewController
+        vc.eventName = newEvent.eventName
+        vc.labelString = Constants.labelStrings.createSuccess
+        self.present(vc, animated: true, completion: nil)
         self.navigationController?.popToRootViewController(animated: true)
         
         let dict = [

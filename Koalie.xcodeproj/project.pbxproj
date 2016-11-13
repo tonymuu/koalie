@@ -157,6 +157,7 @@
 		EAD5115F1DD791BD00C4C135 /* Invite Circle Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */; };
 		EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511601DD7941200C4C135 /* MapViewController.swift */; };
 		EAD511631DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */; };
+		EAE09C891DD810AD00A7B8CE /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE09C881DD810AD00A7B8CE /* ErrorViewController.swift */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
 		EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */; };
 /* End PBXBuildFile section */
@@ -347,6 +348,7 @@
 		EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Invite Circle Icon.png"; sourceTree = "<group>"; };
 		EAD511601DD7941200C4C135 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmJoinEventViewController.swift; sourceTree = "<group>"; };
+		EAE09C881DD810AD00A7B8CE /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
 		EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -599,6 +601,7 @@
 				EAD511581DD6CB9800C4C135 /* FullscreenImageViewController.swift */,
 				EAD511601DD7941200C4C135 /* MapViewController.swift */,
 				EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */,
+				EAE09C881DD810AD00A7B8CE /* ErrorViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				EAD511591DD6CB9800C4C135 /* FullscreenImageViewController.swift in Sources */,
 				EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */,
 				EA4426131D83D29F00CCC4C7 /* LLSimpleCamViewController.swift in Sources */,
+				EAE09C891DD810AD00A7B8CE /* ErrorViewController.swift in Sources */,
 				EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */,
 				EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */,
 				EA6DA95C1CF543B000B14A89 /* OverviewViewController.swift in Sources */,

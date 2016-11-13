@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var eventDataList: [NSDictionary]!
     var userId: String!
     
+    var loadingView: DGElasticPullToRefreshLoadingViewCircle!
     var cache: Cache<UIImage>? = nil
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         // pull to refresh
-        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor.white
         self.eventTableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
             print("pulled to refresh")
@@ -66,14 +67,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidAppear(animated)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "HomeToInfoSegue" {
-            let destinationVC = segue.destination as! InfoViewController
-            
-        }
-    }
-
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OptionsMenuVC") as! OptionsMenuTableViewController
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -123,12 +120,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // time left label
         if timeLeft <= 0 {
             cell.labelProgress.text = "Ended on ".appending(String(describing: eventData.object(forKey: "date_end")!))
+            cell.viewOverLay.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         } else if timeLeft <= 24 {
             cell.labelProgress.text = String(describing: timeLeft).appending(" Hours Left")
+            cell.viewOverLay.backgroundColor = Constants.backgroundColor.dark.withAlphaComponent(0.7)
         } else {
             let daysLeft = timeLeft / 24
             timeLeft = timeLeft % 24
             cell.labelProgress.text = String(describing: daysLeft).appending(" Days ").appending(String(describing: timeLeft)).appending(" Hours Left")
+            cell.viewOverLay.backgroundColor = Constants.backgroundColor.dark.withAlphaComponent(0.7)
         }
         
         // cell background image: most voted nonvideo image
@@ -143,6 +143,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.backgroundView = UIImageView(image: image)
             cell.eventImage = image
             cell.backgroundView?.contentMode = .scaleAspectFill
+        } else {
+            cell.viewOverLay.backgroundColor = UIColor.clear
         }
         
         return cell;
@@ -225,5 +227,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func presentInfoView(controller: UIViewController) {
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension HomeViewController: DeinitPullToRefreshDelegate {
+    func deinitPullToRefresh() {
+        self.eventTableView.dg_removePullToRefresh()
     }
 }

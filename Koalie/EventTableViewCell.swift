@@ -16,6 +16,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var labelEvent: UILabel!
     @IBOutlet weak var labelProgress: UILabel!
     @IBOutlet weak var labelSize: UILabel!
+    @IBOutlet weak var viewOverLay: UIView!
     
     weak var delegate: PresentInfoViewProtocol?
     var eventId: String!

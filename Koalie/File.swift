@@ -29,10 +29,10 @@ struct Constants {
     
     struct URIs {
         // production url
-       static let baseUri = "https://koalie.herokuapp.com"
+//       static let baseUri = "https://koalie.herokuapp.com"
         
         // dev url
-//        static let baseUri = "http://localhost:3000"
+        static let baseUri = "http://localhost:3000"
         
         static let facebookAppUrl = "https://fb.me/1712424622418492"
 
@@ -57,6 +57,11 @@ struct Constants {
         static let eventfull = "EventFull"
         static let alreadyJoined = "AlreadyJoined"
         static let success = "Success"
+    }
+    
+    struct labelStrings {
+        static let joinSuccess = "You have joined the event!"
+        static let createSuccess = "Your event has been created!"
     }
 }
 

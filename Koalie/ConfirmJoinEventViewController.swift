@@ -26,9 +26,25 @@ class ConfirmJoinEventViewController: UIViewController {
     var coverPicture: UIImage!
     var eventName: String!
     var message: String!
+    var eventId: String!
     
     @IBAction func buttonConfirmClick(_ sender: Any) {
-        
+        let dict = ["eventId": eventId!]
+        Alamofire.request(Constants.URIs.baseUri + Constants.routes.joinEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON {
+            response in switch response.result {
+            case .success(let data):
+                print("successfully joined")
+            case .failure(let error):
+                print(error)
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "UnknownErrorVC")
+//                self.present(vc!, animated: true, completion: nil)
+            }
+        }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview") as! OverviewViewController
+        vc.eventName = self.eventName
+        vc.labelString = Constants.labelStrings.joinSuccess
+        self.present(vc, animated: true, completion: nil)
+
     }
     @IBAction func buttonCancelClick(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

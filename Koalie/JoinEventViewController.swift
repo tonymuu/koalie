@@ -38,7 +38,8 @@ class JoinEventViewController: UIViewController {
                 } else if message == Constants.messages.notFound {
                     self.presentNotFoundScreen()
                 } else {
-                    self.presentSuccessScreen(event: dict, message: message)
+                    let eventId = String(describing: dict.object(forKey: "eventId")!)
+                    self.presentSuccessScreen(event: dict, message: message, eventId: eventId)
                 }
             case .failure(let error):
                 print(error)
@@ -53,15 +54,19 @@ class JoinEventViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // tap gesture
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    func presentSuccessScreen(event: NSDictionary, message: String) {
+        
+        // activity indicator
         let rect = CGRect(origin: CGPoint(x: self.view.center.x - 40.0, y: self.view.center.y - 40.0), size: CGSize(width: 80.0, height: 80.0))
         activityIndicator = NVActivityIndicatorView(frame: rect, type: NVActivityIndicatorType.ballRotateChase, color: nil, padding: nil)
         activityIndicator.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.view.addSubview(activityIndicator)
+
+    }
+    
+    func presentSuccessScreen(event: NSDictionary, message: String, eventId: String) {
         activityIndicator.startAnimating()
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmJoinEventVC") as! ConfirmJoinEventViewController
         let coverPictureKey = event.object(forKey: "coverPicture")! as! String
@@ -73,18 +78,23 @@ class JoinEventViewController: UIViewController {
         vc.hoursLeft = hoursLeft
         vc.eventName = eventName
         vc.message = message
-        loadCoverPicture(coverPictureKey: coverPictureKey, vc: vc)
+        vc.eventId = eventId
+        if coverPictureKey == "" {
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            loadCoverPicture(coverPictureKey: coverPictureKey, vc: vc)
+        }
 //        self.navigationController?.popToRootViewController(animated: true)
     }
     
     func presentFailureScreen() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AlreadyJoinedVC")
-        self.present(vc!, animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AlreadyJoinedVC") as! ErrorViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     func presentNotFoundScreen() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventNotFoundVC")
-        self.present(vc!, animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventNotFoundVC") as! ErrorViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     func loadCoverPicture(coverPictureKey: String!, vc: ConfirmJoinEventViewController) {
@@ -108,7 +118,6 @@ class JoinEventViewController: UIViewController {
                 let image: UIImage! = UIImage(contentsOfFile: downloadingFilePath.relativePath)
                 DispatchQueue.main.async {
                     vc.coverPicture = image
-                    self.activityIndicator.stopAnimating()
                     self.present(vc, animated: true, completion: nil)
                 }
                 return downloadOutput
@@ -117,5 +126,9 @@ class JoinEventViewController: UIViewController {
         })
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.activityIndicator.stopAnimating()
+    }
     
 }
