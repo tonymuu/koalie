@@ -14,7 +14,6 @@
 		EA0ACBFE1DD43DAF0038179F /* PeopleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */; };
 		EA163E121DBF170D009FDC2D /* App-Icon-Template.png in Resources */ = {isa = PBXBuildFile; fileRef = EA163E111DBF170D009FDC2D /* App-Icon-Template.png */; };
 		EA1F58F81D7B772A00EAEBDE /* Wallpaper for App.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */; };
-		EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */; };
 		EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */; };
 		EA1F58FE1D7B933200EAEBDE /* JoinEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1F58FD1D7B933200EAEBDE /* JoinEventViewController.swift */; };
 		EA21DAA11CD083D200786F30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAA01CD083D200786F30 /* AppDelegate.swift */; };
@@ -28,7 +27,6 @@
 		EA2589021CE0518E0060B6F2 /* Load Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA2589001CE0518E0060B6F2 /* Load Screen.jpg */; };
 		EA2589051CE2E2D20060B6F2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589041CE2E2D20060B6F2 /* File.swift */; };
 		EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */; };
-		EA2A39ED1CFAAA6A00BC6C4A /* Info Button Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2A39EC1CFAAA6A00BC6C4A /* Info Button Icon.png */; };
 		EA4426131D83D29F00CCC4C7 /* LLSimpleCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4426121D83D29F00CCC4C7 /* LLSimpleCamViewController.swift */; };
 		EA45773B1D7FD73800BF5936 /* Hashtag Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA45773A1D7FD73800BF5936 /* Hashtag Icon@2x.png */; };
 		EA45773D1D7FD76800BF5936 /* Question Mark Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA45773C1D7FD76800BF5936 /* Question Mark Icon@2x.png */; };
@@ -47,38 +45,16 @@
 		EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5382E01D7D264B0044D059 /* ProfileIconView.xib */; };
 		EA566DE81D7BDBA200135CDB /* EventObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA566DE71D7BDBA200135CDB /* EventObject.swift */; };
 		EA5BC4831D237E1A00A066AC /* Back Arrow.pdf in Resources */ = {isa = PBXBuildFile; fileRef = EA5BC4821D237E1A00A066AC /* Back Arrow.pdf */; };
-		EA5C850F1CFEB1F900A61033 /* Back-Arrow-Icons 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C85091CFEB1F900A61033 /* Back-Arrow-Icons 1.png */; };
-		EA5C85101CFEB1F900A61033 /* Delet-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C850A1CFEB1F900A61033 /* Delet-Icon.png */; };
-		EA5C85111CFEB1F900A61033 /* Light Arrow Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C850B1CFEB1F900A61033 /* Light Arrow Icon.png */; };
-		EA5C85121CFEB1F900A61033 /* Not Selected-Download-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C850C1CFEB1F900A61033 /* Not Selected-Download-Button.png */; };
-		EA5C85131CFEB1F900A61033 /* Selected-Download-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C850D1CFEB1F900A61033 /* Selected-Download-Button.png */; };
-		EA5C85141CFEB1F900A61033 /* Unselected Delete Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C850E1CFEB1F900A61033 /* Unselected Delete Icon.png */; };
 		EA5C85161CFFFB0800A61033 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5C85151CFFFB0800A61033 /* GalleryViewController.swift */; };
-		EA5C85181D00032F00A61033 /* Gallery Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5C85171D00032F00A61033 /* Gallery Icon.png */; };
 		EA5C851A1D0160BB00A61033 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5C85191D0160BB00A61033 /* GalleryTableViewCell.swift */; };
-		EA5D48581CF3AD0100B7D10D /* Minus Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5D48571CF3AD0100B7D10D /* Minus Icon.png */; };
-		EA5D485A1CF3AD0F00B7D10D /* Plus Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA5D48591CF3AD0F00B7D10D /* Plus Icon.png */; };
-		EA6DA9561CF53C2E00B14A89 /* Email Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6DA9531CF53C2E00B14A89 /* Email Icon.png */; };
-		EA6DA9571CF53C2E00B14A89 /* Text Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6DA9541CF53C2E00B14A89 /* Text Icon.png */; };
-		EA6DA9581CF53C2E00B14A89 /* X-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6DA9551CF53C2E00B14A89 /* X-Icon.png */; };
 		EA6DA95A1CF53C3E00B14A89 /* Overview Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA6DA9591CF53C3E00B14A89 /* Overview Icon.png */; };
 		EA6DA95C1CF543B000B14A89 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6DA95B1CF543B000B14A89 /* OverviewViewController.swift */; };
 		EA7114081D80F94E009B1846 /* OptionsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7114071D80F94E009B1846 /* OptionsMenuTableViewController.swift */; };
-		EA76B7641D03EF9800E2D593 /* Back-Arrow-Icons 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7631D03EF9800E2D593 /* Back-Arrow-Icons 2.png */; };
-		EA76B7661D03EFA400E2D593 /* Light Arrow Icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7651D03EFA400E2D593 /* Light Arrow Icon 2.png */; };
 		EA76B7681D053AEE00E2D593 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B7671D053AEE00E2D593 /* InfoViewController.swift */; };
 		EA76B7721D07F14200E2D593 /* Photo Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76D1D07F14200E2D593 /* Photo Icon.png */; };
 		EA76B7731D07F14200E2D593 /* Top Rated Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76E1D07F14200E2D593 /* Top Rated Icon.png */; };
 		EA76B7741D07F14200E2D593 /* Video Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B76F1D07F14200E2D593 /* Video Icon.png */; };
 		EA76B7761D07F6CD00E2D593 /* FinalizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B7751D07F6CD00E2D593 /* FinalizeViewController.swift */; };
-		EA76B7801D093F8200E2D593 /* Add Icons Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7771D093F8200E2D593 /* Add Icons Icon.png */; };
-		EA76B7811D093F8200E2D593 /* Add Music Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7781D093F8200E2D593 /* Add Music Icon.png */; };
-		EA76B7821D093F8200E2D593 /* Add Text Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7791D093F8200E2D593 /* Add Text Icon.png */; };
-		EA76B7831D093F8200E2D593 /* Check-Mark-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77A1D093F8200E2D593 /* Check-Mark-Icon.png */; };
-		EA76B7851D093F8200E2D593 /* Pause Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77C1D093F8200E2D593 /* Pause Icon.png */; };
-		EA76B7861D093F8200E2D593 /* Play Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77D1D093F8200E2D593 /* Play Icon.png */; };
-		EA76B7871D093F8200E2D593 /* Preview-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77E1D093F8200E2D593 /* Preview-Icon.png */; };
-		EA76B7881D093F8200E2D593 /* Theme Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA76B77F1D093F8200E2D593 /* Theme Icon.png */; };
 		EA76B7921D0CBBD700E2D593 /* ThemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7911D0CBBD700E2D593 /* ThemeView.xib */; };
 		EA76B7991D0CBC7100E2D593 /* Full Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7941D0CBC7100E2D593 /* Full Selected.jpg */; };
 		EA76B79A1D0CBC7100E2D593 /* Icon Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7951D0CBC7100E2D593 /* Icon Selected.jpg */; };
@@ -90,18 +66,18 @@
 		EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */; };
 		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
 		EA91ABB71CE43EAB00EA81BD /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */; };
-		EA91ABBC1CE91E2D00EA81BD /* Back-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABBA1CE91E2D00EA81BD /* Back-Icon.png */; };
 		EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */ = {isa = PBXBuildFile; fileRef = EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */; };
 		EAB7B2281CF2C498005D01CA /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB7B2271CF2C498005D01CA /* TimeViewController.swift */; };
 		EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = EABC87861CD5CE4D001A6C0F /* Property List.plist */; };
 		EAC553821DCEBADF001D4DE5 /* MorePeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC553811DCEBADF001D4DE5 /* MorePeopleViewController.swift */; };
 		EAC553841DCEBAF9001D4DE5 /* MoreTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC553831DCEBAF9001D4DE5 /* MoreTimeViewController.swift */; };
+		EAD3A5AC1DD9528B00A4EF31 /* Plus Button.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD3A5AB1DD9528B00A4EF31 /* Plus Button.png */; };
+		EAD3A5AE1DD9529100A4EF31 /* X Icon White.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD3A5AD1DD9529100A4EF31 /* X Icon White.png */; };
+		EAD3A5B01DD952F000A4EF31 /* Minus Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD3A5AF1DD952F000A4EF31 /* Minus Icon.png */; };
 		EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */; };
 		EAD487C11D84650A0059EB44 /* LLSimpleCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */; };
 		EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */; };
 		EAD487C51D846A2F0059EB44 /* PreviewVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487C41D846A2F0059EB44 /* PreviewVideoViewController.swift */; };
-		EAD487C71D8481BB0059EB44 /* Flip Camera Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD487C61D8481BB0059EB44 /* Flip Camera Icon.png */; };
-		EAD487C91D8481E20059EB44 /* Home Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD487C81D8481E20059EB44 /* Home Icon.png */; };
 		EAD487CB1D84835D0059EB44 /* SDevCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */; };
 		EAD487CD1D8498D60059EB44 /* ConvenientMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD487CC1D8498D60059EB44 /* ConvenientMethods.swift */; };
 		EAD510FA1DD585DA00C4C135 /* Options Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD510F91DD585DA00C4C135 /* Options Icon.png */; };
@@ -158,8 +134,18 @@
 		EAD511611DD7941200C4C135 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511601DD7941200C4C135 /* MapViewController.swift */; };
 		EAD511631DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */; };
 		EAE09C891DD810AD00A7B8CE /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE09C881DD810AD00A7B8CE /* ErrorViewController.swift */; };
+		EAED8F801DD8D169007CB040 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F761DD8D169007CB040 /* Montserrat-Black.otf */; };
+		EAED8F811DD8D169007CB040 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F771DD8D169007CB040 /* Montserrat-Bold.otf */; };
+		EAED8F821DD8D169007CB040 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F781DD8D169007CB040 /* Montserrat-ExtraBold.otf */; };
+		EAED8F831DD8D169007CB040 /* Montserrat-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F791DD8D169007CB040 /* Montserrat-ExtraLight.otf */; };
+		EAED8F841DD8D169007CB040 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7A1DD8D169007CB040 /* Montserrat-Light.otf */; };
+		EAED8F851DD8D169007CB040 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7B1DD8D169007CB040 /* Montserrat-Medium.otf */; };
+		EAED8F861DD8D169007CB040 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7C1DD8D169007CB040 /* Montserrat-Regular.otf */; };
+		EAED8F871DD8D169007CB040 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7D1DD8D169007CB040 /* Montserrat-SemiBold.otf */; };
+		EAED8F881DD8D169007CB040 /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7E1DD8D169007CB040 /* Montserrat-Thin.otf */; };
+		EAED8F891DD8D169007CB040 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7F1DD8D169007CB040 /* Montserrat-UltraLight.otf */; };
+		EAED8F8B1DD8D47D007CB040 /* Koalie Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F8A1DD8D47D007CB040 /* Koalie Logo.png */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
-		EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,7 +178,6 @@
 		EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleInfoViewController.swift; sourceTree = "<group>"; };
 		EA163E111DBF170D009FDC2D /* App-Icon-Template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-Icon-Template.png"; sourceTree = "<group>"; };
 		EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wallpaper for App.png"; sourceTree = "<group>"; };
-		EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Koalie Logo.png"; sourceTree = "<group>"; };
 		EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upload_test.jpg; sourceTree = "<group>"; };
 		EA1F58FD1D7B933200EAEBDE /* JoinEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinEventViewController.swift; sourceTree = "<group>"; };
 		EA21DA9D1CD083D200786F30 /* Koalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +197,6 @@
 		EA2589001CE0518E0060B6F2 /* Load Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Load Screen.jpg"; path = "images/Load Screen.jpg"; sourceTree = "<group>"; };
 		EA2589041CE2E2D20060B6F2 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		EA2589081CE2E7350060B6F2 /* HashtagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagViewController.swift; sourceTree = "<group>"; };
-		EA2A39EC1CFAAA6A00BC6C4A /* Info Button Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Info Button Icon.png"; sourceTree = "<group>"; };
 		EA41BAE31D935BE2004A69D4 /* Koalie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Koalie.entitlements; sourceTree = "<group>"; };
 		EA4426121D83D29F00CCC4C7 /* LLSimpleCamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLSimpleCamViewController.swift; sourceTree = "<group>"; };
 		EA4426141D83D43500CCC4C7 /* Koalie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Koalie-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -237,38 +221,16 @@
 		EA5382E01D7D264B0044D059 /* ProfileIconView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileIconView.xib; sourceTree = "<group>"; };
 		EA566DE71D7BDBA200135CDB /* EventObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventObject.swift; sourceTree = "<group>"; };
 		EA5BC4821D237E1A00A066AC /* Back Arrow.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Back Arrow.pdf"; sourceTree = "<group>"; };
-		EA5C85091CFEB1F900A61033 /* Back-Arrow-Icons 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Arrow-Icons 1.png"; sourceTree = "<group>"; };
-		EA5C850A1CFEB1F900A61033 /* Delet-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delet-Icon.png"; sourceTree = "<group>"; };
-		EA5C850B1CFEB1F900A61033 /* Light Arrow Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light Arrow Icon.png"; sourceTree = "<group>"; };
-		EA5C850C1CFEB1F900A61033 /* Not Selected-Download-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Not Selected-Download-Button.png"; sourceTree = "<group>"; };
-		EA5C850D1CFEB1F900A61033 /* Selected-Download-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Selected-Download-Button.png"; sourceTree = "<group>"; };
-		EA5C850E1CFEB1F900A61033 /* Unselected Delete Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unselected Delete Icon.png"; sourceTree = "<group>"; };
 		EA5C85151CFFFB0800A61033 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
-		EA5C85171D00032F00A61033 /* Gallery Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gallery Icon.png"; sourceTree = "<group>"; };
 		EA5C85191D0160BB00A61033 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
-		EA5D48571CF3AD0100B7D10D /* Minus Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Minus Icon.png"; sourceTree = "<group>"; };
-		EA5D48591CF3AD0F00B7D10D /* Plus Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus Icon.png"; sourceTree = "<group>"; };
-		EA6DA9531CF53C2E00B14A89 /* Email Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email Icon.png"; sourceTree = "<group>"; };
-		EA6DA9541CF53C2E00B14A89 /* Text Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Text Icon.png"; sourceTree = "<group>"; };
-		EA6DA9551CF53C2E00B14A89 /* X-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X-Icon.png"; sourceTree = "<group>"; };
 		EA6DA9591CF53C3E00B14A89 /* Overview Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overview Icon.png"; sourceTree = "<group>"; };
 		EA6DA95B1CF543B000B14A89 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		EA7114071D80F94E009B1846 /* OptionsMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsMenuTableViewController.swift; sourceTree = "<group>"; };
-		EA76B7631D03EF9800E2D593 /* Back-Arrow-Icons 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-Arrow-Icons 2.png"; sourceTree = "<group>"; };
-		EA76B7651D03EFA400E2D593 /* Light Arrow Icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Light Arrow Icon 2.png"; sourceTree = "<group>"; };
 		EA76B7671D053AEE00E2D593 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		EA76B76D1D07F14200E2D593 /* Photo Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Photo Icon.png"; sourceTree = "<group>"; };
 		EA76B76E1D07F14200E2D593 /* Top Rated Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Top Rated Icon.png"; sourceTree = "<group>"; };
 		EA76B76F1D07F14200E2D593 /* Video Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Video Icon.png"; sourceTree = "<group>"; };
 		EA76B7751D07F6CD00E2D593 /* FinalizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalizeViewController.swift; sourceTree = "<group>"; };
-		EA76B7771D093F8200E2D593 /* Add Icons Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Icons Icon.png"; sourceTree = "<group>"; };
-		EA76B7781D093F8200E2D593 /* Add Music Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Music Icon.png"; sourceTree = "<group>"; };
-		EA76B7791D093F8200E2D593 /* Add Text Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Text Icon.png"; sourceTree = "<group>"; };
-		EA76B77A1D093F8200E2D593 /* Check-Mark-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Check-Mark-Icon.png"; sourceTree = "<group>"; };
-		EA76B77C1D093F8200E2D593 /* Pause Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Icon.png"; sourceTree = "<group>"; };
-		EA76B77D1D093F8200E2D593 /* Play Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Icon.png"; sourceTree = "<group>"; };
-		EA76B77E1D093F8200E2D593 /* Preview-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Preview-Icon.png"; sourceTree = "<group>"; };
-		EA76B77F1D093F8200E2D593 /* Theme Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Theme Icon.png"; sourceTree = "<group>"; };
 		EA76B7911D0CBBD700E2D593 /* ThemeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeView.xib; sourceTree = "<group>"; };
 		EA76B7941D0CBC7100E2D593 /* Full Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Full Selected.jpg"; sourceTree = "<group>"; };
 		EA76B7951D0CBC7100E2D593 /* Icon Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Icon Selected.jpg"; sourceTree = "<group>"; };
@@ -280,18 +242,18 @@
 		EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
 		EA91ABB61CE43EAB00EA81BD /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
-		EA91ABBA1CE91E2D00EA81BD /* Back-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Back-Icon.png"; path = "images/Back-Icon.png"; sourceTree = "<group>"; };
 		EA91ABBB1CE91E2D00EA81BD /* Hashtag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hashtag.png; path = images/Hashtag.png; sourceTree = "<group>"; };
 		EAB7B2271CF2C498005D01CA /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		EABC87861CD5CE4D001A6C0F /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		EAC553811DCEBADF001D4DE5 /* MorePeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorePeopleViewController.swift; sourceTree = "<group>"; };
 		EAC553831DCEBAF9001D4DE5 /* MoreTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTimeViewController.swift; sourceTree = "<group>"; };
+		EAD3A5AB1DD9528B00A4EF31 /* Plus Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus Button.png"; sourceTree = "<group>"; };
+		EAD3A5AD1DD9529100A4EF31 /* X Icon White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X Icon White.png"; sourceTree = "<group>"; };
+		EAD3A5AF1DD952F000A4EF31 /* Minus Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Minus Icon.png"; sourceTree = "<group>"; };
 		EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LLSimpleCamera.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Koalie-fttaifzwsnyhcodpwezrgyxydhln/Build/Products/Debug-iphoneos/LLSimpleCamera.framework"; sourceTree = "<group>"; };
 		EAD487C21D8469FA0059EB44 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		EAD487C41D846A2F0059EB44 /* PreviewVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewVideoViewController.swift; sourceTree = "<group>"; };
-		EAD487C61D8481BB0059EB44 /* Flip Camera Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip Camera Icon.png"; sourceTree = "<group>"; };
-		EAD487C81D8481E20059EB44 /* Home Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home Icon.png"; sourceTree = "<group>"; };
 		EAD487CA1D84835D0059EB44 /* SDevCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDevCircleButton.swift; sourceTree = "<group>"; };
 		EAD487CC1D8498D60059EB44 /* ConvenientMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenientMethods.swift; sourceTree = "<group>"; };
 		EAD510F91DD585DA00C4C135 /* Options Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Options Icon.png"; sourceTree = "<group>"; };
@@ -349,8 +311,18 @@
 		EAD511601DD7941200C4C135 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmJoinEventViewController.swift; sourceTree = "<group>"; };
 		EAE09C881DD810AD00A7B8CE /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		EAED8F761DD8D169007CB040 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		EAED8F771DD8D169007CB040 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		EAED8F781DD8D169007CB040 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		EAED8F791DD8D169007CB040 /* Montserrat-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.otf"; sourceTree = "<group>"; };
+		EAED8F7A1DD8D169007CB040 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		EAED8F7B1DD8D169007CB040 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		EAED8F7C1DD8D169007CB040 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		EAED8F7D1DD8D169007CB040 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		EAED8F7E1DD8D169007CB040 /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		EAED8F7F1DD8D169007CB040 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
+		EAED8F8A1DD8D47D007CB040 /* Koalie Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Koalie Logo.png"; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
-		EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bar Icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +419,7 @@
 		EA21DA9F1CD083D200786F30 /* Koalie */ = {
 			isa = PBXGroup;
 			children = (
+				EAED8F741DD8D0B1007CB040 /* Resources */,
 				EA41BAE31D935BE2004A69D4 /* Koalie.entitlements */,
 				EA2589031CE2E2C30060B6F2 /* Files */,
 				EA449F261CDF925B0009D6B2 /* Views */,
@@ -515,7 +488,6 @@
 				EA4577441D7FDCE700BF5936 /* Add People Icon@2x.png */,
 				EA4577461D7FE19C00BF5936 /* Join Icon@2x.png */,
 				EA4577401D7FDB2000BF5936 /* Clock Icon@2x.png */,
-				EA1F58F91D7B798B00EAEBDE /* Koalie Logo.png */,
 				EA76B76D1D07F14200E2D593 /* Photo Icon.png */,
 				EA76B76E1D07F14200E2D593 /* Top Rated Icon.png */,
 				EA76B76F1D07F14200E2D593 /* Video Icon.png */,
@@ -525,40 +497,6 @@
 				EA163E111DBF170D009FDC2D /* App-Icon-Template.png */,
 			);
 			name = icons;
-			sourceTree = "<group>";
-		};
-		EA5D48561CF3AC6100B7D10D /* buttons */ = {
-			isa = PBXGroup;
-			children = (
-				EAF1CA4D1D9CD28E00E1A769 /* Bar Icon.png */,
-				EAD487C61D8481BB0059EB44 /* Flip Camera Icon.png */,
-				EAD487C81D8481E20059EB44 /* Home Icon.png */,
-				EA76B7651D03EFA400E2D593 /* Light Arrow Icon 2.png */,
-				EA76B7631D03EF9800E2D593 /* Back-Arrow-Icons 2.png */,
-				EA5C85171D00032F00A61033 /* Gallery Icon.png */,
-				EA5C85091CFEB1F900A61033 /* Back-Arrow-Icons 1.png */,
-				EA76B7771D093F8200E2D593 /* Add Icons Icon.png */,
-				EA76B7781D093F8200E2D593 /* Add Music Icon.png */,
-				EA76B7791D093F8200E2D593 /* Add Text Icon.png */,
-				EA76B77A1D093F8200E2D593 /* Check-Mark-Icon.png */,
-				EA76B77C1D093F8200E2D593 /* Pause Icon.png */,
-				EA76B77D1D093F8200E2D593 /* Play Icon.png */,
-				EA76B77E1D093F8200E2D593 /* Preview-Icon.png */,
-				EA76B77F1D093F8200E2D593 /* Theme Icon.png */,
-				EA5C850A1CFEB1F900A61033 /* Delet-Icon.png */,
-				EA5C850B1CFEB1F900A61033 /* Light Arrow Icon.png */,
-				EA5C850C1CFEB1F900A61033 /* Not Selected-Download-Button.png */,
-				EA5C850D1CFEB1F900A61033 /* Selected-Download-Button.png */,
-				EA5C850E1CFEB1F900A61033 /* Unselected Delete Icon.png */,
-				EA2A39EC1CFAAA6A00BC6C4A /* Info Button Icon.png */,
-				EA91ABBA1CE91E2D00EA81BD /* Back-Icon.png */,
-				EA5D48571CF3AD0100B7D10D /* Minus Icon.png */,
-				EA5D48591CF3AD0F00B7D10D /* Plus Icon.png */,
-				EA6DA9531CF53C2E00B14A89 /* Email Icon.png */,
-				EA6DA9541CF53C2E00B14A89 /* Text Icon.png */,
-				EA6DA9551CF53C2E00B14A89 /* X-Icon.png */,
-			);
-			name = buttons;
 			sourceTree = "<group>";
 		};
 		EA76B7931D0CBC1C00E2D593 /* Views */ = {
@@ -613,7 +551,6 @@
 				EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */,
 				EA5BC4821D237E1A00A066AC /* Back Arrow.pdf */,
 				EA76B7931D0CBC1C00E2D593 /* Views */,
-				EA5D48561CF3AC6100B7D10D /* buttons */,
 				EA5D48551CF3AC5300B7D10D /* icons */,
 				EA2589001CE0518E0060B6F2 /* Load Screen.jpg */,
 			);
@@ -641,7 +578,9 @@
 				EAD511081DD5A12700C4C135 /* Divider Thin.png */,
 				EAD511091DD5A12700C4C135 /* Download Icon NOT Selected.png */,
 				EAD5110A1DD5A12700C4C135 /* Download Icon Selected.png */,
+				EAD3A5AB1DD9528B00A4EF31 /* Plus Button.png */,
 				EAD5110B1DD5A12700C4C135 /* Download Icon.png */,
+				EAD3A5AD1DD9529100A4EF31 /* X Icon White.png */,
 				EAD5110C1DD5A12700C4C135 /* Flash Off Icon.png */,
 				EAD5110D1DD5A12700C4C135 /* Flash On Icon.png */,
 				EAD5110E1DD5A12700C4C135 /* Forward Arrow Icon.png */,
@@ -650,6 +589,7 @@
 				EAD511111DD5A12700C4C135 /* Header.h */,
 				EAD511121DD5A12700C4C135 /* In Progress Icon.png */,
 				EAD511131DD5A12700C4C135 /* Info Bar.png */,
+				EAED8F8A1DD8D47D007CB040 /* Koalie Logo.png */,
 				EAD511141DD5A12700C4C135 /* Info Icon.png */,
 				EAD511151DD5A12700C4C135 /* Invite Icon.png */,
 				EAD511161DD5A12700C4C135 /* Join Event Icon.png */,
@@ -670,11 +610,37 @@
 				EAD511251DD5A12700C4C135 /* Wallpaper.png */,
 				EAD511261DD5A12700C4C135 /* White Text Box.png */,
 				EAD511271DD5A12700C4C135 /* X Icon.png */,
+				EAD3A5AF1DD952F000A4EF31 /* Minus Icon.png */,
 				EAD511281DD5A12700C4C135 /* You Icon NOT Selected.png */,
 				EAD511291DD5A12700C4C135 /* You Icon Selected.png */,
 				EAD510F91DD585DA00C4C135 /* Options Icon.png */,
 			);
 			name = "Final Graphics";
+			sourceTree = "<group>";
+		};
+		EAED8F741DD8D0B1007CB040 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EAED8F751DD8D15D007CB040 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EAED8F751DD8D15D007CB040 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EAED8F761DD8D169007CB040 /* Montserrat-Black.otf */,
+				EAED8F771DD8D169007CB040 /* Montserrat-Bold.otf */,
+				EAED8F781DD8D169007CB040 /* Montserrat-ExtraBold.otf */,
+				EAED8F791DD8D169007CB040 /* Montserrat-ExtraLight.otf */,
+				EAED8F7A1DD8D169007CB040 /* Montserrat-Light.otf */,
+				EAED8F7B1DD8D169007CB040 /* Montserrat-Medium.otf */,
+				EAED8F7C1DD8D169007CB040 /* Montserrat-Regular.otf */,
+				EAED8F7D1DD8D169007CB040 /* Montserrat-SemiBold.otf */,
+				EAED8F7E1DD8D169007CB040 /* Montserrat-Thin.otf */,
+				EAED8F7F1DD8D169007CB040 /* Montserrat-UltraLight.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -802,12 +768,11 @@
 				EAD511341DD5A12700C4C135 /* Camera Icon.png in Resources */,
 				EA4577451D7FDCE700BF5936 /* Add People Icon@2x.png in Resources */,
 				EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */,
-				EA5C85131CFEB1F900A61033 /* Selected-Download-Button.png in Resources */,
+				EAED8F891DD8D169007CB040 /* Montserrat-UltraLight.otf in Resources */,
 				EA76B79D1D0CBC7100E2D593 /* Theme Selected.jpg in Resources */,
 				EAD511421DD5A12700C4C135 /* Info Icon.png in Resources */,
 				EA1F58F81D7B772A00EAEBDE /* Wallpaper for App.png in Resources */,
 				EA4577411D7FDB2000BF5936 /* Clock Icon@2x.png in Resources */,
-				EA5C850F1CFEB1F900A61033 /* Back-Arrow-Icons 1.png in Resources */,
 				EA76B7991D0CBC7100E2D593 /* Full Selected.jpg in Resources */,
 				EAD5112E1DD5A12700C4C135 /* Back Arrow Icon.png in Resources */,
 				EAD5113C1DD5A12700C4C135 /* Flash On Icon.png in Resources */,
@@ -815,91 +780,78 @@
 				EA76B7731D07F14200E2D593 /* Top Rated Icon.png in Resources */,
 				EAD511411DD5A12700C4C135 /* Info Bar.png in Resources */,
 				EAD5113B1DD5A12700C4C135 /* Flash Off Icon.png in Resources */,
+				EAED8F871DD8D169007CB040 /* Montserrat-SemiBold.otf in Resources */,
 				EAD511451DD5A12700C4C135 /* Keep Icon.png in Resources */,
-				EA76B7801D093F8200E2D593 /* Add Icons Icon.png in Resources */,
 				EAD5115D1DD791B600C4C135 /* People Icon.png in Resources */,
-				EA1F58FA1D7B798B00EAEBDE /* Koalie Logo.png in Resources */,
+				EAED8F821DD8D169007CB040 /* Montserrat-ExtraBold.otf in Resources */,
 				EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */,
-				EA6DA9581CF53C2E00B14A89 /* X-Icon.png in Resources */,
-				EA2A39ED1CFAAA6A00BC6C4A /* Info Button Icon.png in Resources */,
 				EA45773F1D7FDA8300BF5936 /* Back Arrow@2x.png in Resources */,
 				EA91ABBD1CE91E2D00EA81BD /* Hashtag.png in Resources */,
-				EA76B7821D093F8200E2D593 /* Add Text Icon.png in Resources */,
 				EA4577471D7FE19C00BF5936 /* Join Icon@2x.png in Resources */,
 				EAD511511DD5A12700C4C135 /* Trash Icon.png in Resources */,
 				EAD511381DD5A12700C4C135 /* Download Icon NOT Selected.png in Resources */,
 				EA5BC4831D237E1A00A066AC /* Back Arrow.pdf in Resources */,
-				EAF1CA4E1D9CD28E00E1A769 /* Bar Icon.png in Resources */,
 				EA76B7741D07F14200E2D593 /* Video Icon.png in Resources */,
 				EAD511331DD5A12700C4C135 /* Camera Circle.png in Resources */,
 				EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */,
 				EAD5113D1DD5A12700C4C135 /* Forward Arrow Icon.png in Resources */,
-				EA6DA9571CF53C2E00B14A89 /* Text Icon.png in Resources */,
 				EAD511431DD5A12700C4C135 /* Invite Icon.png in Resources */,
-				EA76B7831D093F8200E2D593 /* Check-Mark-Icon.png in Resources */,
-				EA5C85111CFEB1F900A61033 /* Light Arrow Icon.png in Resources */,
 				EA2589021CE0518E0060B6F2 /* Load Screen.jpg in Resources */,
 				EA76B7921D0CBBD700E2D593 /* ThemeView.xib in Resources */,
 				EAD511461DD5A12700C4C135 /* L Top Bar.png in Resources */,
+				EAED8F801DD8D169007CB040 /* Montserrat-Black.otf in Resources */,
 				EA76B79A1D0CBC7100E2D593 /* Icon Selected.jpg in Resources */,
-				EA76B7881D093F8200E2D593 /* Theme Icon.png in Resources */,
 				EAD511321DD5A12700C4C135 /* Breaker Line.png in Resources */,
 				EAD5113E1DD5A12700C4C135 /* Gallery Box.png in Resources */,
 				EAD5112B1DD5A12700C4C135 /* Add Event Length Icon.png in Resources */,
 				EAD511561DD5A12700C4C135 /* You Icon NOT Selected.png in Resources */,
+				EAED8F8B1DD8D47D007CB040 /* Koalie Logo.png in Resources */,
 				EAD511571DD5A12700C4C135 /* You Icon Selected.png in Resources */,
 				EA21DAA81CD083D200786F30 /* Assets.xcassets in Resources */,
-				EA5D48581CF3AD0100B7D10D /* Minus Icon.png in Resources */,
 				EAD511541DD5A12700C4C135 /* White Text Box.png in Resources */,
 				EA76B79B1D0CBC7100E2D593 /* Music Selected.jpg in Resources */,
 				EAD5114B1DD5A12700C4C135 /* Person Icon.png in Resources */,
 				EAD511441DD5A12700C4C135 /* Join Event Icon.png in Resources */,
 				EAD511401DD5A12700C4C135 /* In Progress Icon.png in Resources */,
+				EAED8F861DD8D169007CB040 /* Montserrat-Regular.otf in Resources */,
+				EAD3A5B01DD952F000A4EF31 /* Minus Icon.png in Resources */,
 				EA45773D1D7FD76800BF5936 /* Question Mark Icon@2x.png in Resources */,
+				EAD3A5AE1DD9529100A4EF31 /* X Icon White.png in Resources */,
 				EA76B79C1D0CBC7100E2D593 /* Text Selected.jpg in Resources */,
 				EAD511391DD5A12700C4C135 /* Download Icon Selected.png in Resources */,
 				EAD5114D1DD5A12700C4C135 /* Settings Icon.png in Resources */,
-				EA5C85141CFEB1F900A61033 /* Unselected Delete Icon.png in Resources */,
+				EAD3A5AC1DD9528B00A4EF31 /* Plus Button.png in Resources */,
 				EAD511351DD5A12700C4C135 /* Collab with Others Icon.png in Resources */,
 				EAD511531DD5A12700C4C135 /* Wallpaper.png in Resources */,
 				EAD5112C1DD5A12700C4C135 /* Add People Icon.png in Resources */,
-				EA76B7641D03EF9800E2D593 /* Back-Arrow-Icons 2.png in Resources */,
-				EA76B7861D093F8200E2D593 /* Play Icon.png in Resources */,
 				EAD511471DD5A12700C4C135 /* Location Icon.png in Resources */,
+				EAED8F841DD8D169007CB040 /* Montserrat-Light.otf in Resources */,
 				EAD511311DD5A12700C4C135 /* Bottom Bar.png in Resources */,
 				EAD511481DD5A12700C4C135 /* Others Icon NOT selected.png in Resources */,
 				EAD511371DD5A12700C4C135 /* Divider Thin.png in Resources */,
 				EAD511491DD5A12700C4C135 /* Others Icon Selected.png in Resources */,
 				EAD510FA1DD585DA00C4C135 /* Options Icon.png in Resources */,
 				EAD5115F1DD791BD00C4C135 /* Invite Circle Icon.png in Resources */,
-				EAD487C91D8481E20059EB44 /* Home Icon.png in Resources */,
 				EAD5114C1DD5A12700C4C135 /* Search Bar.png in Resources */,
 				EAD5112F1DD5A12700C4C135 /* Black Box.png in Resources */,
-				EAD487C71D8481BB0059EB44 /* Flip Camera Icon.png in Resources */,
 				EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */,
 				EAD5114E1DD5A12700C4C135 /* Text Box.png in Resources */,
 				EA45773B1D7FD73800BF5936 /* Hashtag Icon@2x.png in Resources */,
 				EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */,
+				EAED8F851DD8D169007CB040 /* Montserrat-Medium.otf in Resources */,
 				EAD511551DD5A12700C4C135 /* X Icon.png in Resources */,
-				EA76B7851D093F8200E2D593 /* Pause Icon.png in Resources */,
-				EA5C85121CFEB1F900A61033 /* Not Selected-Download-Button.png in Resources */,
 				EAD511501DD5A12700C4C135 /* Time Icon.png in Resources */,
 				EA163E121DBF170D009FDC2D /* App-Icon-Template.png in Resources */,
-				EA91ABBC1CE91E2D00EA81BD /* Back-Icon.png in Resources */,
-				EA5D485A1CF3AD0F00B7D10D /* Plus Icon.png in Resources */,
+				EAED8F831DD8D169007CB040 /* Montserrat-ExtraLight.otf in Resources */,
 				EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */,
-				EA5C85181D00032F00A61033 /* Gallery Icon.png in Resources */,
-				EA5C85101CFEB1F900A61033 /* Delet-Icon.png in Resources */,
 				EAD5113A1DD5A12700C4C135 /* Download Icon.png in Resources */,
-				EA76B7811D093F8200E2D593 /* Add Music Icon.png in Resources */,
 				EAD511521DD5A12700C4C135 /* Up Arrow Icon Not Selected.png in Resources */,
 				EA2589011CE0518E0060B6F2 /* KoalieLogo.png in Resources */,
 				EA76B7721D07F14200E2D593 /* Photo Icon.png in Resources */,
-				EA6DA9561CF53C2E00B14A89 /* Email Icon.png in Resources */,
 				EAD5114F1DD5A12700C4C135 /* Thumbs Up Icon.png in Resources */,
-				EA76B7661D03EFA400E2D593 /* Light Arrow Icon 2.png in Resources */,
-				EA76B7871D093F8200E2D593 /* Preview-Icon.png in Resources */,
+				EAED8F881DD8D169007CB040 /* Montserrat-Thin.otf in Resources */,
 				EAD5113F1DD5A12700C4C135 /* Gray Text Box.png in Resources */,
+				EAED8F811DD8D169007CB040 /* Montserrat-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

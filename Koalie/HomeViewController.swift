@@ -30,6 +30,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var frame = self.navigationController?.navigationBar.frame
+        frame?.size.height += 32
+        self.navigationController?.navigationBar.frame = frame!
+        
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.4).cgColor
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 4.0
+        self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
+        
+//        self.navigationController?.navigationBar.frame.height += 32
+//        self.navigationController?.navigationBar.frame.midY -= 16
+        
         // for splash window animation
         let window = UIApplication.shared.keyWindow
         revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "KoalieLogo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
@@ -61,6 +73,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         } catch _ {
             print("Something wrong")
         }
+        
     }
         
     override func viewDidAppear(_ animated: Bool) {
@@ -86,7 +99,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 104
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -119,16 +132,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // time left label
         if timeLeft <= 0 {
-            cell.labelProgress.text = "Ended on ".appending(String(describing: eventData.object(forKey: "date_end")!))
+            cell.labelProgress.text = String(describing: eventData.object(forKey: "date_end")!)
             cell.viewOverLay.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         } else if timeLeft <= 24 {
             cell.labelProgress.text = String(describing: timeLeft).appending(" Hours Left")
-            cell.viewOverLay.backgroundColor = Constants.backgroundColor.dark.withAlphaComponent(0.7)
+            cell.viewOverLay.backgroundColor = Constants.backgroundColor.dark.withAlphaComponent(0.8)
         } else {
             let daysLeft = timeLeft / 24
             timeLeft = timeLeft % 24
             cell.labelProgress.text = String(describing: daysLeft).appending(" Days ").appending(String(describing: timeLeft)).appending(" Hours Left")
-            cell.viewOverLay.backgroundColor = Constants.backgroundColor.dark.withAlphaComponent(0.7)
+            cell.viewOverLay.backgroundColor = Constants.backgroundColor.dark.withAlphaComponent(0.8)
         }
         
         // cell background image: most voted nonvideo image
@@ -164,7 +177,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     fileprivate func generateProfileImageView(_ urlString: String) -> UIView {
         let hw = self.navigationController?.navigationBar.frame.size.height
-        let imgViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        let imgViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
         let imgView = UIImageView(frame: imgViewContainer.frame)
         let url = URL(string: urlString)
         if let imgData = try? Data(contentsOf: url!) {
@@ -177,9 +190,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             myString.append(attachmentString)
 
         }
-        imgViewContainer.layer.cornerRadius = hw! / 2
-        imgViewContainer.layer.borderWidth = 1.5
-        imgViewContainer.layer.borderColor = (UIColor.white).cgColor
+        imgViewContainer.layer.cornerRadius = hw! / 2.5
         imgViewContainer.clipsToBounds = true
         imgView.contentMode = .scaleAspectFill
         

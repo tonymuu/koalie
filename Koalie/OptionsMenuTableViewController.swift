@@ -18,6 +18,10 @@ class OptionsMenuTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         let logoutTap = UITapGestureRecognizer(target: self, action: #selector(logout))
         cellLogout.addGestureRecognizer(logoutTap)
+        self.navigationItem.title = "Settings"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+//        let backButton = UIBarButtonItem(image: UIImage(named: "Back Arrow Icon"), style: .plain, target: self, action: nil)
+//        self.navigationItem.setRightBarButton(backButton, animated: true)
     }
 
     // MARK: - Table view data source
@@ -29,7 +33,7 @@ class OptionsMenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 3
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -37,8 +41,9 @@ class OptionsMenuTableViewController: UITableViewController {
     
     func logout() {
         self.delegate.deinitPullToRefresh()
-        self.navigationController!.dismiss(animated: true, completion: nil)
         FBSDKLoginManager().logOut()
+        self.dismiss(animated: true, completion: nil)
+        self.navigationController!.dismiss(animated: false, completion: nil)
     }
 }
 

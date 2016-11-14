@@ -52,14 +52,41 @@ class PreviewVideoViewController: UIViewController {
         self.avPlayerLayer.frame = CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height)
         self.view.layer.addSublayer(self.avPlayerLayer)
                 
-        let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(uploadVideoToS3))
-        self.view.addGestureRecognizer(holdGesture)
+        //let holdGesture = UILongPressGestureRecognizer(target: self, action: #selector(uploadVideoToS3))
+        //self.view.addGestureRecognizer(holdGesture)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backButtonPressed))
-        self.view.addGestureRecognizer(tapGesture)
+        //let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backButtonPressed))
+        //self.view.addGestureRecognizer(tapGesture)
         
         self.view!.addSubview(self.backButton)
+        
+        let confirmButton = UIButton(type: .system)
+        confirmButton.frame = CGRect(x: screenRect.size.width - 72.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
+        confirmButton.tintColor = UIColor.white
+        confirmButton.setImage(UIImage(named: "Check-Mark-Icon.png") , for: UIControlState())
+        confirmButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+        confirmButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+        self.view.addSubview(confirmButton)
+        
+        let cancelButton = UIButton(type: .system)
+        cancelButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
+        cancelButton.tintColor = UIColor.white
+        cancelButton.setImage(UIImage(named: "X-Icon.png") , for: UIControlState())
+        cancelButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+        cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
+        self.view.addSubview(cancelButton)
+
     }
+    
+    func cancel(_ gesture: UIGestureRecognizer) {
+        self.dismiss(animated: false, completion: { _ in })
+    }
+    
+    func save() {
+        uploadVideoToS3()
+        self.dismiss(animated: false, completion: { _ in })
+    }
+
     
     func playerItemDidReachEnd(_ notification: Notification) {
         self.avPlayer.seek(to: kCMTimeZero);

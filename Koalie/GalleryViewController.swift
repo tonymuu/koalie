@@ -12,7 +12,7 @@ import AWSS3
 import AwesomeCache
 import FBSDKLoginKit
 
-class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
+class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, GalleryTableViewCellDelegate {
     @IBOutlet weak var eventTableView: UITableView!
     
     var eventId: String!
@@ -27,29 +27,6 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
-    @IBAction func buttonEditClick(_ sender: AnyObject) {
-        let actionSheet = UIAlertController(title: "Edit", message: "Make changes", preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: {
-            UIAlertAction -> Void in
-            
-        })
-        let reportAction = UIAlertAction(title: "Report", style: .default, handler: {
-            UIAlertAction -> Void in
-            
-        })
-        let downloadAction = UIAlertAction(title: "Download", style: .default, handler: {
-            UIAlertAction -> Void in
-            
-        })
-        actionSheet.addAction(downloadAction)
-        actionSheet.addAction(reportAction)
-        actionSheet.addAction(deleteAction)
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(actionSheet, animated: true, completion: nil)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +75,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if !isVideo {
             do {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as! GalleryTableViewCell
+                cell.delegate = self
                 cell.profileName.text = fbName
                 if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
                     cell.profilePicture.image = UIImage(data: data as Data)
@@ -105,6 +83,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.labelUpvotes.text = String(upvotes!)
                 cell.eventId = eventId
                 cell.voted = isVoted
+                cell.buttonUpvote.isSelected = isVoted
                 cell.mediaId = mediaId
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentImageFullscreen))
                 cell.viewPicture.isUserInteractionEnabled = true
@@ -151,11 +130,12 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! GalleryVideoTableViewCell
+            cell.delegate = self
             cell.profileName.text = fbName
             if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
                 cell.profilePicture.image = UIImage(data: data as Data)
             }
-            
+            cell.buttonUpvote.isSelected = isVoted
             cell.labelUpvotes.text = String(upvotes!)
             cell.eventId = eventId
             cell.voted = isVoted
@@ -218,5 +198,9 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func applicationDocumentsDirectory()-> URL {
         return FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).last!
+    }
+    
+    func presentActionSheet(actionSheet: UIAlertController) {
+        self.present(actionSheet, animated: true, completion: nil)
     }
 }

@@ -37,7 +37,7 @@ class PreviewImageViewController: UIViewController {
         self.view!.addSubview(self.imageView)
         
         let confirmButton = UIButton(type: .system)
-        confirmButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
+        confirmButton.frame = CGRect(x: screenRect.size.width - 72.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
         confirmButton.tintColor = UIColor.white
         confirmButton.setImage(UIImage(named: "Check-Mark-Icon.png") , for: UIControlState())
         confirmButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
@@ -45,7 +45,7 @@ class PreviewImageViewController: UIViewController {
         self.view.addSubview(confirmButton)
         
         let cancelButton = UIButton(type: .system)
-        cancelButton.frame = CGRect(x: screenRect.size.width - 36.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
+        cancelButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
         cancelButton.tintColor = UIColor.white
         cancelButton.setImage(UIImage(named: "X-Icon.png") , for: UIControlState())
         cancelButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
