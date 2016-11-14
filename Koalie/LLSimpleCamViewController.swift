@@ -127,7 +127,8 @@ class LLSimpleCamViewController: UIViewController {
             self.flashButton = UIButton(type: .system)
             self.flashButton.frame = CGRect(x: 0, y: 0, width: 16.0 + 20.0, height: 24.0 + 20.0)
             self.flashButton.tintColor = UIColor.white
-            self.flashButton.setImage(UIImage(named: "camera-flash.png"), for: UIControlState())
+            self.flashButton.setImage(UIImage(named: "Flash Off Icon.png"), for: .normal)
+            self.flashButton.setImage(UIImage(named: "Flash On Icon.png"), for: .selected)
             self.flashButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
             self.flashButton.addTarget(self, action: #selector(self.flashButtonPressed(_:)), for: .touchUpInside)
             self.flashButton.isHidden = true;

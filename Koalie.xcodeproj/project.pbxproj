@@ -22,6 +22,10 @@
 		EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA21DAA91CD083D200786F30 /* LaunchScreen.storyboard */; };
 		EA21DAB61CD083D200786F30 /* KoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAB51CD083D200786F30 /* KoalieTests.swift */; };
 		EA21DAC11CD083D300786F30 /* KoalieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA21DAC01CD083D300786F30 /* KoalieUITests.swift */; };
+		EA2268951DD966D800E2943E /* Gallery Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2268941DD966D800E2943E /* Gallery Icon.png */; };
+		EA2268971DD966E300E2943E /* Flip Camera Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2268961DD966E300E2943E /* Flip Camera Icon.png */; };
+		EA2268991DD966EB00E2943E /* Home Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2268981DD966EB00E2943E /* Home Icon.png */; };
+		EA22689B1DD9692F00E2943E /* Upvote Arrow Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = EA22689A1DD9692F00E2943E /* Upvote Arrow Selected.png */; };
 		EA2588FE1CE04A550060B6F2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */; };
 		EA2589011CE0518E0060B6F2 /* KoalieLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */; };
 		EA2589021CE0518E0060B6F2 /* Load Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA2589001CE0518E0060B6F2 /* Load Screen.jpg */; };
@@ -192,6 +196,10 @@
 		EA21DABC1CD083D200786F30 /* KoalieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoalieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA21DAC01CD083D300786F30 /* KoalieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoalieUITests.swift; sourceTree = "<group>"; };
 		EA21DAC21CD083D300786F30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA2268941DD966D800E2943E /* Gallery Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gallery Icon.png"; sourceTree = "<group>"; };
+		EA2268961DD966E300E2943E /* Flip Camera Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip Camera Icon.png"; sourceTree = "<group>"; };
+		EA2268981DD966EB00E2943E /* Home Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home Icon.png"; sourceTree = "<group>"; };
+		EA22689A1DD9692F00E2943E /* Upvote Arrow Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upvote Arrow Selected.png"; sourceTree = "<group>"; };
 		EA2588FD1CE04A550060B6F2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EA2588FF1CE0518E0060B6F2 /* KoalieLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = KoalieLogo.png; path = images/KoalieLogo.png; sourceTree = "<group>"; };
 		EA2589001CE0518E0060B6F2 /* Load Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Load Screen.jpg"; path = "images/Load Screen.jpg"; sourceTree = "<group>"; };
@@ -588,8 +596,12 @@
 				EAD511101DD5A12700C4C135 /* Gray Text Box.png */,
 				EAD511111DD5A12700C4C135 /* Header.h */,
 				EAD511121DD5A12700C4C135 /* In Progress Icon.png */,
+				EA22689A1DD9692F00E2943E /* Upvote Arrow Selected.png */,
 				EAD511131DD5A12700C4C135 /* Info Bar.png */,
+				EA2268961DD966E300E2943E /* Flip Camera Icon.png */,
+				EA2268941DD966D800E2943E /* Gallery Icon.png */,
 				EAED8F8A1DD8D47D007CB040 /* Koalie Logo.png */,
+				EA2268981DD966EB00E2943E /* Home Icon.png */,
 				EAD511141DD5A12700C4C135 /* Info Icon.png */,
 				EAD511151DD5A12700C4C135 /* Invite Icon.png */,
 				EAD511161DD5A12700C4C135 /* Join Event Icon.png */,
@@ -763,6 +775,7 @@
 				EAD5112D1DD5A12700C4C135 /* Back Arrow Icon w_ line.png in Resources */,
 				EAD5112A1DD5A12700C4C135 /* Add a Hashtag Icon.png in Resources */,
 				EAD511301DD5A12700C4C135 /* Bottom Bar No Divider.png in Resources */,
+				EA22689B1DD9692F00E2943E /* Upvote Arrow Selected.png in Resources */,
 				EAD5114A1DD5A12700C4C135 /* Paper Airplane Icon.png in Resources */,
 				EA6DA95A1CF53C3E00B14A89 /* Overview Icon.png in Resources */,
 				EAD511341DD5A12700C4C135 /* Camera Icon.png in Resources */,
@@ -776,6 +789,7 @@
 				EA76B7991D0CBC7100E2D593 /* Full Selected.jpg in Resources */,
 				EAD5112E1DD5A12700C4C135 /* Back Arrow Icon.png in Resources */,
 				EAD5113C1DD5A12700C4C135 /* Flash On Icon.png in Resources */,
+				EA2268971DD966E300E2943E /* Flip Camera Icon.png in Resources */,
 				EAD511361DD5A12700C4C135 /* Discard Icon.png in Resources */,
 				EA76B7731D07F14200E2D593 /* Top Rated Icon.png in Resources */,
 				EAD511411DD5A12700C4C135 /* Info Bar.png in Resources */,
@@ -793,6 +807,7 @@
 				EA5BC4831D237E1A00A066AC /* Back Arrow.pdf in Resources */,
 				EA76B7741D07F14200E2D593 /* Video Icon.png in Resources */,
 				EAD511331DD5A12700C4C135 /* Camera Circle.png in Resources */,
+				EA2268951DD966D800E2943E /* Gallery Icon.png in Resources */,
 				EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */,
 				EAD5113D1DD5A12700C4C135 /* Forward Arrow Icon.png in Resources */,
 				EAD511431DD5A12700C4C135 /* Invite Icon.png in Resources */,
@@ -835,6 +850,7 @@
 				EAD5114C1DD5A12700C4C135 /* Search Bar.png in Resources */,
 				EAD5112F1DD5A12700C4C135 /* Black Box.png in Resources */,
 				EABC87871CD5CE4D001A6C0F /* Property List.plist in Resources */,
+				EA2268991DD966EB00E2943E /* Home Icon.png in Resources */,
 				EAD5114E1DD5A12700C4C135 /* Text Box.png in Resources */,
 				EA45773B1D7FD73800BF5936 /* Hashtag Icon@2x.png in Resources */,
 				EA21DAA61CD083D200786F30 /* Main.storyboard in Resources */,

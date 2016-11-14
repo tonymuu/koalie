@@ -75,7 +75,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpH-8Y-gMS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                                     <color key="backgroundColor" red="0.054901960780000002" green="0.43529411759999997" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-ps-N8l">
@@ -277,7 +277,7 @@
                                     <constraint firstAttribute="height" constant="32" id="Zdu-kJ-MCj"/>
                                     <constraint firstAttribute="width" constant="32" id="ptn-xw-sDp"/>
                                 </constraints>
-                                <state key="normal" image="Back-Icon.png"/>
+                                <state key="normal" image="Back Arrow Icon w_ line.png"/>
                                 <connections>
                                     <action selector="buttonBackClick:" destination="wE8-WQ-lqb" eventType="touchUpInside" id="oEE-4V-WXt"/>
                                 </connections>
@@ -522,8 +522,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="bVd-Ga-jJx"/>
                                                                 <constraint firstAttribute="width" constant="30" id="ldz-8G-oPJ"/>
                                                             </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <state key="normal" image="Up Arrow Icon Not Selected.png"/>
+                                                            <state key="selected" image="Upvote Arrow Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonUpvoteClick:" destination="iKX-gy-S8u" eventType="touchUpInside" id="dqO-Gm-3iL"/>
                                                             </connections>
@@ -627,8 +627,8 @@
                                                                 <constraint firstAttribute="width" constant="30" id="ds3-9j-nj2"/>
                                                                 <constraint firstAttribute="height" constant="30" id="pis-Du-j7V"/>
                                                             </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <state key="normal" image="Up Arrow Icon Not Selected.png"/>
+                                                            <state key="selected" image="Upvote Arrow Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonUpvoteClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="X5p-gf-bE0"/>
                                                             </connections>
@@ -639,8 +639,8 @@
                                                                 <constraint firstAttribute="width" constant="30" id="DEE-sR-qMO"/>
                                                                 <constraint firstAttribute="height" constant="30" id="e51-1F-gck"/>
                                                             </constraints>
-                                                            <state key="normal" image="Not Selected-Download-Button.png"/>
-                                                            <state key="selected" image="Selected-Download-Button.png"/>
+                                                            <state key="normal" image="Download Icon NOT Selected.png"/>
+                                                            <state key="selected" image="Download Icon Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonDownloadClick:" destination="mC0-Rc-mri" eventType="touchUpInside" id="M3b-nD-30Y"/>
                                                             </connections>
@@ -981,7 +981,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dUF-AC-KIJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" id="AAQ-E3-VRC">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" id="AAQ-E3-VRC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.054901960780000002" green="0.43529411759999997" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1303,7 +1303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ran-LN-ZLZ">
-                                <rect key="frame" x="123.5" y="265" width="128.5" height="27"/>
+                                <rect key="frame" x="124" y="265" width="129" height="27"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1660,8 +1660,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="BKC-un-JYf"/>
                                                                 <constraint firstAttribute="width" constant="30" id="RfV-JE-Ft6"/>
                                                             </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <state key="normal" image="Up Arrow Icon Not Selected.png"/>
+                                                            <state key="selected" image="Upvote Arrow Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonUpvoteClick:" destination="Z86-jC-uUv" eventType="touchUpInside" id="YsR-fO-D7b"/>
                                                             </connections>
@@ -1672,8 +1672,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="eoF-iC-29v"/>
                                                                 <constraint firstAttribute="width" constant="30" id="s8u-W4-fqb"/>
                                                             </constraints>
-                                                            <state key="normal" image="Not Selected-Download-Button.png"/>
-                                                            <state key="selected" image="Selected-Download-Button.png"/>
+                                                            <state key="normal" image="Download Icon NOT Selected.png"/>
+                                                            <state key="selected" image="Download Icon Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonDownloadClick:" destination="Z86-jC-uUv" eventType="touchUpInside" id="VtN-3R-zM6"/>
                                                             </connections>
@@ -1765,8 +1765,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="96d-fQ-Jda"/>
                                                                 <constraint firstAttribute="width" constant="30" id="vqw-wL-eVB"/>
                                                             </constraints>
-                                                            <state key="normal" image="Light Arrow Icon.png"/>
-                                                            <state key="selected" image="Back-Arrow-Icons 1.png"/>
+                                                            <state key="normal" image="Up Arrow Icon Not Selected.png"/>
+                                                            <state key="selected" image="Upvote Arrow Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonUpvoteClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="5Gx-RM-r3H"/>
                                                             </connections>
@@ -1777,8 +1777,8 @@
                                                                 <constraint firstAttribute="height" constant="30" id="jWD-Wy-8ZO"/>
                                                                 <constraint firstAttribute="width" constant="30" id="y1n-dX-9sF"/>
                                                             </constraints>
-                                                            <state key="normal" image="Not Selected-Download-Button.png"/>
-                                                            <state key="selected" image="Selected-Download-Button.png"/>
+                                                            <state key="normal" image="Download Icon NOT Selected.png"/>
+                                                            <state key="selected" image="Download Icon Selected.png"/>
                                                             <connections>
                                                                 <action selector="buttonDownloadClick:" destination="F4S-QO-SYB" eventType="touchUpInside" id="Igt-On-75T"/>
                                                             </connections>
@@ -1939,7 +1939,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iIl-OO-0aG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="YOU" id="FGF-Fr-O4K"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FUc-8P-sIm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FUc-8P-sIm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1958,7 +1958,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L7D-wL-r1b" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="OTHERS" id="1mf-j4-cts"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="s28-9h-hml">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s28-9h-hml">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2299,7 +2299,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="j8T-x5-VdR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pbz-JA-zgH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pbz-JA-zgH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2416,7 +2416,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="afr-Nd-Ftw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a2v-3i-ciI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a2v-3i-ciI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2553,7 +2553,7 @@
                                     <constraint firstAttribute="width" secondItem="Kbh-Y5-R3l" secondAttribute="height" multiplier="1:1" id="kmt-HZ-XWU"/>
                                     <constraint firstAttribute="width" constant="48" id="nkb-aK-0Nm"/>
                                 </constraints>
-                                <state key="normal" image="Plus Icon.png"/>
+                                <state key="normal" image="Plus Button.png"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="kmt-HZ-XWU"/>
@@ -3219,8 +3219,6 @@
         <image name="Add Text Icon.png" width="1024" height="1024"/>
         <image name="Back Arrow Icon w_ line.png" width="39" height="67"/>
         <image name="Back Arrow.png" width="38" height="66"/>
-        <image name="Back-Arrow-Icons 1.png" width="659" height="492"/>
-        <image name="Back-Icon.png" width="659" height="708"/>
         <image name="Clock Icon.png" width="255" height="255"/>
         <image name="Divider Thin.png" width="1181" height="2"/>
         <image name="Download Icon NOT Selected.png" width="87" height="52"/>
@@ -3231,20 +3229,18 @@
         <image name="Invite Circle Icon.png" width="157" height="157"/>
         <image name="Join Icon.png" width="261" height="261"/>
         <image name="Koalie Logo.png" width="355" height="341"/>
-        <image name="Light Arrow Icon.png" width="659" height="492"/>
         <image name="Minus Icon.png" width="200" height="200"/>
-        <image name="Not Selected-Download-Button.png" width="672" height="517"/>
         <image name="Options Icon.png" width="55" height="15"/>
         <image name="People Icon.png" width="158" height="158"/>
         <image name="Person Icon.png" width="31" height="39"/>
         <image name="Plus Button.png" width="200" height="200"/>
-        <image name="Plus Icon.png" width="1024" height="1024"/>
         <image name="Question Mark Icon.png" width="73" height="73"/>
-        <image name="Selected-Download-Button.png" width="672" height="517"/>
         <image name="Settings Icon.png" width="74" height="73"/>
         <image name="Theme Icon.png" width="1024" height="1024"/>
         <image name="Thumbs Up Icon.png" width="272" height="249"/>
         <image name="Trash Icon.png" width="60" height="71"/>
+        <image name="Up Arrow Icon Not Selected.png" width="72" height="42"/>
+        <image name="Upvote Arrow Selected.png" width="72" height="42"/>
         <image name="X Icon.png" width="54" height="54"/>
     </resources>
 </document>
