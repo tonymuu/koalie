@@ -35,18 +35,18 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.eventTableView.dataSource = self
 
         
-        let dict = ["eventId": eventId!]
+//        let dict = ["eventId": eventId!]
         
         
-        Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEventMedias, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
-                case .success(let data):
-                    self.mediaList = data as! [NSDictionary] as NSArray?
-                    self.numberOfRows = (self.mediaList?.count)!
-                    self.eventTableView.reloadData()
-                case .failure(let error):
-                    print(error)
-            }
-        }
+//        Alamofire.request(Constants.URIs.baseUri + Constants.routes.getEventMedias, method: .get, parameters: dict, encoding: URLEncoding.default).responseJSON { response in switch response.result {
+//                case .success(let data):
+//                    self.mediaList = data as! [NSDictionary] as NSArray?
+//                    self.numberOfRows = (self.mediaList?.count)!
+//                    self.eventTableView.reloadData()
+//                case .failure(let error):
+//                    print(error)
+//            }
+//        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

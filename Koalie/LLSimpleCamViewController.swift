@@ -301,8 +301,8 @@ class LLSimpleCamViewController: UIViewController {
     
     internal func galleryButtonClick() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let eventGalleryVC = storyboard.instantiateViewController(withIdentifier: "eventGalleryVC") as! GalleryViewController
-        let myGalleryVC = storyboard.instantiateViewController(withIdentifier: "myGalleryVC") as! GalleryViewController
+        let eventGalleryVC = storyboard.instantiateViewController(withIdentifier: "eventGalleryVC") as! EventGalleryViewController
+        let myGalleryVC = storyboard.instantiateViewController(withIdentifier: "myGalleryVC") as! YourGalleryViewController
         let tabbarVC = GalleryTabBarViewController()
         let item2 = UITabBarItem(title: "You", image: UIImage(named: "You Icon NOT Selected"), selectedImage: UIImage(named: "You Icon Selected"))
         let item1 = UITabBarItem(title: "Others", image: UIImage(named: "Others Icon NOT selected"), selectedImage: UIImage(named: "Others Icon Selected"))

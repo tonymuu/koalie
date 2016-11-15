@@ -12,13 +12,17 @@ import SCLAlertView
 import AWSS3
 import NVActivityIndicatorView
 
-class JoinEventViewController: UIViewController {
+class JoinEventViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var textfieldHashtag: UITextField!
     
     @IBOutlet weak var buttonNext: UIButton!
     
     var activityIndicator: NVActivityIndicatorView!
+    
+    @IBAction func editingChanged(_ sender: UITextField) {
+        buttonNext.isEnabled = sender.hasText
+    }
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.navigationController?.dismiss(animated: true, completion: nil)
@@ -64,6 +68,7 @@ class JoinEventViewController: UIViewController {
         activityIndicator.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         self.view.addSubview(activityIndicator)
 
+        self.textfieldHashtag.delegate = self
     }
     
     func presentSuccessScreen(event: NSDictionary, message: String, eventId: String) {
@@ -129,6 +134,20 @@ class JoinEventViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.activityIndicator.stopAnimating()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return (textField.text?.characters.count)! + string.characters.count > 1
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = "#"
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.characters.count == 1 {
+            textField.text = ""
+        }
     }
     
 }

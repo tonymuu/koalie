@@ -30,19 +30,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // getting rid of separators for empty cells
         self.eventTableView.tableFooterView = UIView()
         
-        var frame = self.navigationController?.navigationBar.frame
-        frame?.size.height += 32
-        self.navigationController?.navigationBar.frame = frame!
+//        // navigation bar height
+//        self.navigationController?.navigationBar.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.size.width, height: 80.0))
+//        // set to false so nav bar won't cover view
+//        self.navigationController?.navigationBar.isTranslucent = false
+
         
+        // navigation bar shadow
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.withAlphaComponent(0.4).cgColor
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 4.0
         self.navigationController?.navigationBar.layer.shadowOpacity = 1.0
-        
-//        self.navigationController?.navigationBar.frame.height += 32
-//        self.navigationController?.navigationBar.frame.midY -= 16
         
         // for splash window animation
         let window = UIApplication.shared.keyWindow
@@ -78,8 +79,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
         
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        // navigation bar height
+//        self.navigationController?.navigationBar.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.size.width, height: 80.0))
+//        // set to false so nav bar won't cover view
+//        self.navigationController?.navigationBar.isTranslucent = false
+
     }
     
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
@@ -117,6 +123,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let size = String(describing: eventData.object(forKey: "size")!)
         let filled = String(describing: (eventData.object(forKey: "member_ids") as! NSArray).count)
         var timeLeft = eventData.object(forKey: "timeLeft")! as! Int
+        let endDateParsed = String(describing: eventData.object(forKey: "endDateParsed")!)
         let hoursLong = String(describing: eventData.object(forKey: "hoursLong"))
         let medias = eventData.object(forKey: "media_ids") as! [NSDictionary]
         let users = eventData.object(forKey: "member_ids") as! [NSDictionary]
@@ -134,7 +141,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // time left label
         if timeLeft <= 0 {
-            cell.labelProgress.text = String(describing: eventData.object(forKey: "date_end")!)
+            cell.labelProgress.text = endDateParsed
             cell.viewOverLay.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         } else if timeLeft <= 24 {
             cell.labelProgress.text = String(describing: timeLeft).appending(" Hours Left")
@@ -157,6 +164,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let image = self.cache?[storedPath] {
             cell.backgroundView = UIImageView(image: image)
             cell.eventImage = image
+            cell.clipsToBounds = true
+            cell.backgroundView?.clipsToBounds = true
             cell.backgroundView?.contentMode = .scaleAspectFill
         } else {
             cell.viewOverLay.backgroundColor = UIColor.clear
@@ -178,8 +187,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     fileprivate func generateProfileImageView(_ urlString: String) -> UIView {
-        let hw = self.navigationController?.navigationBar.frame.size.height
-        let imgViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+        let hw = (self.navigationController?.navigationBar.frame.size.height)!
+        let imgViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: hw, height: hw))
         let imgView = UIImageView(frame: imgViewContainer.frame)
         let url = URL(string: urlString)
         if let imgData = try? Data(contentsOf: url!) {
@@ -192,7 +201,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             myString.append(attachmentString)
 
         }
-        imgViewContainer.layer.cornerRadius = hw! / 2.5
+        imgViewContainer.layer.cornerRadius = hw / 2
         imgViewContainer.clipsToBounds = true
         imgView.contentMode = .scaleAspectFill
         
@@ -221,7 +230,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.labelInstructional.text = ""
                 }
                 self.navigationItem.titleView = self.generateProfileImageView(self.userData.object(forKey: "picture") as! String)
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
+//                self.navigationController?.setNavigationBarHidden(false, animated: true)
 //                var newFrame = self.navigationController?.navigationBar.frame
 //                newFrame?.size.height -= 16
 //                self.navigationController!.navigationBar.frame = newFrame!
