@@ -3,7 +3,7 @@
 //  Koalie
 //
 //  Created by Tony Mu on 5/10/16.
-//  Copyright Â© 2016 Koa. All rights reserved.
+//  Copyright © 2016 Koa. All rights reserved.
 //
 
 import Foundation
@@ -29,10 +29,10 @@ struct Constants {
     
     struct URIs {
         // production url
-//       static let baseUri = "https://koalie.herokuapp.com"
+       static let baseUri = "https://koalie.herokuapp.com"
         
         // dev url
-        static let baseUri = "http://localhost:3000"
+//        static let baseUri = "http://localhost:3000"
         
         static let facebookAppUrl = "https://fb.me/1712424622418492"
 
