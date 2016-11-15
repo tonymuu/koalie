@@ -10,6 +10,7 @@ import UIKit
 import LLSimpleCamera
 import Alamofire
 import AWSS3
+import ESTabBarController
 
 class LLSimpleCamViewController: UIViewController {
     var errorLabel = UILabel();
@@ -301,17 +302,19 @@ class LLSimpleCamViewController: UIViewController {
     internal func galleryButtonClick() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let eventGalleryVC = storyboard.instantiateViewController(withIdentifier: "eventGalleryVC") as! GalleryViewController
+        let myGalleryVC = storyboard.instantiateViewController(withIdentifier: "myGalleryVC") as! GalleryViewController
+        let tabbarVC = GalleryTabBarViewController()
+        let item2 = UITabBarItem(title: "You", image: UIImage(named: "You Icon NOT Selected"), selectedImage: UIImage(named: "You Icon Selected"))
+        let item1 = UITabBarItem(title: "Others", image: UIImage(named: "Others Icon NOT selected"), selectedImage: UIImage(named: "Others Icon Selected"))
+        
+        eventGalleryVC.tabBarItem = item1
+        myGalleryVC.tabBarItem = item2
         eventGalleryVC.eventId = self.eventId
         eventGalleryVC.userId = self.userId
-        let myGalleryVC = storyboard.instantiateViewController(withIdentifier: "myGalleryVC") as! GalleryViewController
         myGalleryVC.eventId = self.eventId
         myGalleryVC.userId = self.userId
-        let navVc1 = UINavigationController(rootViewController: eventGalleryVC)
-        let navVc2 = UINavigationController(rootViewController: myGalleryVC)
-        
-        let tabbarVC = UITabBarController()
-        tabbarVC.viewControllers = NSArray(objects: navVc1, navVc2) as? [UIViewController]
-        
+        tabbarVC.setViewControllers([eventGalleryVC, myGalleryVC], animated: true)
+        tabbarVC.tabBar.tintColor = Constants.backgroundColor.selected
         self.present(tabbarVC, animated: true, completion: nil)
     }
     

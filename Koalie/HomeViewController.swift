@@ -30,6 +30,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.eventTableView.tableFooterView = UIView()
+        
         var frame = self.navigationController?.navigationBar.frame
         frame?.size.height += 32
         self.navigationController?.navigationBar.frame = frame!

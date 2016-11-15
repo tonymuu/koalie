@@ -72,9 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationVC = UINavigationController(rootViewController: vc)
             navigationVC.navigationBar.barTintColor = Constants.backgroundColor.darkTranslucent
             var frame = navigationVC.navigationBar.frame
-            frame.size.height += 32
+            frame.size.height += 64
             navigationVC.navigationBar.frame = frame
-
             self.window?.rootViewController = navigationVC
             
             return true
@@ -85,13 +84,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = vc
             return true
         }
- 
-        /*
-       // temporary solution to bypass login for testing camera
-        let vc = LLSimpleCamViewController()
-        let navigationVC = UINavigationController(rootViewController: vc)
-        self.window?.rootViewController = navigationVC
- */
     }
  
     func isUserAuthenticated() -> Bool {

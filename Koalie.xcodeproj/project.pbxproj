@@ -12,6 +12,7 @@
 		EA02ED211D9E2A48006BE585 /* InfoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */; };
 		EA0ACBFC1DD43DA40038179F /* TimeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACBFB1DD43DA40038179F /* TimeInfoViewController.swift */; };
 		EA0ACBFE1DD43DAF0038179F /* PeopleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */; };
+		EA13EF041DDA9D5500B27D7A /* RaisedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA13EF031DDA9D5500B27D7A /* RaisedTabBarController.swift */; };
 		EA163E121DBF170D009FDC2D /* App-Icon-Template.png in Resources */ = {isa = PBXBuildFile; fileRef = EA163E111DBF170D009FDC2D /* App-Icon-Template.png */; };
 		EA1F58F81D7B772A00EAEBDE /* Wallpaper for App.png in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */; };
 		EA1F58FC1D7B81D000EAEBDE /* upload_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */; };
@@ -66,6 +67,8 @@
 		EA76B79C1D0CBC7100E2D593 /* Text Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7971D0CBC7100E2D593 /* Text Selected.jpg */; };
 		EA76B79D1D0CBC7100E2D593 /* Theme Selected.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7981D0CBC7100E2D593 /* Theme Selected.jpg */; };
 		EA76B79F1D0CBD3000E2D593 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */; };
+		EA7F78A41DD9723A00443BA7 /* Camera Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7F78A31DD9723A00443BA7 /* Camera Icon.png */; };
+		EA7F78A61DD9846900443BA7 /* GalleryTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F78A51DD9846900443BA7 /* GalleryTabBarViewController.swift */; };
 		EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA88D9BC1D71F67100345E84 /* LoginViewController.swift */; };
 		EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */; };
 		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
@@ -94,8 +97,6 @@
 		EAD511301DD5A12700C4C135 /* Bottom Bar No Divider.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511011DD5A12700C4C135 /* Bottom Bar No Divider.png */; };
 		EAD511311DD5A12700C4C135 /* Bottom Bar.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511021DD5A12700C4C135 /* Bottom Bar.png */; };
 		EAD511321DD5A12700C4C135 /* Breaker Line.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511031DD5A12700C4C135 /* Breaker Line.png */; };
-		EAD511331DD5A12700C4C135 /* Camera Circle.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511041DD5A12700C4C135 /* Camera Circle.png */; };
-		EAD511341DD5A12700C4C135 /* Camera Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511051DD5A12700C4C135 /* Camera Icon.png */; };
 		EAD511351DD5A12700C4C135 /* Collab with Others Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511061DD5A12700C4C135 /* Collab with Others Icon.png */; };
 		EAD511361DD5A12700C4C135 /* Discard Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511071DD5A12700C4C135 /* Discard Icon.png */; };
 		EAD511371DD5A12700C4C135 /* Divider Thin.png in Resources */ = {isa = PBXBuildFile; fileRef = EAD511081DD5A12700C4C135 /* Divider Thin.png */; };
@@ -180,6 +181,7 @@
 		EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoMenuViewController.swift; sourceTree = "<group>"; };
 		EA0ACBFB1DD43DA40038179F /* TimeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInfoViewController.swift; sourceTree = "<group>"; };
 		EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleInfoViewController.swift; sourceTree = "<group>"; };
+		EA13EF031DDA9D5500B27D7A /* RaisedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedTabBarController.swift; sourceTree = "<group>"; };
 		EA163E111DBF170D009FDC2D /* App-Icon-Template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App-Icon-Template.png"; sourceTree = "<group>"; };
 		EA1F58F71D7B772A00EAEBDE /* Wallpaper for App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wallpaper for App.png"; sourceTree = "<group>"; };
 		EA1F58FB1D7B81D000EAEBDE /* upload_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upload_test.jpg; sourceTree = "<group>"; };
@@ -246,6 +248,8 @@
 		EA76B7971D0CBC7100E2D593 /* Text Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Text Selected.jpg"; sourceTree = "<group>"; };
 		EA76B7981D0CBC7100E2D593 /* Theme Selected.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Theme Selected.jpg"; sourceTree = "<group>"; };
 		EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		EA7F78A31DD9723A00443BA7 /* Camera Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera Icon.png"; sourceTree = "<group>"; };
+		EA7F78A51DD9846900443BA7 /* GalleryTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTabBarViewController.swift; sourceTree = "<group>"; };
 		EA88D9BC1D71F67100345E84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -274,8 +278,6 @@
 		EAD511011DD5A12700C4C135 /* Bottom Bar No Divider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bottom Bar No Divider.png"; sourceTree = "<group>"; };
 		EAD511021DD5A12700C4C135 /* Bottom Bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bottom Bar.png"; sourceTree = "<group>"; };
 		EAD511031DD5A12700C4C135 /* Breaker Line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Breaker Line.png"; sourceTree = "<group>"; };
-		EAD511041DD5A12700C4C135 /* Camera Circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera Circle.png"; sourceTree = "<group>"; };
-		EAD511051DD5A12700C4C135 /* Camera Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera Icon.png"; sourceTree = "<group>"; };
 		EAD511061DD5A12700C4C135 /* Collab with Others Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Collab with Others Icon.png"; sourceTree = "<group>"; };
 		EAD511071DD5A12700C4C135 /* Discard Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Discard Icon.png"; sourceTree = "<group>"; };
 		EAD511081DD5A12700C4C135 /* Divider Thin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Divider Thin.png"; sourceTree = "<group>"; };
@@ -548,6 +550,8 @@
 				EAD511601DD7941200C4C135 /* MapViewController.swift */,
 				EAD511621DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift */,
 				EAE09C881DD810AD00A7B8CE /* ErrorViewController.swift */,
+				EA7F78A51DD9846900443BA7 /* GalleryTabBarViewController.swift */,
+				EA13EF031DDA9D5500B27D7A /* RaisedTabBarController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -578,9 +582,8 @@
 				EAD511011DD5A12700C4C135 /* Bottom Bar No Divider.png */,
 				EAD511021DD5A12700C4C135 /* Bottom Bar.png */,
 				EAD511031DD5A12700C4C135 /* Breaker Line.png */,
-				EAD511041DD5A12700C4C135 /* Camera Circle.png */,
-				EAD511051DD5A12700C4C135 /* Camera Icon.png */,
 				EAD5115E1DD791BD00C4C135 /* Invite Circle Icon.png */,
+				EA7F78A31DD9723A00443BA7 /* Camera Icon.png */,
 				EAD511061DD5A12700C4C135 /* Collab with Others Icon.png */,
 				EAD511071DD5A12700C4C135 /* Discard Icon.png */,
 				EAD511081DD5A12700C4C135 /* Divider Thin.png */,
@@ -778,7 +781,6 @@
 				EA22689B1DD9692F00E2943E /* Upvote Arrow Selected.png in Resources */,
 				EAD5114A1DD5A12700C4C135 /* Paper Airplane Icon.png in Resources */,
 				EA6DA95A1CF53C3E00B14A89 /* Overview Icon.png in Resources */,
-				EAD511341DD5A12700C4C135 /* Camera Icon.png in Resources */,
 				EA4577451D7FDCE700BF5936 /* Add People Icon@2x.png in Resources */,
 				EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */,
 				EAED8F891DD8D169007CB040 /* Montserrat-UltraLight.otf in Resources */,
@@ -806,7 +808,6 @@
 				EAD511381DD5A12700C4C135 /* Download Icon NOT Selected.png in Resources */,
 				EA5BC4831D237E1A00A066AC /* Back Arrow.pdf in Resources */,
 				EA76B7741D07F14200E2D593 /* Video Icon.png in Resources */,
-				EAD511331DD5A12700C4C135 /* Camera Circle.png in Resources */,
 				EA2268951DD966D800E2943E /* Gallery Icon.png in Resources */,
 				EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */,
 				EAD5113D1DD5A12700C4C135 /* Forward Arrow Icon.png in Resources */,
@@ -833,6 +834,7 @@
 				EA45773D1D7FD76800BF5936 /* Question Mark Icon@2x.png in Resources */,
 				EAD3A5AE1DD9529100A4EF31 /* X Icon White.png in Resources */,
 				EA76B79C1D0CBC7100E2D593 /* Text Selected.jpg in Resources */,
+				EA7F78A41DD9723A00443BA7 /* Camera Icon.png in Resources */,
 				EAD511391DD5A12700C4C135 /* Download Icon Selected.png in Resources */,
 				EAD5114D1DD5A12700C4C135 /* Settings Icon.png in Resources */,
 				EAD3A5AC1DD9528B00A4EF31 /* Plus Button.png in Resources */,
@@ -985,6 +987,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA13EF041DDA9D5500B27D7A /* RaisedTabBarController.swift in Sources */,
 				EA5C851A1D0160BB00A61033 /* GalleryTableViewCell.swift in Sources */,
 				EAD511631DD7A24F00C4C135 /* ConfirmJoinEventViewController.swift in Sources */,
 				EA0ACBFC1DD43DA40038179F /* TimeInfoViewController.swift in Sources */,
@@ -1014,6 +1017,7 @@
 				EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */,
 				EAD5115B1DD7829F00C4C135 /* FriendListTableViewCell.swift in Sources */,
 				EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */,
+				EA7F78A61DD9846900443BA7 /* GalleryTabBarViewController.swift in Sources */,
 				EAD487C31D8469FA0059EB44 /* PreviewImageViewController.swift in Sources */,
 				EA5382DF1D7D25EA0044D059 /* ProfileIconView.swift in Sources */,
 				EAD487C51D846A2F0059EB44 /* PreviewVideoViewController.swift in Sources */,

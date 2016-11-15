@@ -10,14 +10,16 @@ import UIKit
 import FBSDKLoginKit
 
 class OptionsMenuTableViewController: UITableViewController {
-    @IBOutlet weak var cellLogout: UITableViewCell!
 
+    @IBOutlet weak var viewLogout: UIView!
+    
     var delegate: HomeViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         self.navigationController?.navigationBar.tintColor = UIColor.white
         let logoutTap = UITapGestureRecognizer(target: self, action: #selector(logout))
-        cellLogout.addGestureRecognizer(logoutTap)
+        viewLogout.addGestureRecognizer(logoutTap)
         self.navigationItem.title = "Settings"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 //        let backButton = UIBarButtonItem(image: UIImage(named: "Back Arrow Icon"), style: .plain, target: self, action: nil)
@@ -42,8 +44,7 @@ class OptionsMenuTableViewController: UITableViewController {
     func logout() {
         self.delegate.deinitPullToRefresh()
         FBSDKLoginManager().logOut()
-        self.dismiss(animated: true, completion: nil)
-        self.navigationController!.dismiss(animated: false, completion: nil)
+        self.navigationController!.dismiss(animated: true, completion: nil)
     }
 }
 

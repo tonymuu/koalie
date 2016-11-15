@@ -21,6 +21,7 @@ target 'Koalie' do
     pod 'DGElasticPullToRefresh'
     pod 'SCLAlertView'
     pod 'NVActivityIndicatorView'
+    pod 'ESTabBarController'
 end
 
 
