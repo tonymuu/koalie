@@ -3,7 +3,7 @@
 //  Koalie
 //
 //  Created by Tony Mu on 5/10/16.
-//  Copyright Â© 2016 Koa. All rights reserved.
+//  Copyright © 2016 Koa. All rights reserved.
 //
 
 import Foundation
