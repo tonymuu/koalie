@@ -85,16 +85,25 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController!.navigationBar.isTranslucent = true
+
         super.viewWillAppear(animated)
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.isTranslucent = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.5, animations: {
+            self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController!.navigationBar.shadowImage = UIImage()
+        })
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
-        self.navigationController!.navigationBar.isTranslucent = false
+//        self.navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
+//        self.navigationController!.navigationBar.isTranslucent = false
+
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {

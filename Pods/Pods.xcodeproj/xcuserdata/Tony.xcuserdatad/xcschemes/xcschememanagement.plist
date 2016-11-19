@@ -104,6 +104,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDRecordButton.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SlideMenuControllerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -117,11 +122,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02A190EA11B08C99FA3FB9E3F2963ABD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>070374204E491EF7E794313D14C6950B</key>
 		<dict>
 			<key>primary</key>
@@ -142,12 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
+		<key>2E813177320828E9120DAFCD2BFEFD16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39B49B03A7C672958A145674CF932A90</key>
+		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,22 +167,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FD3CA702D4F1EA7C1DEB70F6B110579</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4C0D54BC2EA848C7B20395ECFF54CB64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5DFABA8488A60647D98A7B53F5CEE4BC</key>
+		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
+		<key>6FEEBA33603D4B562AE2C73F9B40A9DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -197,6 +192,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9A126BB7A6E4F9AA573883298EB13FA7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
@@ -207,7 +207,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ADF5717A4084A877213718F21C6169E5</key>
+		<key>BF29B8E012239125F20BD4A59B9465AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -217,7 +217,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D7F13EE681D338183EA49C04EF12265D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DD4C60D0C1ADF7586B8862EEA147DE00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE882201FE79876E56DDF9D4450FF9AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

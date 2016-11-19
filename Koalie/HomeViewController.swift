@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // for splash window animation
         let window = UIApplication.shared.keyWindow
-        revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "KoalieLogo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
+        revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Koalie_Logo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
         revealingSplashView.animationType = .heartBeat
         window?.addSubview(revealingSplashView)
         revealingSplashView.startAnimation(){
@@ -61,8 +61,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self?.reloadData()
             self?.eventTableView.dg_stopLoading()
             }, loadingView: loadingView)
-        self.eventTableView.dg_setPullToRefreshFillColor(eventTableView.backgroundColor!)
-        self.eventTableView.dg_setPullToRefreshBackgroundColor(Constants.backgroundColor.dark)
+        self.eventTableView.dg_setPullToRefreshFillColor(Constants.backgroundColor.dark)
+        self.eventTableView.dg_setPullToRefreshBackgroundColor(eventTableView.backgroundColor!)
         
         self.eventTableView.delegate = self
         self.eventTableView.dataSource = self
@@ -81,6 +81,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.setBackgroundImage(nil, for: .default)
+
 //        // navigation bar height
 //        self.navigationController?.navigationBar.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: self.view.frame.size.width, height: 80.0))
 //        // set to false so nav bar won't cover view
@@ -187,13 +189,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     fileprivate func generateProfileImageView(_ urlString: String) -> UIView {
-        let hw = (self.navigationController?.navigationBar.frame.size.height)!
+        let hw = (self.navigationController?.navigationBar.frame.size.height)! - 10
         let imgViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: hw, height: hw))
         let imgView = UIImageView(frame: imgViewContainer.frame)
         let url = URL(string: urlString)
         if let imgData = try? Data(contentsOf: url!) {
             imgView.image = UIImage(data: imgData)
-            
             let textAttachment = NSTextAttachment()
             textAttachment.image = UIImage(data: imgData)
             let attachmentString = NSAttributedString(attachment: textAttachment)

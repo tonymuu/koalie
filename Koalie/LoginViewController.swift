@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "KoalieLogo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
+        revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "Koalie_Logo")!,iconInitialSize: CGSize(width: 120, height: 150), backgroundColor: Constants.backgroundColor.light)
         revealingSplashView.animationType = .heartBeat
         self.view.addSubview(revealingSplashView)
         revealingSplashView.startAnimation(){

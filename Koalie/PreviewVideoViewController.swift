@@ -60,18 +60,18 @@ class PreviewVideoViewController: UIViewController {
         
         self.view!.addSubview(self.backButton)
         
-        let confirmButton = UIButton(type: .system)
+        let confirmButton = UIButton(type: .custom)
         confirmButton.frame = CGRect(x: screenRect.size.width - 72.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
         confirmButton.tintColor = UIColor.white
-        confirmButton.setImage(UIImage(named: "Check-Mark-Icon.png") , for: UIControlState())
+        confirmButton.setImage(UIImage(named: "Keep_Icon") , for: UIControlState())
         confirmButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
         confirmButton.addTarget(self, action: #selector(save), for: .touchUpInside)
         self.view.addSubview(confirmButton)
         
-        let cancelButton = UIButton(type: .system)
+        let cancelButton = UIButton(type: .custom)
         cancelButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 90, width: 60.0, height: 60.0)
         cancelButton.tintColor = UIColor.white
-        cancelButton.setImage(UIImage(named: "X-Icon.png") , for: UIControlState())
+        cancelButton.setImage(UIImage(named: "Discard_Icon") , for: UIControlState())
         cancelButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
         cancelButton.addTarget(self, action: #selector(cancel), for: .touchUpInside)
         self.view.addSubview(cancelButton)

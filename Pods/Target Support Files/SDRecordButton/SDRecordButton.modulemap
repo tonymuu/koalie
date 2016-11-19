@@ -1,0 +1,6 @@
+framework module SDRecordButton {
+  umbrella header "SDRecordButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

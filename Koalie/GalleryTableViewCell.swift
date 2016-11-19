@@ -16,11 +16,11 @@ protocol GalleryTableViewCellDelegate {
 
 
 class GalleryTableViewCell: UITableViewCell {
+    @IBOutlet weak var viewProfile: UIImageView!
     @IBOutlet weak var viewPicture: UIImageView!
     @IBOutlet weak var labelUpvotes: UILabel!
     @IBOutlet weak var buttonUpvote: UIButton!
     @IBOutlet weak var buttonDownload: UIButton!
-    @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     
     var actionSheet: UIAlertController!

@@ -24,9 +24,9 @@ open class RaisedTabBarController: UITabBarController {
     open func addRaisedButton(_ buttonImage: UIImage?, highlightImage: UIImage?) {
         if let buttonImage = buttonImage {
             let button = UIButton(type: UIButtonType.custom)
-            let height = self.tabBar.frame.size.height + 16
+            let height = self.tabBar.frame.size.height + 24
             button.autoresizingMask = [UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleLeftMargin, UIViewAutoresizing.flexibleBottomMargin, UIViewAutoresizing.flexibleTopMargin]
-            button.frame = CGRect(x: 0.0, y: 0.0, width: height, height: height)
+            button.frame = CGRect(x: 0.0, y: 0.0, width: height + 6, height: height)
             button.setBackgroundImage(buttonImage, for: UIControlState())
             button.setBackgroundImage(highlightImage, for: UIControlState.highlighted)
             

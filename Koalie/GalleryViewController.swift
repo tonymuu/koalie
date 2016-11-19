@@ -78,7 +78,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.delegate = self
                 cell.profileName.text = fbName
                 if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
-                    cell.profilePicture.image = UIImage(data: data as Data)
+                    cell.viewProfile.image = UIImage(data: data as Data)
                 }
                 cell.labelUpvotes.text = String(upvotes!)
                 cell.eventId = eventId
@@ -133,7 +133,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.delegate = self
             cell.profileName.text = fbName
             if let data = NSData(contentsOf: URL(string: profilePicUrl)!) {
-                cell.profilePicture.image = UIImage(data: data as Data)
+                cell.viewProfile.image = UIImage(data: data as Data)
             }
             cell.buttonUpvote.isSelected = isVoted
             cell.labelUpvotes.text = String(upvotes!)

@@ -11,20 +11,25 @@ import LLSimpleCamera
 import Alamofire
 import AWSS3
 import ESTabBarController
+import SDRecordButton
 
 class LLSimpleCamViewController: UIViewController {
     var errorLabel = UILabel();
-    var snapButton = UIButton();
+//    var snapButton = UIButton();
     var switchButton = UIButton();
     var flashButton = UIButton()
     var settingsButton = UIButton();
     var galleryButton = UIButton();
     var homeButton = UIButton();
     var camera = LLSimpleCamera();
+    var snapButton: SDRecordButton!
     
     var eventId: String!
     var userId: String!
     
+    var videoDuration = 6.0
+    var progressTimer: Timer!
+    var progress: Double = 0.0
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
@@ -39,14 +44,14 @@ class LLSimpleCamViewController: UIViewController {
         
         let screenRect = UIScreen.main.bounds;
         
-        self.camera = LLSimpleCamera(quality: AVCaptureSessionPresetHigh, position: LLCameraPositionFront, videoEnabled: true)
+        self.camera = LLSimpleCamera(quality: AVCaptureSessionPresetHigh, position: LLCameraPositionRear, videoEnabled: true)
         self.camera.attach(to: self, withFrame: CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height))
         self.camera.fixOrientationAfterCapture = false;
         
-        self.homeButton = UIButton(type: .system)
-        self.homeButton.frame = CGRect(x: 12.0, y: 16.0, width: 29.0 + 20.0, height: 22.0 + 20.0)
+        self.homeButton = UIButton(type: .custom)
+        self.homeButton.frame = CGRect(x: 12.0, y: 16.0, width: 60, height: 60)
         self.homeButton.tintColor = UIColor.white
-        self.homeButton.setImage(UIImage(named: "Home Icon.png"), for: UIControlState())
+        self.homeButton.setImage(UIImage(named: "Home_Icon"), for: UIControlState())
         self.homeButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
         self.homeButton.addTarget(self, action: #selector(homeButtonClick), for: .touchUpInside)
         self.view!.addSubview(homeButton)
@@ -109,44 +114,54 @@ class LLSimpleCamViewController: UIViewController {
         }
         
         if(LLSimpleCamera.isFrontCameraAvailable() && LLSimpleCamera.isRearCameraAvailable()){
-            self.snapButton = UIButton(type: .custom)
-            self.snapButton.frame = CGRect(x: 0, y: 0, width: 70.0, height: 70.0)
-            self.snapButton.clipsToBounds = true
-            self.snapButton.layer.cornerRadius = self.snapButton.frame.width / 2.0
-            self.snapButton.layer.borderColor = UIColor.white.cgColor
-            self.snapButton.layer.borderWidth = 3.0
-            self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.6);
-            self.snapButton.layer.rasterizationScale = UIScreen.main.scale
-            self.snapButton.layer.shouldRasterize = true
+//            self.snapButton = UIButton(type: .custom)
+//            self.snapButton.frame = CGRect(x: 0, y: 0, width: 70.0, height: 70.0)
+//            self.snapButton.clipsToBounds = true
+//            self.snapButton.layer.cornerRadius = self.snapButton.frame.width / 2.0
+//            self.snapButton.layer.borderColor = UIColor.white.cgColor
+//            self.snapButton.layer.borderWidth = 3.0
+//            self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.6);
+//            self.snapButton.layer.rasterizationScale = UIScreen.main.scale
+//            self.snapButton.layer.shouldRasterize = true
+//            self.snapButton.frame = CGRect(x: 0, y: 0, width: 70.0, height: 70.0)
+//            self.snapButton.addTarget(self, action: #selector(snapButtonClicked(_:)), for: .touchUpInside)
+//            self.snapButton.addTarget(self, action: #selector(snapButtonPressedDown(_:)), for: .touchDown)
+//            self.view!.addSubview(self.snapButton)
+            
+            
+            self.snapButton = SDRecordButton(frame: CGRect(x: 0, y: 0, width: 70.0, height: 70.0))
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(snapButtonClicked))
             tapGesture.numberOfTapsRequired = 1
-            let holdDownGesture = UILongPressGestureRecognizer(target: self, action: #selector(snapButtonPressedDown))
-            self.snapButton.addGestureRecognizer(tapGesture)
+            let holdDownGesture = UILongPressGestureRecognizer(target: self, action: #selector(snapButtonPressedDown(_:)))
             self.snapButton.addGestureRecognizer(holdDownGesture)
-            self.view!.addSubview(self.snapButton)
+            self.snapButton.addGestureRecognizer(tapGesture)
+            self.snapButton.buttonColor = UIColor.white
+            self.snapButton.progressColor = UIColor.red
+            self.view.addSubview(self.snapButton)
             
-            self.flashButton = UIButton(type: .system)
-            self.flashButton.frame = CGRect(x: 0, y: 0, width: 16.0 + 20.0, height: 24.0 + 20.0)
+            self.flashButton = UIButton(type: .custom)
+            self.flashButton.frame = CGRect(x: screenRect.size.width - 12.0, y: screenRect.size.height - 60, width: 60, height: 60)
             self.flashButton.tintColor = UIColor.white
-            self.flashButton.setImage(UIImage(named: "Flash Off Icon.png"), for: .normal)
-            self.flashButton.setImage(UIImage(named: "Flash On Icon.png"), for: .selected)
+            self.flashButton.setImage(UIImage(named: "Flash_Off_Icon"), for: .normal)
+            self.flashButton.setImage(UIImage(named: "Flash_On_Icon"), for: .selected)
             self.flashButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
             self.flashButton.addTarget(self, action: #selector(self.flashButtonPressed(_:)), for: .touchUpInside)
-            self.flashButton.isHidden = true;
+            self.flashButton.isHidden = false;
             self.view!.addSubview(self.flashButton)
             
-            self.switchButton = UIButton(type: .system)
-            self.switchButton.frame = CGRect(x: screenRect.size.width - 12.0, y: 12.0, width: 29.0 + 20.0, height: 22.0 + 20.0)
+            self.switchButton = UIButton(type: .custom)
+            self.switchButton.frame = CGRect(x: screenRect.size.width - 12.0, y: 12.0, width: 60, height: 50)
             self.switchButton.tintColor = UIColor.white
-            self.switchButton.setImage(UIImage(named: "Flip Camera Icon.png"), for: UIControlState())
+            self.switchButton.setImage(UIImage(named: "Flip_Camera_Icon"), for: UIControlState())
             self.switchButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
             self.switchButton.addTarget(self, action: #selector(self.switchButtonPressed(_:)), for: .touchUpInside)
             self.view!.addSubview(self.switchButton)
             
-            self.galleryButton = UIButton(type: .system)
-            self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 29.0 + 20.0, height: 22.0 + 20.0)
+            self.galleryButton = UIButton(type: .custom)
+            self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 60, height: 60)
             self.galleryButton.tintColor = UIColor.white
-            self.galleryButton.setImage(UIImage(named: "Gallery Icon.png"), for: UIControlState())
+//            self.galleryButton.
+            self.galleryButton.setImage(UIImage(named: "Gallery_Icon"), for: UIControlState())
             self.galleryButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
             self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
             self.view!.addSubview(self.galleryButton)
@@ -166,10 +181,10 @@ class LLSimpleCamViewController: UIViewController {
             self.view!.addSubview(self.errorLabel)
             
             // temporary gallery button for testing on simulator
-            self.galleryButton = UIButton(type: .system)
+            self.galleryButton = UIButton(type: .custom)
             self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 29.0 + 20.0, height: 22.0 + 20.0)
             self.galleryButton.tintColor = UIColor.white
-            self.galleryButton.setImage(UIImage(named: "Gallery Icon.png"), for: UIControlState())
+            self.galleryButton.setImage(UIImage(named: "Gallery_Icon"), for: UIControlState())
             self.galleryButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
             self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
             self.view!.addSubview(self.galleryButton)
@@ -199,7 +214,7 @@ class LLSimpleCamViewController: UIViewController {
         self.camera.togglePosition()
     }
     
-    func snapButtonClicked(_ sender: UIGestureRecognizer) {
+    func snapButtonClicked(_ sender: UIButton) {
         print("Clicked")
         if (camera.position == LLCameraPositionFront) {
             camera.mirror = LLCameraMirrorOn
@@ -210,12 +225,13 @@ class LLSimpleCamViewController: UIViewController {
         // capture
         self.camera.capture({(camera, image, metadata, error) -> Void in
             if (error == nil) {
+                self.resetProgress()
                 camera?.perform(#selector(NetService.stop), with: nil, afterDelay: 0.2)
                 let imageVC: PreviewImageViewController = PreviewImageViewController(image: image!)
                 imageVC.eventId = self.eventId
                 self.present(imageVC, animated: false, completion: { _ in })
             } else {
-                print("An error has occured: %@", error)
+                print("An error has occured: %@", error!)
             }
         }, exactSeenImage: true)
     }
@@ -227,30 +243,33 @@ class LLSimpleCamViewController: UIViewController {
             camera.mirror = LLCameraMirrorOff
         }
         let uuid = UUID().uuidString
-
         if sender.state == .began {
             print("Held Down...")
+            self.snapButton.progressColor = UIColor.red
+            self.snapButton.circleLayer.backgroundColor = UIColor.red.cgColor
+            self.progressTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(updateProgress), userInfo: nil, repeats: true)
             if(self.camera.position == LLCameraPositionRear && !self.flashButton.isHidden){
                 self.flashButton.isHidden = true;
             }
             self.switchButton.isHidden = true
-            self.snapButton.layer.borderColor = UIColor.red.cgColor
-            self.snapButton.backgroundColor = UIColor.red.withAlphaComponent(0.5);
+            //        self.snapButton.layer.borderColor = UIColor.red.cgColor
+            //        self.snapButton.backgroundColor = UIColor.red.withAlphaComponent(0.5);
             // start recording
             let outputURL: URL = self.applicationDocumentsDirectory().appendingPathComponent(uuid).appendingPathExtension("mov")
             print(outputURL)
             self.camera.startRecording(withOutputUrl: outputURL)
         } else if sender.state == .ended {
             print("Released")
+            self.progressTimer.invalidate()
+            self.resetProgress()
             if(self.camera.position == LLCameraPositionRear && self.flashButton.isHidden){
                 self.flashButton.isHidden = false;
             }
             self.switchButton.isHidden = false
-            self.snapButton.layer.borderColor = UIColor.white.cgColor
-            self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.5);
+//            self.snapButton.layer.borderColor = UIColor.white.cgColor
+//            self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.5);
             self.camera.stopRecording({(camera, outputFileUrl, error) -> Void in
-               // let uploadUrl = self.applicationDocumentsDirectory().appendingPathComponent(uuid).appendingPathExtension("mov")
-                
+                // let uploadUrl = self.applicationDocumentsDirectory().appendingPathComponent(uuid).appendingPathExtension("mov")
                 print(outputFileUrl!)
                 let vc: PreviewVideoViewController = PreviewVideoViewController(videoUrl: outputFileUrl!)
                 vc.eventId = self.eventId
@@ -259,15 +278,44 @@ class LLSimpleCamViewController: UIViewController {
         }
     }
     
+    func updateProgress() {
+        self.progress += 0.05 / videoDuration
+        self.snapButton.setProgress(CGFloat(self.progress))
+        if self.progress >= 1 {
+            self.progressTimer.invalidate()
+            self.camera.stopRecording({(camera, outputFileUrl, error) -> Void in
+                // let uploadUrl = self.applicationDocumentsDirectory().appendingPathComponent(uuid).appendingPathExtension("mov")
+                self.resetProgress()
+                print(outputFileUrl!)
+                let vc: PreviewVideoViewController = PreviewVideoViewController(videoUrl: outputFileUrl!)
+                vc.eventId = self.eventId
+                self.present(vc, animated: false)
+            })
+        }
+    }
+    
+    func resetProgress() {
+        self.progress = 0.0
+        self.snapButton.progressColor = UIColor.white
+        self.snapButton.circleLayer.backgroundColor = UIColor.white.cgColor
+        self.snapButton.setProgress(CGFloat(self.progress))
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.camera.view.frame = self.view.bounds
         self.snapButton.center = self.view.center
         self.snapButton.frame.origin.y = self.view.bounds.height - 90
-        self.flashButton.center = self.view.center
-        self.flashButton.frame.origin.y = 5.0
-        self.switchButton.frame.origin.y = 5.0
+        self.flashButton.frame.origin.x = self.view.frame.width - 70
+        self.flashButton.frame.origin.y = self.view.bounds.height - 70
+        self.switchButton.frame.origin.y = 12.0
         self.switchButton.frame.origin.x = self.view.frame.width - 60.0
+        self.galleryButton.frame.origin.y = self.view.bounds.height - 70
+        self.switchButton.frame.origin.x = self.flashButton.frame.origin.x
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.resetProgress()
     }
     
     func flashButtonPressed(_ button: UIButton) {
@@ -304,9 +352,13 @@ class LLSimpleCamViewController: UIViewController {
         let eventGalleryVC = storyboard.instantiateViewController(withIdentifier: "eventGalleryVC") as! EventGalleryViewController
         let myGalleryVC = storyboard.instantiateViewController(withIdentifier: "myGalleryVC") as! YourGalleryViewController
         let tabbarVC = GalleryTabBarViewController()
-        let item2 = UITabBarItem(title: "You", image: UIImage(named: "You Icon NOT Selected"), selectedImage: UIImage(named: "You Icon Selected"))
-        let item1 = UITabBarItem(title: "Others", image: UIImage(named: "Others Icon NOT selected"), selectedImage: UIImage(named: "Others Icon Selected"))
+        let item2 = UITabBarItem(title: "You", image: UIImage(named: "You_Icon_NOT_Selected"), selectedImage: UIImage(named: "You_Icon_Selected"))
+        let item1 = UITabBarItem(title: "Others", image: UIImage(named: "Others_Icon_NOT_selected"), selectedImage: UIImage(named: "Others_Icon_Selected"))
         
+        UITabBarItem.appearance().setTitleTextAttributes(NSDictionary(object: UIFont(name: "montserrat", size: 12), forKey: NSFontAttributeName as NSCopying) as! [String : Any], for: UIControlState.normal)
+        tabbarVC.tabBar.barTintColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 1.0)
+//        tabbarVC.tintColor = Constants.backgroundColor.dark
+//        tabbarVC.tabBar.backgroundImage =
         eventGalleryVC.tabBarItem = item1
         myGalleryVC.tabBarItem = item2
         eventGalleryVC.eventId = self.eventId
@@ -321,4 +373,6 @@ class LLSimpleCamViewController: UIViewController {
     internal func homeButtonClick() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }

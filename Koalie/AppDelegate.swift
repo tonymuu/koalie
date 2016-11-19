@@ -71,9 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = myStoryBoard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
             let navigationVC = UINavigationController(rootViewController: vc)
             navigationVC.navigationBar.barTintColor = Constants.backgroundColor.darkTranslucent
-            var frame = navigationVC.navigationBar.frame
-            frame.size.height += 64
-            navigationVC.navigationBar.frame = frame
             self.window?.rootViewController = navigationVC
             
             return true

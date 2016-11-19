@@ -25,6 +25,7 @@ PODS:
   - NVActivityIndicatorView (3.0)
   - RevealingSplashView (0.1.0)
   - SCLAlertView (0.7.0)
+  - SDRecordButton (1.0.3)
   - SlideMenuControllerSwift (3.0.0)
   - VIMVideoPlayer (6.0.1)
 
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - RevealingSplashView
   - SCLAlertView
+  - SDRecordButton
   - SlideMenuControllerSwift
   - VIMVideoPlayer
 
@@ -75,9 +77,10 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   RevealingSplashView: 501dd03d975ba2c4165dd463ea1c7c407fb9d13e
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  SDRecordButton: 2533ae9e0e731c1540fa50b6fc43cdc3f15d20f4
   SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 10d64950d2fe7e696e20cdb167fea65cb5b6b74d
+PODFILE CHECKSUM: 83188e42b779318937eced344b3b0515cf5005f5
 
 COCOAPODS: 1.0.1

@@ -22,6 +22,7 @@ target 'Koalie' do
     pod 'SCLAlertView'
     pod 'NVActivityIndicatorView'
     pod 'ESTabBarController'
+    pod 'SDRecordButton'
 end
 
 

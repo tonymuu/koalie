@@ -69,6 +69,7 @@ class JoinEventViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(activityIndicator)
 
         self.textfieldHashtag.delegate = self
+        self.textfieldHashtag.returnKeyType = .done
     }
     
     func presentSuccessScreen(event: NSDictionary, message: String, eventId: String) {
@@ -150,4 +151,8 @@ class JoinEventViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

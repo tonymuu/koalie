@@ -49,6 +49,8 @@ class HashtagViewController: UIViewController, UITextFieldDelegate {
 //        self.textfieldHashtag.leftView = labelHashtag
         
         self.textfieldHashtag.delegate = self
+        self.textfieldHashtag.returnKeyType = .done
+
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -63,6 +65,12 @@ class HashtagViewController: UIViewController, UITextFieldDelegate {
         if textField.text?.characters.count == 1 {
             textField.text = ""
         }
+        buttonNext.isEnabled = textField.hasText
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func dismissKeyboard() {

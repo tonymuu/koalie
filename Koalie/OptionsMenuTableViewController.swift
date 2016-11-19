@@ -20,6 +20,7 @@ class OptionsMenuTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         let logoutTap = UITapGestureRecognizer(target: self, action: #selector(logout))
         viewLogout.addGestureRecognizer(logoutTap)
+        self.viewLogout.layer.zPosition = 1
         self.navigationItem.title = "Settings"
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
 //        let backButton = UIBarButtonItem(image: UIImage(named: "Back Arrow Icon"), style: .plain, target: self, action: nil)
@@ -39,6 +40,9 @@ class OptionsMenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.row == 2 {
+//            logout()
+//        }
     }
     
     func logout() {
