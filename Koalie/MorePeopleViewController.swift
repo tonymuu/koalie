@@ -23,11 +23,17 @@ class MorePeopleViewController: PeopleViewController {
     }
     
     @IBAction func buttonAddClick(_ sender: AnyObject) {
-        let dict = ["eventId": self.eventId,
-                    "size": self.size] as [String : Any]
-        Alamofire.request(Constants.URIs.baseUri + Constants.routes.addPeople, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-            print(response.request ?? "Response")
-            SCLAlertView().showSuccess("Success!", subTitle: "Congratz! You just added \(self.size!) people!")
+        if self.size == 50 {
+            let alert = SCLAlertView()
+            alert.addButton("Confirm", action: {
+                let dict = ["eventId": self.eventId,
+                            "size": self.size] as [String : Any]
+                Alamofire.request(Constants.URIs.baseUri + Constants.routes.addPeople, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                    print(response.request ?? "Response")
+                    SCLAlertView().showSuccess("Success!", subTitle: "Congratz! You just added \(self.size!) people!")
+                }
+            })
+            alert.showSuccess("$1.99", subTitle: "$1.99 will add 50 spots to your event.")
         }
     }
 }

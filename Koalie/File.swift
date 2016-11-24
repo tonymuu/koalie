@@ -65,5 +65,9 @@ struct Constants {
         static let joinSuccess = "You have joined the event!"
         static let createSuccess = "Your event has been created!"
     }
+    
+    struct bundles {
+        static let FiftySpotBundle = "com.koa.Koalie.50_spot_bundle"
+    }
 }
 

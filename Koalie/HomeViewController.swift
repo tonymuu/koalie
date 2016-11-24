@@ -112,26 +112,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 104
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
-            let eventId = cell.eventId!
-            let dict = ["eventId": eventId]
-            if (cell.adminId != self.userId) {
-                Alamofire.request(Constants.URIs.baseUri + Constants.routes.exitEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-                    print("exited event")
-                }
-                numberOfRows -= 1
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                SCLAlertView().showSuccess("Success!", subTitle: "You have exited the event")
-            } else {
-                Alamofire.request(Constants.URIs.baseUri + Constants.routes.deleteEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-                    print("deleted event")
-                }
-                numberOfRows -= 1
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                SCLAlertView().showSuccess("Success!", subTitle: "You have deleted the event")
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+        let eventId = cell.eventId!
+        let dict = ["eventId": eventId]
+        let exitAction = UITableViewRowAction(style: .normal, title: "Exit", handler: {_,_ in
+            Alamofire.request(Constants.URIs.baseUri + Constants.routes.exitEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                print("exited event")
             }
+            self.numberOfRows -= 1
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            SCLAlertView().showSuccess("Success!", subTitle: "You have exited the event")
+        })
+        exitAction.backgroundColor = UIColor.orange
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: {_,_ in
+            Alamofire.request(Constants.URIs.baseUri + Constants.routes.deleteEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                print("deleted event")
+            }
+            self.numberOfRows -= 1
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            SCLAlertView().showSuccess("Success!", subTitle: "You have deleted the event")
+        })
+
+        if !cell.isAdmin  {
+            return [exitAction]
+        } else {
+            return [deleteAction]
         }
     }
     
@@ -161,7 +167,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.users = users
         cell.x = x
         cell.y = y
-        cell.adminId = adminId
+        cell.isAdmin = adminId == self.userId
         
         // time left label
         if timeLeft <= 0 {

@@ -19,7 +19,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var viewOverLay: UIView!
     
     weak var delegate: PresentInfoViewProtocol?
-    var adminId: String!
+    var isAdmin: Bool!
     var eventId: String!
     var eventImage: UIImage?
     var hoursLong: String!

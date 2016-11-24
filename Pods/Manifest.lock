@@ -27,6 +27,7 @@ PODS:
   - SCLAlertView (0.7.0)
   - SDRecordButton (1.0.3)
   - SlideMenuControllerSwift (3.0.0)
+  - SwiftyStoreKit (0.5.3)
   - VIMVideoPlayer (6.0.1)
 
 DEPENDENCIES:
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - SCLAlertView
   - SDRecordButton
   - SlideMenuControllerSwift
+  - SwiftyStoreKit
   - VIMVideoPlayer
 
 EXTERNAL SOURCES:
@@ -79,8 +81,9 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   SDRecordButton: 2533ae9e0e731c1540fa50b6fc43cdc3f15d20f4
   SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
+  SwiftyStoreKit: 4422976f5ffacc4bd1be04211d0579f85c8c4ee1
   VIMVideoPlayer: f4ed0a9986294ec3684a2e6bdc738e30051ef4ef
 
-PODFILE CHECKSUM: 83188e42b779318937eced344b3b0515cf5005f5
+PODFILE CHECKSUM: 0839dc5ded31fdde056c3bc839cb301af40ffab3
 
 COCOAPODS: 1.0.1

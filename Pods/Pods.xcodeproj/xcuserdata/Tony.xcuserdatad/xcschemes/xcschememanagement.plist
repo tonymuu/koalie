@@ -114,6 +114,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyStoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>VIMVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -127,7 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>08CB8C5CF10A86A6175C8BE70126E408</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>115824B7CB2E76E5ACB836A251E79404</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1E18949D1F01AF41F510094DBE3CDBB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -138,11 +153,6 @@
 			<true/>
 		</dict>
 		<key>2637C02A9FA946061714A669B4162D08</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2E813177320828E9120DAFCD2BFEFD16</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,12 +182,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
+		<key>57B8DA3949D61420AB47BC50AD0116BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FEEBA33603D4B562AE2C73F9B40A9DE</key>
+		<key>6EA3D4B2422201538C807D827093CB6A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,11 +207,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A126BB7A6E4F9AA573883298EB13FA7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
@@ -207,7 +217,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF29B8E012239125F20BD4A59B9465AF</key>
+		<key>BB1F195E167782DE89F04EC43F596E3B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD03C81E3CCC0F0468668F53B47CF19B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -217,17 +232,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D7F13EE681D338183EA49C04EF12265D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>DD4C60D0C1ADF7586B8862EEA147DE00</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE882201FE79876E56DDF9D4450FF9AD</key>
+		<key>DEB6477CBA3C587C908468BEDC53446A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

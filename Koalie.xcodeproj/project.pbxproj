@@ -45,6 +45,7 @@
 		EA76B7921D0CBBD700E2D593 /* ThemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA76B7911D0CBBD700E2D593 /* ThemeView.xib */; };
 		EA76B79F1D0CBD3000E2D593 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */; };
 		EA7F78A61DD9846900443BA7 /* GalleryTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F78A51DD9846900443BA7 /* GalleryTabBarViewController.swift */; };
+		EA803D9E1DE6AF1D008D73D9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA803D9D1DE6AF1D008D73D9 /* StoreKit.framework */; };
 		EA88D9BD1D71F67100345E84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA88D9BC1D71F67100345E84 /* LoginViewController.swift */; };
 		EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */; };
 		EA91ABB51CE43B2A00EA81BD /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */; };
@@ -76,7 +77,6 @@
 		EAED8F881DD8D169007CB040 /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7E1DD8D169007CB040 /* Montserrat-Thin.otf */; };
 		EAED8F891DD8D169007CB040 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAED8F7F1DD8D169007CB040 /* Montserrat-UltraLight.otf */; };
 		EAF1CA4C1D98514000E1A769 /* GalleryVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */; };
-		EAFCC3691DDFD0A2005A36F7 /* home icon shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFCC3681DDFD0A2005A36F7 /* home icon shadow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +152,7 @@
 		EA76B7911D0CBBD700E2D593 /* ThemeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeView.xib; sourceTree = "<group>"; };
 		EA76B79E1D0CBD3000E2D593 /* GeneralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		EA7F78A51DD9846900443BA7 /* GalleryTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryTabBarViewController.swift; sourceTree = "<group>"; };
+		EA803D9D1DE6AF1D008D73D9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EA88D9BC1D71F67100345E84 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EA89D2F51CED4940005A6D43 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA91ABB41CE43B2A00EA81BD /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +184,6 @@
 		EAED8F7E1DD8D169007CB040 /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
 		EAED8F7F1DD8D169007CB040 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		EAF1CA4B1D98514000E1A769 /* GalleryVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryVideoTableViewCell.swift; sourceTree = "<group>"; };
-		EAFCC3681DDFD0A2005A36F7 /* home icon shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home icon shadow.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +198,7 @@
 				EA51623E1D792F590012B26B /* Bolts.framework in Frameworks */,
 				EA5162431D792F590012B26B /* FBSDKCoreKit.framework in Frameworks */,
 				EA5162441D792F590012B26B /* FBSDKLoginKit.framework in Frameworks */,
+				EA803D9E1DE6AF1D008D73D9 /* StoreKit.framework in Frameworks */,
 				EA5162451D792F590012B26B /* FBSDKShareKit.framework in Frameworks */,
 				AA9F31FC24FE4AD2052FFB7C /* Pods_Koalie.framework in Frameworks */,
 			);
@@ -224,6 +225,7 @@
 		4E9D006CA0433765B29C596E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA803D9D1DE6AF1D008D73D9 /* StoreKit.framework */,
 				EAD487C01D84650A0059EB44 /* LLSimpleCamera.framework */,
 				EA5162301D792F590012B26B /* Alamofire.framework */,
 				EA5162311D792F590012B26B /* AWSCore.framework */,
@@ -379,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				EA2589001CE0518E0060B6F2 /* Load Screen.jpg */,
-				EAFCC3681DDFD0A2005A36F7 /* home icon shadow.png */,
 				EADE5A971DDEC71A00A49E4D /* Wallpaper for App.png */,
 			);
 			name = Images;
@@ -484,9 +485,12 @@
 				TargetAttributes = {
 					EA21DA9C1CD083D200786F30 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = FGWM5JGVBM;
+						DevelopmentTeam = 9PLMUF72QT;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -530,7 +534,6 @@
 				EA89D2F61CED4940005A6D43 /* GoogleService-Info.plist in Resources */,
 				EAED8F891DD8D169007CB040 /* Montserrat-UltraLight.otf in Resources */,
 				EAED8F871DD8D169007CB040 /* Montserrat-SemiBold.otf in Resources */,
-				EAFCC3691DDFD0A2005A36F7 /* home icon shadow.png in Resources */,
 				EAED8F821DD8D169007CB040 /* Montserrat-ExtraBold.otf in Resources */,
 				EA5382E11D7D264B0044D059 /* ProfileIconView.xib in Resources */,
 				EA21DAAB1CD083D200786F30 /* LaunchScreen.storyboard in Resources */,
@@ -777,6 +780,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -798,7 +802,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -828,7 +832,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -843,7 +848,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -862,10 +867,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Koalie/Koalie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9PLMUF72QT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.koa.Koalie;
+				PRODUCT_BUNDLE_IDENTIFIER = KoalieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Koalie/Koalie-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -883,10 +889,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Koalie/Koalie.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9PLMUF72QT;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Koalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.koa.Koalie;
+				PRODUCT_BUNDLE_IDENTIFIER = KoalieApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Koalie/Koalie-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

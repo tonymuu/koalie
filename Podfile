@@ -23,6 +23,7 @@ target 'Koalie' do
     pod 'NVActivityIndicatorView'
     pod 'ESTabBarController'
     pod 'SDRecordButton'
+    pod 'SwiftyStoreKit'
 end
 
 

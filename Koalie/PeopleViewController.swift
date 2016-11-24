@@ -10,6 +10,8 @@ import UIKit
 import Alamofire
 import FBSDKLoginKit
 import MapKit
+import SwiftyStoreKit
+import SCLAlertView
 
 class PeopleViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
@@ -31,21 +33,27 @@ class PeopleViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func ButtonCreateClick(_ sender: AnyObject) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview") as! OverviewViewController
-        vc.eventName = newEvent.eventName
-        vc.labelString = Constants.labelStrings.createSuccess
-        self.present(vc, animated: true, completion: nil)
-        self.navigationController?.popToRootViewController(animated: true)
-        
-        let dict = [
-            "eventName": self.newEvent!.eventName!,
-            "eventSize": String(self.newEvent!.eventSize),
-            "eventLength": String(self.newEvent!.eventLength),
-            "x": String(self.x),
-            "y": String(self.y)]
-        
-        Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
-            print(response.request ?? "Response request")
+        if self.size == 50 {
+            let alert = SCLAlertView()
+            alert.addButton("Confirm", action: {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview") as! OverviewViewController
+                vc.eventName = self.newEvent.eventName
+                vc.labelString = Constants.labelStrings.createSuccess
+                self.present(vc, animated: true, completion: nil)
+                self.navigationController?.popToRootViewController(animated: true)
+                
+                let dict = [
+                    "eventName": self.newEvent!.eventName!,
+                    "eventSize": String(self.newEvent!.eventSize),
+                    "eventLength": String(self.newEvent!.eventLength),
+                    "x": String(self.x),
+                    "y": String(self.y)]
+                
+                Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                    print(response.request ?? "Response request")
+                }
+            })
+            alert.showSuccess("$1.99", subTitle: "$1.99 will add 50 spots to your event.")
         }
         
     }
@@ -62,6 +70,21 @@ class PeopleViewController: UIViewController, CLLocationManagerDelegate {
         buttonSecond.backgroundColor = Constants.backgroundColor.selected
         newEvent.eventSize = 50
         size = 50
+        SwiftyStoreKit.retrieveProductsInfo([Constants.bundles.FiftySpotBundle]) { result in
+            if let product = result.retrievedProducts.first {
+                let numberFormatter = NumberFormatter()
+                numberFormatter.locale = product.priceLocale
+                numberFormatter.numberStyle = .currency
+                let priceString = numberFormatter.string(from: product.price ?? 0) ?? ""
+                SCLAlertView().showInfo("Info", subTitle: "Product: \(product.localizedDescription), price: \(priceString)")
+            }
+            else if let invalidProductId = result.invalidProductIDs.first {
+                SCLAlertView().showError("Could not retrieve product info", subTitle: "Invalid product identifier: \(invalidProductId)")
+            }
+            else {
+                print("Error: \(result.error)")
+            }
+        }
     }
 
     override func viewDidLoad() {

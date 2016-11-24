@@ -78,7 +78,7 @@ class JoinEventViewController: UIViewController, UITextFieldDelegate {
         let coverPictureKey = event.object(forKey: "coverPicture")! as! String
         let spotsOpen = String(describing: event.object(forKey: "spotsOpen")!).appending(" Spots Open")
         let hoursLeft = String(describing: event.object(forKey: "timeLeft")!).appending(" Hours Left")
-        let eventName = "#".appending(String(describing: event.object(forKey: "name")!))
+        let eventName = String(describing: event.object(forKey: "name")!)
         vc.coverPictureKey = coverPictureKey
         vc.spotsOpen = spotsOpen
         vc.hoursLeft = hoursLeft
