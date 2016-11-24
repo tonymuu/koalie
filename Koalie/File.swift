@@ -3,7 +3,7 @@
 //  Koalie
 //
 //  Created by Tony Mu on 5/10/16.
-//  Copyright © 2016 Koa. All rights reserved.
+//  Copyright 2016 Koa. All rights reserved.
 //
 
 import Foundation
@@ -50,6 +50,8 @@ struct Constants {
         static let postUpvotes = "/vote_media"
         static let addPeople = "/add_people"
         static let addTime = "/add_time"
+        static let deleteEvent = "/delete_event"
+        static let exitEvent = "/exit_event"
     }
     
     struct messages {

@@ -25,7 +25,8 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     var userTotal: String!
     var eventImage: UIImage!
     var users: [NSDictionary]!
-    var locationManager: CLLocationManager!
+    var x: Double!
+    var y: Double!
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
@@ -34,7 +35,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     @IBAction func buttonAddTimeClick(_ sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimeInfoVC") as! TimeInfoViewController
         vc.eventId = self.eventId
-        vc.timeLeft = self.timeLeft
+        vc.hoursLeft = self.hoursLeft
         vc.hoursLong = self.hoursLong
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(vc, animated: true)
@@ -59,9 +60,6 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization()
-        
         self.labelTitle.text = self.eventName
         self.labelTimeLeft.text = self.timeLeft
         if self.eventImage != nil {
@@ -74,14 +72,18 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
         
         // init map view
         mapView.delegate = self
-        mapView.showsUserLocation = true
+        mapView.showsUserLocation = false
         var mapRegion = MKCoordinateRegion()
-        mapRegion.center.latitude = mapView.userLocation.coordinate.latitude
-        mapRegion.center.longitude = mapView.userLocation.coordinate.longitude
+        let annotation = MKPointAnnotation()
+        mapRegion.center.latitude = self.x
+        mapRegion.center.longitude = self.y
+        annotation.coordinate = mapRegion.center
+        annotation.title = self.eventName
+        self.mapView.addAnnotation(annotation)
         mapRegion.span.latitudeDelta = 0.2
         mapRegion.span.longitudeDelta = 0.2
         mapView.setRegion(mapRegion, animated: true)
-        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+        mapView.setCenter(mapRegion.center, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,11 +94,10 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.5, animations: {
-            self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationController!.navigationBar.shadowImage = UIImage()
-        })
-
+//        UIView.animate(withDuration: 0.5, animations: {
+//            self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//            self.navigationController!.navigationBar.shadowImage = UIImage()
+//        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -106,14 +107,6 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
 
     }
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        var mapRegion = MKCoordinateRegion()
-        mapRegion.center.latitude = mapView.userLocation.coordinate.latitude
-        mapRegion.center.longitude = mapView.userLocation.coordinate.longitude
-        mapRegion.span.latitudeDelta = 0.2
-        mapRegion.span.longitudeDelta = 0.2
-        mapView.setRegion(mapRegion, animated: true)
-    }
     
     func appInviteDialog(_ appInviteDialog: FBSDKAppInviteDialog!, didCompleteWithResults results: [AnyHashable : Any]!) {
         
@@ -124,7 +117,10 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     }
     
     func fullscreenMapview() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapVC")
-        self.present(vc!, animated: true, completion: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MapVC") as! MapViewController
+        vc.x = self.x
+        vc.y = self.y
+        vc.eventName = self.eventName
+        self.present(vc, animated: true, completion: nil)
     }
 }

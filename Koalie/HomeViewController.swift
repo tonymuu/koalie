@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import AwesomeCache
 import RevealingSplashView
 import DGElasticPullToRefresh
-
+import SCLAlertView
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PresentInfoViewProtocol {
     @IBOutlet weak var eventTableView: UITableView!
@@ -114,8 +114,24 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            numberOfRows -= 1
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let cell = tableView.cellForRow(at: indexPath) as! EventTableViewCell
+            let eventId = cell.eventId!
+            let dict = ["eventId": eventId]
+            if (cell.adminId != self.userId) {
+                Alamofire.request(Constants.URIs.baseUri + Constants.routes.exitEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                    print("exited event")
+                }
+                numberOfRows -= 1
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                SCLAlertView().showSuccess("Success!", subTitle: "You have exited the event")
+            } else {
+                Alamofire.request(Constants.URIs.baseUri + Constants.routes.deleteEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                    print("deleted event")
+                }
+                numberOfRows -= 1
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                SCLAlertView().showSuccess("Success!", subTitle: "You have deleted the event")
+            }
         }
     }
     
@@ -126,9 +142,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let filled = String(describing: (eventData.object(forKey: "member_ids") as! NSArray).count)
         var timeLeft = eventData.object(forKey: "timeLeft")! as! Int
         let endDateParsed = String(describing: eventData.object(forKey: "endDateParsed")!)
-        let hoursLong = String(describing: eventData.object(forKey: "hoursLong"))
+        let hoursLong = String(describing: eventData.object(forKey: "hoursLong")!)
         let medias = eventData.object(forKey: "media_ids") as! [NSDictionary]
         let users = eventData.object(forKey: "member_ids") as! [NSDictionary]
+        let x = eventData.object(forKey: "x") as! Double
+        let y = eventData.object(forKey: "y") as! Double
+        let adminId = eventData.object(forKey: "admin") as! String
         
         cell.delegate = self
         
@@ -140,6 +159,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userTotal = filled
         cell.eventSize = size
         cell.users = users
+        cell.x = x
+        cell.y = y
+        cell.adminId = adminId
         
         // time left label
         if timeLeft <= 0 {
@@ -186,6 +208,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.present(camVC, animated: true, completion: nil)
         
         return indexPath
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     fileprivate func generateProfileImageView(_ urlString: String) -> UIView {

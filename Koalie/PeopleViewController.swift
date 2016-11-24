@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 import FBSDKLoginKit
+import MapKit
 
-class PeopleViewController: UIViewController {
+class PeopleViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var centerConstraints: NSLayoutConstraint!
@@ -20,6 +21,9 @@ class PeopleViewController: UIViewController {
     
     var newEvent: Event!
     var size: Int!
+    var locationManager: CLLocationManager!
+    var x: Double!
+    var y: Double!
     
     
     @IBAction func ButtonBackClick(_ sender: AnyObject) {
@@ -36,8 +40,9 @@ class PeopleViewController: UIViewController {
         let dict = [
             "eventName": self.newEvent!.eventName!,
             "eventSize": String(self.newEvent!.eventSize),
-            "eventLength": String(self.newEvent!.eventLength)
-            ]
+            "eventLength": String(self.newEvent!.eventLength),
+            "x": String(self.x),
+            "y": String(self.y)]
         
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
             print(response.request ?? "Response request")
@@ -65,5 +70,23 @@ class PeopleViewController: UIViewController {
         if newEvent == nil {
             newEvent = Event()
         }
+        
+        self.firstSelected(self)
+        
+        locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        locationManager.startUpdatingLocation()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.x = locations.last?.coordinate.latitude
+        self.y = locations.last?.coordinate.longitude
+    }
+
 }

@@ -19,6 +19,7 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var viewOverLay: UIView!
     
     weak var delegate: PresentInfoViewProtocol?
+    var adminId: String!
     var eventId: String!
     var eventImage: UIImage?
     var hoursLong: String!
@@ -26,6 +27,8 @@ class EventTableViewCell: UITableViewCell {
     var eventSize: String!
     var userTotal: String!
     var users: [NSDictionary]!
+    var x: Double!
+    var y: Double!
     
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
@@ -39,6 +42,8 @@ class EventTableViewCell: UITableViewCell {
         vc.userTotal = self.userTotal
         vc.eventSize = self.eventSize
         vc.users = self.users
+        vc.x = x
+        vc.y = y
         delegate?.presentInfoView(controller: vc)
     }
 }

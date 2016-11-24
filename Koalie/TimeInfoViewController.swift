@@ -21,8 +21,8 @@ class TimeInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.labelHoursLeft.text = hoursLeft
-        self.labelHoursLong.text = hoursLong
+        self.labelHoursLeft.text = hoursLeft!
+        self.labelHoursLong.text = hoursLong!
         addTimeBarButton = UIBarButtonItem(title: "Add Time", style: .plain, target: self, action: #selector(showAddTimeVC))
     }
     

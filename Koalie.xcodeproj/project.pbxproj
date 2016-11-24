@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		691635BD79CEDCE1945C7C83 /* Pods_KoalieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C9625CEC048A06C5DF0463C /* Pods_KoalieTests.framework */; };
 		AA9F31FC24FE4AD2052FFB7C /* Pods_Koalie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D507CAABDCE0583DAEDACEFF /* Pods_Koalie.framework */; };
-		EA02ED211D9E2A48006BE585 /* InfoMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */; };
 		EA0ACBFC1DD43DA40038179F /* TimeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACBFB1DD43DA40038179F /* TimeInfoViewController.swift */; };
 		EA0ACBFE1DD43DAF0038179F /* PeopleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */; };
 		EA13EF041DDA9D5500B27D7A /* RaisedTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA13EF031DDA9D5500B27D7A /* RaisedTabBarController.swift */; };
@@ -105,7 +104,6 @@
 		C490D9EE5C9A7C536B5F17FE /* Pods-Koalie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koalie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Koalie/Pods-Koalie.debug.xcconfig"; sourceTree = "<group>"; };
 		D507CAABDCE0583DAEDACEFF /* Pods_Koalie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Koalie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C2E589A163D5DB6D7D7D47 /* Pods-Koalie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Koalie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Koalie/Pods-Koalie.release.xcconfig"; sourceTree = "<group>"; };
-		EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoMenuViewController.swift; sourceTree = "<group>"; };
 		EA0ACBFB1DD43DA40038179F /* TimeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInfoViewController.swift; sourceTree = "<group>"; };
 		EA0ACBFD1DD43DAF0038179F /* PeopleInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleInfoViewController.swift; sourceTree = "<group>"; };
 		EA13EF031DDA9D5500B27D7A /* RaisedTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedTabBarController.swift; sourceTree = "<group>"; };
@@ -352,7 +350,6 @@
 				EA6DA95B1CF543B000B14A89 /* OverviewViewController.swift */,
 				EA5C85151CFFFB0800A61033 /* GalleryViewController.swift */,
 				EA76B7671D053AEE00E2D593 /* InfoViewController.swift */,
-				EA02ED201D9E2A48006BE585 /* InfoMenuViewController.swift */,
 				EA76B7751D07F6CD00E2D593 /* FinalizeViewController.swift */,
 				EAD415D01D31D28A00A9E644 /* TutorialPageViewController.swift */,
 				EA88D9BC1D71F67100345E84 /* LoginViewController.swift */,
@@ -695,7 +692,6 @@
 				EAD487CD1D8498D60059EB44 /* ConvenientMethods.swift in Sources */,
 				EA5C85161CFFFB0800A61033 /* GalleryViewController.swift in Sources */,
 				EA13EF081DDAE31D00B27D7A /* YourGalleryViewController.swift in Sources */,
-				EA02ED211D9E2A48006BE585 /* InfoMenuViewController.swift in Sources */,
 				EA2589091CE2E7350060B6F2 /* HashtagViewController.swift in Sources */,
 				EAD5115B1DD7829F00C4C135 /* FriendListTableViewCell.swift in Sources */,
 				EAD415D11D31D28A00A9E644 /* TutorialPageViewController.swift in Sources */,
