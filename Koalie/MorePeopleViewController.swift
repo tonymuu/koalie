@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 class MorePeopleViewController: PeopleViewController {
 
@@ -26,7 +27,7 @@ class MorePeopleViewController: PeopleViewController {
                     "size": self.size] as [String : Any]
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.addPeople, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
             print(response.request ?? "Response")
+            SCLAlertView().showSuccess("Success!", subTitle: "Congratz! You just added \(self.size!) people!")
         }
-        dismiss(animated: true, completion: nil)
     }
 }

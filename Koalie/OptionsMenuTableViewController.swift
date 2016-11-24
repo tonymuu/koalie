@@ -48,7 +48,11 @@ class OptionsMenuTableViewController: UITableViewController {
     func logout() {
         self.delegate.deinitPullToRefresh()
         FBSDKLoginManager().logOut()
-        self.navigationController!.dismiss(animated: true, completion: nil)
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController? = vc
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 class MoreTimeViewController: TimeViewController {
     
@@ -37,6 +38,6 @@ class MoreTimeViewController: TimeViewController {
         Alamofire.request(Constants.URIs.baseUri + Constants.routes.addTime, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
             print(response.request)
         }
-        dismiss(animated: true, completion: nil)
+        SCLAlertView().showSuccess("Success!", subTitle: "Congratz! You just added \(num) \(unit!)!")
     }
 }

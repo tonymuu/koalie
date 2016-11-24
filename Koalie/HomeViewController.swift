@@ -182,18 +182,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         for media in medias {
             if !(media.object(forKey: "is_video") as! Bool) {
                 storedPath = media.object(forKey: "stored_path")! as! String
+                if let image = self.cache?[storedPath] {
+                    cell.backgroundView = UIImageView(image: image)
+                    cell.eventImage = image
+                    cell.clipsToBounds = true
+                    cell.backgroundView?.clipsToBounds = true
+                    cell.backgroundView?.contentMode = .scaleAspectFill
+                }
                 break
             }
         }
         if storedPath == "" {
             cell.viewOverLay.backgroundColor = UIColor.clear
-        } else if let image = self.cache?[storedPath] {
-            cell.backgroundView = UIImageView(image: image)
-            cell.eventImage = image
-            cell.clipsToBounds = true
-            cell.backgroundView?.clipsToBounds = true
-            cell.backgroundView?.contentMode = .scaleAspectFill
         }
+        
         return cell;
     }
     
