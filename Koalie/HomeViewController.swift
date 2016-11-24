@@ -185,16 +185,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 break
             }
         }
-        if let image = self.cache?[storedPath] {
+        if storedPath == "" {
+            cell.viewOverLay.backgroundColor = UIColor.clear
+        } else if let image = self.cache?[storedPath] {
             cell.backgroundView = UIImageView(image: image)
             cell.eventImage = image
             cell.clipsToBounds = true
             cell.backgroundView?.clipsToBounds = true
             cell.backgroundView?.contentMode = .scaleAspectFill
-        } else {
-            cell.viewOverLay.backgroundColor = UIColor.clear
         }
-        
         return cell;
     }
     
