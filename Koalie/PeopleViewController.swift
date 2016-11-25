@@ -54,10 +54,26 @@ class PeopleViewController: UIViewController, CLLocationManagerDelegate {
                 }
             })
             alert.showSuccess("$1.99", subTitle: "$1.99 will add 50 spots to your event.")
+        } else if self.size == 5 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "VCOverview") as! OverviewViewController
+            vc.eventName = self.newEvent.eventName
+            vc.labelString = Constants.labelStrings.createSuccess
+            self.present(vc, animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
+            
+            let dict = [
+                "eventName": self.newEvent!.eventName!,
+                "eventSize": String(self.newEvent!.eventSize),
+                "eventLength": String(self.newEvent!.eventLength),
+                "x": String(self.x),
+                "y": String(self.y)]
+            
+            Alamofire.request(Constants.URIs.baseUri + Constants.routes.createEvent, method: .post, parameters: dict, encoding: URLEncoding.default).responseJSON { response in
+                print(response.request ?? "Response request")
+            }
         }
-        
     }
-    
+
     @IBAction func firstSelected(_ sender: AnyObject) {
         buttonSecond.backgroundColor = Constants.backgroundColor.dark
         buttonFirst.backgroundColor = Constants.backgroundColor.selected

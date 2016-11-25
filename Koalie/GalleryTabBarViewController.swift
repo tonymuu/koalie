@@ -16,7 +16,7 @@ class GalleryTabBarViewController: RaisedTabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.insertEmptyTabItem("", atIndex: 1)
-        let img = UIImage(named: "Camera Icon.png")
+        let img = UIImage(named: "Camera_Icon")
         self.addRaisedButton(img, highlightImage: nil)
     }
 
