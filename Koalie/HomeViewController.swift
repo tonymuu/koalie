@@ -168,6 +168,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.x = x
         cell.y = y
         cell.isAdmin = adminId == self.userId
+        cell.userId = self.userId
         
         // time left label
         if timeLeft <= 0 {

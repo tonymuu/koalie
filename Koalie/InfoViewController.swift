@@ -17,6 +17,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     @IBOutlet weak var viewImage: UIImageView!
     
     var eventId: String!
+    var userId: String!
     var eventName: String!
     var timeLeft: String!
     var hoursLeft: String!
@@ -31,6 +32,14 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func buttonReturnClick(_ sender: AnyObject) {
+        let camVC = LLSimpleCamViewController()
+        camVC.eventId = self.eventId
+        camVC.userId = self.userId
+        self.present(camVC, animated: true, completion: nil)
+    }
+    
     
     @IBAction func buttonAddTimeClick(_ sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "TimeInfoVC") as! TimeInfoViewController

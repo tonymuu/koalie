@@ -29,6 +29,7 @@ class EventTableViewCell: UITableViewCell {
     var users: [NSDictionary]!
     var x: Double!
     var y: Double!
+    var userId: String!
     
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
@@ -42,6 +43,7 @@ class EventTableViewCell: UITableViewCell {
         vc.userTotal = self.userTotal
         vc.eventSize = self.eventSize
         vc.users = self.users
+        vc.userId = self.userId
         vc.x = x
         vc.y = y
         delegate?.presentInfoView(controller: vc)
