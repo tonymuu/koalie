@@ -10,7 +10,7 @@ import UIKit
 
 class ErrorViewController: UIViewController {
     
-    @IBAction func dismissClick(_ sender: Any) {
+    @IBAction func dismissClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     

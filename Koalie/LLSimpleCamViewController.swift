@@ -32,8 +32,10 @@ class LLSimpleCamViewController: UIViewController {
     var progress: Double = 0.0
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated);
-        self.camera.start();
+        super.viewWillAppear(animated)
+        if LLSimpleCamera.isFrontCameraAvailable() && LLSimpleCamera.isRearCameraAvailable() {
+            self.camera.start()
+        }
     }
     
     override func viewDidLoad() {
@@ -55,6 +57,14 @@ class LLSimpleCamViewController: UIViewController {
         self.homeButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
         self.homeButton.addTarget(self, action: #selector(homeButtonClick), for: .touchUpInside)
         self.view!.addSubview(homeButton)
+        
+        self.galleryButton = UIButton(type: .custom)
+        self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 29.0 + 20.0, height: 22.0 + 20.0)
+        self.galleryButton.tintColor = UIColor.white
+        self.galleryButton.setImage(UIImage(named: "Gallery_Icon"), for: UIControlState())
+        self.galleryButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
+        self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
+        self.view!.addSubview(self.galleryButton)
         
         self.camera.onDeviceChange = {(camera, device) -> Void in
             if (camera?.isFlashAvailable())! {
@@ -114,21 +124,6 @@ class LLSimpleCamViewController: UIViewController {
         }
         
         if(LLSimpleCamera.isFrontCameraAvailable() && LLSimpleCamera.isRearCameraAvailable()){
-//            self.snapButton = UIButton(type: .custom)
-//            self.snapButton.frame = CGRect(x: 0, y: 0, width: 70.0, height: 70.0)
-//            self.snapButton.clipsToBounds = true
-//            self.snapButton.layer.cornerRadius = self.snapButton.frame.width / 2.0
-//            self.snapButton.layer.borderColor = UIColor.white.cgColor
-//            self.snapButton.layer.borderWidth = 3.0
-//            self.snapButton.backgroundColor = UIColor.white.withAlphaComponent(0.6);
-//            self.snapButton.layer.rasterizationScale = UIScreen.main.scale
-//            self.snapButton.layer.shouldRasterize = true
-//            self.snapButton.frame = CGRect(x: 0, y: 0, width: 70.0, height: 70.0)
-//            self.snapButton.addTarget(self, action: #selector(snapButtonClicked(_:)), for: .touchUpInside)
-//            self.snapButton.addTarget(self, action: #selector(snapButtonPressedDown(_:)), for: .touchDown)
-//            self.view!.addSubview(self.snapButton)
-            
-            
             self.snapButton = SDRecordButton(frame: CGRect(x: 0, y: 0, width: 70.0, height: 70.0))
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(snapButtonClicked))
             tapGesture.numberOfTapsRequired = 1
@@ -157,13 +152,15 @@ class LLSimpleCamViewController: UIViewController {
             self.switchButton.addTarget(self, action: #selector(self.switchButtonPressed(_:)), for: .touchUpInside)
             self.view!.addSubview(self.switchButton)
             
-            self.galleryButton = UIButton(type: .custom)
-            self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 60, height: 60)
-            self.galleryButton.tintColor = UIColor.white
-//            self.galleryButton.
-            self.galleryButton.setImage(UIImage(named: "Gallery_Icon"), for: UIControlState())
-            self.galleryButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-            self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
+            self.snapButton.center = self.view.center
+            self.snapButton.frame.origin.y = self.view.bounds.height - 90
+            self.flashButton.frame.origin.x = self.view.frame.width - 70
+            self.flashButton.frame.origin.y = self.view.bounds.height - 70
+            self.switchButton.frame.origin.y = 12.0
+            self.switchButton.frame.origin.x = self.view.frame.width - 60.0
+            self.galleryButton.frame.origin.y = self.view.bounds.height - 70
+            self.switchButton.frame.origin.x = self.flashButton.frame.origin.x
+
             self.view!.addSubview(self.galleryButton)
             
         } else {
@@ -179,15 +176,6 @@ class LLSimpleCamViewController: UIViewController {
             label.center = CGPoint(x: screenRect.size.width / 2.0, y: screenRect.size.height / 2.0)
             self.errorLabel = label
             self.view!.addSubview(self.errorLabel)
-            
-            // temporary gallery button for testing on simulator
-            self.galleryButton = UIButton(type: .custom)
-            self.galleryButton.frame = CGRect(x: 12.0, y: screenRect.size.height - 60, width: 29.0 + 20.0, height: 22.0 + 20.0)
-            self.galleryButton.tintColor = UIColor.white
-            self.galleryButton.setImage(UIImage(named: "Gallery_Icon"), for: UIControlState())
-            self.galleryButton.imageEdgeInsets = UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
-            self.galleryButton.addTarget(self, action: #selector(galleryButtonClick), for: .touchUpInside)
-            self.view!.addSubview(self.galleryButton)
         }
     }
     
@@ -304,18 +292,18 @@ class LLSimpleCamViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.camera.view.frame = self.view.bounds
-        self.snapButton.center = self.view.center
-        self.snapButton.frame.origin.y = self.view.bounds.height - 90
-        self.flashButton.frame.origin.x = self.view.frame.width - 70
-        self.flashButton.frame.origin.y = self.view.bounds.height - 70
-        self.switchButton.frame.origin.y = 12.0
-        self.switchButton.frame.origin.x = self.view.frame.width - 60.0
-        self.galleryButton.frame.origin.y = self.view.bounds.height - 70
-        self.switchButton.frame.origin.x = self.flashButton.frame.origin.x
+//        self.snapButton.center = self.view.center
+//        self.snapButton.frame.origin.y = self.view.bounds.height - 90
+//        self.flashButton.frame.origin.x = self.view.frame.width - 70
+//        self.flashButton.frame.origin.y = self.view.bounds.height - 70
+//        self.switchButton.frame.origin.y = 12.0
+//        self.switchButton.frame.origin.x = self.view.frame.width - 60.0
+//        self.galleryButton.frame.origin.y = self.view.bounds.height - 70
+//        self.switchButton.frame.origin.x = self.flashButton.frame.origin.x
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.resetProgress()
+//        self.resetProgress()
     }
     
     func flashButtonPressed(_ button: UIButton) {

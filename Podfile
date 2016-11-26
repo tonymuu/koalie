@@ -24,6 +24,7 @@ target 'Koalie' do
     pod 'ESTabBarController'
     pod 'SDRecordButton'
     pod 'SwiftyStoreKit'
+    pod 'UITableView+Cache'
 end
 
 
