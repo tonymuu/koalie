@@ -17,7 +17,6 @@ class GalleryVideoTableViewCell: GalleryTableViewCell, VIMVideoPlayerViewDelegat
     override func awakeFromNib() {
         super.awakeFromNib()
         self.player.delegate = self
-        self.player.player.isLooping = false
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(playVideo))
         player.addGestureRecognizer(tapGestureRecognizer)
         self.addSubview(player)
@@ -29,6 +28,11 @@ class GalleryVideoTableViewCell: GalleryTableViewCell, VIMVideoPlayerViewDelegat
         // Configure the view for the selected state
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.player.frame = self.viewPicture.frame
+    }
+    
     func playVideo(_ sender: UIGestureRecognizer) {
         if self.player.player.isPlaying {
             self.player.player.pause()
@@ -36,5 +40,5 @@ class GalleryVideoTableViewCell: GalleryTableViewCell, VIMVideoPlayerViewDelegat
             self.player.player.play()
         }
     }
-
+    
 }

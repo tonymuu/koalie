@@ -21,7 +21,7 @@ class EventGalleryViewController: GalleryViewController {
         case .success(let data):
             self.mediaList = data as! [NSDictionary] as NSArray?
             self.numberOfRows = (self.mediaList?.count)!
-            self.eventTableView.reloadData()
+            self.tableView.reloadData()
         case .failure(let error):
             print(error)
             }

@@ -11,9 +11,11 @@ import Alamofire
 import AWSS3
 import AwesomeCache
 import FBSDKLoginKit
+import UITableView_Cache
+import VIMVideoPlayer
 
 class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, GalleryTableViewCellDelegate {
-    @IBOutlet weak var eventTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     var eventId: String!
     var userId: String!
@@ -31,9 +33,11 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.eventTableView.delegate = self
-        self.eventTableView.dataSource = self
-
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.tableView.register(GalleryTableViewCell.self, forCellReuseIdentifier: "PictureCell", cacheSize: 10)
+        self.tableView.register(GalleryVideoTableViewCell.self, forCellReuseIdentifier: "VideoCell", cacheSize: 10)
         
 //        let dict = ["eventId": eventId!]
         
@@ -140,16 +144,16 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.eventId = eventId
             cell.voted = isVoted
             cell.mediaId = mediaId
-            cell.player.frame = cell.viewPicture.frame
-            cell.player.player.isLooping = true
-            cell.player.player.disableAirplay()
-            cell.player.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
-
             do {
                 let cache = try Cache<NSString>(name: "videoCache")
                 print("got video from cache")
                 if let name = cache[key!] {
                     let videoUrl = self.applicationDocumentsDirectory().appendingPathComponent(name as String)
+                    cell.player.player.isLooping = false
+                    cell.player.player.disableAirplay()
+                    cell.player.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
+//                    cell.addSubview(cell.player)
+//                    cell.bringSubview(toFront: cell.player)
                     cell.player.player.setURL(videoUrl)
                     return cell
                 } else {
@@ -172,6 +176,11 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                         if ((task.result) != nil) {
                             let downloadOutput: AWSS3TransferManagerDownloadOutput = task.result as! AWSS3TransferManagerDownloadOutput
                             cache[key!] = name as NSString?
+                            cell.player.player.isLooping = false
+                            cell.player.player.disableAirplay()
+                            cell.player.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
+//                            cell.addSubview(cell.player)
+//                            cell.bringSubview(toFront: cell.player)
                             cell.player.player.setURL(downloadingFilePath)
                             return downloadOutput
                         }
