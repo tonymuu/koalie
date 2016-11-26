@@ -31,6 +31,8 @@ class GalleryTableViewCell: UITableViewCell {
     var eventId: String!
     var mediaId: String!
     
+    var fullscreen: FullscreenImageViewController!
+    
     var delegate: GalleryTableViewCellDelegate!
     
     @IBAction func buttonEditClick(_ sender: AnyObject) {

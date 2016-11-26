@@ -92,7 +92,7 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(presentImageFullscreen))
                 cell.viewPicture.isUserInteractionEnabled = true
                 tapGestureRecognizer.delegate = self
-                cell.viewPicture.addGestureRecognizer(tapGestureRecognizer)
+                cell.addGestureRecognizer(tapGestureRecognizer)
 
                 let cache = try Cache<UIImage>(name: "imageCache")
                 if let image = cache[key!] {
@@ -168,7 +168,6 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     downloadRequest?.downloadingFileURL = downloadingFilePath
                     
                     // download request
-                    
                     transferManager?.download(downloadRequest).continue( {(task: AWSTask!) -> AnyObject! in
                         if ((task.error) != nil) {
                             print(task.error)
@@ -198,10 +197,14 @@ class GalleryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func presentImageFullscreen(sender: UITapGestureRecognizer) {
-        let fullImageView = sender.view as! UIImageView
-        let image = fullImageView.image
+        let cell = sender.view as! GalleryTableViewCell
+        let image = cell.viewPicture.image
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "FullscreenImageVC") as! FullscreenImageViewController
         vc.image = image
+        vc.eventId = cell.eventId
+        vc.mediaId = cell.mediaId
+        vc.voted = cell.voted
+        vc.upvotes = cell.upvotes
         self.present(vc, animated: true, completion: nil)
     }
     
