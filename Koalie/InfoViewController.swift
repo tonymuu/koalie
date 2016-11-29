@@ -15,6 +15,8 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelTimeLeft: UILabel!
     @IBOutlet weak var viewImage: UIImageView!
+    @IBOutlet weak var labelPeopleTotal: UILabel!
+    @IBOutlet weak var viewOverlay: UIView!
     
     var eventId: String!
     var userId: String!
@@ -28,6 +30,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
     var users: [NSDictionary]!
     var x: Double!
     var y: Double!
+    var isEnded: Bool!
     
     @IBAction func buttonBackClick(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
@@ -74,6 +77,7 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
         if self.eventImage != nil {
             self.viewImage.image = self.eventImage
         }
+        self.labelPeopleTotal.text = self.userTotal.appending("/").appending(self.eventSize)
         
         // add tap to fullscreen to mapview
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(fullscreenMapview))
@@ -99,10 +103,13 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
 //        self.navigationController!.navigationBar.isTranslucent = true
 
         super.viewWillAppear(animated)
+        self.viewOverlay.backgroundColor = self.isEnded! ? Constants.backgroundColor.dark.withAlphaComponent(0.8) : UIColor.black.withAlphaComponent(0.5)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
 //        UIView.animate(withDuration: 0.5, animations: {
 //            self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
 //            self.navigationController!.navigationBar.shadowImage = UIImage()

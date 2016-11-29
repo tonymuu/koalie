@@ -46,7 +46,7 @@ class LLSimpleCamViewController: UIViewController {
         
         let screenRect = UIScreen.main.bounds;
         
-        self.camera = LLSimpleCamera(quality: AVCaptureSessionPresetLow, position: LLCameraPositionRear, videoEnabled: true)
+        self.camera = LLSimpleCamera(quality: AVCaptureSessionPresetMedium, position: LLCameraPositionRear, videoEnabled: true)
         self.camera.attach(to: self, withFrame: CGRect(x: 0, y: 0, width: screenRect.size.width, height: screenRect.size.height))
         self.camera.fixOrientationAfterCapture = false;
         

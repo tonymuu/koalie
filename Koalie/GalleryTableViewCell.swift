@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SCLAlertView
 
 protocol GalleryTableViewCellDelegate {
 //    func presentImageFullscreen(imageView: UIImageView) -> Void;
@@ -60,10 +61,10 @@ class GalleryTableViewCell: UITableViewCell {
         if !voted {
             upvotes = Int(labelUpvotes.text!)!
             voted = true
-            buttonUpvote.isSelected = true
             upvotes += 1
             labelUpvotes.text = String(describing: upvotes)
             updateUpvotes(upvotes: upvotes)
+            buttonUpvote.isSelected = true
         }
     }
     
@@ -71,6 +72,7 @@ class GalleryTableViewCell: UITableViewCell {
         if !buttonDownload.isSelected {
             buttonDownload.isSelected = true
             UIImageWriteToSavedPhotosAlbum(self.viewPicture.image!, nil, nil, nil)
+            SCLAlertView().showSuccess("Download Success", subTitle: "The picture has successfully been saved to your Camera Roll")
         }
     }
     

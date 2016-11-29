@@ -27,6 +27,7 @@ class ConfirmJoinEventViewController: UIViewController {
     var eventName: String!
     var message: String!
     var eventId: String!
+    var peopleTotal: String!
     
     @IBAction func buttonConfirmClick(_ sender: Any) {
         let dict = ["eventId": eventId!]

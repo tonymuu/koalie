@@ -76,7 +76,8 @@ class JoinEventViewController: UIViewController, UITextFieldDelegate {
         activityIndicator.startAnimating()
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmJoinEventVC") as! ConfirmJoinEventViewController
         let coverPictureKey = event.object(forKey: "coverPicture")! as! String
-        let spotsOpen = String(describing: event.object(forKey: "spotsOpen")!).appending(" Spots Open")
+        let totalSpots = String(describing: event.object(forKey: "peopleTotal")!)
+        let spotsOpen = String(describing: event.object(forKey: "spotsOpen")!).appending("/").appending(totalSpots)
         let hoursLeft = String(describing: event.object(forKey: "timeLeft")!).appending(" Hours Left")
         let eventName = String(describing: event.object(forKey: "name")!)
         vc.coverPictureKey = coverPictureKey

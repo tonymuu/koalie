@@ -34,6 +34,7 @@ class EventTableViewCell: UITableViewCell {
     @IBAction func buttonInfoClick(_ sender: AnyObject) {
         let storybard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storybard.instantiateViewController(withIdentifier: "InfoVC") as! InfoViewController
+        vc.isEnded = Int(self.hoursLeft)! > 0
         vc.eventId = self.eventId
         vc.eventName = self.labelEvent.text
         vc.timeLeft = self.labelProgress.text
