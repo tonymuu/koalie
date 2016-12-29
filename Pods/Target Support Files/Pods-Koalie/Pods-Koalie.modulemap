@@ -1,6 +1,0 @@
-framework module Pods_Koalie {
-  umbrella header "Pods-Koalie-umbrella.h"
-
-  export *
-  module * { export * }
-}
