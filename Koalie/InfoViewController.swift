@@ -36,6 +36,9 @@ class InfoViewController: UIViewController, MKMapViewDelegate, FBSDKAppInviteDia
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func buttonFinalizeClick(_ sender: Any) {
+    }
+    
     @IBAction func buttonReturnClick(_ sender: AnyObject) {
         let camVC = LLSimpleCamViewController()
         camVC.eventId = self.eventId
