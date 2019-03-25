@@ -1,3 +1,5 @@
+I stopped actively developing for Koalie in February of 2018. This is an archive of code as of the date I pushed my last commit in 2018.
+
 # koalie
 A new and meaningful way to capture, combine, and share your memories, quite literaly!
 <p>
